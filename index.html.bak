@@ -2,9 +2,9 @@
 
 <!--
   Theme options:
-  - theme-auto: Automatically switches based on user's system preferences
-  - theme-light: Forces light theme
-  - theme-dark: Forces dark theme
+  - theme-auto
+  - theme-light
+  - theme-dark
 -->
 
 <html class="theme-dark" lang="en">
@@ -12,45 +12,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Page Title -->
     <title>Justin Napolitano</title>
     <link rel="icon" type="image/x-icon" href="/images/avatar.png">
 
-    <!-- Meta Description -->
-    <meta name="description" content="Justin Napolitano — links">
-
-    <!-- Keywords -->
-    <meta
-      name="keywords"
-      content="Justin Napolitano, healthcare analytics, clinical analytics, business intelligence, BI analyst, healthcare data, hospital analytics, quality improvement, quality metrics, heart failure metrics, readmissions analytics, O/E mortality, Vizient analytics, Epic Clarity, Epic reporting, Epic SQL, Clarity SQL, SQL developer, data engineering, data modeling, dimensional modeling, Power BI, DAX, dashboards, KPI dashboards, performance improvement, clinical quality, value-based care, population health analytics, ETL, data pipelines, reporting automation, procurement analytics, supply chain analytics, AI in healthcare, analytics consultant"
-    >
-
-    <!-- Canonical URL (using Vercel-preferred www primary) -->
-    <link rel="canonical" href="https://www.justin-napolitano.com/">
-
-    <!-- Author Information -->
+    <meta name="description" content="Justin Napolitano">
+    <meta name="keywords" content="your name, industry, specialties">
+    <link rel="canonical" href="https://justin-napolitano.com">
     <meta name="author" content="Justin Napolitano">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Justin Napolitano">
-    <meta property="og:description" content="Justin Napolitano — links">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.justin-napolitano.com/">
-    <meta property="og:image" content="https://www.justin-napolitano.com/images/og.png">
-    <meta property="og:image:alt" content="Justin Napolitano — links">
-
-    <!-- Twitter/X cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Justin Napolitano">
-    <meta name="twitter:description" content="Justin Napolitano — links">
-    <meta name="twitter:image" content="https://www.justin-napolitano.com/images/og.png">
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/brands.css">
 
-    <!-- LittleLink Extended Stylesheet (Optional) -->
+    <!-- Optional: LittleLink Extended -->
     <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
 
     <!-- Tiny helper styles for section headers -->
@@ -61,6 +35,11 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         opacity: 0.8;
+      }
+      .section-note {
+        margin: 0.25rem 0 0.75rem;
+        font-size: 0.9rem;
+        opacity: 0.75;
       }
     </style>
   </head>
@@ -77,30 +56,22 @@
         >
 
         <h1><div>Justin Napolitano</div></h1>
-
-        <!-- Optional short line under your name (leave commented if you don't want it) -->
-        <!-- <p>Healthcare analytics & BI</p> -->
+        <p>Write something short here.</p>
 
         <!-- ========== SOCIALS ========== -->
         <h2 class="section-title">Socials</h2>
         <div class="button-stack" role="navigation" aria-label="Social links">
 
           <!-- Instagram -->
-          <a class="button button-instagram" href="https://instagram.com/jay.b.napolitano" target="_blank" rel="noopener" role="button">
+          <a class="button button-instagram" href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/instagram.svg" alt="Instagram Logo">
             Instagram
           </a>
 
           <!-- Bluesky -->
-          <a class="button button-bluesky" href="https://bsky.app/profile/justin-napolitano.bsky.social" target="_blank" rel="noopener" role="button">
+          <a class="button button-bluesky" href="https://bsky.app/profile/YOUR_HANDLE" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/bluesky.svg" alt="Bluesky Logo">
             Bluesky
-          </a>
-
-          <!-- Mastodon (use your instance + handle) -->
-          <a class="button button-mastodon" href="https://mastodon.social/@jnapolitano/" target="_blank" rel="me noopener" role="button">
-            <img class="icon" aria-hidden="true" src="images/icons/mastodon.svg" alt="Mastodon Logo">
-            Mastodon
           </a>
 
         </div>
@@ -110,26 +81,26 @@
         <div class="button-stack" role="navigation" aria-label="Work links">
 
           <!-- LinkedIn -->
-          <a class="button button-linked" href="https://linkedin.com/in/justin-napolitano" target="_blank" rel="noopener" role="button">
+          <a class="button button-linked" href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/linkedin.svg" alt="LinkedIn Logo">
             LinkedIn
           </a>
 
           <!-- GitHub -->
-          <a class="button button-github" href="https://github.com/justin-napolitano" target="_blank" rel="noopener" role="button">
+          <a class="button button-github" href="https://github.com/YOUR_HANDLE" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/github.svg" alt="GitHub Logo">
             GitHub
           </a>
 
           <!-- Calendly -->
-          <a class="button button-calendly" href="https://calendly.com/justin-napolitano" target="_blank" rel="noopener" role="button">
+          <a class="button button-calendly" href="https://calendly.com/YOUR_HANDLE" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/calendly.svg" alt="Calendly Logo">
             Schedule with Calendly
           </a>
 
           <!-- Coming soon: Portfolio -->
           <!--
-          <a class="button button-default" href="https://www.justin-napolitano.com/portfolio" target="_blank" rel="noopener" role="button">
+          <a class="button button-default" href="https://YOURDOMAIN.com" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/generic-homepage.svg" alt="Homepage Icon">
             Portfolio
           </a>
@@ -157,8 +128,8 @@
         <h2 class="section-title">Contact</h2>
         <div class="button-stack" role="navigation" aria-label="Contact links">
 
-          <!-- Signal (use your signal.me link) -->
-          <a class="button button-signal" href="https://signal.me/#p/jaynap.81" target="_blank" rel="noopener" role="button">
+          <!-- Signal (use signal:// only if you want app-deep-linking; https is safer for web) -->
+          <a class="button button-signal" href="https://signal.me/#p/YOUR_SIGNAL_LINK" target="_blank" rel="noopener" role="button">
             <img class="icon" aria-hidden="true" src="images/icons/signal.svg" alt="Signal Logo">
             Signal
           </a>
