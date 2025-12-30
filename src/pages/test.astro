@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import links from '../data/test-links.json';
+const isExternal = (href: string = '') => /^https?:\/\//.test(href);
+const iconPath = (name: string) => `/images/icons/${name}.svg`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Classic Link Stack | Justin Napolitano</title>
+  </head>
+  <body>
+    <main>
+      <section class="hero hero--simple" aria-labelledby="test-hero">
+        <div class="hero__copy">
+          <h1 id="test-hero">{links.hero.title}</h1>
+        </div>
+      </section>
+
+      <section class="legacy-stack" aria-label="Link tree">
+        {links.links.map((link) => {
+          const openInNewTab = link.newTab ?? isExternal(link.href);
+          return (
+            <a
+              class="legacy-pill"
+              href={link.href}
+              target={openInNewTab ? '_blank' : undefined}
+              rel={openInNewTab ? 'noopener' : undefined}
+              style={`--legacy-color: ${link.brandColor ?? 'var(--accent)'}`}
+            >
+              <span class="legacy-pill__icon" style={`--icon-image: url('${iconPath(link.icon)}');`} aria-hidden="true" />
+              <div class="legacy-pill__copy">
+                <span class="legacy-pill__label">{link.label}</span>
+                {link.meta && <span class="legacy-pill__meta">{link.meta}</span>}
+              </div>
+              <span class="legacy-pill__arrow" aria-hidden="true">↗</span>
+            </a>
+          );
+        })}
+      </section>
+    </main>
+  </body>
+</html>

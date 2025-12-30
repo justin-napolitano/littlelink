@@ -1,0 +1,26 @@
+{
+  "name": "littlelink",
+  "version": "1.0.0",
+  "description": "Personal Astro link hub for Justin Napolitano",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justin-napolitano/littlelink.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/justin-napolitano/littlelink/issues"
+  },
+  "homepage": "https://github.com/justin-napolitano/littlelink#readme",
+  "dependencies": {
+    "@astrojs/vercel": "^9.0.2",
+    "astro": "^5.16.6"
+  }
+}

@@ -1,0 +1,94 @@
+---
+import site from '../data/site.json';
+import '../styles/global.css';
+
+const { meta, hero, sections, footer } = site;
+const isExternal = (href: string = '') => /^https?:\/\//.test(href);
+const iconPath = (name: string) => `/images/icons/${name}.svg`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keywords} />
+    <meta name="author" content={meta.author} />
+    <link rel="canonical" href={meta.url} />
+
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={meta.url} />
+    <meta property="og:image" content={meta.image} />
+    <meta property="og:image:alt" content={`${meta.title} — personal link hub`} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={meta.image} />
+    <link rel="icon" type="image/png" href="/images/avatar.png" />
+  </head>
+  <body>
+    <main>
+      <section class="hero hero--simple" aria-labelledby="profile-title">
+        <div class="hero__copy">
+          <h1 id="profile-title">{hero.name}</h1>
+        </div>
+      </section>
+
+      <section class="link-stack" aria-label="Personal link hub">
+        {sections.map((section) => (
+          <article class={`link-stack__section${section.accent ? ' link-stack__section--accent' : ''}`}>
+            <header>
+              <p class="card-code">{section.code}</p>
+              <h2>{section.title}</h2>
+              {section.note && <p class="card-note">{section.note}</p>}
+            </header>
+            <div class="link-pills">
+              {section.links.map((link) => {
+                const openInNewTab = link.newTab ?? isExternal(link.href);
+                const relValue = openInNewTab ? 'noopener' : undefined;
+                return (
+                  <a
+                    class="link-pill"
+                    href={link.href}
+                    target={openInNewTab ? '_blank' : undefined}
+                    rel={relValue}
+                  >
+                    {link.icon && (
+                      <span
+                        class="link-pill__icon"
+                        style={`--icon-image: url('${iconPath(link.icon)}'); --icon-color: ${link.brandColor ?? 'var(--accent)'};`}
+                        aria-hidden="true"
+                      />
+                    )}
+                    <div>
+                      <span class="link-pill__label">{link.label}</span>
+                      {link.meta && <span class="link-pill__meta">{link.meta}</span>}
+                    </div>
+                    <span class="link-pill__arrow" aria-hidden="true">↗</span>
+                  </a>
+                );
+              })}
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          {footer.text}
+          {footer.privacyHref && (
+            <>
+              {' '}
+              <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy policy'}</a>
+            </>
+          )}
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

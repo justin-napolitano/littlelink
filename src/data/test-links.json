@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "title": "Justin Napolitano"
+  },
+  "links": [
+    {
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/justin-napolitano",
+      "meta": "In-public operating notes",
+      "icon": "linkedin",
+      "brandColor": "#0A66C2"
+    },
+    {
+      "label": "Bluesky",
+      "href": "https://bsky.app/profile/justin-napolitano.bsky.social",
+      "meta": "Short riffs + experiments",
+      "icon": "bluesky",
+      "brandColor": "#1185FE"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://instagram.com/jaynap.81",
+      "meta": "Process shots + reels",
+      "icon": "instagram",
+      "brandColor": "#E1306C"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/justin-napolitano",
+      "meta": "Code + data rigs",
+      "icon": "github",
+      "brandColor": "#171515"
+    },
+    {
+      "label": "Resume",
+      "href": "https://resume.jnap.me",
+      "meta": "Dossier + past work",
+      "icon": "generic-cloud",
+      "brandColor": "#0F7C66"
+    },
+    {
+      "label": "Journal",
+      "href": "https://log.jnap.me",
+      "meta": "Dispatches + operating notes",
+      "icon": "generic-blog",
+      "brandColor": "#B87333"
+    },
+    {
+      "label": "Signal",
+      "href": "/api/direct/signal",
+      "meta": "Encrypted live thread",
+      "icon": "signal",
+      "brandColor": "#3A76F0",
+      "newTab": true
+    },
+    {
+      "label": "Email",
+      "href": "/api/direct/email",
+      "meta": "Inbox for collaborations",
+      "icon": "generic-email",
+      "brandColor": "#0F100F",
+      "newTab": true
+    },
+    {
+      "label": "Schedule some time",
+      "href": "/api/direct/studio",
+      "meta": "Book 25 minutes",
+      "icon": "generic-calendar",
+      "brandColor": "#0F7C66",
+      "newTab": true
+    }
+  ]
+}
