@@ -127,3 +127,22 @@ This will make the site available at http://localhost:8080
 For more information about Docker configuration, see [docker/README.md](docker/README.md).
 
 ---
+
+## Astro rebuild & private links
+-------------------------------------------------------------------------------
+This project now runs on Astro with JSON-driven content (see `src/data/site.json`), 
+plus a `/test` route for the classic vertical link stack.
+
+### Local setup
+1. Install deps: `npm install`
+2. Set env vars (or copy `.env.example` to `.env`). Required secrets:
+   - `DIRECT_SIGNAL_URL`
+   - `DIRECT_EMAIL_URL`
+   - `DIRECT_STUDIO_URL`
+3. Run dev server: `npm run dev`
+4. Build for prod/Vercel: `npm run build`
+
+### Private link proxy
+Sensitive links use `/api/direct/[slug]`, which resolves slugs via the env vars 
+above. Update `src/lib/direct-links.ts` to add more slugs. This keeps raw URLs 
+out of the static bundle—only Vercel’s server responds with the redirect.

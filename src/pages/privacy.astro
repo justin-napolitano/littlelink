@@ -1,0 +1,94 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy | Justin Napolitano</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="/images/avatar.png" />
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="privacy-title">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Privacy</p>
+          <h1 id="privacy-title">Privacy Overview</h1>
+          <p class="hero__thesis">
+            Static Astro build served without tracking or analytics cookies. Any outbound link clicks happen client-side and are
+            governed by the destination site.
+          </p>
+          <div class="hero__cta">
+            <a class="cta primary" href="/">Back to main</a>
+          </div>
+        </div>
+        <div class="hero__details">
+          <p class="hero__note">Data minimalism</p>
+          <dl class="hero__vitals">
+            <div>
+              <dt>Analytics</dt>
+              <dd>No third-party analytics are embedded.</dd>
+            </div>
+            <div>
+              <dt>Hosting</dt>
+              <dd>Static files served via edge hosting.</dd>
+            </div>
+            <div>
+              <dt>Forms</dt>
+              <dd>No data collection via forms.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="link-stack" aria-label="Detailed policy">
+        <article class="link-stack__section">
+          <header>
+            <p class="card-code">ANL.01</p>
+            <h2>Analytics</h2>
+            <p class="card-note">No client-side trackers.</p>
+          </header>
+          <div class="link-pills">
+            <div class="link-pill">
+              <div>
+                <span class="link-pill__label">Traffic logs</span>
+                <span class="link-pill__meta">Only basic server logs for uptime/debugging.</span>
+              </div>
+            </div>
+            <div class="link-pill">
+              <div>
+                <span class="link-pill__label">Scripts</span>
+                <span class="link-pill__meta">No analytics scripts are loaded.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="link-stack__section">
+          <header>
+            <p class="card-code">EXT.02</p>
+            <h2>External content</h2>
+            <p class="card-note">Outbound links may have their own policies.</p>
+          </header>
+          <div class="link-pills">
+            <div class="link-pill">
+              <div>
+                <span class="link-pill__label">Target sites</span>
+                <span class="link-pill__meta">Each link has its own privacy practice.</span>
+              </div>
+            </div>
+            <div class="link-pill">
+              <div>
+                <span class="link-pill__label">Best effort</span>
+                <span class="link-pill__meta">Links curated manually; remove requests welcome.</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
