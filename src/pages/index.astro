@@ -35,7 +35,9 @@ const iconPath = (name: string) => `/images/icons/${name}.svg`;
     <main>
       <section class="hero hero--simple" aria-labelledby="profile-title">
         <div class="hero__copy">
+          {hero.eyebrow && <p class="hero__eyebrow">{hero.eyebrow}</p>}
           <h1 id="profile-title">{hero.name}</h1>
+          {hero.subhead && <p class="hero__subhead">{hero.subhead}</p>}
         </div>
       </section>
 
