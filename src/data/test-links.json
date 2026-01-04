@@ -39,7 +39,14 @@
       "brandColor": "#0F7C66"
     },
     {
-      "label": "Journal",
+      "label": "Docs",
+      "href": "https://docs.jnap.me",
+      "meta": "Working papers + references",
+      "icon": "generic-cloud",
+      "brandColor": "#1D4ED8"
+    },
+    {
+      "label": "Log",
       "href": "https://log.jnap.me",
       "meta": "Dispatches + operating notes",
       "icon": "generic-blog",
