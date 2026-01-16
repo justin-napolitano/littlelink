@@ -20,31 +20,35 @@
   },
   "sections": [
     {
-      "id": "broadcast",
-      "code": "BRD.01",
-      "title": "Broadcast",
-      "note": "Quick taps into the socials",
+      "id": "direct",
+      "code": "COM.01",
+      "title": "Direct Lines",
+      "note": "When you need the private line",
+      "accent": true,
       "links": [
         {
-          "label": "LinkedIn",
-          "meta": "In-public operating notes",
-          "href": "https://linkedin.com/in/justin-napolitano",
-          "icon": "linkedin",
-          "brandColor": "#0A66C2"
+          "label": "Signal",
+          "meta": "Encrypted live thread",
+          "href": "/api/direct/signal",
+          "icon": "signal",
+          "brandColor": "#3A76F0",
+          "newTab": true
         },
         {
-          "label": "Bluesky",
-          "meta": "Short riffs + experiments",
-          "href": "https://bsky.app/profile/justin-napolitano.bsky.social",
-          "icon": "bluesky",
-          "brandColor": "#1185FE"
+          "label": "Email",
+          "meta": "Inbox for collaborations",
+          "href": "/api/direct/email",
+          "icon": "generic-email",
+          "brandColor": "#0F100F",
+          "newTab": true
         },
         {
-          "label": "Instagram",
-          "meta": "Process shots + reels",
-          "href": "https://instagram.com/jaynap.81",
-          "icon": "instagram",
-          "brandColor": "#E1306C"
+          "label": "Schedule some time",
+          "meta": "Book 25 minutes",
+          "href": "/api/direct/studio",
+          "icon": "generic-calendar",
+          "brandColor": "#0F7C66",
+          "newTab": true
         }
       ]
     },
@@ -74,46 +78,35 @@
           "href": "https://docs.jnap.me",
           "icon": "generic-cloud",
           "brandColor": "#1D4ED8"
-        },
-        {
-          "label": "Log",
-          "meta": "Dispatches + operating notes",
-          "href": "https://log.jnap.me",
-          "icon": "generic-blog",
-          "brandColor": "#B87333"
         }
       ]
     },
     {
-      "id": "direct",
-      "code": "COM.03",
-      "title": "Direct Lines",
-      "note": "When you need the private line",
-      "accent": true,
+      "id": "broadcast",
+      "code": "BRD.03",
+      "title": "Broadcast",
+      "note": "Quick taps into the socials",
       "links": [
         {
-          "label": "Signal",
-          "meta": "Encrypted live thread",
-          "href": "/api/direct/signal",
-          "icon": "signal",
-          "brandColor": "#3A76F0",
-          "newTab": true
+          "label": "LinkedIn",
+          "meta": "In-public operating notes",
+          "href": "https://linkedin.com/in/justin-napolitano",
+          "icon": "linkedin",
+          "brandColor": "#0A66C2"
         },
         {
-          "label": "Email",
-          "meta": "Inbox for collaborations",
-          "href": "/api/direct/email",
-          "icon": "generic-email",
-          "brandColor": "#0F100F",
-          "newTab": true
+          "label": "Bluesky",
+          "meta": "Short riffs + experiments",
+          "href": "https://bsky.app/profile/justin-napolitano.bsky.social",
+          "icon": "bluesky",
+          "brandColor": "#1185FE"
         },
         {
-          "label": "Schedule some time",
-          "meta": "Book 25 minutes",
-          "href": "/api/direct/studio",
-          "icon": "generic-calendar",
-          "brandColor": "#0F7C66",
-          "newTab": true
+          "label": "Instagram",
+          "meta": "Process shots + reels",
+          "href": "https://instagram.com/jay.b.napolitano",
+          "icon": "instagram",
+          "brandColor": "#E1306C"
         }
       ]
     }

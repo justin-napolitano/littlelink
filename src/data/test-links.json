@@ -19,7 +19,7 @@
     },
     {
       "label": "Instagram",
-      "href": "https://instagram.com/jaynap.81",
+      "href": "https://instagram.com/jay.b.napolitano",
       "meta": "Process shots + reels",
       "icon": "instagram",
       "brandColor": "#E1306C"
@@ -44,13 +44,6 @@
       "meta": "Working papers + references",
       "icon": "generic-cloud",
       "brandColor": "#1D4ED8"
-    },
-    {
-      "label": "Log",
-      "href": "https://log.jnap.me",
-      "meta": "Dispatches + operating notes",
-      "icon": "generic-blog",
-      "brandColor": "#B87333"
     },
     {
       "label": "Signal",
