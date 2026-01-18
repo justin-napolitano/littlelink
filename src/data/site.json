@@ -5,7 +5,7 @@
     "keywords": "Justin Napolitano, creative operations, healthcare analytics, data engineering, Vizient, Epic Clarity, media ops, editorial systems, analytics consultant",
     "author": "Justin Napolitano",
     "url": "https://www.justin-napolitano.com",
-    "image": "https://www.justin-napolitano.com/images/og.png"
+    "image": "https://www.justin-napolitano.com/twitter-card.png"
   },
   "hero": {
     "eyebrow": "",
@@ -27,8 +27,14 @@
       "accent": true,
       "links": [
         {
+          "label": "Schedule some time",
+          "href": "/api/direct/studio",
+          "icon": "generic-calendar",
+          "brandColor": "#0F7C66",
+          "newTab": true
+        },
+        {
           "label": "Signal",
-          "meta": "Encrypted live thread",
           "href": "/api/direct/signal",
           "icon": "signal",
           "brandColor": "#3A76F0",
@@ -36,18 +42,9 @@
         },
         {
           "label": "Email",
-          "meta": "Inbox for collaborations",
           "href": "/api/direct/email",
           "icon": "generic-email",
           "brandColor": "#0F100F",
-          "newTab": true
-        },
-        {
-          "label": "Schedule some time",
-          "meta": "Book 25 minutes",
-          "href": "/api/direct/studio",
-          "icon": "generic-calendar",
-          "brandColor": "#0F7C66",
           "newTab": true
         }
       ]
@@ -56,54 +53,48 @@
       "id": "studio",
       "code": "STD.02",
       "title": "Studio & Library",
-      "note": "Where the builds and dossiers live.",
+      "note": "Where the folio and builds live",
       "links": [
         {
-          "label": "GitHub",
-          "meta": "Code + data rigs",
-          "href": "https://github.com/justin-napolitano",
-          "icon": "github",
-          "brandColor": "#171515"
-        },
-        {
           "label": "Resume",
-          "meta": "Dossier + past work",
           "href": "https://resume.jnap.me",
           "icon": "generic-cloud",
           "brandColor": "#0F7C66"
         },
         {
           "label": "Docs",
-          "meta": "Working papers + references",
           "href": "https://docs.jnap.me",
           "icon": "generic-cloud",
           "brandColor": "#1D4ED8"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/justin-napolitano",
+          "icon": "github",
+          "brandColor": "#171515"
         }
       ]
     },
     {
-      "id": "broadcast",
+      "id": "socials",
       "code": "BRD.03",
-      "title": "Broadcast",
+      "title": "Socials",
       "note": "Quick taps into the socials",
       "links": [
         {
           "label": "LinkedIn",
-          "meta": "In-public operating notes",
           "href": "https://linkedin.com/in/justin-napolitano",
           "icon": "linkedin",
           "brandColor": "#0A66C2"
         },
         {
           "label": "Bluesky",
-          "meta": "Short riffs + experiments",
           "href": "https://bsky.app/profile/justin-napolitano.bsky.social",
           "icon": "bluesky",
           "brandColor": "#1185FE"
         },
         {
           "label": "Instagram",
-          "meta": "Process shots + reels",
           "href": "https://instagram.com/jay.b.napolitano",
           "icon": "instagram",
           "brandColor": "#E1306C"
