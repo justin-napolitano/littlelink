@@ -20,11 +20,38 @@
   },
   "sections": [
     {
+      "id": "studio",
+      "code": "STD.01",
+      "title": "Studio & Library",
+      "note": "Where the folio and builds live",
+      "accent": true,
+      "links": [
+        {
+          "label": "Resume",
+          "href": "https://resume.jnap.me",
+          "icon": "generic-cloud",
+          "brandColor": "#0F7C66"
+        },
+        {
+          "label": "Docs",
+          "href": "https://docs.jnap.me",
+          "icon": "generic-cloud",
+          "brandColor": "#1D4ED8"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/justin-napolitano",
+          "icon": "github",
+          "brandColor": "#171515"
+        }
+      ]
+    },
+    {
       "id": "direct",
-      "code": "COM.01",
+      "code": "COM.02",
       "title": "Direct Lines",
       "note": "When you need the private line",
-      "accent": true,
+      "accent": false,
       "links": [
         {
           "label": "Schedule some time",
@@ -46,32 +73,6 @@
           "icon": "generic-email",
           "brandColor": "#0F100F",
           "newTab": true
-        }
-      ]
-    },
-    {
-      "id": "studio",
-      "code": "STD.02",
-      "title": "Studio & Library",
-      "note": "Where the folio and builds live",
-      "links": [
-        {
-          "label": "Resume",
-          "href": "https://resume.jnap.me",
-          "icon": "generic-cloud",
-          "brandColor": "#0F7C66"
-        },
-        {
-          "label": "Docs",
-          "href": "https://docs.jnap.me",
-          "icon": "generic-cloud",
-          "brandColor": "#1D4ED8"
-        },
-        {
-          "label": "GitHub",
-          "href": "https://github.com/justin-napolitano",
-          "icon": "github",
-          "brandColor": "#171515"
         }
       ]
     },
