@@ -1,0 +1,76 @@
+---
+import './styles.css';
+
+const { site, consentScript } = Astro.props;
+const { hero, sections, footer } = site;
+const isExternal = (href: string = '') => /^https?:\/\//.test(href);
+const iconPath = (name: string) => `/images/icons/${name}.svg`;
+const workSection = sections.find((section) => section.id === 'studio') ?? sections[0];
+const otherSections = sections.filter((section) => section.id !== workSection.id);
+---
+
+<main class="proof-index" data-design-template="proof-index">
+  <section class="proof-hero" aria-labelledby="proof-title">
+    <div>
+      <p class="proof-kicker">{hero.subhead || 'Links'}</p>
+      <h1 id="proof-title">{hero.name}</h1>
+    </div>
+    <div class="proof-primary" aria-label={workSection.title}>
+      {workSection.links.map((link) => {
+        const openInNewTab = link.newTab ?? isExternal(link.href);
+        return (
+          <a
+            class="proof-primary__link"
+            href={link.href}
+            target={openInNewTab ? '_blank' : undefined}
+            rel={openInNewTab ? 'noopener' : undefined}
+          >
+            {link.icon && (
+              <span
+                class="proof-icon"
+                style={`--icon-image: url('${iconPath(link.icon)}'); --icon-color: ${link.brandColor ?? '#111827'};`}
+                aria-hidden="true"
+              />
+            )}
+            <span>{link.label}</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="proof-sections" aria-label="More links">
+    {otherSections.map((section) => (
+      <article class="proof-section">
+        <h2>{section.title}</h2>
+        <div>
+          {section.links.map((link) => {
+            const openInNewTab = link.newTab ?? isExternal(link.href);
+            return (
+              <a
+                class="proof-link"
+                href={link.href}
+                target={openInNewTab ? '_blank' : undefined}
+                rel={openInNewTab ? 'noopener' : undefined}
+              >
+                <span>{link.label}</span>
+              </a>
+            );
+          })}
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <footer class="proof-footer">
+    {footer.privacyHref && <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy'}</a>}
+  </footer>
+</main>
+<div id="consentBanner" class="consent-banner" hidden role="dialog" aria-live="polite" aria-label="Analytics consent">
+  <p>Analytics cookies?</p>
+  <div class="consent-banner__actions">
+    <button type="button" data-consent="accept">Allow</button>
+    <button type="button" class="secondary" data-consent="decline">No</button>
+  </div>
+</div>
+<script is:inline set:html={consentScript}></script>

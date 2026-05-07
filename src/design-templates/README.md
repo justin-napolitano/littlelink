@@ -37,6 +37,13 @@ Implemented templates are registered in `src/lib/design-template-registry.ts`.
 Implemented template IDs live in `src/lib/design-template-ids.ts` so metadata-only
 preview pages can avoid importing template presentation CSS.
 
+Implemented preview templates:
+
+- `link-index-mobile-first`
+- `quiet-index`
+- `garden-index`
+- `proof-index`
+
 Preview routes use `/preview/[templateId]`. The preview route:
 
 - renders the requested implemented template against shared `src/data/site.json`

@@ -1,0 +1,179 @@
+main[data-design-template='garden-index'] {
+  --garden-bg: #f4f2ea;
+  --garden-paper: #fffdf7;
+  --garden-ink: #151812;
+  --garden-muted: rgba(21, 24, 18, 0.6);
+  --garden-line: rgba(58, 78, 55, 0.18);
+  --garden-green: #315f4a;
+  --garden-blue: #385f7d;
+  width: min(1040px, 100%);
+  max-width: none;
+  margin: 0 auto;
+  padding: 56px 1.25rem 88px;
+  color: var(--garden-ink);
+}
+
+main[data-design-template='garden-index'] .garden-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+main[data-design-template='garden-index'] .garden-hero > div {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: clamp(1.4rem, 5vw, 2.4rem);
+  border: 1px solid var(--garden-line);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(49, 95, 74, 0.12), transparent 44%),
+    var(--garden-paper);
+}
+
+main[data-design-template='garden-index'] .garden-kicker {
+  margin: 0 0 0.45rem;
+  color: var(--garden-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+main[data-design-template='garden-index'] h1 {
+  max-width: 9ch;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 12vw, 6.2rem);
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+main[data-design-template='garden-index'] .garden-feature {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.35rem;
+  border: 1px solid rgba(49, 95, 74, 0.36);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(49, 95, 74, 0.18), transparent 58%),
+    #edf3e9;
+  color: var(--garden-green);
+  text-decoration: none;
+}
+
+main[data-design-template='garden-index'] .garden-feature span {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+main[data-design-template='garden-index'] .garden-feature strong {
+  font-size: clamp(2.1rem, 8vw, 3.8rem);
+  line-height: 0.95;
+}
+
+main[data-design-template='garden-index'] .garden-paths {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+main[data-design-template='garden-index'] .garden-section {
+  min-width: 0;
+  padding: 1.1rem;
+  border: 1px solid var(--garden-line);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--garden-paper) 88%, white);
+}
+
+main[data-design-template='garden-index'] h2 {
+  margin: 0 0 1rem;
+  color: var(--garden-muted);
+  font-size: 0.9rem;
+}
+
+main[data-design-template='garden-index'] .garden-links {
+  display: grid;
+  gap: 0.55rem;
+}
+
+main[data-design-template='garden-index'] .garden-link {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: center;
+  min-height: 54px;
+  padding: 0.65rem;
+  border-radius: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+main[data-design-template='garden-index'] .garden-link:hover,
+main[data-design-template='garden-index'] .garden-link:focus-visible {
+  background: rgba(49, 95, 74, 0.08);
+}
+
+main[data-design-template='garden-index'] .garden-link__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--icon-color, var(--garden-green)) 14%, white);
+  position: relative;
+}
+
+main[data-design-template='garden-index'] .garden-link__icon::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  background-color: var(--icon-color, var(--garden-green));
+  -webkit-mask: var(--icon-image) center/contain no-repeat;
+  mask: var(--icon-image) center/contain no-repeat;
+}
+
+main[data-design-template='garden-index'] .garden-link span:last-child {
+  min-width: 0;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+main[data-design-template='garden-index'] .garden-footer {
+  margin-top: 1.5rem;
+  color: var(--garden-muted);
+  font-size: 0.9rem;
+}
+
+main[data-design-template='garden-index'] .garden-footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+main[data-design-template='garden-index'] .garden-footer a:hover,
+main[data-design-template='garden-index'] .garden-footer a:focus-visible {
+  border-color: currentColor;
+}
+
+@media (max-width: 760px) {
+  main[data-design-template='garden-index'] {
+    padding: 42px 1rem 72px;
+  }
+
+  main[data-design-template='garden-index'] .garden-hero,
+  main[data-design-template='garden-index'] .garden-paths {
+    grid-template-columns: 1fr;
+  }
+
+  main[data-design-template='garden-index'] .garden-hero > div,
+  main[data-design-template='garden-index'] .garden-feature {
+    min-height: 210px;
+  }
+}

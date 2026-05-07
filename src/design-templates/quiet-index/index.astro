@@ -1,0 +1,60 @@
+---
+import './styles.css';
+
+const { site, consentScript } = Astro.props;
+const { hero, sections, footer } = site;
+const isExternal = (href: string = '') => /^https?:\/\//.test(href);
+const iconPath = (name: string) => `/images/icons/${name}.svg`;
+---
+
+<main class="quiet-index" data-design-template="quiet-index">
+  <header class="quiet-hero" aria-labelledby="quiet-title">
+    <p class="quiet-kicker">{hero.subhead || 'Links'}</p>
+    <h1 id="quiet-title">{hero.name}</h1>
+  </header>
+
+  <div class="quiet-sections" aria-label="Personal link hub">
+    {sections.map((section) => (
+      <section class="quiet-section" aria-labelledby={`quiet-${section.id}`}>
+        <h2 id={`quiet-${section.id}`}>{section.title}</h2>
+        <ul>
+          {section.links.map((link) => {
+            const openInNewTab = link.newTab ?? isExternal(link.href);
+            return (
+              <li>
+                <a
+                  class="quiet-link"
+                  href={link.href}
+                  target={openInNewTab ? '_blank' : undefined}
+                  rel={openInNewTab ? 'noopener' : undefined}
+                >
+                  {link.icon && (
+                    <span
+                      class="quiet-link__icon"
+                      style={`--icon-image: url('${iconPath(link.icon)}'); --icon-color: ${link.brandColor ?? '#0f7c66'};`}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span class="quiet-link__label">{link.label}</span>
+                  {link.meta && <span class="quiet-link__meta">{link.meta}</span>}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  <footer class="quiet-footer">
+    {footer.privacyHref && <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy'}</a>}
+  </footer>
+</main>
+<div id="consentBanner" class="consent-banner" hidden role="dialog" aria-live="polite" aria-label="Analytics consent">
+  <p>Analytics cookies?</p>
+  <div class="consent-banner__actions">
+    <button type="button" data-consent="accept">Allow</button>
+    <button type="button" class="secondary" data-consent="decline">No</button>
+  </div>
+</div>
+<script is:inline set:html={consentScript}></script>
