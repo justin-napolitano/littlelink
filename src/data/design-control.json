@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "tenant_id": "jnap",
+  "site_url": "https://jnap.me",
+  "active_template_id": "link-index-mobile-first",
+  "source_of_truth": {
+    "content": "src/data/site.json",
+    "active_template": "src/data/active-template.json",
+    "template_manifest": "src/design-templates/link-index-mobile-first/manifest.yaml",
+    "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json"
+  },
+  "brand_position": {
+    "root_role": "public_front_door",
+    "trust_signal": "normal_organized_competent_personal",
+    "operating_rule": "show_and_do_do_not_explain",
+    "avoid": [
+      "pitch_deck_copy",
+      "tech_stack_personality",
+      "generic_saas_hero",
+      "overexplaining",
+      "unready_public_routes"
+    ]
+  },
+  "content_controls": {
+    "universal": [
+      "identity",
+      "resume",
+      "docs",
+      "projects",
+      "social_contact_paths",
+      "privacy_rules",
+      "route_identity",
+      "canonical_urls"
+    ],
+    "optional": [
+      "essays",
+      "photos",
+      "lifestyle_objects",
+      "interests",
+      "offers",
+      "services",
+      "proof_grids",
+      "featured_projects",
+      "social_media_panels"
+    ],
+    "invariants": [
+      "canonical_urls",
+      "analytics_behavior",
+      "privacy_behavior",
+      "direct_link_redirects",
+      "route_labels",
+      "provider_backed_data_ownership"
+    ]
+  },
+  "modules": [
+    {
+      "id": "identity",
+      "status": "active",
+      "required": true,
+      "content_paths": [
+        "hero.name",
+        "hero.subhead"
+      ],
+      "privacy": "public"
+    },
+    {
+      "id": "work",
+      "status": "active",
+      "required": true,
+      "content_paths": [
+        "sections[id=studio]"
+      ],
+      "privacy": "public"
+    },
+    {
+      "id": "contact",
+      "status": "active",
+      "required": true,
+      "content_paths": [
+        "sections[id=direct]"
+      ],
+      "privacy": "mixed"
+    },
+    {
+      "id": "social",
+      "status": "active",
+      "required": true,
+      "content_paths": [
+        "sections[id=socials]"
+      ],
+      "privacy": "public"
+    },
+    {
+      "id": "garden",
+      "status": "planned",
+      "required": false,
+      "content_paths": [
+        "future.docs_wiki"
+      ],
+      "privacy": "public_reviewed"
+    },
+    {
+      "id": "lifestyle",
+      "status": "planned",
+      "required": false,
+      "content_paths": [
+        "future.lifestyle_objects",
+        "future.photos",
+        "future.interests"
+      ],
+      "privacy": "selective"
+    }
+  ],
+  "theme_controls": {
+    "typography": {
+      "display_font": "Fraunces",
+      "body_font": "Space Grotesk",
+      "heading_style": "warm_serif_identity",
+      "label_style": "plain_nouns_and_actions"
+    },
+    "color": {
+      "page_background": "var(--bg)",
+      "surface": "var(--upper-bg)",
+      "text": "var(--ink)",
+      "muted_text": "var(--ink-soft)",
+      "accent": "var(--accent)",
+      "lines": [
+        "var(--line)",
+        "var(--line-strong)"
+      ]
+    },
+    "shape": {
+      "surface_radius": "var(--radius)",
+      "link_radius": "999px",
+      "icon_radius": "999px"
+    },
+    "motion": {
+      "policy": "subtle_guidance_only",
+      "allowed": [
+        "hover_state",
+        "focus_state",
+        "gentle_transition"
+      ],
+      "forbidden": [
+        "scroll_spectacle",
+        "distracting_animation",
+        "motion_required_for_comprehension"
+      ]
+    }
+  },
+  "qa_gates": [
+    "npm_build",
+    "route_health_check",
+    "mobile_screenshot",
+    "desktop_screenshot",
+    "no_text_overflow",
+    "section_headers_align_with_link_edges",
+    "keyboard_focus_visible",
+    "contrast_readable",
+    "privacy_behavior_unchanged"
+  ],
+  "reference_sources": [
+    "brian-lovin",
+    "derek-sivers",
+    "maggie-appleton",
+    "maggie-appleton-digital-garden",
+    "thinkhouse-2026-web-design"
+  ]
+}
