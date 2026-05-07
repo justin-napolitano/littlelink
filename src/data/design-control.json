@@ -7,7 +7,8 @@
     "content": "src/data/site.json",
     "active_template": "src/data/active-template.json",
     "template_manifest": "src/design-templates/link-index-mobile-first/manifest.yaml",
-    "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json"
+    "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json",
+    "candidate_templates": "src/design-templates/candidate-templates.json"
   },
   "template_strategy": {
     "comparison_unit": "template",
@@ -15,6 +16,22 @@
     "active_selection_rule": "Only one template is active for the root route at a time.",
     "shared_content_rule": "Improve site.json as universal content; do not bake current-template layout needs into shared data.",
     "presentation_scope_rule": "Spacing, typography, background, density, and motion choices are template-owned unless explicitly promoted to shared controls."
+  },
+  "candidate_templates": {
+    "planning_artifact": "src/design-templates/candidate-templates.json",
+    "first_build_batch": [
+      "quiet-index",
+      "garden-index",
+      "proof-index"
+    ],
+    "later_candidates": [
+      "card-index",
+      "ledger-index",
+      "social-card-index",
+      "business-card-index"
+    ],
+    "preview_requirement": "Candidate templates must be previewable without changing production active-template config.",
+    "selection_rule": "Select a candidate only after mobile and desktop screenshot review."
   },
   "brand_position": {
     "root_role": "public_front_door",

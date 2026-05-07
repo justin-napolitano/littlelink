@@ -16,6 +16,21 @@ The current production design is preserved as `link-index-mobile-first`.
 
 The current `link-index-mobile-first` template may keep evolving, but it should be treated as one template. Future visual directions should be added as separate templates so they can be compared and selected cleanly.
 
+## Candidate Planning
+
+Candidate plans live in:
+
+- `src/design-templates/candidate-templates.md`
+- `src/design-templates/candidate-templates.json`
+
+Build the first batch before expanding the set:
+
+- `quiet-index`
+- `garden-index`
+- `proof-index`
+
+Production should remain on `link-index-mobile-first` until a candidate passes preview, screenshot QA, and selection review.
+
 ## Controls
 
 Template controls are declarative for now:
