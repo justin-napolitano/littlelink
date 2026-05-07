@@ -194,7 +194,7 @@ const consentScript = `(() => {
         {sections.map((section) => (
           <article class={`link-stack__section${section.accent ? ' link-stack__section--accent' : ''}`}>
             <header>
-              <p class="card-code">{section.code}</p>
+              {section.code && <p class="card-code">{section.code}</p>}
               <h2>{section.title}</h2>
               {section.note && <p class="card-note">{section.note}</p>}
             </header>
@@ -231,10 +231,10 @@ const consentScript = `(() => {
 
       <footer class="site-footer">
         <p>
-          {footer.text}
+          {footer.text && <>{footer.text}</>}
           {footer.privacyHref && (
             <>
-              {' '}
+              {footer.text && ' '}
               <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy policy'}</a>
             </>
           )}
@@ -242,10 +242,10 @@ const consentScript = `(() => {
       </footer>
     </main>
     <div id="consentBanner" class="consent-banner" hidden role="dialog" aria-live="polite" aria-label="Analytics consent">
-      <p>We use cookies to measure engagement. Enable analytics?</p>
+      <p>Analytics cookies?</p>
       <div class="consent-banner__actions">
-        <button type="button" data-consent="accept">Allow analytics</button>
-        <button type="button" class="secondary" data-consent="decline">No thanks</button>
+        <button type="button" data-consent="accept">Allow</button>
+        <button type="button" class="secondary" data-consent="decline">No</button>
       </div>
     </div>
     <script is:inline set:html={consentScript}></script>
