@@ -33,12 +33,6 @@
           "brandColor": "#0F7C66"
         },
         {
-          "label": "Hire",
-          "href": "https://hire.jnap.me",
-          "icon": "generic-cloud",
-          "brandColor": "#9333EA"
-        },
-        {
           "label": "Docs",
           "href": "https://docs.jnap.me",
           "icon": "generic-cloud",
