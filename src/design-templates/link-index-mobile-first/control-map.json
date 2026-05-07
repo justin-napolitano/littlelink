@@ -3,6 +3,12 @@
   "template_id": "link-index-mobile-first",
   "status": "active",
   "intent": "Preserve the accepted JNAP mobile-first link hub while making its controls explicit.",
+  "template_scope": {
+    "comparison_unit": "template",
+    "presentation_ownership": "This template owns its spacing, typography, background, density, and interaction choices.",
+    "candidate_rule": "Different visual directions should become separate templates instead of mutations of this template.",
+    "shared_content_rule": "Shared content stays in src/data/site.json and should remain useful across templates."
+  },
   "content_map": {
     "identity": {
       "component_scope": "hero",
@@ -76,6 +82,7 @@
     ]
   },
   "layout_controls": {
+    "scope": "link-index-mobile-first",
     "page_width": "main max-width",
     "page_padding": "main padding",
     "hero_density": ".hero--simple padding",

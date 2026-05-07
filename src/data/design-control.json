@@ -9,6 +9,13 @@
     "template_manifest": "src/design-templates/link-index-mobile-first/manifest.yaml",
     "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json"
   },
+  "template_strategy": {
+    "comparison_unit": "template",
+    "candidate_definition": "A candidate template is a complete inactive presentation implementation for comparison.",
+    "active_selection_rule": "Only one template is active for the root route at a time.",
+    "shared_content_rule": "Improve site.json as universal content; do not bake current-template layout needs into shared data.",
+    "presentation_scope_rule": "Spacing, typography, background, density, and motion choices are template-owned unless explicitly promoted to shared controls."
+  },
   "brand_position": {
     "root_role": "public_front_door",
     "trust_signal": "normal_organized_competent_personal",
@@ -112,6 +119,7 @@
     }
   ],
   "theme_controls": {
+    "scope": "active_template_defaults",
     "typography": {
       "display_font": "Fraunces",
       "body_font": "system_ui",

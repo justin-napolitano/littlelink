@@ -6,6 +6,16 @@ The active template is selected by `src/data/active-template.json`. Template swi
 
 The current production design is preserved as `link-index-mobile-first`.
 
+## Language
+
+- A template is a complete presentation implementation: layout, spacing, type, color, motion, module emphasis, and interaction behavior.
+- A candidate template is a real inactive template built for comparison. It is not a minor iteration of the active template.
+- The active template is the one selected for the live root route.
+- Shared content is not a template. `src/data/site.json` should remain good enough to serve every candidate template.
+- Template-specific spacing, typography, background treatment, component density, and interaction choices belong to the template folder and its control map.
+
+The current `link-index-mobile-first` template may keep evolving, but it should be treated as one template. Future visual directions should be added as separate templates so they can be compared and selected cleanly.
+
 ## Controls
 
 Template controls are declarative for now:

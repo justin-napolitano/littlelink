@@ -42,6 +42,11 @@ brand_contract:
     - tech_stack_personality
     - generic_saas_hero
     - overexplaining
+template_scope:
+  comparison_unit: template
+  presentation_ownership: "Spacing, typography, background, density, and interaction choices belong to this template."
+  candidate_rule: "Different visual directions should be built as separate templates for comparison."
+  shared_content_rule: "Content remains shared through src/data/site.json."
 notes:
   - "This template preserves the accepted JNAP mobile-first link hub design."
   - "Switching templates must not change shared content, route URLs, or privacy decisions."
