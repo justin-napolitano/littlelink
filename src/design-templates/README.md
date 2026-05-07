@@ -34,6 +34,8 @@ Production should remain on `link-index-mobile-first` until a candidate passes p
 ## Preview Harness
 
 Implemented templates are registered in `src/lib/design-template-registry.ts`.
+Implemented template IDs live in `src/lib/design-template-ids.ts` so metadata-only
+preview pages can avoid importing template presentation CSS.
 
 Preview routes use `/preview/[templateId]`. The preview route:
 
@@ -41,6 +43,8 @@ Preview routes use `/preview/[templateId]`. The preview route:
 - does not read or modify `src/data/active-template.json`
 - uses `noindex` metadata
 - returns `404` for planned templates that are not implemented yet
+
+The preview index lives at `/preview` and shows cards for implemented and planned templates. Only implemented template cards are clickable.
 
 ## Controls
 
