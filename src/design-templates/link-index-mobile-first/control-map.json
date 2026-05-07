@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "template_id": "link-index-mobile-first",
+  "status": "active",
+  "intent": "Preserve the accepted JNAP mobile-first link hub while making its controls explicit.",
+  "content_map": {
+    "identity": {
+      "component_scope": "hero",
+      "source_paths": [
+        "hero.name",
+        "hero.subhead"
+      ],
+      "selectors": [
+        ".hero",
+        ".hero__copy",
+        "h1",
+        ".hero__subhead"
+      ]
+    },
+    "section_groups": {
+      "component_scope": "link-stack",
+      "source_paths": [
+        "sections[]",
+        "sections[].links[]"
+      ],
+      "selectors": [
+        ".link-stack",
+        ".link-stack__section",
+        ".link-pills",
+        ".link-pill"
+      ]
+    },
+    "footer": {
+      "component_scope": "site-footer",
+      "source_paths": [
+        "footer.text",
+        "footer.privacyLabel",
+        "footer.privacyHref"
+      ],
+      "selectors": [
+        ".site-footer"
+      ]
+    },
+    "privacy": {
+      "component_scope": "consent-banner",
+      "source_paths": [
+        "consentScript"
+      ],
+      "selectors": [
+        ".consent-banner",
+        ".consent-banner__actions"
+      ]
+    }
+  },
+  "css_token_map": {
+    "background": [
+      "--bg",
+      "--upper-bg"
+    ],
+    "text": [
+      "--ink",
+      "--ink-soft",
+      "--ink-mute"
+    ],
+    "accent": [
+      "--accent",
+      "--accent-soft"
+    ],
+    "line": [
+      "--line",
+      "--line-strong"
+    ],
+    "surface": [
+      "--shadow",
+      "--radius"
+    ]
+  },
+  "layout_controls": {
+    "page_width": "main max-width",
+    "page_padding": "main padding",
+    "hero_density": ".hero--simple padding",
+    "section_density": ".link-stack__section padding",
+    "link_density": ".link-pill padding",
+    "section_header_alignment": ".link-stack__section header padding-inline",
+    "tap_target_policy": "large rounded link pills"
+  },
+  "copy_policy": {
+    "rule": "show_and_do_do_not_explain",
+    "allowed_label_style": "plain nouns and actions",
+    "forbidden": [
+      "pitch_deck_copy",
+      "systems_experiments_labels",
+      "tech_stack_personality",
+      "generic_template_language"
+    ]
+  },
+  "accessibility_controls": {
+    "focus": "a:focus-visible and button focus states must remain visible",
+    "headings": "one h1 followed by section h2 labels",
+    "contrast": "text and icon colors must remain readable against surfaces",
+    "motion": "motion may clarify hover/focus only"
+  },
+  "activation_requirements": [
+    "src/data/active-template.json selects this template",
+    "src/data/site.json remains the shared content source",
+    "route labels and URLs are unchanged unless the content contract changes",
+    "privacy and analytics behavior are unchanged",
+    "mobile and desktop screenshots are reviewed"
+  ]
+}
