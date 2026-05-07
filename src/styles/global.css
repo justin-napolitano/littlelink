@@ -267,6 +267,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  padding-inline: 1.15rem;
 }
 
 .card-code {
@@ -382,6 +383,10 @@ h1 {
 
   .link-stack__section {
     padding: 1.25rem;
+  }
+
+  .link-stack__section header {
+    padding-inline: 0.95rem;
   }
 
   .link-pill {
