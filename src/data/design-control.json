@@ -8,7 +8,9 @@
     "active_template": "src/data/active-template.json",
     "template_manifest": "src/design-templates/link-index-mobile-first/manifest.yaml",
     "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json",
-    "candidate_templates": "src/design-templates/candidate-templates.json"
+    "candidate_templates": "src/design-templates/candidate-templates.json",
+    "template_registry": "src/lib/design-template-registry.ts",
+    "preview_route": "src/pages/preview/[templateId].astro"
   },
   "template_strategy": {
     "comparison_unit": "template",
@@ -31,7 +33,8 @@
       "business-card-index"
     ],
     "preview_requirement": "Candidate templates must be previewable without changing production active-template config.",
-    "selection_rule": "Select a candidate only after mobile and desktop screenshot review."
+    "selection_rule": "Select a candidate only after mobile and desktop screenshot review.",
+    "preview_route_pattern": "/preview/[templateId]"
   },
   "brand_position": {
     "root_role": "public_front_door",
