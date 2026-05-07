@@ -17,7 +17,7 @@
   "candidates": [
     {
       "id": "quiet-index",
-      "status": "planned_first_batch",
+      "status": "implemented_first_batch",
       "purpose": "Most normal, trustworthy, and personal version of the root.",
       "primary_question": "Does this feel like an organized person instead of a tech presentation?",
       "references": [
@@ -42,7 +42,7 @@
     },
     {
       "id": "garden-index",
-      "status": "planned_first_batch",
+      "status": "implemented_first_batch",
       "purpose": "Root template that creates a stronger bridge into docs.jnap.me as the public garden/wiki.",
       "primary_question": "Does the root make the docs/wiki feel like the deeper public knowledge surface without overexplaining?",
       "references": [
@@ -65,7 +65,7 @@
     },
     {
       "id": "proof-index",
-      "status": "planned_first_batch",
+      "status": "implemented_first_batch",
       "purpose": "Hiring/professional proof-forward root focused on resume, docs, GitHub, and projects.",
       "primary_question": "Does this help a reviewer trust the work faster?",
       "references": [

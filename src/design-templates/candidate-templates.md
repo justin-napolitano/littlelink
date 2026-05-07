@@ -16,7 +16,11 @@ The current live template is `link-index-mobile-first`. It remains one template.
 
 ## First Build Batch
 
+Status: implemented as inactive preview templates.
+
 ### `quiet-index`
+
+Status: `implemented_first_batch`
 
 Most normal, trustworthy, and personal version of the root.
 
@@ -27,6 +31,8 @@ Most normal, trustworthy, and personal version of the root.
 
 ### `garden-index`
 
+Status: `implemented_first_batch`
+
 Root template that creates a stronger bridge into `docs.jnap.me` as the public garden/wiki.
 
 - Primary question: Does the root make the docs/wiki feel like the deeper public knowledge surface without overexplaining?
@@ -35,6 +41,8 @@ Root template that creates a stronger bridge into `docs.jnap.me` as the public g
 - Activation test: makes `docs.jnap.me` feel important without turning the root into a blog.
 
 ### `proof-index`
+
+Status: `implemented_first_batch`
 
 Hiring/professional proof-forward root focused on resume, docs, GitHub, and projects.
 
