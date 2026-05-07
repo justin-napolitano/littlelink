@@ -1,0 +1,17 @@
+version: 1
+template_id: link-index-mobile-first
+status: active
+content_source: src/data/site.json
+active_template_config: src/data/active-template.json
+runtime_files:
+  - src/design-templates/link-index-mobile-first/index.astro
+  - src/design-templates/link-index-mobile-first/styles.css
+  - src/design-templates/link-index-mobile-first/tokens.css
+quality_gates:
+  - npm_build
+  - mobile_screenshot
+  - desktop_screenshot
+  - route_health_check
+notes:
+  - "This template preserves the accepted JNAP mobile-first link hub design."
+  - "Switching templates must not change shared content, route URLs, or privacy decisions."
