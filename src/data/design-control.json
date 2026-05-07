@@ -114,7 +114,7 @@
   "theme_controls": {
     "typography": {
       "display_font": "Fraunces",
-      "body_font": "Space Grotesk",
+      "body_font": "system_ui",
       "heading_style": "warm_serif_identity",
       "label_style": "plain_nouns_and_actions"
     },

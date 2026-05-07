@@ -87,6 +87,7 @@
   "copy_policy": {
     "rule": "show_and_do_do_not_explain",
     "allowed_label_style": "plain nouns and actions",
+    "meta_description": "personal links, not marketing copy",
     "forbidden": [
       "pitch_deck_copy",
       "systems_experiments_labels",
