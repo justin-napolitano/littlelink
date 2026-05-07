@@ -1,17 +1,17 @@
 {
   "meta": {
     "title": "Justin Napolitano",
-    "description": "Personal studio feed for creative systems work across healthcare and media ops.",
-    "keywords": "Justin Napolitano, creative operations, healthcare analytics, data engineering, Vizient, Epic Clarity, media ops, editorial systems, analytics consultant",
+    "description": "Links for Justin Napolitano.",
+    "keywords": "Justin Napolitano, resume, docs, hiring, GitHub, LinkedIn",
     "author": "Justin Napolitano",
-    "url": "https://www.justin-napolitano.com",
-    "image": "https://www.justin-napolitano.com/twitter-card.png"
+    "url": "https://jnap.me",
+    "image": "https://jnap.me/twitter-card.png"
   },
   "hero": {
     "eyebrow": "",
     "name": "Justin Napolitano",
     "thesis": "",
-    "subhead": "Links and contact",
+    "subhead": "Links",
     "primaryCta": null,
     "secondaryCta": null,
     "note": "",
@@ -21,9 +21,9 @@
   "sections": [
     {
       "id": "studio",
-      "code": "STD.01",
-      "title": "Studio & Library",
-      "note": "Where the folio and builds live",
+      "code": "",
+      "title": "Work",
+      "note": "",
       "accent": true,
       "links": [
         {
@@ -31,6 +31,12 @@
           "href": "https://resume.jnap.me",
           "icon": "generic-cloud",
           "brandColor": "#0F7C66"
+        },
+        {
+          "label": "Hire",
+          "href": "https://hire.jnap.me",
+          "icon": "generic-cloud",
+          "brandColor": "#9333EA"
         },
         {
           "label": "Docs",
@@ -48,13 +54,13 @@
     },
     {
       "id": "direct",
-      "code": "COM.02",
-      "title": "Direct Lines",
-      "note": "When you need the private line",
+      "code": "",
+      "title": "Contact",
+      "note": "",
       "accent": false,
       "links": [
         {
-          "label": "Schedule some time",
+          "label": "Schedule",
           "href": "/api/direct/studio",
           "icon": "generic-calendar",
           "brandColor": "#0F7C66",
@@ -78,9 +84,9 @@
     },
     {
       "id": "socials",
-      "code": "BRD.03",
-      "title": "Socials",
-      "note": "Quick taps into the socials",
+      "code": "",
+      "title": "Social",
+      "note": "",
       "links": [
         {
           "label": "LinkedIn",
@@ -104,8 +110,8 @@
     }
   ],
   "footer": {
-    "text": "Privacy-forward build inspired by the editorial resume.",
-    "privacyLabel": "Privacy policy",
+    "text": "",
+    "privacyLabel": "Privacy",
     "privacyHref": "/privacy"
   }
 }
