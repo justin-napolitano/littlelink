@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "status": "planned",
+  "active_template_id": "link-index-mobile-first",
+  "candidate_policy": {
+    "comparison_unit": "template",
+    "active_selection": "Only one template is active on the root route at a time.",
+    "preview_rule": "Candidate templates must be previewable without changing production active-template config.",
+    "shared_content_rule": "Every candidate renders the same shared src/data/site.json content unless a content-contract change is approved.",
+    "privacy_rule": "Privacy, analytics, direct links, and provider-backed data behavior must not change during template comparison."
+  },
+  "first_build_batch": [
+    "quiet-index",
+    "garden-index",
+    "proof-index"
+  ],
+  "candidates": [
+    {
+      "id": "quiet-index",
+      "status": "implemented_first_batch",
+      "purpose": "Most normal, trustworthy, and personal version of the root.",
+      "primary_question": "Does this feel like an organized person instead of a tech presentation?",
+      "references": [
+        "derek-sivers",
+        "rauno-freiberg",
+        "thinkhouse-2026-web-design"
+      ],
+      "changes": [
+        "quieter surface treatment",
+        "less visual emphasis on cards",
+        "plain system typography",
+        "minimal motion"
+      ],
+      "must_not_change": [
+        "route labels",
+        "route URLs",
+        "privacy behavior",
+        "analytics behavior",
+        "direct link behavior"
+      ],
+      "activation_test": "Feels more trustworthy than link-index-mobile-first without becoming generic."
+    },
+    {
+      "id": "garden-index",
+      "status": "implemented_first_batch",
+      "purpose": "Root template that creates a stronger bridge into docs.jnap.me as the public garden/wiki.",
+      "primary_question": "Does the root make the docs/wiki feel like the deeper public knowledge surface without overexplaining?",
+      "references": [
+        "maggie-appleton",
+        "maggie-appleton-digital-garden",
+        "tania-rascia"
+      ],
+      "changes": [
+        "stronger docs route emphasis",
+        "subtle garden/navigation metaphor",
+        "more editorial spacing",
+        "still direct root navigation"
+      ],
+      "must_not_change": [
+        "root remains a front door",
+        "docs content stays off the root until governed",
+        "privacy-reviewed public content only"
+      ],
+      "activation_test": "Makes docs.jnap.me feel important without turning the root into a blog."
+    },
+    {
+      "id": "proof-index",
+      "status": "implemented_first_batch",
+      "purpose": "Hiring/professional proof-forward root focused on resume, docs, GitHub, and projects.",
+      "primary_question": "Does this help a reviewer trust the work faster?",
+      "references": [
+        "paco-coursey",
+        "brian-lovin",
+        "one-page-love-minimal"
+      ],
+      "changes": [
+        "stronger work/proof grouping",
+        "more scan-oriented hierarchy",
+        "project-ready module space",
+        "resume and docs remain primary"
+      ],
+      "must_not_change": [
+        "no resume wall",
+        "no pitch copy",
+        "no unsupported claims",
+        "route contracts remain stable"
+      ],
+      "activation_test": "Improves professional scan speed without making the page feel like a deck."
+    },
+    {
+      "id": "card-index",
+      "status": "planned_later",
+      "purpose": "Warmer personal card style with stronger tactile identity.",
+      "primary_question": "Can the root feel more personal and less interface-like while staying simple?",
+      "references": [
+        "creative-bloq-2026-graphic-design",
+        "one-page-love-minimal"
+      ],
+      "changes": [
+        "stronger paper/card feeling",
+        "warmer spacing rhythm",
+        "very restrained texture if performance-safe"
+      ],
+      "must_not_change": [
+        "readability",
+        "mobile performance",
+        "tap target size"
+      ],
+      "activation_test": "Feels personal and polished without decorative clutter."
+    },
+    {
+      "id": "ledger-index",
+      "status": "planned_later",
+      "purpose": "Text-forward index that treats the root like a durable personal directory.",
+      "primary_question": "Does an even simpler text-led page feel more trustworthy?",
+      "references": [
+        "derek-sivers",
+        "tania-rascia"
+      ],
+      "changes": [
+        "lower card weight",
+        "more list/table rhythm",
+        "fast route scanning"
+      ],
+      "must_not_change": [
+        "normal language",
+        "obvious links",
+        "mobile comfort"
+      ],
+      "activation_test": "Feels clear and durable, not unfinished."
+    },
+    {
+      "id": "social-card-index",
+      "status": "planned_later",
+      "purpose": "More personal/social presentation while avoiding embedded feeds.",
+      "primary_question": "Can the root show personal texture safely without exposing private life?",
+      "references": [
+        "maggie-appleton",
+        "framer-small-business-examples"
+      ],
+      "changes": [
+        "more emphasis on selected social exits",
+        "optional lifestyle module slot",
+        "privacy-reviewed public objects only"
+      ],
+      "must_not_change": [
+        "no scraped feeds",
+        "no private photos",
+        "no private locations"
+      ],
+      "activation_test": "Feels human without becoming invasive."
+    },
+    {
+      "id": "business-card-index",
+      "status": "planned_later",
+      "purpose": "Reusable small-business/person template for future tenants.",
+      "primary_question": "Can this become a reusable PR base without making Justin's root generic?",
+      "references": [
+        "framer-small-business-examples",
+        "thinkhouse-2026-web-design"
+      ],
+      "changes": [
+        "clearer offer/contact slot",
+        "service/proof module support",
+        "business-friendly layout scale"
+      ],
+      "must_not_change": [
+        "active JNAP root stays personal",
+        "no fake offer",
+        "tenant-specific brand remains required"
+      ],
+      "activation_test": "Useful as a future tenant template, not necessarily the JNAP default."
+    }
+  ],
+  "qa_gates": [
+    "npm_build",
+    "route_health_check",
+    "mobile_screenshot",
+    "desktop_screenshot",
+    "no_text_overflow",
+    "keyboard_focus_visible",
+    "contrast_readable",
+    "privacy_behavior_unchanged",
+    "shared_content_unchanged",
+    "template_can_be_previewed_without_activation"
+  ]
+}

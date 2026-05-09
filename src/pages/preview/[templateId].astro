@@ -1,0 +1,47 @@
+---
+import RootDocument from '../../components/RootDocument.astro';
+import site from '../../data/site.json';
+import candidateTemplates from '../../design-templates/candidate-templates.json';
+import { createAnalyticsConsentScript } from '../../lib/analytics-consent';
+import { getDesignTemplate } from '../../lib/design-template-registry';
+
+const gaMeasurementId = 'G-MT18WRFBGW';
+const templateId = Astro.params.templateId ?? '';
+const ActiveTemplate = getDesignTemplate(templateId);
+const plannedTemplateIds = new Set([
+  candidateTemplates.active_template_id,
+  ...candidateTemplates.candidates.map((candidate) => candidate.id),
+]);
+const isKnownPlannedTemplate = plannedTemplateIds.has(templateId);
+const consentScript = createAnalyticsConsentScript(gaMeasurementId);
+
+if (!ActiveTemplate) {
+  Astro.response.status = 404;
+}
+---
+
+{
+  ActiveTemplate ? (
+    <RootDocument site={site} titleSuffix={`${templateId} preview`} noindex>
+      <ActiveTemplate site={site} consentScript={consentScript} />
+    </RootDocument>
+  ) : (
+    <RootDocument site={site} titleSuffix="template preview unavailable" noindex>
+      <main>
+        <section class="hero hero--simple" aria-labelledby="preview-title">
+          <div class="hero__copy">
+            <h1 id="preview-title">Template preview unavailable</h1>
+            <p class="hero__subhead">
+              {isKnownPlannedTemplate
+                ? `${templateId} is planned but not implemented yet.`
+                : `${templateId || 'Unknown template'} is not registered.`}
+            </p>
+            <div class="hero__cta">
+              <a class="cta secondary" href="/preview">Back to previews</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </RootDocument>
+  )
+}

@@ -1,0 +1,66 @@
+---
+import './styles.css';
+
+const { site, consentScript } = Astro.props;
+const { hero, sections, footer } = site;
+const isExternal = (href: string = '') => /^https?:\/\//.test(href);
+const iconPath = (name: string) => `/images/icons/${name}.svg`;
+const docsLink = sections.flatMap((section) => section.links).find((link) => link.label === 'Docs');
+---
+
+<main class="garden-index" data-design-template="garden-index">
+  <section class="garden-hero" aria-labelledby="garden-title">
+    <div>
+      <p class="garden-kicker">{hero.subhead || 'Links'}</p>
+      <h1 id="garden-title">{hero.name}</h1>
+    </div>
+    {docsLink && (
+      <a class="garden-feature" href={docsLink.href} target="_blank" rel="noopener">
+        <span>Docs</span>
+        <strong>{docsLink.label}</strong>
+      </a>
+    )}
+  </section>
+
+  <section class="garden-paths" aria-label="Personal link hub">
+    {sections.map((section) => (
+      <article class={`garden-section garden-section--${section.id}`}>
+        <h2>{section.title}</h2>
+        <div class="garden-links">
+          {section.links.map((link) => {
+            const openInNewTab = link.newTab ?? isExternal(link.href);
+            return (
+              <a
+                class="garden-link"
+                href={link.href}
+                target={openInNewTab ? '_blank' : undefined}
+                rel={openInNewTab ? 'noopener' : undefined}
+              >
+                {link.icon && (
+                  <span
+                    class="garden-link__icon"
+                    style={`--icon-image: url('${iconPath(link.icon)}'); --icon-color: ${link.brandColor ?? '#315f4a'};`}
+                    aria-hidden="true"
+                  />
+                )}
+                <span>{link.label}</span>
+              </a>
+            );
+          })}
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <footer class="garden-footer">
+    {footer.privacyHref && <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy'}</a>}
+  </footer>
+</main>
+<div id="consentBanner" class="consent-banner" hidden role="dialog" aria-live="polite" aria-label="Analytics consent">
+  <p>Analytics cookies?</p>
+  <div class="consent-banner__actions">
+    <button type="button" data-consent="accept">Allow</button>
+    <button type="button" class="secondary" data-consent="decline">No</button>
+  </div>
+</div>
+<script is:inline set:html={consentScript}></script>
