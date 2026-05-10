@@ -1,33 +1,51 @@
 {
   "$schema": "../../schemas/design-token-file.schema.json",
-  "$metadata": {
-    "token_set_id": "internet-foyer.color.tokens.v1",
-    "format": "DTCG-compatible",
-    "template_id": "internet-foyer-index",
-    "source_object_refs": [
-      "src/design-templates/design-objects/internet-foyer-index/palette.json"
-    ]
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "internet-foyer.color.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "internet-foyer-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/internet-foyer-index/palette.json"
+      ]
+    }
   },
   "color": {
     "surface": {
       "page": {
         "$type": "color",
-        "$value": "#F5F2EC",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9608,
+            0.949,
+            0.9255
+          ]
+        },
         "$description": "Warm page base.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-color-surface-page",
+            "css_value": "#F5F2EC",
             "source_object_id": "color.surface.page"
           }
         }
       },
       "object": {
         "$type": "color",
-        "$value": "#FDFBF7",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9922,
+            0.9843,
+            0.9686
+          ]
+        },
         "$description": "Primary object surface.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-color-surface-object",
+            "css_value": "#FDFBF7",
             "source_object_id": "color.surface.object"
           }
         }
@@ -36,22 +54,39 @@
     "text": {
       "primary": {
         "$type": "color",
-        "$value": "#0F100F",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.0627,
+            0.0588
+          ]
+        },
         "$description": "Primary readable text.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-color-text-primary",
+            "css_value": "#0F100F",
             "source_object_id": "color.text.primary"
           }
         }
       },
       "secondary": {
         "$type": "color",
-        "$value": "rgba(15, 16, 15, 0.65)",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.0627,
+            0.0588
+          ],
+          "alpha": 0.65
+        },
         "$description": "Secondary text.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-color-text-secondary",
+            "css_value": "rgba(15, 16, 15, 0.65)",
             "source_object_id": "color.text.secondary"
           }
         }
@@ -60,22 +95,38 @@
     "accent": {
       "living": {
         "$type": "color",
-        "$value": "#0F7C66",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.4863,
+            0.4
+          ]
+        },
         "$description": "Small route accents and focus states.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-color-accent-living",
+            "css_value": "#0F7C66",
             "source_object_id": "color.accent.living"
           }
         }
       },
       "electric": {
         "$type": "color",
-        "$value": "#2563EB",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1451,
+            0.3882,
+            0.9216
+          ]
+        },
         "$description": "Occasional interaction accent.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-color-accent-electric",
+            "css_value": "#2563EB",
             "source_object_id": "color.accent.electric"
           }
         }
@@ -84,11 +135,20 @@
     "line": {
       "soft": {
         "$type": "color",
-        "$value": "rgba(15, 16, 15, 0.12)",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.0627,
+            0.0588
+          ],
+          "alpha": 0.12
+        },
         "$description": "Low-contrast object borders.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-color-line-soft",
+            "css_value": "rgba(15, 16, 15, 0.12)",
             "source_object_id": "color.line.soft"
           }
         }

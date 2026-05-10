@@ -1,13 +1,37 @@
 import { readdir, readFile, stat } from 'node:fs/promises';
+import Ajv from 'ajv';
 import path from 'node:path';
 import process from 'node:process';
 
+const args = process.argv.slice(2);
 const root = process.cwd();
 const designObjectRoot = path.join(root, 'src/design-templates/design-objects');
-const activeObjectDir = path.join(designObjectRoot, 'internet-foyer-index');
-const buildPlanPath = path.join(root, 'src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json');
+
+const getArg = (name, fallback = undefined) => {
+  const index = args.indexOf(name);
+  return index >= 0 ? args[index + 1] : fallback;
+};
+
+const resolveFromRoot = (filePath) => path.resolve(root, filePath);
+const templateId = getArg('--template-id', 'internet-foyer-index');
+const activeObjectDir = path.join(designObjectRoot, templateId);
+const buildPlanPath = resolveFromRoot(
+  getArg('--build-plan', 'src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json')
+);
+
+const schemaPaths = {
+  designObjectSet: path.join(designObjectRoot, 'design-object-set.schema.json'),
+  tokenFile: path.join(designObjectRoot, 'schemas/design-token-file.schema.json'),
+  byKind: {
+    accessibility: path.join(designObjectRoot, 'schemas/accessibility-object.schema.json'),
+    component: path.join(designObjectRoot, 'schemas/component-object.schema.json'),
+    implementation_map: path.join(designObjectRoot, 'schemas/implementation-map.schema.json'),
+    palette: path.join(designObjectRoot, 'schemas/palette-object.schema.json')
+  }
+};
 
 const failures = [];
+const ajv = new Ajv({ allErrors: true, schemaId: 'auto' });
 
 const relative = (filePath) => path.relative(root, filePath);
 
@@ -27,6 +51,31 @@ const readJson = async (filePath) => {
   } catch (error) {
     fail(filePath, `invalid JSON: ${error.message}`);
     return null;
+  }
+};
+
+const loadSchemaValidator = async (filePath) => {
+  const schema = await readJson(filePath);
+
+  if (!schema) {
+    return null;
+  }
+
+  try {
+    return ajv.compile(schema);
+  } catch (error) {
+    fail(filePath, `invalid schema: ${error.message}`);
+    return null;
+  }
+};
+
+const validateWithSchema = (validator, filePath, value, label) => {
+  if (!validator || validator(value)) {
+    return;
+  }
+
+  for (const error of validator.errors ?? []) {
+    fail(filePath, `${label}: ${error.dataPath || '(root)'} ${error.message}`);
   }
 };
 
@@ -62,6 +111,8 @@ const objectSetFiles = async () => {
     .map((entry) => path.join(activeObjectDir, entry.name))
     .sort();
 };
+
+const jnapExtension = (node) => node?.$extensions?.['me.jnap'];
 
 const hexToRgb = (value) => {
   const normalized = value.trim();
@@ -105,6 +156,59 @@ const tokenLike = (value) =>
   typeof value === 'string' &&
   /^[a-z]+(\.[a-z0-9_-]+)+$/.test(value) &&
   !value.includes('var(');
+
+const tokenReference = (value) => typeof value === 'string' && /^\{[a-z0-9_-]+(\.[a-z0-9_-]+)+\}$/.test(value);
+
+const validDimensionValue = (value) =>
+  value &&
+  typeof value === 'object' &&
+  !Array.isArray(value) &&
+  typeof value.value === 'number' &&
+  ['px', 'rem'].includes(value.unit);
+
+const validColorValue = (value) =>
+  value &&
+  typeof value === 'object' &&
+  !Array.isArray(value) &&
+  value.colorSpace === 'srgb' &&
+  Array.isArray(value.components) &&
+  value.components.length === 3 &&
+  value.components.every((component) => typeof component === 'number' && component >= 0 && component <= 1) &&
+  (value.alpha === undefined || (typeof value.alpha === 'number' && value.alpha >= 0 && value.alpha <= 1));
+
+const validFontFamilyValue = (value) =>
+  typeof value === 'string' || (Array.isArray(value) && value.length > 0 && value.every((entry) => typeof entry === 'string'));
+
+const validFontWeightValue = (value) =>
+  (typeof value === 'number' && value >= 1 && value <= 1000) || typeof value === 'string';
+
+const validTypographyValue = (value) => {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return false;
+  }
+
+  return (
+    (tokenReference(value.fontFamily) || validFontFamilyValue(value.fontFamily)) &&
+    (tokenReference(value.fontSize) || validDimensionValue(value.fontSize)) &&
+    (tokenReference(value.fontWeight) || validFontWeightValue(value.fontWeight)) &&
+    (tokenReference(value.lineHeight) || typeof value.lineHeight === 'number') &&
+    (tokenReference(value.letterSpacing) || validDimensionValue(value.letterSpacing))
+  );
+};
+
+const validateDtcgTokenValue = (filePath, tokenPath, token) => {
+  if (token.$type === 'color') {
+    assert(validColorValue(token.$value), filePath, `${tokenPath} color $value must use srgb color object`);
+  } else if (token.$type === 'dimension') {
+    assert(validDimensionValue(token.$value), filePath, `${tokenPath} dimension $value must use { value, unit }`);
+  } else if (token.$type === 'fontFamily') {
+    assert(validFontFamilyValue(token.$value), filePath, `${tokenPath} fontFamily $value must be a string or string array`);
+  } else if (token.$type === 'fontWeight') {
+    assert(validFontWeightValue(token.$value), filePath, `${tokenPath} fontWeight $value must be numeric 1-1000 or a valid alias`);
+  } else if (token.$type === 'typography') {
+    assert(validTypographyValue(token.$value), filePath, `${tokenPath} typography $value must use typed component values`);
+  }
+};
 
 const validateObjectSetShape = (filePath, objectSet, objectIds) => {
   assert(typeof objectSet.object_set_id === 'string', filePath, 'missing object_set_id');
@@ -235,9 +339,10 @@ const walkTokenFile = (filePath, node, tokenPath, objectIds) => {
 
   if (Object.hasOwn(node, '$value')) {
     assert(typeof node.$type === 'string' && node.$type.length > 0, filePath, `${tokenPath} missing $type`);
+    validateDtcgTokenValue(filePath, tokenPath, node);
 
-    const jnap = node.$extensions?.jnap;
-    assert(Boolean(jnap), filePath, `${tokenPath} missing $extensions.jnap`);
+    const jnap = jnapExtension(node);
+    assert(Boolean(jnap), filePath, `${tokenPath} missing $extensions.me.jnap`);
     assert(typeof jnap?.source_object_id === 'string', filePath, `${tokenPath} missing source_object_id`);
 
     if (jnap?.source_object_id) {
@@ -265,12 +370,13 @@ const validateTokenFile = async (filePath, objectIds) => {
     return;
   }
 
-  assert(typeof tokenFile.$metadata?.token_set_id === 'string', filePath, 'missing $metadata.token_set_id');
-  assert(tokenFile.$metadata?.format === 'DTCG-compatible', filePath, 'format must be DTCG-compatible');
-  assert(tokenFile.$metadata?.template_id === 'internet-foyer-index', filePath, 'template_id must be internet-foyer-index');
-  assert(Array.isArray(tokenFile.$metadata?.source_object_refs) && tokenFile.$metadata.source_object_refs.length > 0, filePath, 'source_object_refs must be non-empty');
+  const metadata = jnapExtension(tokenFile);
+  assert(typeof metadata?.token_set_id === 'string', filePath, 'missing $extensions.me.jnap.token_set_id');
+  assert(metadata?.format === 'DTCG 2025.10', filePath, 'format must be DTCG 2025.10');
+  assert(metadata?.template_id === templateId, filePath, `template_id must be ${templateId}`);
+  assert(Array.isArray(metadata?.source_object_refs) && metadata.source_object_refs.length > 0, filePath, 'source_object_refs must be non-empty');
 
-  for (const sourceRef of tokenFile.$metadata?.source_object_refs ?? []) {
+  for (const sourceRef of metadata?.source_object_refs ?? []) {
     assert(await fileExists(path.join(root, sourceRef)), filePath, `source object ref missing: ${sourceRef}`);
   }
 
@@ -290,6 +396,8 @@ const validateBuildPlanRefs = async () => {
     assert(await fileExists(path.join(root, ref)), buildPlanPath, `missing design_object_ref ${ref}`);
   }
 
+  assert(Array.isArray(buildPlan.token_refs) && buildPlan.token_refs.length > 0, buildPlanPath, 'token_refs must be non-empty');
+
   for (const ref of buildPlan.token_refs ?? []) {
     assert(await fileExists(path.join(root, ref)), buildPlanPath, `missing token_ref ${ref}`);
   }
@@ -302,6 +410,14 @@ const validateBuildPlanRefs = async () => {
 };
 
 const main = async () => {
+  const designObjectValidator = await loadSchemaValidator(schemaPaths.designObjectSet);
+  const tokenFileValidator = await loadSchemaValidator(schemaPaths.tokenFile);
+  const kindValidators = {};
+
+  for (const [kind, schemaPath] of Object.entries(schemaPaths.byKind)) {
+    kindValidators[kind] = await loadSchemaValidator(schemaPath);
+  }
+
   const files = await objectSetFiles();
   const requiredKinds = new Set([
     'palette',
@@ -326,6 +442,8 @@ const main = async () => {
       continue;
     }
 
+    validateWithSchema(designObjectValidator, filePath, objectSet, 'design-object schema');
+    validateWithSchema(kindValidators[objectSet.kind], filePath, objectSet, `${objectSet.kind} schema`);
     validateObjectSetShape(filePath, objectSet, objectIds);
     seenKinds.add(objectSet.kind);
     objectSets.push([filePath, objectSet]);
@@ -356,9 +474,11 @@ const main = async () => {
   }
 
   const tokenFiles = await listFiles(activeObjectDir, (filePath) => filePath.endsWith('.tokens.json'));
-  assert(tokenFiles.length > 0, activeObjectDir, 'missing DTCG-compatible token files');
+  assert(tokenFiles.length > 0, activeObjectDir, 'missing DTCG token files');
 
   for (const filePath of tokenFiles.sort()) {
+    const tokenFile = await readJson(filePath);
+    validateWithSchema(tokenFileValidator, filePath, tokenFile, 'token-file schema');
     await validateTokenFile(filePath, objectIds);
   }
 

@@ -32,7 +32,7 @@ const escapeHtml = (value = '') =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
 
-const cssVariableName = (object) => object.css_variable ?? object.$extensions?.jnap?.css_variable ?? '';
+const cssVariableName = (object) => object.css_variable ?? object.$extensions?.['me.jnap']?.css_variable ?? '';
 
 const loadDesignObjects = async (dir) => {
   if (!dir) {

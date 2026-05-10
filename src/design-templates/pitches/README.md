@@ -22,7 +22,7 @@ This layer exists so the platform can support real design work for Justin's root
    `../design-objects/design-object-set.schema.json` defines build-grade JSON for palette, typography, spacing, shape, motion, layout, components, content map, accessibility, and implementation map.
 
 6. **Design tokens**
-   `../design-objects/*/tokens/*.tokens.json` exports DTCG-compatible color, typography, and spacing decisions for build tooling.
+   `../design-objects/*/tokens/*.tokens.json` exports DTCG color, typography, and spacing decisions for build tooling.
 
 7. **Template build plan**
    `template-build-plan.schema.json` turns an approved pitch into implementation slices, validation commands, PR policy, and stop conditions.

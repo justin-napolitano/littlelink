@@ -24,6 +24,7 @@
   "homepage": "https://github.com/justin-napolitano/littlelink#readme",
   "dependencies": {
     "@astrojs/vercel": "^9.0.2",
+    "ajv": "^6.12.6",
     "astro": "^5.16.6"
   }
 }

@@ -1,12 +1,14 @@
 {
   "$schema": "../../schemas/design-token-file.schema.json",
-  "$metadata": {
-    "token_set_id": "internet-foyer.typography.tokens.v1",
-    "format": "DTCG-compatible",
-    "template_id": "internet-foyer-index",
-    "source_object_refs": [
-      "src/design-templates/design-objects/internet-foyer-index/typography.json"
-    ]
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "internet-foyer.typography.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "internet-foyer-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/internet-foyer-index/typography.json"
+      ]
+    }
   },
   "font": {
     "display": {
@@ -19,8 +21,9 @@
         ],
         "$description": "Distinctive name treatment.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-font-display",
+            "css_value": "'Fraunces', 'Georgia', serif",
             "source_object_id": "font.display.identity"
           }
         }
@@ -39,8 +42,9 @@
         ],
         "$description": "Readable route labels and notes.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "css_variable": "--foyer-font-body",
+            "css_value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif",
             "source_object_id": "font.body.default"
           }
         }
@@ -53,15 +57,24 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font.display.identity}",
-          "fontSize": "clamp(2.8rem, 12vw, 4.75rem)",
-          "fontWeight": "560",
-          "lineHeight": "1",
-          "letterSpacing": "0"
+          "fontSize": {
+            "value": 2.8,
+            "unit": "rem"
+          },
+          "fontWeight": 560,
+          "lineHeight": 1,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         "$description": "First impression and identity.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "selector": ".foyer-name",
+            "css_values": {
+              "font_size": "clamp(2.8rem, 12vw, 4.75rem)"
+            },
             "source_object_id": "type.identity.name"
           }
         }
@@ -72,14 +85,20 @@
         "$type": "typography",
         "$value": {
           "fontFamily": "{font.body.default}",
-          "fontSize": "1rem",
-          "fontWeight": "650",
-          "lineHeight": "1.2",
-          "letterSpacing": "0"
+          "fontSize": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "fontWeight": 650,
+          "lineHeight": 1.2,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         "$description": "Readable labels on route objects.",
         "$extensions": {
-          "jnap": {
+          "me.jnap": {
             "selector": ".foyer-route__label",
             "source_object_id": "type.route.label"
           }
