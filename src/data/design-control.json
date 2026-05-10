@@ -13,6 +13,7 @@
     "next_template_contract": "src/design-templates/contracts/internet-foyer.contract.json",
     "client_intake_schema": "src/design-templates/pitches/client-intake.schema.json",
     "design_pitch_schema": "src/design-templates/pitches/design-pitch.schema.json",
+    "design_one_pager_schema": "src/design-templates/pitches/design-one-pager.schema.json",
     "template_build_plan_schema": "src/design-templates/pitches/template-build-plan.schema.json",
     "design_pitch_execplan_template": ".agent/execplans/templates/client-design-pitch-execplan.md",
     "template_build_execplan_template": ".agent/execplans/templates/client-template-build-execplan.md",
@@ -202,6 +203,7 @@
   "pitch_workflow": [
     "client_intake",
     "design_pitch",
+    "design_one_pager",
     "template_contract",
     "template_build_plan",
     "execplan",

@@ -1,0 +1,185 @@
+{
+  "$schema": "../design-one-pager.schema.json",
+  "one_pager_id": "jnap-internet-foyer-one-pager-v1",
+  "version": 1,
+  "status": "ready_for_client_review",
+  "pitch_ref": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
+  "client": {
+    "name": "Justin Napolitano",
+    "site_url": "https://jnap.me",
+    "project_type": "Personal public PR platform"
+  },
+  "selected_direction": {
+    "id": "front-room",
+    "name": "Front Room",
+    "why": "This direction makes the root feel curious, human, and worth exploring without turning it into a pitch deck."
+  },
+  "design_thesis": {
+    "one_liner": "A mobile-first front room on the internet: a few high-signal objects, enough personality to keep clicking, and no overexplaining.",
+    "first_impression": "Justin has taste, range, and a real life beyond a resume.",
+    "not_this": [
+      "generic tech portfolio",
+      "SaaS landing page",
+      "resume wall",
+      "over-polished pitch deck"
+    ]
+  },
+  "visual_system": {
+    "typography": {
+      "display": "Warm expressive serif for the name, likely continuing from the current Fraunces direction unless the prototype proves otherwise.",
+      "body": "System UI for readable route labels and short notes.",
+      "labels": "Plain nouns and action words; no decorative category language.",
+      "rules": [
+        "No viewport-scaled body text.",
+        "No large marketing headline under the name.",
+        "Labels must fit on 390px mobile without wrapping awkwardly."
+      ]
+    },
+    "color_palette": [
+      {
+        "name": "warm paper",
+        "value": "#F5F2EC",
+        "usage": "page base"
+      },
+      {
+        "name": "soft surface",
+        "value": "#FDFBF7",
+        "usage": "primary object surfaces"
+      },
+      {
+        "name": "ink",
+        "value": "#0F100F",
+        "usage": "primary text"
+      },
+      {
+        "name": "muted ink",
+        "value": "rgba(15, 16, 15, 0.65)",
+        "usage": "secondary text"
+      },
+      {
+        "name": "living green",
+        "value": "#0F7C66",
+        "usage": "small route accents and focus states"
+      },
+      {
+        "name": "electric blue",
+        "value": "#2563EB",
+        "usage": "occasional interaction accent"
+      }
+    ],
+    "shape": [
+      "Soft object surfaces, but less uniformly card-like than the current template.",
+      "Touchable items remain comfortable and thumb-friendly.",
+      "Desktop can use shelf, table, or loose object placement."
+    ],
+    "texture": [
+      "Subtle paper/object tactility is allowed if performance-safe.",
+      "No decorative blobs, orbs, or generic gradients."
+    ],
+    "imagery": [
+      "No stock imagery.",
+      "Future photos or lifestyle objects require privacy review.",
+      "Objects should represent real routes or real public artifacts."
+    ],
+    "iconography": [
+      "Small route icons can stay.",
+      "Icons should feel like objects, not app-store badges.",
+      "Do not rely on icons without readable labels."
+    ]
+  },
+  "experience_system": {
+    "mobile_first": "The first phone screen should show the name and immediate route objects, with a hint that more exists below.",
+    "layout": [
+      "Group by proximity and spacing instead of visible category headings.",
+      "Keep the first three exits obvious.",
+      "Let desktop become more asymmetric without changing content."
+    ],
+    "interaction": [
+      "Tap feedback should feel immediate.",
+      "Hover/focus can slightly move or wake objects.",
+      "No hidden navigation or hover-only meaning."
+    ],
+    "motion": [
+      "Reduced-motion-safe by default.",
+      "Small Anime.js-style interaction may be prototyped only after static layout works.",
+      "No scroll spectacle or delayed route access."
+    ],
+    "accessibility": [
+      "Readable contrast.",
+      "Visible keyboard focus.",
+      "Touch targets remain comfortable.",
+      "All routes work without animation."
+    ]
+  },
+  "content_modules": [
+    {
+      "name": "Identity",
+      "status": "required",
+      "purpose": "Name and first impression."
+    },
+    {
+      "name": "Proof routes",
+      "status": "required",
+      "purpose": "Resume, docs, and GitHub for professional trust."
+    },
+    {
+      "name": "Direct contact",
+      "status": "required",
+      "purpose": "Schedule, Signal, and email without exposing private URLs."
+    },
+    {
+      "name": "Social",
+      "status": "required",
+      "purpose": "Human texture through public profiles."
+    },
+    {
+      "name": "Selected objects",
+      "status": "future_optional",
+      "purpose": "Projects, photos, listening, or lifestyle artifacts after privacy review."
+    }
+  ],
+  "references": [
+    {
+      "name": "Paco Coursey",
+      "url": "https://paco.me/",
+      "borrow": "Plain personal signal density and route clarity."
+    },
+    {
+      "name": "Joe Coleman Agencies",
+      "url": "https://getcoleman.com/agencies/",
+      "borrow": "Confidence through direct proof listing."
+    },
+    {
+      "name": "Anime.js",
+      "url": "https://animejs.com/",
+      "borrow": "Playful interaction as proof of craft, not decoration."
+    },
+    {
+      "name": "Brian Lovin",
+      "url": "https://brianlovin.com/",
+      "borrow": "Personal operating-system feel."
+    },
+    {
+      "name": "Rauno Freiberg",
+      "url": "https://rauno.me/",
+      "borrow": "Sparse personal signature and restraint."
+    }
+  ],
+  "deliverables": [
+    "inactive preview template",
+    "mobile screenshot",
+    "desktop screenshot",
+    "design-control updates",
+    "template control map",
+    "activation recommendation"
+  ],
+  "approval_checklist": [
+    "Design thesis approved.",
+    "Font direction approved.",
+    "Palette approved.",
+    "Motion policy approved.",
+    "Content modules approved.",
+    "Privacy-sensitive future modules explicitly deferred.",
+    "Approved to generate an inactive preview template."
+  ]
+}

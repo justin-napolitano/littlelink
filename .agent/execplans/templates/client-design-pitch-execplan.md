@@ -9,6 +9,7 @@ Generate a governed personal-site design pitch from client intake and reusable t
 - Client intake: `<CLIENT_INTAKE_JSON>`
 - Candidate template contracts: `<TEMPLATE_CONTRACT_JSON_LIST>`
 - Output pitch path: `<OUTPUT_PITCH_JSON>`
+- Output one-pager path: `<OUTPUT_ONE_PAGER_JSON>`
 - Optional review notes: `<REVIEW_NOTES>`
 
 ## Hard Requirements
@@ -27,13 +28,15 @@ Generate a governed personal-site design pitch from client intake and reusable t
 4. Recommend exactly one direction for the first build.
 5. Define the generated template id, preview route, files to create, files to update, and execplan template.
 6. Write the pitch JSON at `<OUTPUT_PITCH_JSON>` using `src/design-templates/pitches/design-pitch.schema.json`.
-7. Validate the pitch JSON against the schema.
-8. Finish with a summary of recommendation, risks, approval gates, and next build-plan command.
+7. Write the client-facing one-pager JSON at `<OUTPUT_ONE_PAGER_JSON>` using `src/design-templates/pitches/design-one-pager.schema.json`.
+8. Validate the pitch JSON and one-pager JSON against their schemas.
+9. Finish with a summary of recommendation, fonts, palette, risks, approval gates, and next build-plan command.
 
 ## Validation
 
 - JSON parses.
 - Pitch validates against `src/design-templates/pitches/design-pitch.schema.json`.
+- One-pager validates against `src/design-templates/pitches/design-one-pager.schema.json`.
 - No implementation files are created.
 - No private data is included.
 

@@ -48,11 +48,12 @@ Client design work uses a contract stack:
 1. `src/design-templates/pitches/client-intake.schema.json`
 2. `src/design-templates/contracts/personal-site-template-contract.schema.json`
 3. `src/design-templates/pitches/design-pitch.schema.json`
-4. `src/design-templates/pitches/template-build-plan.schema.json`
-5. `.agent/execplans/templates/client-design-pitch-execplan.md`
-6. `.agent/execplans/templates/client-template-build-execplan.md`
+4. `src/design-templates/pitches/design-one-pager.schema.json`
+5. `src/design-templates/pitches/template-build-plan.schema.json`
+6. `.agent/execplans/templates/client-design-pitch-execplan.md`
+7. `.agent/execplans/templates/client-template-build-execplan.md`
 
-The pitch step can compare several design directions, but it should recommend one direction for the first build. The build-plan step turns the approved pitch into implementation slices and validation commands. The execplan step executes those slices as an inactive preview template.
+The pitch step can compare several design directions, but it should recommend one direction for the first build. The one-pager turns that recommendation into a client-facing summary of fonts, palette, layout, motion, modules, references, deliverables, and approvals. The build-plan step turns the approved pitch into implementation slices and validation commands. The execplan step executes those slices as an inactive preview template.
 
 Example JNAP planning artifacts live in `src/design-templates/pitches/examples/`.
 

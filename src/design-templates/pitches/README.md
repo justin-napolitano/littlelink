@@ -15,10 +15,13 @@ This layer exists so the platform can support real design work for Justin's root
 3. **Design pitch**
    `design-pitch.schema.json` turns intake plus template contracts into pitch directions, a recommendation, and the files a build would create.
 
-4. **Template build plan**
+4. **Design one-pager**
+   `design-one-pager.schema.json` summarizes the selected direction for client review: thesis, fonts, palette, layout, motion, modules, references, deliverables, and approvals.
+
+5. **Template build plan**
    `template-build-plan.schema.json` turns an approved pitch into implementation slices, validation commands, PR policy, and stop conditions.
 
-5. **ExecPlan**
+6. **ExecPlan**
    `.agent/execplans/templates/client-template-build-execplan.md` is the human/agent execution wrapper for the build plan.
 
 ## Rules
@@ -32,3 +35,5 @@ This layer exists so the platform can support real design work for Justin's root
 ## Example
 
 `examples/jnap-internet-foyer.pitch.json` shows how the current JNAP direction becomes a pitch package. It is still planning metadata; it does not activate or build a template.
+
+`examples/jnap-internet-foyer.one-pager.json` is the client-facing version of the same recommendation.
