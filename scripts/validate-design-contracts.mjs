@@ -6,6 +6,7 @@ import process from 'node:process';
 const args = process.argv.slice(2);
 const root = process.cwd();
 const designObjectRoot = path.join(root, 'src/design-templates/design-objects');
+const designTemplateRoot = path.join(root, 'src/design-templates');
 
 const getArg = (name, fallback = undefined) => {
   const index = args.indexOf(name);
@@ -13,13 +14,14 @@ const getArg = (name, fallback = undefined) => {
 };
 
 const resolveFromRoot = (filePath) => path.resolve(root, filePath);
-const templateId = getArg('--template-id', 'internet-foyer-index');
-const activeObjectDir = path.join(designObjectRoot, templateId);
-const buildPlanPath = resolveFromRoot(
-  getArg('--build-plan', 'src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json')
-);
+const requestedTemplateId = getArg('--template-id', 'all');
+const requestedBuildPlanPath = getArg('--build-plan');
 
 const schemaPaths = {
+  templateContract: path.join(designTemplateRoot, 'contracts/personal-site-template-contract.schema.json'),
+  designPitch: path.join(designTemplateRoot, 'pitches/design-pitch.schema.json'),
+  designOnePager: path.join(designTemplateRoot, 'pitches/design-one-pager.schema.json'),
+  templateBuildPlan: path.join(designTemplateRoot, 'pitches/template-build-plan.schema.json'),
   designObjectSet: path.join(designObjectRoot, 'design-object-set.schema.json'),
   tokenFile: path.join(designObjectRoot, 'schemas/design-token-file.schema.json'),
   byKind: {
@@ -104,12 +106,64 @@ const listFiles = async (dir, predicate) => {
   return files;
 };
 
-const objectSetFiles = async () => {
+const dirExists = async (filePath) => {
+  try {
+    return (await stat(filePath)).isDirectory();
+  } catch {
+    return false;
+  }
+};
+
+const objectSetFiles = async (activeObjectDir) => {
   const entries = await readdir(activeObjectDir, { withFileTypes: true });
   return entries
     .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
     .map((entry) => path.join(activeObjectDir, entry.name))
     .sort();
+};
+
+const implementedTemplateIds = async () => {
+  const idsFile = path.join(root, 'src/lib/design-template-ids.ts');
+  const contents = await readFile(idsFile, 'utf8');
+  const ids = [...contents.matchAll(/'([^']+)'/g)].map((match) => match[1]);
+
+  assert(ids.length > 0, idsFile, 'must export at least one implemented template id');
+  return ids;
+};
+
+const manifestValue = (contents, key) => {
+  const match = contents.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
+  if (!match) {
+    return null;
+  }
+  return match[1].trim().replace(/^"|"$/g, '');
+};
+
+const readTemplateManifest = async (templateId) => {
+  const manifestPath = path.join(designTemplateRoot, templateId, 'manifest.yaml');
+
+  try {
+    const contents = await readFile(manifestPath, 'utf8');
+    return {
+      manifestPath,
+      manifest: {
+        version: manifestValue(contents, 'version'),
+        template_id: manifestValue(contents, 'template_id') ?? manifestValue(contents, 'id'),
+        status: manifestValue(contents, 'status'),
+        source_content: manifestValue(contents, 'source_content') ?? manifestValue(contents, 'content_source'),
+        preview_path: manifestValue(contents, 'preview_path'),
+        contract: manifestValue(contents, 'contract'),
+        pitch: manifestValue(contents, 'pitch'),
+        one_pager: manifestValue(contents, 'one_pager'),
+        build_plan: manifestValue(contents, 'build_plan'),
+        design_objects: manifestValue(contents, 'design_objects'),
+        control_map: manifestValue(contents, 'control_map')
+      }
+    };
+  } catch (error) {
+    fail(manifestPath, `missing or unreadable manifest: ${error.message}`);
+    return { manifestPath, manifest: {} };
+  }
 };
 
 const jnapExtension = (node) => node?.$extensions?.['me.jnap'];
@@ -363,7 +417,7 @@ const walkTokenFile = (filePath, node, tokenPath, objectIds) => {
   }
 };
 
-const validateTokenFile = async (filePath, objectIds) => {
+const validateTokenFile = async (filePath, objectIds, templateId) => {
   const tokenFile = await readJson(filePath);
 
   if (!tokenFile) {
@@ -383,23 +437,28 @@ const validateTokenFile = async (filePath, objectIds) => {
   walkTokenFile(filePath, tokenFile, '', objectIds);
 };
 
-const validateBuildPlanRefs = async () => {
+const validateBuildPlanRefs = async (buildPlanPath, templateId, lifecycleRefs, buildPlanValidator) => {
   const buildPlan = await readJson(buildPlanPath);
 
   if (!buildPlan) {
     return;
   }
 
-  assert(buildPlan.status === 'ready_for_build', buildPlanPath, 'status must be ready_for_build before a template build execplan can run');
+  validateWithSchema(buildPlanValidator, buildPlanPath, buildPlan, 'template-build-plan schema');
+  assert(['ready_for_build', 'complete'].includes(buildPlan.status), buildPlanPath, 'status must be ready_for_build or complete');
+  assert(buildPlan.template_contract_ref === lifecycleRefs.contract, buildPlanPath, `template_contract_ref must be ${lifecycleRefs.contract}`);
+  assert(buildPlan.pitch_ref === lifecycleRefs.pitch, buildPlanPath, `pitch_ref must be ${lifecycleRefs.pitch}`);
 
   for (const ref of buildPlan.design_object_refs ?? []) {
     assert(await fileExists(path.join(root, ref)), buildPlanPath, `missing design_object_ref ${ref}`);
+    assert(ref.startsWith(`src/design-templates/design-objects/${templateId}/`), buildPlanPath, `design_object_ref must belong to ${templateId}: ${ref}`);
   }
 
   assert(Array.isArray(buildPlan.token_refs) && buildPlan.token_refs.length > 0, buildPlanPath, 'token_refs must be non-empty');
 
   for (const ref of buildPlan.token_refs ?? []) {
     assert(await fileExists(path.join(root, ref)), buildPlanPath, `missing token_ref ${ref}`);
+    assert(ref.startsWith(`src/design-templates/design-objects/${templateId}/tokens/`), buildPlanPath, `token_ref must belong to ${templateId}: ${ref}`);
   }
 
   assert(
@@ -409,16 +468,92 @@ const validateBuildPlanRefs = async () => {
   );
 };
 
-const main = async () => {
-  const designObjectValidator = await loadSchemaValidator(schemaPaths.designObjectSet);
-  const tokenFileValidator = await loadSchemaValidator(schemaPaths.tokenFile);
-  const kindValidators = {};
+const validateTemplateLifecycle = async (templateId, validators) => {
+  const { manifestPath, manifest } = await readTemplateManifest(templateId);
+  const requiredManifestKeys = [
+    'template_id',
+    'status',
+    'source_content',
+    'preview_path',
+    'contract',
+    'pitch',
+    'one_pager',
+    'build_plan',
+    'design_objects',
+    'control_map'
+  ];
 
-  for (const [kind, schemaPath] of Object.entries(schemaPaths.byKind)) {
-    kindValidators[kind] = await loadSchemaValidator(schemaPath);
+  for (const key of requiredManifestKeys) {
+    assert(Boolean(manifest[key]), manifestPath, `manifest missing ${key}`);
   }
 
-  const files = await objectSetFiles();
+  assert(manifest.template_id === templateId, manifestPath, `template_id must be ${templateId}`);
+  assert(manifest.source_content === 'src/data/site.json', manifestPath, 'source_content must be src/data/site.json');
+  assert(manifest.preview_path === `/preview/${templateId}`, manifestPath, `preview_path must be /preview/${templateId}`);
+
+  const lifecycleRefs = {
+    contract: manifest.contract,
+    pitch: manifest.pitch,
+    onePager: manifest.one_pager,
+    buildPlan: requestedBuildPlanPath && templateId === requestedTemplateId ? requestedBuildPlanPath : manifest.build_plan,
+    designObjects: manifest.design_objects,
+    controlMap: manifest.control_map
+  };
+
+  assert(await fileExists(path.join(root, lifecycleRefs.contract)), manifestPath, `contract missing: ${lifecycleRefs.contract}`);
+  assert(await fileExists(path.join(root, lifecycleRefs.pitch)), manifestPath, `pitch missing: ${lifecycleRefs.pitch}`);
+  assert(await fileExists(path.join(root, lifecycleRefs.onePager)), manifestPath, `one_pager missing: ${lifecycleRefs.onePager}`);
+  assert(await fileExists(path.join(root, lifecycleRefs.buildPlan)), manifestPath, `build_plan missing: ${lifecycleRefs.buildPlan}`);
+  assert(await dirExists(path.join(root, lifecycleRefs.designObjects)), manifestPath, `design_objects dir missing: ${lifecycleRefs.designObjects}`);
+  assert(await fileExists(path.join(root, lifecycleRefs.controlMap)), manifestPath, `control_map missing: ${lifecycleRefs.controlMap}`);
+
+  const contractPath = path.join(root, lifecycleRefs.contract);
+  const contract = await readJson(contractPath);
+  if (contract) {
+    validateWithSchema(validators.templateContract, contractPath, contract, 'template-contract schema');
+    assert(['approved_for_build', 'implemented'].includes(contract.status), contractPath, 'status must be approved_for_build or implemented');
+    assert(contract.template?.id === templateId, contractPath, `template.id must be ${templateId}`);
+    assert(contract.template?.candidate_id === templateId, contractPath, `template.candidate_id must be ${templateId}`);
+    assert(contract.content_contract?.shared_source === 'src/data/site.json', contractPath, 'content_contract.shared_source must be src/data/site.json');
+    assert(contract.implementation_scope?.preview_route === `/preview/${templateId}`, contractPath, `implementation_scope.preview_route must be /preview/${templateId}`);
+  }
+
+  const pitchPath = path.join(root, lifecycleRefs.pitch);
+  const pitch = await readJson(pitchPath);
+  if (pitch) {
+    validateWithSchema(validators.designPitch, pitchPath, pitch, 'design-pitch schema');
+    assert(['approved_for_execplan', 'implemented'].includes(pitch.status), pitchPath, 'status must be approved_for_execplan or implemented');
+    assert((pitch.template_contract_refs ?? []).includes(lifecycleRefs.contract), pitchPath, `template_contract_refs must include ${lifecycleRefs.contract}`);
+    assert(pitch.template_generation_plan?.template_id === templateId, pitchPath, `template_generation_plan.template_id must be ${templateId}`);
+    assert(pitch.template_generation_plan?.preview_route === `/preview/${templateId}`, pitchPath, `template_generation_plan.preview_route must be /preview/${templateId}`);
+  }
+
+  const onePagerPath = path.join(root, lifecycleRefs.onePager);
+  const onePager = await readJson(onePagerPath);
+  if (onePager) {
+    validateWithSchema(validators.designOnePager, onePagerPath, onePager, 'design-one-pager schema');
+    assert(onePager.status === 'approved', onePagerPath, 'status must be approved');
+    assert(onePager.pitch_ref === lifecycleRefs.pitch, onePagerPath, `pitch_ref must be ${lifecycleRefs.pitch}`);
+  }
+
+  const controlMapPath = path.join(root, lifecycleRefs.controlMap);
+  const controlMap = await readJson(controlMapPath);
+  if (controlMap) {
+    assert(controlMap.template_id === templateId, controlMapPath, `template_id must be ${templateId}`);
+    assert(controlMap.source_contracts?.template_contract === lifecycleRefs.contract, controlMapPath, `source_contracts.template_contract must be ${lifecycleRefs.contract}`);
+    assert(controlMap.source_contracts?.pitch === lifecycleRefs.pitch, controlMapPath, `source_contracts.pitch must be ${lifecycleRefs.pitch}`);
+    assert(controlMap.source_contracts?.one_pager === lifecycleRefs.onePager, controlMapPath, `source_contracts.one_pager must be ${lifecycleRefs.onePager}`);
+    assert(controlMap.source_contracts?.build_plan === lifecycleRefs.buildPlan, controlMapPath, `source_contracts.build_plan must be ${lifecycleRefs.buildPlan}`);
+    assert(controlMap.source_contracts?.design_objects === lifecycleRefs.designObjects, controlMapPath, `source_contracts.design_objects must be ${lifecycleRefs.designObjects}`);
+    assert(Array.isArray(controlMap.source_contracts?.tokens) && controlMap.source_contracts.tokens.length > 0, controlMapPath, 'source_contracts.tokens must be non-empty');
+  }
+
+  return lifecycleRefs;
+};
+
+const validateTemplateDesignObjects = async (templateId, lifecycleRefs, validators) => {
+  const activeObjectDir = path.join(root, lifecycleRefs.designObjects);
+  const files = await objectSetFiles(activeObjectDir);
   const requiredKinds = new Set([
     'palette',
     'typography',
@@ -442,8 +577,8 @@ const main = async () => {
       continue;
     }
 
-    validateWithSchema(designObjectValidator, filePath, objectSet, 'design-object schema');
-    validateWithSchema(kindValidators[objectSet.kind], filePath, objectSet, `${objectSet.kind} schema`);
+    validateWithSchema(validators.designObject, filePath, objectSet, 'design-object schema');
+    validateWithSchema(validators.byKind[objectSet.kind], filePath, objectSet, `${objectSet.kind} schema`);
     validateObjectSetShape(filePath, objectSet, objectIds);
     seenKinds.add(objectSet.kind);
     objectSets.push([filePath, objectSet]);
@@ -478,11 +613,37 @@ const main = async () => {
 
   for (const filePath of tokenFiles.sort()) {
     const tokenFile = await readJson(filePath);
-    validateWithSchema(tokenFileValidator, filePath, tokenFile, 'token-file schema');
-    await validateTokenFile(filePath, objectIds);
+    validateWithSchema(validators.tokenFile, filePath, tokenFile, 'token-file schema');
+    await validateTokenFile(filePath, objectIds, templateId);
   }
 
-  await validateBuildPlanRefs();
+  await validateBuildPlanRefs(path.join(root, lifecycleRefs.buildPlan), templateId, lifecycleRefs, validators.templateBuildPlan);
+
+  return { objectSetCount: objectSets.length, tokenFileCount: tokenFiles.length };
+};
+
+const main = async () => {
+  const validators = {
+    templateContract: await loadSchemaValidator(schemaPaths.templateContract),
+    designPitch: await loadSchemaValidator(schemaPaths.designPitch),
+    designOnePager: await loadSchemaValidator(schemaPaths.designOnePager),
+    templateBuildPlan: await loadSchemaValidator(schemaPaths.templateBuildPlan),
+    designObject: await loadSchemaValidator(schemaPaths.designObjectSet),
+    tokenFile: await loadSchemaValidator(schemaPaths.tokenFile),
+    byKind: {}
+  };
+
+  for (const [kind, schemaPath] of Object.entries(schemaPaths.byKind)) {
+    validators.byKind[kind] = await loadSchemaValidator(schemaPath);
+  }
+
+  const templateIds = requestedTemplateId === 'all' ? await implementedTemplateIds() : [requestedTemplateId];
+  const counts = [];
+
+  for (const templateId of templateIds) {
+    const lifecycleRefs = await validateTemplateLifecycle(templateId, validators);
+    counts.push(await validateTemplateDesignObjects(templateId, lifecycleRefs, validators));
+  }
 
   if (failures.length > 0) {
     console.error('Design contract validation failed:');
@@ -492,7 +653,10 @@ const main = async () => {
     process.exit(1);
   }
 
-  console.log(`Validated ${objectSets.length} design object sets and ${tokenFiles.length} token files.`);
+  const objectSetTotal = counts.reduce((total, count) => total + count.objectSetCount, 0);
+  const tokenFileTotal = counts.reduce((total, count) => total + count.tokenFileCount, 0);
+  const templateLabel = templateIds.length === 1 ? templateIds[0] : `${templateIds.length} templates`;
+  console.log(`Validated ${templateLabel}, ${objectSetTotal} design object sets, and ${tokenFileTotal} token files.`);
 };
 
 await main();

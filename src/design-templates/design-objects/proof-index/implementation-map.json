@@ -1,0 +1,61 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "proof-index.implementation_map.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "proof-index",
+  "kind": "implementation_map",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-proof-index.build-plan.json",
+    "src/design-templates/design-objects/proof-index/components.json"
+  ],
+  "objects": [
+    {
+      "id": "implementation.template_files",
+      "type": "implementation_rule",
+      "name": "Template Files",
+      "purpose": "Runtime template implementation files.",
+      "status": "implemented",
+      "implementation": {
+        "files": [
+          "src/design-templates/proof-index/manifest.yaml",
+          "src/design-templates/proof-index/index.astro",
+          "src/design-templates/proof-index/styles.css",
+          "src/design-templates/proof-index/control-map.json"
+        ],
+        "selectors": [
+          "main[data-design-template='proof-index']",
+          ".proof-hero",
+          ".proof-primary__link, .proof-link"
+        ],
+        "test_hooks": [
+          "/preview/proof-index"
+        ]
+      },
+      "requirements": [
+        "Template remains previewable.",
+        "Shared content and privacy behavior remain unchanged."
+      ]
+    },
+    {
+      "id": "implementation.validation",
+      "type": "implementation_rule",
+      "name": "Validation",
+      "purpose": "Required checks for this template lifecycle.",
+      "status": "implemented",
+      "requirements": [
+        "npm run design:validate",
+        "npm run build",
+        "git diff --check",
+        "curl -I http://127.0.0.1:4327/preview/proof-index"
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "build_passes",
+    "preview_route_healthy"
+  ]
+}

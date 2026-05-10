@@ -1,0 +1,139 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "garden-index.color.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "garden-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/garden-index/palette.json"
+      ]
+    }
+  },
+  "color": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9569,
+            0.949,
+            0.9176
+          ]
+        },
+        "$description": "Garden Background",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.page",
+            "css_variable": "--garden-bg",
+            "css_fallback": "#F4F2EA"
+          }
+        }
+      },
+      "object": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.9922,
+            0.9686
+          ]
+        },
+        "$description": "Garden Paper",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.object",
+            "css_variable": "--garden-paper",
+            "css_fallback": "#FFFDF7"
+          }
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0824,
+            0.0941,
+            0.0706
+          ]
+        },
+        "$description": "Garden Ink",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.primary",
+            "css_variable": "--garden-ink",
+            "css_fallback": "#151812"
+          }
+        }
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0824,
+            0.0941,
+            0.0706
+          ],
+          "alpha": 0.6
+        },
+        "$description": "Garden Muted",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.secondary",
+            "css_variable": "--garden-muted",
+            "css_fallback": "rgba(#151812, 0.6)"
+          }
+        }
+      }
+    },
+    "accent": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1922,
+            0.3725,
+            0.2902
+          ]
+        },
+        "$description": "Garden Green",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.accent.primary",
+            "css_variable": "--garden-green",
+            "css_fallback": "#315F4A"
+          }
+        }
+      }
+    },
+    "line": {
+      "soft": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2275,
+            0.3059,
+            0.2157
+          ],
+          "alpha": 0.18
+        },
+        "$description": "Garden Line",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.line.soft",
+            "css_variable": "--garden-line",
+            "css_fallback": "rgba(#3A4E37, 0.18)"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "garden-index.palette.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "garden-index",
+  "kind": "palette",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+    "src/design-templates/contracts/garden-index.contract.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/garden-index/tokens/color.tokens.json",
+    "contrast_pairs": [
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.object",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.accent.primary",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "color.surface.page",
+      "type": "color",
+      "name": "Garden Background",
+      "purpose": "Garden Background token for Garden Index.",
+      "status": "implemented",
+      "value": "#F4F2EA",
+      "css_variable": "--garden-bg",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.surface.object",
+      "type": "color",
+      "name": "Garden Paper",
+      "purpose": "Garden Paper token for Garden Index.",
+      "status": "implemented",
+      "value": "#FFFDF7",
+      "css_variable": "--garden-paper",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.text.primary",
+      "type": "color",
+      "name": "Garden Ink",
+      "purpose": "Garden Ink token for Garden Index.",
+      "status": "implemented",
+      "value": "#151812",
+      "css_variable": "--garden-ink",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.text.secondary",
+      "type": "color",
+      "name": "Garden Muted",
+      "purpose": "Garden Muted token for Garden Index.",
+      "status": "implemented",
+      "value": "#151812",
+      "css_variable": "--garden-muted",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.accent.primary",
+      "type": "color",
+      "name": "Garden Green",
+      "purpose": "Garden Green token for Garden Index.",
+      "status": "implemented",
+      "value": "#315F4A",
+      "css_variable": "--garden-green",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.line.soft",
+      "type": "color",
+      "name": "Garden Line",
+      "purpose": "Garden Line token for Garden Index.",
+      "status": "implemented",
+      "value": "#3A4E37",
+      "css_variable": "--garden-line",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "contrast_readable"
+  ]
+}

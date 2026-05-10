@@ -2,7 +2,7 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.implementation-map.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "implementation_map",
   "source_refs": [
@@ -15,7 +15,7 @@
       "type": "implementation_rule",
       "name": "Template Files",
       "purpose": "Files created by the first inactive template build.",
-      "status": "approved",
+      "status": "implemented",
       "implementation": {
         "files": [
           "src/design-templates/internet-foyer-index/manifest.yaml",
@@ -45,7 +45,7 @@
       "type": "implementation_rule",
       "name": "Registry Files",
       "purpose": "Files updated to expose inactive preview route.",
-      "status": "approved",
+      "status": "implemented",
       "implementation": {
         "files": [
           "src/lib/design-template-ids.ts",
@@ -68,7 +68,7 @@
       "type": "implementation_rule",
       "name": "Validation",
       "purpose": "Required verification for build PR.",
-      "status": "approved",
+      "status": "implemented",
       "requirements": [
         "npm run build",
         "git diff --check",

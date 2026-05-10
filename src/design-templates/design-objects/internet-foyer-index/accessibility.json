@@ -2,7 +2,7 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.accessibility.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "accessibility",
   "source_refs": [
@@ -14,7 +14,7 @@
       "type": "accessibility_rule",
       "name": "Visible Focus",
       "purpose": "Keyboard navigation clarity.",
-      "status": "approved",
+      "status": "implemented",
       "selector": ".foyer-route:focus-visible",
       "requirements": [
         "Focus ring visible on every route object.",
@@ -35,7 +35,7 @@
       "type": "accessibility_rule",
       "name": "Comfortable Tap Targets",
       "purpose": "Mobile-first usability.",
-      "status": "approved",
+      "status": "implemented",
       "requirements": [
         "Route objects are at least 44px high.",
         "Route objects have enough spacing to avoid accidental taps."
@@ -56,7 +56,7 @@
       "type": "accessibility_rule",
       "name": "Reduced Motion",
       "purpose": "Motion safety.",
-      "status": "approved",
+      "status": "implemented",
       "selector": "@media (prefers-reduced-motion: reduce)",
       "requirements": [
         "Disable or simplify object movement.",
@@ -77,7 +77,7 @@
       "type": "accessibility_rule",
       "name": "Semantic Structure",
       "purpose": "Preserve structure while hiding visible category headings.",
-      "status": "approved",
+      "status": "implemented",
       "requirements": [
         "The main identity has a single h1.",
         "Route clusters use aria-label when visible headings are removed.",

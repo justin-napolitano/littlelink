@@ -1,0 +1,48 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "link-index-mobile-first.shape.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "link-index-mobile-first",
+  "kind": "shape",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-link-index-mobile-first.one-pager.json",
+    "src/design-templates/contracts/link-index-mobile-first.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "radius.surface",
+      "type": "shape_token",
+      "name": "Surface Radius",
+      "purpose": "Surface Radius for the template surface system.",
+      "status": "implemented",
+      "value": "28px",
+      "css_variable": "--template-radius-surface"
+    },
+    {
+      "id": "radius.route",
+      "type": "shape_token",
+      "name": "Route Radius",
+      "purpose": "Route Radius for the template surface system.",
+      "status": "implemented",
+      "value": "999px",
+      "css_variable": "--template-radius-route"
+    },
+    {
+      "id": "radius.icon",
+      "type": "shape_token",
+      "name": "Icon Radius",
+      "purpose": "Icon Radius for the template surface system.",
+      "status": "implemented",
+      "value": "999px",
+      "css_variable": "--template-radius-icon"
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "npm_build",
+    "no_text_overflow"
+  ]
+}

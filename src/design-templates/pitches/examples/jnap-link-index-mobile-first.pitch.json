@@ -1,0 +1,118 @@
+{
+  "$schema": "../design-pitch.schema.json",
+  "pitch_id": "jnap-link-index-mobile-first-pitch-v1",
+  "version": 1,
+  "status": "implemented",
+  "intake_ref": "src/design-templates/pitches/examples/jnap-intake.json",
+  "template_contract_refs": [
+    "src/design-templates/contracts/link-index-mobile-first.contract.json"
+  ],
+  "client_summary": {
+    "positioning": "A normal, organized public front door that feels personal without trying too hard.",
+    "audience_priority": [
+      "professional-reviewer",
+      "social-discovery",
+      "direct-contact"
+    ],
+    "content_strategy": "Render shared site content through a distinct template-owned presentation without changing route contracts.",
+    "design_risks": [
+      "overfitting shared content to one template",
+      "letting prototype styles become ungoverned production defaults"
+    ]
+  },
+  "pitch_directions": [
+    {
+      "id": "link-index-mobile-first",
+      "name": "Link Index Mobile First",
+      "thesis": "Accepted mobile-first link hub with warm identity and direct route objects.",
+      "reference_logic": [
+        "Use brian-lovin as a directional reference, not a visual copy source.",
+        "Use rauno-freiberg as a directional reference, not a visual copy source."
+      ],
+      "content_modules": [
+        "identity",
+        "work",
+        "contact",
+        "social"
+      ],
+      "visual_system": [
+        "single-column mobile-first route stack",
+        "warm hero surface above grouped route cards"
+      ],
+      "interaction_model": [
+        "subtle hover/focus transition only",
+        "reduced-motion-safe by global reset"
+      ],
+      "pros": [
+        "uses existing shared route data",
+        "previewable without activation",
+        "small implementation surface"
+      ],
+      "risks": [
+        "needs screenshot QA before activation",
+        "requires contract updates before visual changes"
+      ],
+      "best_for": [
+        "template comparison",
+        "personal PR front door experimentation"
+      ]
+    }
+  ],
+  "recommended_direction": {
+    "direction_id": "link-index-mobile-first",
+    "why": "Backfilled to match the governed template lifecycle and preserve the existing implemented direction.",
+    "changes_to_template_contract": [
+      "Mark existing implementation as governed.",
+      "Bind manifest, control map, design objects, tokens, and build plan."
+    ]
+  },
+  "template_generation_plan": {
+    "template_id": "link-index-mobile-first",
+    "preview_route": "/preview/link-index-mobile-first",
+    "files_to_create": [
+      "src/design-templates/contracts/link-index-mobile-first.contract.json",
+      "src/design-templates/pitches/examples/jnap-link-index-mobile-first.one-pager.json",
+      "src/design-templates/pitches/examples/jnap-link-index-mobile-first.build-plan.json",
+      "src/design-templates/link-index-mobile-first/control-map.json",
+      "src/design-templates/design-objects/link-index-mobile-first/palette.json",
+      "src/design-templates/design-objects/link-index-mobile-first/typography.json",
+      "src/design-templates/design-objects/link-index-mobile-first/spacing.json",
+      "src/design-templates/design-objects/link-index-mobile-first/shape.json",
+      "src/design-templates/design-objects/link-index-mobile-first/motion.json",
+      "src/design-templates/design-objects/link-index-mobile-first/layout.json",
+      "src/design-templates/design-objects/link-index-mobile-first/components.json",
+      "src/design-templates/design-objects/link-index-mobile-first/content-map.json",
+      "src/design-templates/design-objects/link-index-mobile-first/accessibility.json",
+      "src/design-templates/design-objects/link-index-mobile-first/implementation-map.json",
+      "src/design-templates/design-objects/link-index-mobile-first/tokens/color.tokens.json",
+      "src/design-templates/design-objects/link-index-mobile-first/tokens/typography.tokens.json",
+      "src/design-templates/design-objects/link-index-mobile-first/tokens/spacing.tokens.json"
+    ],
+    "files_to_update": [
+      "src/design-templates/link-index-mobile-first/manifest.yaml",
+      "src/design-templates/candidate-templates.json",
+      "src/design-templates/README.md"
+    ],
+    "execplan_template": ".agent/execplans/templates/client-template-build-execplan.md"
+  },
+  "client_review_packet": {
+    "include": [
+      "template contract",
+      "one-page summary",
+      "mobile screenshot",
+      "desktop screenshot"
+    ],
+    "exclude": [
+      "private source material",
+      "unapproved social feeds",
+      "unreviewed analytics changes"
+    ]
+  },
+  "approval_gates": [
+    "template_contract_marked_implemented",
+    "design_objects_present",
+    "tokens_present",
+    "build_plan_present",
+    "validator_passes"
+  ]
+}

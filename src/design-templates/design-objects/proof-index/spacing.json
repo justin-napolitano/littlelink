@@ -1,0 +1,59 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "proof-index.spacing.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "proof-index",
+  "kind": "spacing",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+    "src/design-templates/contracts/proof-index.contract.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/proof-index/tokens/spacing.tokens.json"
+  },
+  "objects": [
+    {
+      "id": "space.page.padding",
+      "type": "space_token",
+      "name": "Page Padding",
+      "purpose": "Page Padding for Proof Index.",
+      "status": "implemented",
+      "value": "56px 1.25rem 88px",
+      "css_variable": "--template-page-padding"
+    },
+    {
+      "id": "space.stack.gap",
+      "type": "space_token",
+      "name": "Stack Gap",
+      "purpose": "Stack Gap for Proof Index.",
+      "status": "implemented",
+      "value": "1rem",
+      "css_variable": "--template-stack-gap"
+    },
+    {
+      "id": "space.section.padding",
+      "type": "space_token",
+      "name": "Section Padding",
+      "purpose": "Section Padding for Proof Index.",
+      "status": "implemented",
+      "value": "1rem",
+      "css_variable": "--template-section-padding"
+    },
+    {
+      "id": "space.route.padding",
+      "type": "space_token",
+      "name": "Route Padding",
+      "purpose": "Route Padding for Proof Index.",
+      "status": "implemented",
+      "value": "1rem",
+      "css_variable": "--template-route-padding"
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "tap_targets_not_crowded"
+  ]
+}

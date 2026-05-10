@@ -1,0 +1,139 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "proof-index.color.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "proof-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/proof-index/palette.json"
+      ]
+    }
+  },
+  "color": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9686,
+            0.9686,
+            0.9529
+          ]
+        },
+        "$description": "Proof Background",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.page",
+            "css_variable": "--proof-bg",
+            "css_fallback": "#F7F7F3"
+          }
+        }
+      },
+      "object": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ]
+        },
+        "$description": "Proof Paper",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.object",
+            "css_variable": "--proof-paper",
+            "css_fallback": "#FFFFFF"
+          }
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0667,
+            0.0667,
+            0.0667
+          ]
+        },
+        "$description": "Proof Ink",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.primary",
+            "css_variable": "--proof-ink",
+            "css_fallback": "#111111"
+          }
+        }
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0667,
+            0.0667,
+            0.0667
+          ],
+          "alpha": 0.56
+        },
+        "$description": "Proof Muted",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.secondary",
+            "css_variable": "--proof-muted",
+            "css_fallback": "rgba(#111111, 0.56)"
+          }
+        }
+      }
+    },
+    "accent": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1412,
+            0.3098,
+            0.4784
+          ]
+        },
+        "$description": "Proof Blue",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.accent.primary",
+            "css_variable": "--proof-blue",
+            "css_fallback": "#244F7A"
+          }
+        }
+      }
+    },
+    "line": {
+      "soft": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0667,
+            0.0667,
+            0.0667
+          ],
+          "alpha": 0.14
+        },
+        "$description": "Proof Line",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.line.soft",
+            "css_variable": "--proof-line",
+            "css_fallback": "rgba(#111111, 0.14)"
+          }
+        }
+      }
+    }
+  }
+}

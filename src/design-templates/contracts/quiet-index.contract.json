@@ -1,0 +1,202 @@
+{
+  "$schema": "./personal-site-template-contract.schema.json",
+  "contract_id": "quiet-index-template-v1",
+  "version": 1,
+  "status": "implemented",
+  "template": {
+    "id": "quiet-index",
+    "name": "Quiet Index",
+    "candidate_id": "quiet-index",
+    "reusable_market": "Personal PR base for individuals, operators, makers, small studios, and small businesses."
+  },
+  "positioning": {
+    "first_impression": "A plain and competent personal directory.",
+    "curiosity_strategy": "Use restraint, readable labels, and low ornament so trust comes before novelty.",
+    "tone": [
+      "normal",
+      "direct",
+      "personal",
+      "trustworthy"
+    ],
+    "must_feel_like": [
+      "a real person with taste",
+      "a maintained public front door",
+      "easy to act on"
+    ],
+    "must_not_feel_like": [
+      "pitch deck",
+      "tech stack personality",
+      "generic SaaS hero",
+      "overexplained portfolio"
+    ]
+  },
+  "audience_modes": [
+    {
+      "id": "professional-reviewer",
+      "intent": "Check work, resume, docs, and GitHub quickly.",
+      "primary_exits": [
+        "Resume",
+        "Docs",
+        "GitHub"
+      ]
+    },
+    {
+      "id": "social-discovery",
+      "intent": "Get a curated glimpse of the person and choose a social/contact path.",
+      "primary_exits": [
+        "LinkedIn",
+        "Bluesky",
+        "Instagram",
+        "Signal"
+      ]
+    },
+    {
+      "id": "direct-contact",
+      "intent": "Find the right way to contact or schedule.",
+      "primary_exits": [
+        "Schedule",
+        "Email",
+        "Signal"
+      ]
+    }
+  ],
+  "reference_set": [
+    {
+      "id": "derek-sivers",
+      "url": "https://sive.rs/",
+      "role": "Plain personal site reference",
+      "borrow": [
+        "direct structure",
+        "strong signal without overexplaining"
+      ],
+      "avoid": [
+        "copying visual identity",
+        "making the page feel like a generic template"
+      ]
+    },
+    {
+      "id": "rauno-freiberg",
+      "url": "https://rauno.me/",
+      "role": "Sparse personal signature reference",
+      "borrow": [
+        "direct structure",
+        "strong signal without overexplaining"
+      ],
+      "avoid": [
+        "copying visual identity",
+        "making the page feel like a generic template"
+      ]
+    }
+  ],
+  "content_contract": {
+    "shared_source": "src/data/site.json",
+    "required_modules": [
+      "identity",
+      "work",
+      "contact",
+      "social"
+    ],
+    "optional_modules": [
+      "garden",
+      "lifestyle",
+      "proof_grid",
+      "offers"
+    ],
+    "copy_rules": [
+      "Use plain nouns and direct action labels.",
+      "Do not add pitch copy to compensate for weak structure.",
+      "Route labels and URLs are content-contract invariants."
+    ]
+  },
+  "experience_contract": {
+    "mobile_first": true,
+    "first_screen": "A plain and competent personal directory.",
+    "navigation_model": "Shared route content rendered as template-owned navigation objects.",
+    "progressive_disclosure": "The root shows enough to invite action and leaves deeper explanation to linked surfaces.",
+    "interaction_requirements": [
+      "All links are tappable on mobile.",
+      "Keyboard focus is visible.",
+      "No route depends on hover-only meaning."
+    ]
+  },
+  "visual_contract": {
+    "layout": [
+      "narrow centered page",
+      "section labels sit beside route lists on desktop and stack on mobile"
+    ],
+    "typography": [
+      "Display: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "Body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "No negative letter spacing."
+    ],
+    "color": [
+      "Page: #F8F6F1",
+      "Surface: #FFFDF8",
+      "Accent: #0F7C66"
+    ],
+    "texture": [
+      "Use surface, spacing, and line quality instead of decorative effects."
+    ],
+    "density": [
+      "Mobile-first density",
+      "Below-fold hint preferred",
+      "Readable tap rhythm"
+    ]
+  },
+  "motion_contract": {
+    "policy": "Motion may guide attention, never carry meaning.",
+    "allowed": [
+      "one-pixel hover lift",
+      "motion removed under reduced-motion preference"
+    ],
+    "forbidden": [
+      "motion required for comprehension",
+      "large decorative animation",
+      "scroll-jacking"
+    ]
+  },
+  "privacy_contract": {
+    "invariants": [
+      "privacy behavior unchanged",
+      "analytics behavior unchanged",
+      "direct link behavior unchanged",
+      "shared content ownership unchanged"
+    ],
+    "review_required_for": [
+      "new provider calls",
+      "embedded social feeds",
+      "private photos or locations",
+      "new analytics collection"
+    ]
+  },
+  "implementation_scope": {
+    "build_status": "Implemented as a governed template preview.",
+    "intended_files": [
+      "src/design-templates/quiet-index/manifest.yaml",
+      "src/design-templates/quiet-index/index.astro",
+      "src/design-templates/quiet-index/styles.css",
+      "src/design-templates/quiet-index/control-map.json",
+      "src/lib/design-template-ids.ts",
+      "src/lib/design-template-registry.ts",
+      "src/design-templates/candidate-templates.json"
+    ],
+    "preview_route": "/preview/quiet-index",
+    "activation_rule": "Only activate after mobile and desktop screenshot comparison beats the current active template for its intended question."
+  },
+  "qa_gates": [
+    "npm_build",
+    "route_health_check",
+    "mobile_screenshot",
+    "desktop_screenshot",
+    "no_text_overflow",
+    "keyboard_focus_visible",
+    "contrast_readable",
+    "privacy_behavior_unchanged",
+    "template_can_be_previewed_without_activation"
+  ],
+  "selection_criteria": [
+    "Keeps shared route content stable.",
+    "Improves the template-specific design question.",
+    "Feels personal and credible without overexplaining."
+  ]
+}

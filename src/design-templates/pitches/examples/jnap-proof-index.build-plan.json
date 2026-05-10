@@ -1,0 +1,68 @@
+{
+  "$schema": "../template-build-plan.schema.json",
+  "plan_id": "jnap-proof-index-build-plan-v1",
+  "version": 1,
+  "status": "complete",
+  "pitch_ref": "src/design-templates/pitches/examples/jnap-proof-index.pitch.json",
+  "template_contract_ref": "src/design-templates/contracts/proof-index.contract.json",
+  "design_object_refs": [
+    "src/design-templates/design-objects/proof-index/palette.json",
+    "src/design-templates/design-objects/proof-index/typography.json",
+    "src/design-templates/design-objects/proof-index/spacing.json",
+    "src/design-templates/design-objects/proof-index/shape.json",
+    "src/design-templates/design-objects/proof-index/motion.json",
+    "src/design-templates/design-objects/proof-index/layout.json",
+    "src/design-templates/design-objects/proof-index/components.json",
+    "src/design-templates/design-objects/proof-index/content-map.json",
+    "src/design-templates/design-objects/proof-index/accessibility.json",
+    "src/design-templates/design-objects/proof-index/implementation-map.json"
+  ],
+  "token_refs": [
+    "src/design-templates/design-objects/proof-index/tokens/color.tokens.json",
+    "src/design-templates/design-objects/proof-index/tokens/typography.tokens.json",
+    "src/design-templates/design-objects/proof-index/tokens/spacing.tokens.json"
+  ],
+  "branch": "impl-execplan/template-contract-requirements-backfill",
+  "implementation_slices": [
+    {
+      "id": "lifecycle-backfill",
+      "title": "Backfill governed template lifecycle artifacts",
+      "owned_files": [
+        "src/design-templates/proof-index/manifest.yaml",
+        "src/design-templates/proof-index/control-map.json",
+        "src/design-templates/contracts/proof-index.contract.json",
+        "src/design-templates/pitches/examples/jnap-proof-index.pitch.json",
+        "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+        "src/design-templates/pitches/examples/jnap-proof-index.build-plan.json",
+        "src/design-templates/design-objects/proof-index/"
+      ],
+      "deliverable": "Existing template has the same machine-readable contract stack as new template builds.",
+      "acceptance_checks": [
+        "npm run design:validate",
+        "npm run build",
+        "git diff --check"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "npm run design:validate",
+    "npm run build",
+    "git diff --check",
+    "curl -I http://127.0.0.1:4327/preview/proof-index"
+  ],
+  "pull_request_policy": {
+    "base": "main",
+    "draft_allowed": false,
+    "required_summary": [
+      "contract lifecycle requirement",
+      "backfilled artifacts",
+      "validation results"
+    ]
+  },
+  "stop_conditions": [
+    "shared route URLs changed",
+    "active template config changed unexpectedly",
+    "privacy behavior changed",
+    "design validator fails"
+  ]
+}

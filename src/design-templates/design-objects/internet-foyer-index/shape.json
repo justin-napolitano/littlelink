@@ -2,7 +2,7 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.shape.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "shape",
   "source_refs": [
@@ -14,7 +14,7 @@
       "type": "radius_token",
       "name": "Soft Object Radius",
       "purpose": "Touchable route objects.",
-      "status": "approved",
+      "status": "implemented",
       "value": "24px",
       "css_variable": "--foyer-radius-object-soft"
     },
@@ -23,7 +23,7 @@
       "type": "radius_token",
       "name": "Loose Surface Radius",
       "purpose": "Larger identity or cluster surfaces.",
-      "status": "approved",
+      "status": "implemented",
       "value": "30px",
       "css_variable": "--foyer-radius-surface-loose"
     },
@@ -32,7 +32,7 @@
       "type": "border_token",
       "name": "Hairline Border",
       "purpose": "Quiet object definition.",
-      "status": "approved",
+      "status": "implemented",
       "value": "1px solid var(--foyer-color-line-soft)",
       "css_variable": "--foyer-border-hairline"
     },
@@ -41,7 +41,7 @@
       "type": "shadow_token",
       "name": "Object Lift",
       "purpose": "Subtle tactile depth.",
-      "status": "approved",
+      "status": "implemented",
       "value": "0 18px 48px rgba(15, 16, 15, 0.08)",
       "css_variable": "--foyer-shadow-object-lift",
       "requirements": [

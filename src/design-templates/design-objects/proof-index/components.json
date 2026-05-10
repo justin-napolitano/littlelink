@@ -1,0 +1,110 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "proof-index.component.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "proof-index",
+  "kind": "component",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+    "src/design-templates/contracts/proof-index.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "component.template_root",
+      "type": "component",
+      "name": "Template Root",
+      "purpose": "Template root and scoped style owner.",
+      "status": "implemented",
+      "class_name": "proof-index",
+      "selector": "main[data-design-template='proof-index']",
+      "tokens": {
+        "background": "color.surface.page",
+        "text": "color.text.primary"
+      }
+    },
+    {
+      "id": "component.identity_object",
+      "type": "component",
+      "name": "Identity Object",
+      "purpose": "Name and first impression.",
+      "status": "implemented",
+      "class_name": "proof-hero",
+      "selector": ".proof-hero",
+      "content_bindings": [
+        {
+          "source_path": "hero.name",
+          "target": "#proof-title",
+          "rule": "Render the shared identity name."
+        }
+      ]
+    },
+    {
+      "id": "component.route_cluster",
+      "type": "component",
+      "name": "Route Cluster",
+      "purpose": "Visual grouping for shared sections.",
+      "status": "implemented",
+      "class_name": "proof-section",
+      "selector": ".proof-section",
+      "content_bindings": [
+        {
+          "source_path": "sections[]",
+          "target": ".proof-section",
+          "rule": "Render section groups in source order."
+        }
+      ]
+    },
+    {
+      "id": "component.route_object",
+      "type": "component",
+      "name": "Route Object",
+      "purpose": "Touchable route into shared destinations.",
+      "status": "implemented",
+      "class_name": "proof-route",
+      "selector": ".proof-primary__link, .proof-link",
+      "content_bindings": [
+        {
+          "source_path": "sections[].links[].label",
+          "target": ".proof-primary__link span:last-child, .proof-link span",
+          "rule": "Render visible label."
+        },
+        {
+          "source_path": "sections[].links[].href",
+          "target": ".proof-primary__link, .proof-link[href]",
+          "rule": "Preserve href."
+        }
+      ],
+      "metadata": {
+        "min_target_px": 44
+      },
+      "requirements": [
+        "Minimum 44px tap target.",
+        "No hover-only meaning."
+      ]
+    },
+    {
+      "id": "component.template_footer",
+      "type": "component",
+      "name": "Template Footer",
+      "purpose": "Privacy link surface.",
+      "status": "implemented",
+      "class_name": "proof-footer",
+      "selector": ".proof-footer",
+      "content_bindings": [
+        {
+          "source_path": "footer.privacyHref",
+          "target": ".proof-footer a[href]",
+          "rule": "Render privacy link when available."
+        }
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "tap_targets",
+    "keyboard_focus_visible"
+  ]
+}

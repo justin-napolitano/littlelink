@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "template_id": "proof-index",
+  "status": "implemented_preview",
+  "intent": "Scan-fast professional proof surface for resume, docs, GitHub, and direct contact.",
+  "source_contracts": {
+    "template_contract": "src/design-templates/contracts/proof-index.contract.json",
+    "pitch": "src/design-templates/pitches/examples/jnap-proof-index.pitch.json",
+    "one_pager": "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+    "build_plan": "src/design-templates/pitches/examples/jnap-proof-index.build-plan.json",
+    "design_objects": "src/design-templates/design-objects/proof-index/",
+    "tokens": [
+      "src/design-templates/design-objects/proof-index/tokens/color.tokens.json",
+      "src/design-templates/design-objects/proof-index/tokens/typography.tokens.json",
+      "src/design-templates/design-objects/proof-index/tokens/spacing.tokens.json"
+    ]
+  },
+  "content_map": {
+    "identity": {
+      "source_paths": [
+        "hero.name",
+        "hero.subhead"
+      ],
+      "selectors": [
+        ".proof-hero",
+        "#proof-title"
+      ],
+      "rule": "Render shared identity content without adding pitch copy."
+    },
+    "route_clusters": {
+      "source_paths": [
+        "sections[]",
+        "sections[].links[]"
+      ],
+      "selectors": [
+        ".proof-section",
+        ".proof-primary__link, .proof-link",
+        ".proof-primary__link span:last-child, .proof-link span",
+        ".proof-icon"
+      ],
+      "rule": "Preserve route labels, URLs, icon bindings, and source order."
+    },
+    "footer": {
+      "source_paths": [
+        "footer.privacyLabel",
+        "footer.privacyHref"
+      ],
+      "selectors": [
+        ".proof-footer"
+      ]
+    },
+    "privacy": {
+      "source_paths": [
+        "consentScript"
+      ],
+      "selectors": [
+        ".consent-banner",
+        ".consent-banner__actions"
+      ]
+    }
+  },
+  "css_token_map": {
+    "color": [
+      "color.surface.page",
+      "color.surface.object",
+      "color.text.primary",
+      "color.text.secondary",
+      "color.accent.primary",
+      "color.line.soft"
+    ],
+    "type": [
+      "font.display.identity",
+      "font.body.default",
+      "type.identity.name",
+      "type.route.label"
+    ],
+    "space": [
+      "space.page.padding",
+      "space.stack.gap",
+      "space.section.padding",
+      "space.route.padding"
+    ]
+  },
+  "activation_requirements": [
+    "route labels and URLs are unchanged unless the content contract changes",
+    "privacy and analytics behavior are unchanged",
+    "mobile and desktop screenshots are reviewed",
+    "npm run design:validate passes for all implemented templates"
+  ]
+}

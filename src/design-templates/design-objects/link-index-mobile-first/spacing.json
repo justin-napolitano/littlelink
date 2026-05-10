@@ -1,0 +1,59 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "link-index-mobile-first.spacing.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "link-index-mobile-first",
+  "kind": "spacing",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-link-index-mobile-first.one-pager.json",
+    "src/design-templates/contracts/link-index-mobile-first.contract.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/link-index-mobile-first/tokens/spacing.tokens.json"
+  },
+  "objects": [
+    {
+      "id": "space.page.padding",
+      "type": "space_token",
+      "name": "Page Padding",
+      "purpose": "Page Padding for Link Index Mobile First.",
+      "status": "implemented",
+      "value": "72px clamp(1.5rem, 4vw, 4rem) 104px",
+      "css_variable": "--template-page-padding"
+    },
+    {
+      "id": "space.stack.gap",
+      "type": "space_token",
+      "name": "Stack Gap",
+      "purpose": "Stack Gap for Link Index Mobile First.",
+      "status": "implemented",
+      "value": "1.5rem",
+      "css_variable": "--template-stack-gap"
+    },
+    {
+      "id": "space.section.padding",
+      "type": "space_token",
+      "name": "Section Padding",
+      "purpose": "Section Padding for Link Index Mobile First.",
+      "status": "implemented",
+      "value": "clamp(2rem, 4vw, 3rem)",
+      "css_variable": "--template-section-padding"
+    },
+    {
+      "id": "space.route.padding",
+      "type": "space_token",
+      "name": "Route Padding",
+      "purpose": "Route Padding for Link Index Mobile First.",
+      "status": "implemented",
+      "value": "0.95rem",
+      "css_variable": "--template-route-padding"
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "tap_targets_not_crowded"
+  ]
+}

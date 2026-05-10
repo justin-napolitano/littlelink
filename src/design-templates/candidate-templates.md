@@ -13,16 +13,17 @@ The current live template is `link-index-mobile-first`. It remains one template.
 - Candidates must not change route labels, route URLs, privacy behavior, analytics behavior, or direct link behavior.
 - Candidates must be previewable without changing the production active-template config.
 - Candidate PRs must include mobile and desktop screenshots.
-- New candidate directions need a JSON design contract before implementation.
+- Every implemented template needs the full governed lifecycle: manifest, control map, template contract, pitch, one-pager, build plan, design objects, and token files.
+- `npm run design:validate` must pass across all implemented templates before template work is merged.
 
 ## Design Contracts
 
 Contracts live in `src/design-templates/contracts/`.
 
 - `personal-site-template-contract.schema.json`: reusable schema for personal-site template briefs.
-- `internet-foyer.contract.json`: next planned direction for a more curious personal root.
+- `[template-id].contract.json`: one contract per implemented template.
 
-A contract captures audience modes, references, content rules, visual rules, motion rules, privacy invariants, implementation scope, QA gates, and selection criteria. Build work should start only after the contract is reviewed and marked `approved_for_build`.
+A contract captures audience modes, references, content rules, visual rules, motion rules, privacy invariants, implementation scope, QA gates, and selection criteria. Existing prototype templates are backfilled as `implemented`; new template work should start only after the contract is reviewed and marked `approved_for_build`.
 
 ## First Build Batch
 

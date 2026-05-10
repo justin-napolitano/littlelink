@@ -8,7 +8,7 @@
     "preview_rule": "Candidate templates must be previewable without changing production active-template config.",
     "shared_content_rule": "Every candidate renders the same shared src/data/site.json content unless a content-contract change is approved.",
     "privacy_rule": "Privacy, analytics, direct links, and provider-backed data behavior must not change during template comparison.",
-    "contract_rule": "New candidate directions need a JSON design contract before implementation."
+    "contract_rule": "Every implemented template must carry a template contract, pitch, one-pager, build plan, design objects, DTCG-compatible tokens, manifest, and control map."
   },
   "first_build_batch": [
     "quiet-index",
@@ -39,7 +39,13 @@
         "analytics behavior",
         "direct link behavior"
       ],
-      "activation_test": "Feels more trustworthy than link-index-mobile-first without becoming generic."
+      "activation_test": "Feels more trustworthy than link-index-mobile-first without becoming generic.",
+      "contract": "src/design-templates/contracts/quiet-index.contract.json",
+      "pitch": "src/design-templates/pitches/examples/jnap-quiet-index.pitch.json",
+      "one_pager": "src/design-templates/pitches/examples/jnap-quiet-index.one-pager.json",
+      "build_plan": "src/design-templates/pitches/examples/jnap-quiet-index.build-plan.json",
+      "design_objects": "src/design-templates/design-objects/quiet-index/",
+      "control_map": "src/design-templates/quiet-index/control-map.json"
     },
     {
       "id": "garden-index",
@@ -62,7 +68,13 @@
         "docs content stays off the root until governed",
         "privacy-reviewed public content only"
       ],
-      "activation_test": "Makes docs.jnap.me feel important without turning the root into a blog."
+      "activation_test": "Makes docs.jnap.me feel important without turning the root into a blog.",
+      "contract": "src/design-templates/contracts/garden-index.contract.json",
+      "pitch": "src/design-templates/pitches/examples/jnap-garden-index.pitch.json",
+      "one_pager": "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+      "build_plan": "src/design-templates/pitches/examples/jnap-garden-index.build-plan.json",
+      "design_objects": "src/design-templates/design-objects/garden-index/",
+      "control_map": "src/design-templates/garden-index/control-map.json"
     },
     {
       "id": "proof-index",
@@ -86,14 +98,20 @@
         "no unsupported claims",
         "route contracts remain stable"
       ],
-      "activation_test": "Improves professional scan speed without making the page feel like a deck."
+      "activation_test": "Improves professional scan speed without making the page feel like a deck.",
+      "contract": "src/design-templates/contracts/proof-index.contract.json",
+      "pitch": "src/design-templates/pitches/examples/jnap-proof-index.pitch.json",
+      "one_pager": "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+      "build_plan": "src/design-templates/pitches/examples/jnap-proof-index.build-plan.json",
+      "design_objects": "src/design-templates/design-objects/proof-index/",
+      "control_map": "src/design-templates/proof-index/control-map.json"
     },
     {
       "id": "internet-foyer-index",
       "status": "implemented_preview",
       "purpose": "Curious personal front-room template that makes visitors want to click deeper without explaining everything.",
       "primary_question": "Does this make Justin feel interesting, human, and worth exploring while staying trustworthy?",
-      "contract": "src/design-templates/contracts/internet-foyer.contract.json",
+      "contract": "src/design-templates/contracts/internet-foyer-index.contract.json",
       "references": [
         "paco-coursey",
         "joe-coleman-agencies",
@@ -115,7 +133,12 @@
         "direct link behavior",
         "shared content ownership"
       ],
-      "activation_test": "Beats the current template for curiosity and personal signal without becoming unclear or performative."
+      "activation_test": "Beats the current template for curiosity and personal signal without becoming unclear or performative.",
+      "pitch": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
+      "one_pager": "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json",
+      "build_plan": "src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json",
+      "design_objects": "src/design-templates/design-objects/internet-foyer-index/",
+      "control_map": "src/design-templates/internet-foyer-index/control-map.json"
     },
     {
       "id": "card-index",
@@ -213,5 +236,14 @@
     "privacy_behavior_unchanged",
     "shared_content_unchanged",
     "template_can_be_previewed_without_activation"
-  ]
+  ],
+  "active_template_contracts": {
+    "template_id": "link-index-mobile-first",
+    "contract": "src/design-templates/contracts/link-index-mobile-first.contract.json",
+    "pitch": "src/design-templates/pitches/examples/jnap-link-index-mobile-first.pitch.json",
+    "one_pager": "src/design-templates/pitches/examples/jnap-link-index-mobile-first.one-pager.json",
+    "build_plan": "src/design-templates/pitches/examples/jnap-link-index-mobile-first.build-plan.json",
+    "design_objects": "src/design-templates/design-objects/link-index-mobile-first/",
+    "control_map": "src/design-templates/link-index-mobile-first/control-map.json"
+  }
 }

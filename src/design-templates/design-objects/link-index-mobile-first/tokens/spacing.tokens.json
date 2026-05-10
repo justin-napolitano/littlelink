@@ -1,0 +1,71 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "link-index-mobile-first.spacing.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "link-index-mobile-first",
+      "source_object_refs": [
+        "src/design-templates/design-objects/link-index-mobile-first/spacing.json"
+      ]
+    }
+  },
+  "space": {
+    "page": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "space.page.padding",
+          "css_variable": "--template-page-padding",
+          "css_fallback": "72px clamp(1.5rem, 4vw, 4rem) 104px"
+        }
+      }
+    },
+    "stack": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "space.stack.gap",
+          "css_variable": "--template-stack-gap",
+          "css_fallback": "1.5rem"
+        }
+      }
+    },
+    "section": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "space.section.padding",
+          "css_variable": "--template-section-padding",
+          "css_fallback": "clamp(2rem, 4vw, 3rem)"
+        }
+      }
+    },
+    "route": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "space.route.padding",
+          "css_variable": "--template-route-padding",
+          "css_fallback": "0.95rem"
+        }
+      }
+    }
+  }
+}

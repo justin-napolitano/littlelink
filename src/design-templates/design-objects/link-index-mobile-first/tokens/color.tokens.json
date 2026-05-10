@@ -1,0 +1,139 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "link-index-mobile-first.color.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "link-index-mobile-first",
+      "source_object_refs": [
+        "src/design-templates/design-objects/link-index-mobile-first/palette.json"
+      ]
+    }
+  },
+  "color": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9608,
+            0.949,
+            0.9255
+          ]
+        },
+        "$description": "Warm Background",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.page",
+            "css_variable": "--bg",
+            "css_fallback": "#F5F2EC"
+          }
+        }
+      },
+      "object": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9922,
+            0.9843,
+            0.9686
+          ]
+        },
+        "$description": "Soft Upper Surface",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.object",
+            "css_variable": "--upper-bg",
+            "css_fallback": "#FDFBF7"
+          }
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.0627,
+            0.0588
+          ]
+        },
+        "$description": "Ink",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.primary",
+            "css_variable": "--ink",
+            "css_fallback": "#0F100F"
+          }
+        }
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.0627,
+            0.0588
+          ],
+          "alpha": 0.65
+        },
+        "$description": "Soft Ink",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.secondary",
+            "css_variable": "--ink-soft",
+            "css_fallback": "rgba(#0F100F, 0.65)"
+          }
+        }
+      }
+    },
+    "accent": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.4863,
+            0.4
+          ]
+        },
+        "$description": "Living Green",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.accent.primary",
+            "css_variable": "--accent",
+            "css_fallback": "#0F7C66"
+          }
+        }
+      }
+    },
+    "line": {
+      "soft": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.0627,
+            0.0588
+          ],
+          "alpha": 0.12
+        },
+        "$description": "Soft Line",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.line.soft",
+            "css_variable": "--line",
+            "css_fallback": "rgba(#0F100F, 0.12)"
+          }
+        }
+      }
+    }
+  }
+}

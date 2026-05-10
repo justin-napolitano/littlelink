@@ -1,0 +1,45 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "proof-index.layout.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "proof-index",
+  "kind": "layout",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+    "src/design-templates/contracts/proof-index.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "layout.root",
+      "type": "layout_rule",
+      "name": "Root Layout",
+      "purpose": "Owns template viewport, width, and page rhythm.",
+      "status": "implemented",
+      "selector": "main[data-design-template='proof-index']",
+      "requirements": [
+        "proof-forward hero split",
+        "primary work links are larger than secondary routes"
+      ]
+    },
+    {
+      "id": "layout.routes",
+      "type": "layout_rule",
+      "name": "Route Layout",
+      "purpose": "Defines route grouping and scan rhythm.",
+      "status": "implemented",
+      "selector": ".proof-section",
+      "requirements": [
+        "Render shared sections in source order.",
+        "Preserve mobile-first readability."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "mobile_screenshot",
+    "desktop_screenshot"
+  ]
+}

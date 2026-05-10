@@ -37,12 +37,13 @@ This layer exists so the platform can support real design work for Justin's root
 - Template code should not be written until the pitch is approved for an execplan.
 - Client-specific private material must stay out of public template contracts.
 - The generated implementation must be an inactive preview template until screenshots and review pass.
+- Every implemented template must keep pitch, one-pager, build-plan, design-object, and token refs valid under `npm run design:validate`.
 
 ## Example
 
-`examples/jnap-internet-foyer.pitch.json` shows how the current JNAP direction becomes a pitch package. It is still planning metadata; it does not activate or build a template.
+`examples/jnap-[template-id].pitch.json` files show how each implemented template is represented as a pitch package. These artifacts do not activate templates.
 
-`examples/jnap-internet-foyer.one-pager.json` is the client-facing version of the same recommendation.
+`examples/jnap-[template-id].one-pager.json` files are the client-facing version of the same recommendation.
 
 Generate a readable Markdown brief from a one-pager JSON contract:
 

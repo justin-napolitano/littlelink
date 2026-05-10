@@ -1,0 +1,67 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "quiet-index.content_map.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "quiet-index",
+  "kind": "content_map",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-quiet-index.one-pager.json",
+    "src/design-templates/contracts/quiet-index.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "content.identity",
+      "type": "content_rule",
+      "name": "Identity Content",
+      "purpose": "Bind shared identity fields.",
+      "status": "implemented",
+      "content_bindings": [
+        {
+          "source_path": "hero.name",
+          "target": "#quiet-title",
+          "rule": "Render without changing content."
+        }
+      ]
+    },
+    {
+      "id": "content.routes",
+      "type": "content_rule",
+      "name": "Route Content",
+      "purpose": "Bind shared sections and route links.",
+      "status": "implemented",
+      "content_bindings": [
+        {
+          "source_path": "sections[]",
+          "target": ".quiet-section",
+          "rule": "Render in source order."
+        },
+        {
+          "source_path": "sections[].links[]",
+          "target": ".quiet-link",
+          "rule": "Preserve labels, URLs, icons, and new-tab behavior."
+        }
+      ]
+    },
+    {
+      "id": "content.footer",
+      "type": "content_rule",
+      "name": "Footer Content",
+      "purpose": "Bind privacy footer content.",
+      "status": "implemented",
+      "content_bindings": [
+        {
+          "source_path": "footer.privacyHref",
+          "target": ".quiet-footer",
+          "rule": "Preserve privacy route."
+        }
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "shared_content_unchanged"
+  ]
+}

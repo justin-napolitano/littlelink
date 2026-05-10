@@ -1,0 +1,143 @@
+{
+  "$schema": "../design-one-pager.schema.json",
+  "one_pager_id": "jnap-proof-index-one-pager-v1",
+  "version": 1,
+  "status": "approved",
+  "pitch_ref": "src/design-templates/pitches/examples/jnap-proof-index.pitch.json",
+  "client": {
+    "name": "Justin Napolitano",
+    "site_url": "https://jnap.me",
+    "project_type": "Personal PR template"
+  },
+  "selected_direction": {
+    "id": "proof-index",
+    "name": "Proof Index",
+    "why": "Scan-fast professional proof surface for resume, docs, GitHub, and direct contact."
+  },
+  "design_thesis": {
+    "one_liner": "Scan-fast professional proof surface for resume, docs, GitHub, and direct contact.",
+    "first_impression": "A hiring reviewer can find proof quickly without reading a pitch.",
+    "not_this": [
+      "pitch deck",
+      "generic template",
+      "tech-stack personality"
+    ]
+  },
+  "visual_system": {
+    "typography": {
+      "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "labels": "Route labels use .proof-primary__link span:last-child.",
+      "rules": [
+        "No negative letter spacing.",
+        "Text must fit mobile containers.",
+        "Copy stays short and direct."
+      ]
+    },
+    "color_palette": [
+      {
+        "name": "Proof Background",
+        "value": "#F7F7F3",
+        "usage": "page background"
+      },
+      {
+        "name": "Proof Paper",
+        "value": "#FFFFFF",
+        "usage": "surface/object background"
+      },
+      {
+        "name": "Proof Ink",
+        "value": "#111111",
+        "usage": "primary text"
+      },
+      {
+        "name": "Proof Blue",
+        "value": "#244F7A",
+        "usage": "focus and route accent"
+      }
+    ],
+    "shape": [
+      "Surface radius: 12px",
+      "Route radius: 12px",
+      "Icon radius: 10px"
+    ],
+    "texture": [
+      "Line, spacing, and surface quality only."
+    ],
+    "imagery": [
+      "No image dependency for this template."
+    ],
+    "iconography": [
+      "Use existing route icons from shared content."
+    ]
+  },
+  "experience_system": {
+    "mobile_first": "Mobile is the primary review surface.",
+    "layout": [
+      "proof-forward hero split",
+      "primary work links are larger than secondary routes"
+    ],
+    "interaction": [
+      "Direct route links",
+      "Visible keyboard focus",
+      "No hover-only meaning"
+    ],
+    "motion": [
+      "border-color hover/focus only",
+      "no animated claims or decorative motion"
+    ],
+    "accessibility": [
+      "Readable contrast",
+      "Minimum 44px tap targets",
+      "Single clear identity heading"
+    ]
+  },
+  "content_modules": [
+    {
+      "name": "identity",
+      "status": "active_or_supported",
+      "purpose": "Supports identity content through shared site.json."
+    },
+    {
+      "name": "work_primary",
+      "status": "active_or_supported",
+      "purpose": "Supports work_primary content through shared site.json."
+    },
+    {
+      "name": "contact",
+      "status": "active_or_supported",
+      "purpose": "Supports contact content through shared site.json."
+    },
+    {
+      "name": "social",
+      "status": "active_or_supported",
+      "purpose": "Supports social content through shared site.json."
+    }
+  ],
+  "references": [
+    {
+      "name": "paco-coursey",
+      "url": "https://paco.me/",
+      "borrow": "Dense personal proof reference"
+    },
+    {
+      "name": "brian-lovin",
+      "url": "https://brianlovin.com/",
+      "borrow": "Personal operating-system reference"
+    }
+  ],
+  "deliverables": [
+    "inactive preview template",
+    "template contract",
+    "control map",
+    "design object files",
+    "DTCG-compatible token files",
+    "template build plan"
+  ],
+  "approval_checklist": [
+    "Shared route data unchanged.",
+    "Privacy behavior unchanged.",
+    "Mobile and desktop screenshots reviewed.",
+    "Validator passes."
+  ]
+}

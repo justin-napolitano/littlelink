@@ -2,7 +2,7 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.components.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "component",
   "source_refs": [
@@ -16,7 +16,7 @@
       "type": "component",
       "name": "Foyer Root",
       "purpose": "Template root and token scope.",
-      "status": "approved",
+      "status": "implemented",
       "class_name": "foyer-index",
       "selector": "main[data-design-template='internet-foyer-index']",
       "tokens": {
@@ -39,7 +39,7 @@
       "type": "component",
       "name": "Identity Object",
       "purpose": "Name-bearing first impression surface.",
-      "status": "approved",
+      "status": "implemented",
       "class_name": "foyer-identity",
       "selector": ".foyer-identity",
       "content_bindings": [
@@ -65,7 +65,7 @@
       "type": "component",
       "name": "Route Cluster",
       "purpose": "Visual group of related route objects without visible section headings.",
-      "status": "approved",
+      "status": "implemented",
       "class_name": "foyer-cluster",
       "selector": ".foyer-cluster",
       "content_bindings": [
@@ -89,7 +89,7 @@
       "type": "component",
       "name": "Route Object",
       "purpose": "Touchable route into an external or internal destination.",
-      "status": "approved",
+      "status": "implemented",
       "class_name": "foyer-route",
       "selector": ".foyer-route",
       "content_bindings": [
@@ -147,7 +147,7 @@
       "type": "component",
       "name": "Foyer Footer",
       "purpose": "Privacy link and minimal footer surface.",
-      "status": "approved",
+      "status": "implemented",
       "class_name": "foyer-footer",
       "selector": ".foyer-footer",
       "content_bindings": [

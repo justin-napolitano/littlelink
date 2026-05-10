@@ -1,0 +1,118 @@
+{
+  "$schema": "../design-pitch.schema.json",
+  "pitch_id": "jnap-proof-index-pitch-v1",
+  "version": 1,
+  "status": "implemented",
+  "intake_ref": "src/design-templates/pitches/examples/jnap-intake.json",
+  "template_contract_refs": [
+    "src/design-templates/contracts/proof-index.contract.json"
+  ],
+  "client_summary": {
+    "positioning": "A hiring reviewer can find proof quickly without reading a pitch.",
+    "audience_priority": [
+      "professional-reviewer",
+      "social-discovery",
+      "direct-contact"
+    ],
+    "content_strategy": "Render shared site content through a distinct template-owned presentation without changing route contracts.",
+    "design_risks": [
+      "overfitting shared content to one template",
+      "letting prototype styles become ungoverned production defaults"
+    ]
+  },
+  "pitch_directions": [
+    {
+      "id": "proof-index",
+      "name": "Proof Index",
+      "thesis": "Scan-fast professional proof surface for resume, docs, GitHub, and direct contact.",
+      "reference_logic": [
+        "Use paco-coursey as a directional reference, not a visual copy source.",
+        "Use brian-lovin as a directional reference, not a visual copy source."
+      ],
+      "content_modules": [
+        "identity",
+        "work_primary",
+        "contact",
+        "social"
+      ],
+      "visual_system": [
+        "proof-forward hero split",
+        "primary work links are larger than secondary routes"
+      ],
+      "interaction_model": [
+        "border-color hover/focus only",
+        "no animated claims or decorative motion"
+      ],
+      "pros": [
+        "uses existing shared route data",
+        "previewable without activation",
+        "small implementation surface"
+      ],
+      "risks": [
+        "needs screenshot QA before activation",
+        "requires contract updates before visual changes"
+      ],
+      "best_for": [
+        "template comparison",
+        "personal PR front door experimentation"
+      ]
+    }
+  ],
+  "recommended_direction": {
+    "direction_id": "proof-index",
+    "why": "Backfilled to match the governed template lifecycle and preserve the existing implemented direction.",
+    "changes_to_template_contract": [
+      "Mark existing implementation as governed.",
+      "Bind manifest, control map, design objects, tokens, and build plan."
+    ]
+  },
+  "template_generation_plan": {
+    "template_id": "proof-index",
+    "preview_route": "/preview/proof-index",
+    "files_to_create": [
+      "src/design-templates/contracts/proof-index.contract.json",
+      "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+      "src/design-templates/pitches/examples/jnap-proof-index.build-plan.json",
+      "src/design-templates/proof-index/control-map.json",
+      "src/design-templates/design-objects/proof-index/palette.json",
+      "src/design-templates/design-objects/proof-index/typography.json",
+      "src/design-templates/design-objects/proof-index/spacing.json",
+      "src/design-templates/design-objects/proof-index/shape.json",
+      "src/design-templates/design-objects/proof-index/motion.json",
+      "src/design-templates/design-objects/proof-index/layout.json",
+      "src/design-templates/design-objects/proof-index/components.json",
+      "src/design-templates/design-objects/proof-index/content-map.json",
+      "src/design-templates/design-objects/proof-index/accessibility.json",
+      "src/design-templates/design-objects/proof-index/implementation-map.json",
+      "src/design-templates/design-objects/proof-index/tokens/color.tokens.json",
+      "src/design-templates/design-objects/proof-index/tokens/typography.tokens.json",
+      "src/design-templates/design-objects/proof-index/tokens/spacing.tokens.json"
+    ],
+    "files_to_update": [
+      "src/design-templates/proof-index/manifest.yaml",
+      "src/design-templates/candidate-templates.json",
+      "src/design-templates/README.md"
+    ],
+    "execplan_template": ".agent/execplans/templates/client-template-build-execplan.md"
+  },
+  "client_review_packet": {
+    "include": [
+      "template contract",
+      "one-page summary",
+      "mobile screenshot",
+      "desktop screenshot"
+    ],
+    "exclude": [
+      "private source material",
+      "unapproved social feeds",
+      "unreviewed analytics changes"
+    ]
+  },
+  "approval_gates": [
+    "template_contract_marked_implemented",
+    "design_objects_present",
+    "tokens_present",
+    "build_plan_present",
+    "validator_passes"
+  ]
+}

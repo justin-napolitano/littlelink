@@ -1,17 +1,28 @@
-id: garden-index
+version: 1
+template_id: garden-index
 status: implemented_preview
 source_content: src/data/site.json
 preview_path: /preview/garden-index
-intent: "Docs-forward public garden bridge without turning the root into a blog."
+intent: "Docs-forward bridge into the public garden/wiki without turning the root into a blog."
+contract: src/design-templates/contracts/garden-index.contract.json
+pitch: src/design-templates/pitches/examples/jnap-garden-index.pitch.json
+one_pager: src/design-templates/pitches/examples/jnap-garden-index.one-pager.json
+build_plan: src/design-templates/pitches/examples/jnap-garden-index.build-plan.json
+design_objects: src/design-templates/design-objects/garden-index/
+control_map: src/design-templates/garden-index/control-map.json
 invariants:
   - route_labels
   - route_urls
   - privacy_behavior
   - analytics_behavior
   - direct_link_behavior
+  - shared_content_ownership
 qa_gates:
   - npm_build
   - route_health_check
   - mobile_screenshot
   - desktop_screenshot
   - no_text_overflow
+  - keyboard_focus_visible
+  - contrast_readable
+  - template_can_be_previewed_without_activation

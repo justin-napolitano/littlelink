@@ -1,17 +1,28 @@
-id: proof-index
+version: 1
+template_id: proof-index
 status: implemented_preview
 source_content: src/data/site.json
 preview_path: /preview/proof-index
 intent: "Scan-fast professional proof surface for resume, docs, GitHub, and direct contact."
+contract: src/design-templates/contracts/proof-index.contract.json
+pitch: src/design-templates/pitches/examples/jnap-proof-index.pitch.json
+one_pager: src/design-templates/pitches/examples/jnap-proof-index.one-pager.json
+build_plan: src/design-templates/pitches/examples/jnap-proof-index.build-plan.json
+design_objects: src/design-templates/design-objects/proof-index/
+control_map: src/design-templates/proof-index/control-map.json
 invariants:
   - route_labels
   - route_urls
   - privacy_behavior
   - analytics_behavior
   - direct_link_behavior
+  - shared_content_ownership
 qa_gates:
   - npm_build
   - route_health_check
   - mobile_screenshot
   - desktop_screenshot
   - no_text_overflow
+  - keyboard_focus_visible
+  - contrast_readable
+  - template_can_be_previewed_without_activation

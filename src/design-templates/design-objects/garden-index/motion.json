@@ -1,0 +1,42 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "garden-index.motion.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "garden-index",
+  "kind": "motion",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+    "src/design-templates/contracts/garden-index.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "motion.interaction.hover",
+      "type": "motion_rule",
+      "name": "Hover and Focus Motion",
+      "purpose": "Small interaction response without carrying meaning.",
+      "status": "implemented",
+      "requirements": [
+        "subtle hover background on route rows",
+        "no motion required for comprehension"
+      ]
+    },
+    {
+      "id": "motion.reduced",
+      "type": "motion_rule",
+      "name": "Reduced Motion",
+      "purpose": "Respect reduced-motion preferences.",
+      "status": "implemented",
+      "requirements": [
+        "Template remains usable without motion.",
+        "Hover/focus meaning must remain visible."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "reduced_motion_acceptable"
+  ]
+}

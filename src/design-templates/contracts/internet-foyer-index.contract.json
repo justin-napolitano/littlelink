@@ -2,7 +2,7 @@
   "$schema": "./personal-site-template-contract.schema.json",
   "contract_id": "internet-foyer-template-v1",
   "version": 1,
-  "status": "planned",
+  "status": "implemented",
   "template": {
     "id": "internet-foyer-index",
     "name": "Internet Foyer",
@@ -246,7 +246,7 @@
     ]
   },
   "implementation_scope": {
-    "build_status": "Do not build until this contract is reviewed and approved.",
+    "build_status": "Implemented as a governed inactive preview template.",
     "intended_files": [
       "src/design-templates/internet-foyer-index/manifest.yaml",
       "src/design-templates/internet-foyer-index/index.astro",

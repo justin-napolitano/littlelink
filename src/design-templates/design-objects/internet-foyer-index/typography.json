@@ -2,7 +2,7 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.typography.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "typography",
   "source_refs": [
@@ -17,7 +17,7 @@
       "type": "font",
       "name": "Identity Display",
       "purpose": "Distinctive name treatment.",
-      "status": "approved",
+      "status": "implemented",
       "value": "'Fraunces', 'Georgia', serif",
       "css_variable": "--foyer-font-display",
       "requirements": [
@@ -30,7 +30,7 @@
       "type": "font",
       "name": "Readable Body",
       "purpose": "Fast, normal reading for labels and notes.",
-      "status": "approved",
+      "status": "implemented",
       "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif",
       "css_variable": "--foyer-font-body"
     },
@@ -39,7 +39,7 @@
       "type": "type_style",
       "name": "Name",
       "purpose": "First impression and identity.",
-      "status": "approved",
+      "status": "implemented",
       "values": {
         "font_family": "font.display.identity",
         "font_size": "clamp(2.8rem, 12vw, 4.75rem)",
@@ -58,7 +58,7 @@
       "type": "type_style",
       "name": "Route Label",
       "purpose": "Readable labels on route objects.",
-      "status": "approved",
+      "status": "implemented",
       "values": {
         "font_family": "font.body.default",
         "font_size": "1rem",
