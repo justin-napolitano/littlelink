@@ -2,7 +2,7 @@
   "$schema": "../design-pitch.schema.json",
   "pitch_id": "jnap-internet-foyer-pitch-v1",
   "version": 1,
-  "status": "ready_for_review",
+  "status": "approved_for_execplan",
   "intake_ref": "src/design-templates/pitches/examples/jnap-intake.json",
   "template_contract_refs": [
     "src/design-templates/contracts/internet-foyer.contract.json"

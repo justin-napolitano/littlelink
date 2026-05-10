@@ -12,6 +12,7 @@
     "pitch_ref",
     "template_contract_ref",
     "design_object_refs",
+    "token_refs",
     "branch",
     "implementation_slices",
     "validation_commands",
@@ -47,6 +48,13 @@
       "type": "string"
     },
     "design_object_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "token_refs": {
       "type": "array",
       "items": {
         "type": "string"

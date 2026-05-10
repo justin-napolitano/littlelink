@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/design-token-file.schema.json",
+  "title": "DTCG-Compatible Design Token File",
+  "description": "A local contract for design token exports that use DTCG-style $type, $value, $description, and $extensions fields.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "$schema",
+    "$metadata"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "token_set_id",
+        "format",
+        "template_id",
+        "source_object_refs"
+      ],
+      "properties": {
+        "token_set_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "format": {
+          "type": "string"
+        },
+        "template_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "source_object_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$metadata": {
+    "token_set_id": "internet-foyer.color.tokens.v1",
+    "format": "DTCG-compatible",
+    "template_id": "internet-foyer-index",
+    "source_object_refs": [
+      "src/design-templates/design-objects/internet-foyer-index/palette.json"
+    ]
+  },
+  "color": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "#F5F2EC",
+        "$description": "Warm page base.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-color-surface-page",
+            "source_object_id": "color.surface.page"
+          }
+        }
+      },
+      "object": {
+        "$type": "color",
+        "$value": "#FDFBF7",
+        "$description": "Primary object surface.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-color-surface-object",
+            "source_object_id": "color.surface.object"
+          }
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "#0F100F",
+        "$description": "Primary readable text.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-color-text-primary",
+            "source_object_id": "color.text.primary"
+          }
+        }
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "rgba(15, 16, 15, 0.65)",
+        "$description": "Secondary text.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-color-text-secondary",
+            "source_object_id": "color.text.secondary"
+          }
+        }
+      }
+    },
+    "accent": {
+      "living": {
+        "$type": "color",
+        "$value": "#0F7C66",
+        "$description": "Small route accents and focus states.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-color-accent-living",
+            "source_object_id": "color.accent.living"
+          }
+        }
+      },
+      "electric": {
+        "$type": "color",
+        "$value": "#2563EB",
+        "$description": "Occasional interaction accent.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-color-accent-electric",
+            "source_object_id": "color.accent.electric"
+          }
+        }
+      }
+    },
+    "line": {
+      "soft": {
+        "$type": "color",
+        "$value": "rgba(15, 16, 15, 0.12)",
+        "$description": "Low-contrast object borders.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-color-line-soft",
+            "source_object_id": "color.line.soft"
+          }
+        }
+      }
+    }
+  }
+}

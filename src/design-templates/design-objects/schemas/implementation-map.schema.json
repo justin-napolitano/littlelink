@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/implementation-map.schema.json",
+  "title": "Implementation Map Design Object Set",
+  "description": "Implementation-map-specific constraints layered on top of design-object-set.schema.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "objects"
+  ],
+  "properties": {
+    "kind": {
+      "const": "implementation_map"
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "requirements"
+        ],
+        "properties": {
+          "type": {
+            "const": "implementation_rule"
+          },
+          "implementation": {
+            "type": "object",
+            "properties": {
+              "files": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "selectors": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "test_hooks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

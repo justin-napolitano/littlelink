@@ -21,10 +21,13 @@ This layer exists so the platform can support real design work for Justin's root
 5. **Design objects**
    `../design-objects/design-object-set.schema.json` defines build-grade JSON for palette, typography, spacing, shape, motion, layout, components, content map, accessibility, and implementation map.
 
-6. **Template build plan**
+6. **Design tokens**
+   `../design-objects/*/tokens/*.tokens.json` exports DTCG-compatible color, typography, and spacing decisions for build tooling.
+
+7. **Template build plan**
    `template-build-plan.schema.json` turns an approved pitch into implementation slices, validation commands, PR policy, and stop conditions.
 
-7. **ExecPlan**
+8. **ExecPlan**
    `.agent/execplans/templates/client-template-build-execplan.md` is the human/agent execution wrapper for the build plan.
 
 ## Rules
@@ -44,7 +47,19 @@ This layer exists so the platform can support real design work for Justin's root
 Generate a readable Markdown brief from a one-pager JSON contract:
 
 ```bash
-npm run design:one-pager -- --input src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json --output src/design-templates/pitches/generated/jnap-internet-foyer.one-pager.md
+npm run design:one-pager -- --input src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json --output src/design-templates/pitches/generated/jnap-internet-foyer.one-pager.md --design-objects-dir src/design-templates/design-objects/internet-foyer-index
 ```
 
-Generated Markdown is for review and handoff. The JSON contract remains the source of truth.
+Generate a visual HTML review sheet from the same contracts:
+
+```bash
+npm run design:one-pager -- --input src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json --output src/design-templates/pitches/generated/jnap-internet-foyer.one-pager.html --design-objects-dir src/design-templates/design-objects/internet-foyer-index
+```
+
+Validate the design contract layer before implementation:
+
+```bash
+npm run design:validate
+```
+
+Generated Markdown and HTML are for review and handoff. The JSON contracts and token files remain the source of truth.

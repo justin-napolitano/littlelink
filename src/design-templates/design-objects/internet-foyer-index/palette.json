@@ -9,6 +9,31 @@
     "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json",
     "src/design-templates/contracts/internet-foyer.contract.json"
   ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/internet-foyer-index/tokens/color.tokens.json",
+    "contrast_pairs": [
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.object",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.accent.living",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.accent.electric",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      }
+    ]
+  },
   "objects": [
     {
       "id": "color.surface.page",

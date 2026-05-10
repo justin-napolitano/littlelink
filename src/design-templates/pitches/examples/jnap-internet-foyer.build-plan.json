@@ -2,7 +2,7 @@
   "$schema": "../template-build-plan.schema.json",
   "plan_id": "jnap-internet-foyer-build-plan-v1",
   "version": 1,
-  "status": "draft",
+  "status": "ready_for_build",
   "pitch_ref": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
   "template_contract_ref": "src/design-templates/contracts/internet-foyer.contract.json",
   "design_object_refs": [
@@ -16,6 +16,11 @@
     "src/design-templates/design-objects/internet-foyer-index/content-map.json",
     "src/design-templates/design-objects/internet-foyer-index/accessibility.json",
     "src/design-templates/design-objects/internet-foyer-index/implementation-map.json"
+  ],
+  "token_refs": [
+    "src/design-templates/design-objects/internet-foyer-index/tokens/color.tokens.json",
+    "src/design-templates/design-objects/internet-foyer-index/tokens/typography.tokens.json",
+    "src/design-templates/design-objects/internet-foyer-index/tokens/spacing.tokens.json"
   ],
   "branch": "impl-execplan/internet-foyer-template",
   "implementation_slices": [
@@ -84,9 +89,9 @@
     }
   ],
   "validation_commands": [
+    "npm run design:validate",
     "npm run build",
     "git diff --check",
-    "design object JSON validates against src/design-templates/design-objects/design-object-set.schema.json",
     "curl -I http://127.0.0.1:4327/preview/internet-foyer-index"
   ],
   "pull_request_policy": {

@@ -2,7 +2,7 @@
   "$schema": "../design-one-pager.schema.json",
   "one_pager_id": "jnap-internet-foyer-one-pager-v1",
   "version": 1,
-  "status": "ready_for_client_review",
+  "status": "approved",
   "pitch_ref": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
   "client": {
     "name": "Justin Napolitano",

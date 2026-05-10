@@ -137,7 +137,10 @@
       "accessibility": [
         "Visible text label is required.",
         "External links retain rel and target behavior from current template conventions."
-      ]
+      ],
+      "metadata": {
+        "min_target_px": 44
+      }
     },
     {
       "id": "component.foyer_footer",

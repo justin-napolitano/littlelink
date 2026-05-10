@@ -19,7 +19,16 @@
       "requirements": [
         "Focus ring visible on every route object.",
         "Focus indication must not rely on motion alone."
-      ]
+      ],
+      "metadata": {
+        "machine_checks": [
+          {
+            "id": "focus-selector-required",
+            "type": "selector_required",
+            "selector": ".foyer-route:focus-visible"
+          }
+        ]
+      }
     },
     {
       "id": "accessibility.tap_targets",
@@ -30,7 +39,17 @@
       "requirements": [
         "Route objects are at least 44px high.",
         "Route objects have enough spacing to avoid accidental taps."
-      ]
+      ],
+      "metadata": {
+        "machine_checks": [
+          {
+            "id": "route-target-minimum",
+            "type": "tap_target_minimum",
+            "selector": ".foyer-route",
+            "minimum_px": 44
+          }
+        ]
+      }
     },
     {
       "id": "accessibility.motion",
@@ -42,7 +61,16 @@
       "requirements": [
         "Disable or simplify object movement.",
         "All routes remain visible and usable without animation."
-      ]
+      ],
+      "metadata": {
+        "machine_checks": [
+          {
+            "id": "reduced-motion-query-required",
+            "type": "selector_required",
+            "selector": "@media (prefers-reduced-motion: reduce)"
+          }
+        ]
+      }
     },
     {
       "id": "accessibility.structure",
@@ -54,7 +82,22 @@
         "The main identity has a single h1.",
         "Route clusters use aria-label when visible headings are removed.",
         "Links retain readable labels."
-      ]
+      ],
+      "metadata": {
+        "machine_checks": [
+          {
+            "id": "single-h1",
+            "type": "semantic_rule",
+            "expectation": "exactly_one_h1"
+          },
+          {
+            "id": "cluster-aria-label",
+            "type": "attribute_required",
+            "selector": ".foyer-cluster",
+            "attribute": "aria-label"
+          }
+        ]
+      }
     }
   ],
   "build_rules": [

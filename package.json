@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "favicons": "node scripts/generate-favicons.mjs",
-    "design:one-pager": "node scripts/generate-design-one-pager.mjs"
+    "design:one-pager": "node scripts/generate-design-one-pager.mjs",
+    "design:validate": "node scripts/validate-design-contracts.mjs"
   },
   "repository": {
     "type": "git",

@@ -8,6 +8,9 @@
   "source_refs": [
     "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
   ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/internet-foyer-index/tokens/spacing.tokens.json"
+  },
   "objects": [
     {
       "id": "space.1",

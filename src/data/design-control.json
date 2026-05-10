@@ -16,7 +16,9 @@
     "design_one_pager_schema": "src/design-templates/pitches/design-one-pager.schema.json",
     "template_build_plan_schema": "src/design-templates/pitches/template-build-plan.schema.json",
     "design_object_schema": "src/design-templates/design-objects/design-object-set.schema.json",
+    "design_token_schema": "src/design-templates/design-objects/schemas/design-token-file.schema.json",
     "internet_foyer_design_objects": "src/design-templates/design-objects/internet-foyer-index/",
+    "internet_foyer_design_tokens": "src/design-templates/design-objects/internet-foyer-index/tokens/",
     "design_pitch_execplan_template": ".agent/execplans/templates/client-design-pitch-execplan.md",
     "template_build_execplan_template": ".agent/execplans/templates/client-template-build-execplan.md",
     "template_ids": "src/lib/design-template-ids.ts",
@@ -30,7 +32,7 @@
     "active_selection_rule": "Only one template is active for the root route at a time.",
     "shared_content_rule": "Improve site.json as universal content; do not bake current-template layout needs into shared data.",
     "presentation_scope_rule": "Spacing, typography, background, density, and motion choices are template-owned unless explicitly promoted to shared controls.",
-    "pitch_workflow_rule": "Client designs start with intake, pitch, template contract, build plan, and execplan artifacts before implementation."
+    "pitch_workflow_rule": "Client designs start with intake, pitch, template contract, design objects, token exports, build plan, and execplan artifacts before implementation."
   },
   "candidate_templates": {
     "planning_artifact": "src/design-templates/candidate-templates.json",

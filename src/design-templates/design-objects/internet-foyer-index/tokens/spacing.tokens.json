@@ -1,0 +1,92 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$metadata": {
+    "token_set_id": "internet-foyer.spacing.tokens.v1",
+    "format": "DTCG-compatible",
+    "template_id": "internet-foyer-index",
+    "source_object_refs": [
+      "src/design-templates/design-objects/internet-foyer-index/spacing.json"
+    ]
+  },
+  "space": {
+    "1": {
+      "$type": "dimension",
+      "$value": "0.25rem",
+      "$description": "Small internal offset.",
+      "$extensions": {
+        "jnap": {
+          "css_variable": "--foyer-space-1",
+          "source_object_id": "space.1"
+        }
+      }
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "0.5rem",
+      "$description": "Small gap.",
+      "$extensions": {
+        "jnap": {
+          "css_variable": "--foyer-space-2",
+          "source_object_id": "space.2"
+        }
+      }
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "0.85rem",
+      "$description": "Default tight gap.",
+      "$extensions": {
+        "jnap": {
+          "css_variable": "--foyer-space-3",
+          "source_object_id": "space.3"
+        }
+      }
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "1.1rem",
+      "$description": "Object padding and cluster gap.",
+      "$extensions": {
+        "jnap": {
+          "css_variable": "--foyer-space-4",
+          "source_object_id": "space.4"
+        }
+      }
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "1.75rem",
+      "$description": "Section rhythm.",
+      "$extensions": {
+        "jnap": {
+          "css_variable": "--foyer-space-6",
+          "source_object_id": "space.6"
+        }
+      }
+    },
+    "page": {
+      "mobile": {
+        "$type": "dimension",
+        "$value": "1.25rem",
+        "$description": "Comfortable mobile edge inset.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-page-padding-mobile",
+            "source_object_id": "space.page.mobile"
+          }
+        }
+      },
+      "desktop": {
+        "$type": "dimension",
+        "$value": "clamp(2rem, 5vw, 5rem)",
+        "$description": "Responsive desktop page inset.",
+        "$extensions": {
+          "jnap": {
+            "css_variable": "--foyer-page-padding-desktop",
+            "source_object_id": "space.page.desktop"
+          }
+        }
+      }
+    }
+  }
+}

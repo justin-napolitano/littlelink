@@ -50,14 +50,16 @@ Client design work uses a contract stack:
 3. `src/design-templates/pitches/design-pitch.schema.json`
 4. `src/design-templates/pitches/design-one-pager.schema.json`
 5. `src/design-templates/design-objects/design-object-set.schema.json`
-6. `src/design-templates/pitches/template-build-plan.schema.json`
-7. `.agent/execplans/templates/client-design-pitch-execplan.md`
-8. `.agent/execplans/templates/client-template-build-execplan.md`
+6. `src/design-templates/design-objects/*/tokens/*.tokens.json`
+7. `src/design-templates/pitches/template-build-plan.schema.json`
+8. `.agent/execplans/templates/client-design-pitch-execplan.md`
+9. `.agent/execplans/templates/client-template-build-execplan.md`
 
-The pitch step can compare several design directions, but it should recommend one direction for the first build. The one-pager turns that recommendation into a client-facing summary of fonts, palette, layout, motion, modules, references, deliverables, and approvals. Design objects turn the recommendation into build-grade tokens, classes, layout rules, content maps, accessibility requirements, and implementation maps. The build-plan step turns the approved pitch into implementation slices and validation commands. The execplan step executes those slices as an inactive preview template.
+The pitch step can compare several design directions, but it should recommend one direction for the first build. The one-pager turns that recommendation into a client-facing summary of fonts, palette, layout, motion, modules, references, deliverables, and approvals. Design objects turn the recommendation into build-grade classes, layout rules, content maps, accessibility requirements, and implementation maps. DTCG-compatible token files turn the build-critical palette, type, and spacing choices into machine-readable values. The build-plan step turns the approved pitch into implementation slices and validation commands. The execplan step executes those slices as an inactive preview template.
 
 Example JNAP planning artifacts live in `src/design-templates/pitches/examples/`.
 Example JNAP design objects live in `src/design-templates/design-objects/internet-foyer-index/`.
+Run `npm run design:validate` before a build agent edits template code.
 
 ## Preview Harness
 
