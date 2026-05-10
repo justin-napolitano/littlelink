@@ -1,0 +1,86 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.motion.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "motion",
+  "source_refs": [
+    "src/design-templates/contracts/internet-foyer.contract.json",
+    "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
+  ],
+  "objects": [
+    {
+      "id": "motion.duration.quick",
+      "type": "duration_token",
+      "name": "Quick",
+      "purpose": "Immediate tap and hover response.",
+      "status": "approved",
+      "value": "160ms",
+      "css_variable": "--foyer-motion-quick"
+    },
+    {
+      "id": "motion.duration.gentle",
+      "type": "duration_token",
+      "name": "Gentle",
+      "purpose": "Small object wake transitions.",
+      "status": "approved",
+      "value": "260ms",
+      "css_variable": "--foyer-motion-gentle"
+    },
+    {
+      "id": "motion.easing.natural",
+      "type": "easing_token",
+      "name": "Natural",
+      "purpose": "Soft movement without spectacle.",
+      "status": "approved",
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "css_variable": "--foyer-ease-natural"
+    },
+    {
+      "id": "motion.route.wake",
+      "type": "interaction",
+      "name": "Route Wake",
+      "purpose": "Small proof-of-craft response on hover, focus, and tap.",
+      "status": "approved",
+      "selector": ".foyer-route",
+      "states": [
+        {
+          "id": "hover",
+          "trigger": ":hover",
+          "tokens": {
+            "transform": "translateY(-2px) rotate(-0.25deg)",
+            "transition": "transform var(--foyer-motion-gentle) var(--foyer-ease-natural)"
+          },
+          "requirements": [
+            "No layout shift."
+          ]
+        },
+        {
+          "id": "focus",
+          "trigger": ":focus-visible",
+          "tokens": {
+            "outline": "2px solid var(--foyer-color-accent-living)",
+            "outline_offset": "4px"
+          },
+          "requirements": [
+            "Focus is visible without color alone."
+          ]
+        }
+      ],
+      "requirements": [
+        "Works without JavaScript.",
+        "Must be disabled or simplified under prefers-reduced-motion."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Static layout must work before motion is added.",
+    "No route access may be delayed by animation.",
+    "Anime.js-style interaction is optional and only allowed after CSS motion passes."
+  ],
+  "qa_gates": [
+    "reduced_motion_acceptable",
+    "no_motion_required_for_comprehension"
+  ]
+}

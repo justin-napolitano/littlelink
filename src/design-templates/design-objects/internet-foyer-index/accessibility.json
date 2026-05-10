@@ -1,0 +1,70 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.accessibility.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "accessibility",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
+  ],
+  "objects": [
+    {
+      "id": "accessibility.focus",
+      "type": "accessibility_rule",
+      "name": "Visible Focus",
+      "purpose": "Keyboard navigation clarity.",
+      "status": "approved",
+      "selector": ".foyer-route:focus-visible",
+      "requirements": [
+        "Focus ring visible on every route object.",
+        "Focus indication must not rely on motion alone."
+      ]
+    },
+    {
+      "id": "accessibility.tap_targets",
+      "type": "accessibility_rule",
+      "name": "Comfortable Tap Targets",
+      "purpose": "Mobile-first usability.",
+      "status": "approved",
+      "requirements": [
+        "Route objects are at least 44px high.",
+        "Route objects have enough spacing to avoid accidental taps."
+      ]
+    },
+    {
+      "id": "accessibility.motion",
+      "type": "accessibility_rule",
+      "name": "Reduced Motion",
+      "purpose": "Motion safety.",
+      "status": "approved",
+      "selector": "@media (prefers-reduced-motion: reduce)",
+      "requirements": [
+        "Disable or simplify object movement.",
+        "All routes remain visible and usable without animation."
+      ]
+    },
+    {
+      "id": "accessibility.structure",
+      "type": "accessibility_rule",
+      "name": "Semantic Structure",
+      "purpose": "Preserve structure while hiding visible category headings.",
+      "status": "approved",
+      "requirements": [
+        "The main identity has a single h1.",
+        "Route clusters use aria-label when visible headings are removed.",
+        "Links retain readable labels."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Accessibility rules are not optional visual polish.",
+    "Screenshots do not replace keyboard and semantic checks."
+  ],
+  "qa_gates": [
+    "keyboard_focus_visible",
+    "tap_target_review",
+    "reduced_motion_acceptable",
+    "logical_heading_structure"
+  ]
+}

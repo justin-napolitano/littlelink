@@ -1,0 +1,79 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.layout.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "layout",
+  "source_refs": [
+    "src/design-templates/contracts/internet-foyer.contract.json",
+    "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json"
+  ],
+  "objects": [
+    {
+      "id": "layout.mobile.first_screen",
+      "type": "layout_rule",
+      "name": "Mobile First Screen",
+      "purpose": "Create curiosity immediately without explaining everything.",
+      "status": "approved",
+      "selector": ".foyer-index",
+      "tokens": {
+        "display": "grid",
+        "gap": "var(--foyer-space-6)",
+        "padding": "48px var(--foyer-page-padding-mobile) 64px"
+      },
+      "requirements": [
+        "Name and first route objects visible on 390px mobile.",
+        "A below-fold hint should be visible on common mobile viewports.",
+        "No visible category heading is required for comprehension."
+      ]
+    },
+    {
+      "id": "layout.route_clusters.mobile",
+      "type": "layout_rule",
+      "name": "Mobile Route Clusters",
+      "purpose": "Group routes visually through spacing and object rhythm.",
+      "status": "approved",
+      "selector": ".foyer-cluster",
+      "tokens": {
+        "display": "grid",
+        "gap": "var(--foyer-space-3)"
+      },
+      "requirements": [
+        "Each route object remains at least 44px high.",
+        "Cluster labels should be aria labels, not visible section headings."
+      ]
+    },
+    {
+      "id": "layout.desktop.front_room",
+      "type": "layout_rule",
+      "name": "Desktop Front Room",
+      "purpose": "Loosen desktop into a front-room composition.",
+      "status": "approved",
+      "selector": ".foyer-room",
+      "responsive": [
+        {
+          "breakpoint": "min-width: 860px",
+          "behavior": "Use asymmetric object placement while preserving reading order.",
+          "tokens": {
+            "grid_template_columns": "minmax(0, 0.9fr) minmax(320px, 1.1fr)",
+            "align_items": "start"
+          }
+        }
+      ],
+      "requirements": [
+        "Desktop must not become a centered SaaS hero.",
+        "Reading order must remain logical."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Mobile layout is the canonical design; desktop adapts it.",
+    "Do not introduce a landing-page hero or marketing CTA block."
+  ],
+  "qa_gates": [
+    "mobile_screenshot",
+    "desktop_screenshot",
+    "logical_reading_order"
+  ]
+}

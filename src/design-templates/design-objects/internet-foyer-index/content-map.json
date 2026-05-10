@@ -1,0 +1,97 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.content-map.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "content_map",
+  "source_refs": [
+    "src/data/site.json",
+    "src/design-templates/contracts/internet-foyer.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "content.identity",
+      "type": "content_binding",
+      "name": "Identity",
+      "purpose": "Map shared identity content into the identity object.",
+      "status": "approved",
+      "content_bindings": [
+        {
+          "source_path": "hero.name",
+          "target": "component.identity_object",
+          "rule": "Required."
+        },
+        {
+          "source_path": "hero.subhead",
+          "target": "component.identity_object",
+          "rule": "Do not render by default for internet-foyer-index."
+        }
+      ],
+      "requirements": [
+        "The root should not explain itself with a large subhead."
+      ]
+    },
+    {
+      "id": "content.proof_routes",
+      "type": "content_binding",
+      "name": "Proof Routes",
+      "purpose": "Professional trust exits.",
+      "status": "approved",
+      "content_bindings": [
+        {
+          "source_path": "sections[id=studio].links",
+          "target": "component.route_cluster",
+          "rule": "Render first cluster."
+        }
+      ],
+      "requirements": [
+        "Resume, docs, and GitHub remain visible and easy to tap."
+      ]
+    },
+    {
+      "id": "content.contact_routes",
+      "type": "content_binding",
+      "name": "Contact Routes",
+      "purpose": "Direct contact while preserving private URL proxying.",
+      "status": "approved",
+      "content_bindings": [
+        {
+          "source_path": "sections[id=direct].links",
+          "target": "component.route_cluster",
+          "rule": "Render with original href values."
+        }
+      ],
+      "requirements": [
+        "Do not expose direct private URLs.",
+        "Preserve /api/direct/[slug] behavior."
+      ]
+    },
+    {
+      "id": "content.social_routes",
+      "type": "content_binding",
+      "name": "Social Routes",
+      "purpose": "Human texture through public social routes.",
+      "status": "approved",
+      "content_bindings": [
+        {
+          "source_path": "sections[id=socials].links",
+          "target": "component.route_cluster",
+          "rule": "Render after proof and contact clusters."
+        }
+      ],
+      "requirements": [
+        "No embedded feeds.",
+        "No scraped social content."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Render shared src/data/site.json content only.",
+    "Do not add client/private content during template build."
+  ],
+  "qa_gates": [
+    "shared_content_unchanged",
+    "privacy_behavior_unchanged"
+  ]
+}

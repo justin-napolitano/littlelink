@@ -11,6 +11,7 @@
     "status",
     "pitch_ref",
     "template_contract_ref",
+    "design_object_refs",
     "branch",
     "implementation_slices",
     "validation_commands",
@@ -44,6 +45,13 @@
     },
     "template_contract_ref": {
       "type": "string"
+    },
+    "design_object_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
     },
     "branch": {
       "type": "string"

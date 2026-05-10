@@ -18,10 +18,13 @@ This layer exists so the platform can support real design work for Justin's root
 4. **Design one-pager**
    `design-one-pager.schema.json` summarizes the selected direction for client review: thesis, fonts, palette, layout, motion, modules, references, deliverables, and approvals.
 
-5. **Template build plan**
+5. **Design objects**
+   `../design-objects/design-object-set.schema.json` defines build-grade JSON for palette, typography, spacing, shape, motion, layout, components, content map, accessibility, and implementation map.
+
+6. **Template build plan**
    `template-build-plan.schema.json` turns an approved pitch into implementation slices, validation commands, PR policy, and stop conditions.
 
-6. **ExecPlan**
+7. **ExecPlan**
    `.agent/execplans/templates/client-template-build-execplan.md` is the human/agent execution wrapper for the build plan.
 
 ## Rules

@@ -5,6 +5,18 @@
   "status": "draft",
   "pitch_ref": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
   "template_contract_ref": "src/design-templates/contracts/internet-foyer.contract.json",
+  "design_object_refs": [
+    "src/design-templates/design-objects/internet-foyer-index/palette.json",
+    "src/design-templates/design-objects/internet-foyer-index/typography.json",
+    "src/design-templates/design-objects/internet-foyer-index/spacing.json",
+    "src/design-templates/design-objects/internet-foyer-index/shape.json",
+    "src/design-templates/design-objects/internet-foyer-index/motion.json",
+    "src/design-templates/design-objects/internet-foyer-index/layout.json",
+    "src/design-templates/design-objects/internet-foyer-index/components.json",
+    "src/design-templates/design-objects/internet-foyer-index/content-map.json",
+    "src/design-templates/design-objects/internet-foyer-index/accessibility.json",
+    "src/design-templates/design-objects/internet-foyer-index/implementation-map.json"
+  ],
   "branch": "impl-execplan/internet-foyer-template",
   "implementation_slices": [
     {
@@ -21,6 +33,7 @@
       "deliverable": "Previewable inactive template at /preview/internet-foyer-index.",
       "acceptance_checks": [
         "template renders shared site.json",
+        "template classes follow design-object component class names",
         "production active template unchanged",
         "preview route returns 200",
         "npm run build passes"
@@ -73,6 +86,7 @@
   "validation_commands": [
     "npm run build",
     "git diff --check",
+    "design object JSON validates against src/design-templates/design-objects/design-object-set.schema.json",
     "curl -I http://127.0.0.1:4327/preview/internet-foyer-index"
   ],
   "pull_request_policy": {

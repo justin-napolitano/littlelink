@@ -1,0 +1,90 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.implementation-map.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "implementation_map",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json",
+    "src/design-templates/design-objects/internet-foyer-index/components.json"
+  ],
+  "objects": [
+    {
+      "id": "implementation.template_files",
+      "type": "implementation_rule",
+      "name": "Template Files",
+      "purpose": "Files created by the first inactive template build.",
+      "status": "approved",
+      "implementation": {
+        "files": [
+          "src/design-templates/internet-foyer-index/manifest.yaml",
+          "src/design-templates/internet-foyer-index/index.astro",
+          "src/design-templates/internet-foyer-index/styles.css",
+          "src/design-templates/internet-foyer-index/control-map.json"
+        ],
+        "selectors": [
+          "main[data-design-template='internet-foyer-index']",
+          ".foyer-index",
+          ".foyer-identity",
+          ".foyer-name",
+          ".foyer-cluster",
+          ".foyer-route"
+        ],
+        "test_hooks": [
+          "/preview/internet-foyer-index"
+        ]
+      },
+      "requirements": [
+        "Template remains inactive until explicit activation.",
+        "Production active-template config must not change."
+      ]
+    },
+    {
+      "id": "implementation.registry_files",
+      "type": "implementation_rule",
+      "name": "Registry Files",
+      "purpose": "Files updated to expose inactive preview route.",
+      "status": "approved",
+      "implementation": {
+        "files": [
+          "src/lib/design-template-ids.ts",
+          "src/lib/design-template-registry.ts",
+          "src/design-templates/candidate-templates.json",
+          "src/design-templates/README.md"
+        ],
+        "test_hooks": [
+          "/preview",
+          "/preview/internet-foyer-index"
+        ]
+      },
+      "requirements": [
+        "Preview index should show internet-foyer-index as implemented after build.",
+        "Root route still renders current active template."
+      ]
+    },
+    {
+      "id": "implementation.validation",
+      "type": "implementation_rule",
+      "name": "Validation",
+      "purpose": "Required verification for build PR.",
+      "status": "approved",
+      "requirements": [
+        "npm run build",
+        "git diff --check",
+        "curl -I http://127.0.0.1:4327/preview/internet-foyer-index",
+        "mobile screenshot at 390px width",
+        "desktop screenshot at 1440px width"
+      ]
+    }
+  ],
+  "build_rules": [
+    "A build agent should read this map before editing template files.",
+    "If implementation needs a class or file not listed here, update the design object first."
+  ],
+  "qa_gates": [
+    "build_passes",
+    "preview_route_healthy",
+    "root_route_unchanged"
+  ]
+}

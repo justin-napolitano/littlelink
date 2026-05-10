@@ -1,0 +1,84 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.spacing.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "spacing",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
+  ],
+  "objects": [
+    {
+      "id": "space.1",
+      "type": "space_token",
+      "name": "Space 1",
+      "purpose": "Small internal offset.",
+      "status": "approved",
+      "value": "0.25rem",
+      "css_variable": "--foyer-space-1"
+    },
+    {
+      "id": "space.2",
+      "type": "space_token",
+      "name": "Space 2",
+      "purpose": "Small gap.",
+      "status": "approved",
+      "value": "0.5rem",
+      "css_variable": "--foyer-space-2"
+    },
+    {
+      "id": "space.3",
+      "type": "space_token",
+      "name": "Space 3",
+      "purpose": "Default tight gap.",
+      "status": "approved",
+      "value": "0.85rem",
+      "css_variable": "--foyer-space-3"
+    },
+    {
+      "id": "space.4",
+      "type": "space_token",
+      "name": "Space 4",
+      "purpose": "Object padding and cluster gap.",
+      "status": "approved",
+      "value": "1.1rem",
+      "css_variable": "--foyer-space-4"
+    },
+    {
+      "id": "space.6",
+      "type": "space_token",
+      "name": "Space 6",
+      "purpose": "Section rhythm.",
+      "status": "approved",
+      "value": "1.75rem",
+      "css_variable": "--foyer-space-6"
+    },
+    {
+      "id": "space.page.mobile",
+      "type": "space_token",
+      "name": "Mobile Page Padding",
+      "purpose": "Comfortable mobile edge inset.",
+      "status": "approved",
+      "value": "1.25rem",
+      "css_variable": "--foyer-page-padding-mobile"
+    },
+    {
+      "id": "space.page.desktop",
+      "type": "space_token",
+      "name": "Desktop Page Padding",
+      "purpose": "Desktop page edge inset.",
+      "status": "approved",
+      "value": "clamp(2rem, 5vw, 5rem)",
+      "css_variable": "--foyer-page-padding-desktop"
+    }
+  ],
+  "build_rules": [
+    "Use spacing tokens for component padding and gaps.",
+    "Keep mobile density high enough to show a below-fold hint."
+  ],
+  "qa_gates": [
+    "mobile_below_fold_hint_visible",
+    "tap_targets_not_crowded"
+  ]
+}

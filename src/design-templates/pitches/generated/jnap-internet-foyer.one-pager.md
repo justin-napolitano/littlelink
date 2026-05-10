@@ -113,6 +113,7 @@ A mobile-first front room on the internet: a few high-signal objects, enough per
 ## Deliverables
 
 - inactive preview template
+- design object JSON files
 - mobile screenshot
 - desktop screenshot
 - design-control updates
