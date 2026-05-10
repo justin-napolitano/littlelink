@@ -1,1 +1,3 @@
-/* Template-local token overrides for link-index-mobile-first belong here. */
+main[data-design-template='link-index-mobile-first'] .hero--simple h1 {
+  margin-bottom: 0;
+}
