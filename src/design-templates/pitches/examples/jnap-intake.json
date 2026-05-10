@@ -1,0 +1,144 @@
+{
+  "$schema": "../client-intake.schema.json",
+  "intake_id": "jnap-personal-root-intake-v1",
+  "version": 1,
+  "status": "approved_for_pitch",
+  "client": {
+    "id": "jnap",
+    "display_name": "Justin Napolitano",
+    "business_type": "personal-public-pr-platform",
+    "canonical_url": "https://jnap.me"
+  },
+  "site_goal": {
+    "primary_outcome": "Make a visitor interested enough to click into the right next surface.",
+    "first_impression": "Justin has taste, range, and a real life beyond a resume.",
+    "conversion_paths": [
+      "resume",
+      "docs",
+      "github",
+      "schedule",
+      "social"
+    ],
+    "non_goals": [
+      "explain everything on the root",
+      "look like a pitch deck",
+      "look like a generic tech portfolio"
+    ]
+  },
+  "audiences": [
+    {
+      "id": "recruiter",
+      "intent": "Find proof and decide whether to keep reviewing.",
+      "must_find": [
+        "resume",
+        "docs",
+        "github"
+      ]
+    },
+    {
+      "id": "collaborator",
+      "intent": "Understand what Justin makes and how to contact him.",
+      "must_find": [
+        "docs",
+        "github",
+        "schedule"
+      ]
+    },
+    {
+      "id": "personal",
+      "intent": "Get a normal human read without a polished sales page.",
+      "must_find": [
+        "instagram",
+        "bluesky",
+        "signal"
+      ]
+    }
+  ],
+  "brand_inputs": {
+    "tone": [
+      "curious",
+      "direct",
+      "normal",
+      "confident",
+      "slightly playful"
+    ],
+    "visual_preferences": [
+      "mobile-first",
+      "experience-first",
+      "less polished than current root",
+      "more object-led",
+      "not wordy"
+    ],
+    "references": [
+      {
+        "url": "https://paco.me/",
+        "why": "Plain personal index with signal density."
+      },
+      {
+        "url": "https://getcoleman.com/agencies/",
+        "why": "Confident direct proof list."
+      },
+      {
+        "url": "https://animejs.com/",
+        "why": "Playful interaction as evidence of craft."
+      }
+    ],
+    "avoid": [
+      "pitch deck",
+      "generic SaaS landing page",
+      "tech stack personality",
+      "overexplaining",
+      "fake gravitas"
+    ]
+  },
+  "content_inventory": {
+    "available": [
+      "identity",
+      "resume",
+      "docs",
+      "github",
+      "schedule",
+      "signal",
+      "email",
+      "linkedin",
+      "bluesky",
+      "instagram"
+    ],
+    "missing": [
+      "selected projects",
+      "selected writing",
+      "public lifestyle objects",
+      "approved photo set"
+    ],
+    "private_or_sensitive": [
+      "private contact URLs",
+      "location-adjacent details",
+      "unreviewed personal photos"
+    ]
+  },
+  "constraints": {
+    "technical": [
+      "Astro site",
+      "inactive preview template first",
+      "shared src/data/site.json content unless a content-contract change is approved"
+    ],
+    "privacy": [
+      "direct links stay behind /api/direct/[slug]",
+      "analytics consent behavior unchanged",
+      "no private feeds or unreviewed photos"
+    ],
+    "accessibility": [
+      "keyboard focus visible",
+      "readable contrast",
+      "no hover-only meaning",
+      "reduced-motion safe"
+    ],
+    "timeline": "Plan first, then implement in small preview-template slices."
+  },
+  "approval_gates": [
+    "intake_reviewed",
+    "references_reviewed",
+    "pitch_approved_before_execplan",
+    "preview_screenshots_before_activation"
+  ]
+}

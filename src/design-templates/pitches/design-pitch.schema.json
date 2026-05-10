@@ -1,0 +1,250 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/design-pitch.schema.json",
+  "title": "Personal Site Design Pitch",
+  "description": "Machine-readable design pitch generated from intake and template contracts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pitch_id",
+    "version",
+    "status",
+    "intake_ref",
+    "template_contract_refs",
+    "client_summary",
+    "pitch_directions",
+    "recommended_direction",
+    "template_generation_plan",
+    "client_review_packet",
+    "approval_gates"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "pitch_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_review",
+        "approved_for_execplan",
+        "implemented",
+        "retired"
+      ]
+    },
+    "intake_ref": {
+      "type": "string"
+    },
+    "template_contract_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "client_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positioning",
+        "audience_priority",
+        "content_strategy",
+        "design_risks"
+      ],
+      "properties": {
+        "positioning": {
+          "type": "string"
+        },
+        "audience_priority": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "content_strategy": {
+          "type": "string"
+        },
+        "design_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pitch_directions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "thesis",
+          "reference_logic",
+          "content_modules",
+          "visual_system",
+          "interaction_model",
+          "pros",
+          "risks",
+          "best_for"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "thesis": {
+            "type": "string"
+          },
+          "reference_logic": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "content_modules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "visual_system": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "interaction_model": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pros": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "best_for": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "recommended_direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direction_id",
+        "why",
+        "changes_to_template_contract"
+      ],
+      "properties": {
+        "direction_id": {
+          "type": "string"
+        },
+        "why": {
+          "type": "string"
+        },
+        "changes_to_template_contract": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "template_generation_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "template_id",
+        "preview_route",
+        "files_to_create",
+        "files_to_update",
+        "execplan_template"
+      ],
+      "properties": {
+        "template_id": {
+          "type": "string"
+        },
+        "preview_route": {
+          "type": "string"
+        },
+        "files_to_create": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "files_to_update": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "execplan_template": {
+          "type": "string"
+        }
+      }
+    },
+    "client_review_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "include",
+        "exclude"
+      ],
+      "properties": {
+        "include": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "approval_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.palette.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "palette",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json",
+    "src/design-templates/contracts/internet-foyer.contract.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/internet-foyer-index/tokens/color.tokens.json",
+    "contrast_pairs": [
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.object",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.accent.living",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.accent.electric",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "color.surface.page",
+      "type": "color",
+      "name": "Warm Paper",
+      "purpose": "Page base that feels warm without becoming a beige-only theme.",
+      "status": "approved",
+      "value": "#F5F2EC",
+      "css_variable": "--foyer-color-surface-page",
+      "usage": [
+        "body background",
+        "outer page field"
+      ],
+      "requirements": [
+        "Must pair with color.text.primary at WCAG AA or better.",
+        "Must not be the only dominant visual color."
+      ]
+    },
+    {
+      "id": "color.surface.object",
+      "type": "color",
+      "name": "Soft Surface",
+      "purpose": "Primary object surface for tappable route objects and identity surfaces.",
+      "status": "approved",
+      "value": "#FDFBF7",
+      "css_variable": "--foyer-color-surface-object",
+      "usage": [
+        "route object background",
+        "identity object background"
+      ]
+    },
+    {
+      "id": "color.text.primary",
+      "type": "color",
+      "name": "Ink",
+      "purpose": "Primary readable text.",
+      "status": "approved",
+      "value": "#0F100F",
+      "css_variable": "--foyer-color-text-primary",
+      "usage": [
+        "name",
+        "route labels",
+        "icons when monochrome"
+      ]
+    },
+    {
+      "id": "color.text.secondary",
+      "type": "color",
+      "name": "Muted Ink",
+      "purpose": "Secondary explanatory text if a design object needs it.",
+      "status": "approved",
+      "value": "rgba(15, 16, 15, 0.65)",
+      "css_variable": "--foyer-color-text-secondary",
+      "usage": [
+        "short notes",
+        "secondary labels"
+      ]
+    },
+    {
+      "id": "color.accent.living",
+      "type": "color",
+      "name": "Living Green",
+      "purpose": "Small route accents and focus states.",
+      "status": "approved",
+      "value": "#0F7C66",
+      "css_variable": "--foyer-color-accent-living",
+      "usage": [
+        "focus ring",
+        "selected accents",
+        "route icon tint"
+      ]
+    },
+    {
+      "id": "color.accent.electric",
+      "type": "color",
+      "name": "Electric Blue",
+      "purpose": "Occasional interaction accent for a more alive surface.",
+      "status": "approved",
+      "value": "#2563EB",
+      "css_variable": "--foyer-color-accent-electric",
+      "usage": [
+        "secondary accent",
+        "interactive wake state"
+      ],
+      "requirements": [
+        "Use sparingly.",
+        "Must not create a blue/purple-dominant page."
+      ]
+    },
+    {
+      "id": "color.line.soft",
+      "type": "color",
+      "name": "Soft Line",
+      "purpose": "Low-contrast borders around tactile objects.",
+      "status": "approved",
+      "value": "rgba(15, 16, 15, 0.12)",
+      "css_variable": "--foyer-color-line-soft",
+      "usage": [
+        "object border",
+        "surface divider"
+      ]
+    }
+  ],
+  "build_rules": [
+    "Expose these as CSS custom properties inside main[data-design-template='internet-foyer-index'].",
+    "Do not hard-code equivalent color values in component CSS."
+  ],
+  "qa_gates": [
+    "contrast_readable",
+    "no_one_note_palette"
+  ]
+}

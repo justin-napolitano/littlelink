@@ -26,3 +26,5 @@ The goal is to make personal-site design work explicit before implementation:
 6. Compare mobile and desktop screenshots before activation.
 
 Contracts do not activate templates. They define the scope and design standard for future implementation slices.
+
+For client work, contracts are consumed by the pitch workflow in `src/design-templates/pitches/`. That workflow turns intake into a design pitch, then into a template build plan and execplan.

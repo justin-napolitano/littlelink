@@ -1,0 +1,60 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.shape.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "shape",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
+  ],
+  "objects": [
+    {
+      "id": "radius.object.soft",
+      "type": "radius_token",
+      "name": "Soft Object Radius",
+      "purpose": "Touchable route objects.",
+      "status": "approved",
+      "value": "24px",
+      "css_variable": "--foyer-radius-object-soft"
+    },
+    {
+      "id": "radius.surface.loose",
+      "type": "radius_token",
+      "name": "Loose Surface Radius",
+      "purpose": "Larger identity or cluster surfaces.",
+      "status": "approved",
+      "value": "30px",
+      "css_variable": "--foyer-radius-surface-loose"
+    },
+    {
+      "id": "border.hairline",
+      "type": "border_token",
+      "name": "Hairline Border",
+      "purpose": "Quiet object definition.",
+      "status": "approved",
+      "value": "1px solid var(--foyer-color-line-soft)",
+      "css_variable": "--foyer-border-hairline"
+    },
+    {
+      "id": "shadow.object.lift",
+      "type": "shadow_token",
+      "name": "Object Lift",
+      "purpose": "Subtle tactile depth.",
+      "status": "approved",
+      "value": "0 18px 48px rgba(15, 16, 15, 0.08)",
+      "css_variable": "--foyer-shadow-object-lift",
+      "requirements": [
+        "Must not create heavy card-stack pitch-deck feel."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Objects may be soft, but the layout should not become a uniform card grid.",
+    "Avoid nested cards."
+  ],
+  "qa_gates": [
+    "no_nested_cards",
+    "not_generic_saas_cards"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/palette-object.schema.json",
+  "title": "Palette Design Object Set",
+  "description": "Palette-specific constraints layered on top of design-object-set.schema.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "objects"
+  ],
+  "properties": {
+    "kind": {
+      "const": "palette"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "contrast_pairs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "foreground",
+              "background",
+              "minimum_ratio"
+            ],
+            "properties": {
+              "foreground": {
+                "type": "string"
+              },
+              "background": {
+                "type": "string"
+              },
+              "minimum_ratio": {
+                "type": "number",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "value",
+          "css_variable"
+        ],
+        "properties": {
+          "type": {
+            "const": "color"
+          },
+          "value": {
+            "type": "string"
+          },
+          "css_variable": {
+            "type": "string",
+            "pattern": "^--[a-z0-9-]+$"
+          }
+        }
+      }
+    }
+  }
+}

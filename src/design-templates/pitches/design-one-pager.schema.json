@@ -1,0 +1,301 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/design-one-pager.schema.json",
+  "title": "Design Pitch One-Pager",
+  "description": "Client-facing one-page summary of a selected design pitch direction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "one_pager_id",
+    "version",
+    "status",
+    "pitch_ref",
+    "client",
+    "selected_direction",
+    "design_thesis",
+    "visual_system",
+    "experience_system",
+    "content_modules",
+    "references",
+    "deliverables",
+    "approval_checklist"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "one_pager_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_client_review",
+        "approved",
+        "retired"
+      ]
+    },
+    "pitch_ref": {
+      "type": "string"
+    },
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "site_url",
+        "project_type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "site_url": {
+          "type": "string"
+        },
+        "project_type": {
+          "type": "string"
+        }
+      }
+    },
+    "selected_direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "why"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "why": {
+          "type": "string"
+        }
+      }
+    },
+    "design_thesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "one_liner",
+        "first_impression",
+        "not_this"
+      ],
+      "properties": {
+        "one_liner": {
+          "type": "string"
+        },
+        "first_impression": {
+          "type": "string"
+        },
+        "not_this": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "visual_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "typography",
+        "color_palette",
+        "shape",
+        "texture",
+        "imagery",
+        "iconography"
+      ],
+      "properties": {
+        "typography": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "display",
+            "body",
+            "labels",
+            "rules"
+          ],
+          "properties": {
+            "display": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            },
+            "labels": {
+              "type": "string"
+            },
+            "rules": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "color_palette": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "value",
+              "usage"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "usage": {
+                "type": "string"
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "shape": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "texture": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imagery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "iconography": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "experience_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mobile_first",
+        "layout",
+        "interaction",
+        "motion",
+        "accessibility"
+      ],
+      "properties": {
+        "mobile_first": {
+          "type": "string"
+        },
+        "layout": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "interaction": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "motion": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accessibility": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content_modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "status",
+          "purpose"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "url",
+          "borrow"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "borrow": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "approval_checklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}

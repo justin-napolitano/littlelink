@@ -1,0 +1,244 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/client-intake.schema.json",
+  "title": "Client Personal Site Intake",
+  "description": "Machine-readable intake for generating a personal-site design pitch.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intake_id",
+    "version",
+    "status",
+    "client",
+    "site_goal",
+    "audiences",
+    "brand_inputs",
+    "content_inventory",
+    "constraints",
+    "approval_gates"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "intake_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "reviewed",
+        "approved_for_pitch",
+        "retired"
+      ]
+    },
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "display_name",
+        "business_type",
+        "canonical_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "business_type": {
+          "type": "string"
+        },
+        "canonical_url": {
+          "type": "string"
+        }
+      }
+    },
+    "site_goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_outcome",
+        "first_impression",
+        "conversion_paths",
+        "non_goals"
+      ],
+      "properties": {
+        "primary_outcome": {
+          "type": "string"
+        },
+        "first_impression": {
+          "type": "string"
+        },
+        "conversion_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "non_goals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "audiences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "intent",
+          "must_find"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "intent": {
+            "type": "string"
+          },
+          "must_find": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "brand_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tone",
+        "visual_preferences",
+        "references",
+        "avoid"
+      ],
+      "properties": {
+        "tone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "visual_preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url",
+              "why"
+            ],
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "why": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "available",
+        "missing",
+        "private_or_sensitive"
+      ],
+      "properties": {
+        "available": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "private_or_sensitive": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "technical",
+        "privacy",
+        "accessibility",
+        "timeline"
+      ],
+      "properties": {
+        "technical": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "privacy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accessibility": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "timeline": {
+          "type": "string"
+        }
+      }
+    },
+    "approval_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}

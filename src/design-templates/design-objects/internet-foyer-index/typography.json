@@ -1,0 +1,84 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.typography.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "typography",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/internet-foyer-index/tokens/typography.tokens.json"
+  },
+  "objects": [
+    {
+      "id": "font.display.identity",
+      "type": "font",
+      "name": "Identity Display",
+      "purpose": "Distinctive name treatment.",
+      "status": "approved",
+      "value": "'Fraunces', 'Georgia', serif",
+      "css_variable": "--foyer-font-display",
+      "requirements": [
+        "May be changed only if prototype proves the identity mark feels wrong.",
+        "Do not use decorative headline copy under the name."
+      ]
+    },
+    {
+      "id": "font.body.default",
+      "type": "font",
+      "name": "Readable Body",
+      "purpose": "Fast, normal reading for labels and notes.",
+      "status": "approved",
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif",
+      "css_variable": "--foyer-font-body"
+    },
+    {
+      "id": "type.identity.name",
+      "type": "type_style",
+      "name": "Name",
+      "purpose": "First impression and identity.",
+      "status": "approved",
+      "values": {
+        "font_family": "font.display.identity",
+        "font_size": "clamp(2.8rem, 12vw, 4.75rem)",
+        "font_weight": "560",
+        "line_height": "1.0",
+        "letter_spacing": "0"
+      },
+      "selector": ".foyer-name",
+      "requirements": [
+        "Must fit on 390px mobile without horizontal overflow.",
+        "No negative letter spacing."
+      ]
+    },
+    {
+      "id": "type.route.label",
+      "type": "type_style",
+      "name": "Route Label",
+      "purpose": "Readable labels on route objects.",
+      "status": "approved",
+      "values": {
+        "font_family": "font.body.default",
+        "font_size": "1rem",
+        "font_weight": "650",
+        "line_height": "1.2",
+        "letter_spacing": "0"
+      },
+      "selector": ".foyer-route__label",
+      "requirements": [
+        "Use plain nouns and action words.",
+        "No decorative category labels."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Define type styles in template CSS, not global CSS.",
+    "Do not scale body or label type directly with viewport width."
+  ],
+  "qa_gates": [
+    "no_text_overflow",
+    "mobile_390_width_review"
+  ]
+}

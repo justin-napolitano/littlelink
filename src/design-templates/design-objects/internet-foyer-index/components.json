@@ -1,0 +1,174 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "internet-foyer.components.v1",
+  "version": 1,
+  "status": "draft",
+  "template_id": "internet-foyer-index",
+  "kind": "component",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json",
+    "src/design-templates/design-objects/internet-foyer-index/palette.json",
+    "src/design-templates/design-objects/internet-foyer-index/typography.json"
+  ],
+  "objects": [
+    {
+      "id": "component.foyer_root",
+      "type": "component",
+      "name": "Foyer Root",
+      "purpose": "Template root and token scope.",
+      "status": "approved",
+      "class_name": "foyer-index",
+      "selector": "main[data-design-template='internet-foyer-index']",
+      "tokens": {
+        "background": "color.surface.page",
+        "text": "color.text.primary",
+        "font": "font.body.default"
+      },
+      "implementation": {
+        "files": [
+          "src/design-templates/internet-foyer-index/index.astro",
+          "src/design-templates/internet-foyer-index/styles.css"
+        ],
+        "selectors": [
+          "main[data-design-template='internet-foyer-index']"
+        ]
+      }
+    },
+    {
+      "id": "component.identity_object",
+      "type": "component",
+      "name": "Identity Object",
+      "purpose": "Name-bearing first impression surface.",
+      "status": "approved",
+      "class_name": "foyer-identity",
+      "selector": ".foyer-identity",
+      "content_bindings": [
+        {
+          "source_path": "hero.name",
+          "target": ".foyer-name",
+          "rule": "Render as the only large identity text."
+        }
+      ],
+      "tokens": {
+        "background": "color.surface.object",
+        "radius": "radius.surface.loose",
+        "border": "border.hairline",
+        "shadow": "shadow.object.lift"
+      },
+      "requirements": [
+        "No visible hero subhead by default.",
+        "No marketing headline under name."
+      ]
+    },
+    {
+      "id": "component.route_cluster",
+      "type": "component",
+      "name": "Route Cluster",
+      "purpose": "Visual group of related route objects without visible section headings.",
+      "status": "approved",
+      "class_name": "foyer-cluster",
+      "selector": ".foyer-cluster",
+      "content_bindings": [
+        {
+          "source_path": "sections[]",
+          "target": ".foyer-cluster",
+          "rule": "Each section becomes a visually grouped cluster with aria-label from section.title."
+        }
+      ],
+      "requirements": [
+        "Visible h2 category headings are not rendered by default.",
+        "Group meaning comes from proximity and route objects."
+      ],
+      "accessibility": [
+        "Cluster receives aria-label from shared content.",
+        "DOM order follows source section order."
+      ]
+    },
+    {
+      "id": "component.route_object",
+      "type": "component",
+      "name": "Route Object",
+      "purpose": "Touchable route into an external or internal destination.",
+      "status": "approved",
+      "class_name": "foyer-route",
+      "selector": ".foyer-route",
+      "content_bindings": [
+        {
+          "source_path": "sections[].links[].label",
+          "target": ".foyer-route__label",
+          "rule": "Render as visible label."
+        },
+        {
+          "source_path": "sections[].links[].href",
+          "target": ".foyer-route[href]",
+          "rule": "Preserve route URL."
+        },
+        {
+          "source_path": "sections[].links[].icon",
+          "target": ".foyer-route__icon",
+          "rule": "Render icon only with visible label."
+        }
+      ],
+      "tokens": {
+        "background": "color.surface.object",
+        "radius": "radius.object.soft",
+        "border": "border.hairline",
+        "padding": "space.4",
+        "label_type": "type.route.label"
+      },
+      "states": [
+        {
+          "id": "focus",
+          "trigger": ":focus-visible",
+          "tokens": {
+            "outline": "2px solid var(--foyer-color-accent-living)",
+            "outline_offset": "4px"
+          },
+          "requirements": [
+            "Visible focus ring."
+          ]
+        }
+      ],
+      "requirements": [
+        "Minimum 44px tap target.",
+        "No hover-only meaning.",
+        "Works without motion."
+      ],
+      "accessibility": [
+        "Visible text label is required.",
+        "External links retain rel and target behavior from current template conventions."
+      ],
+      "metadata": {
+        "min_target_px": 44
+      }
+    },
+    {
+      "id": "component.foyer_footer",
+      "type": "component",
+      "name": "Foyer Footer",
+      "purpose": "Privacy link and minimal footer surface.",
+      "status": "approved",
+      "class_name": "foyer-footer",
+      "selector": ".foyer-footer",
+      "content_bindings": [
+        {
+          "source_path": "footer.privacyHref",
+          "target": ".foyer-footer a[href]",
+          "rule": "Render when privacyHref exists."
+        }
+      ],
+      "requirements": [
+        "Do not add extra claims or marketing copy."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Build components from these class names unless the implementation map is updated.",
+    "Do not render decorative category headings for route clusters."
+  ],
+  "qa_gates": [
+    "route_urls_unchanged",
+    "tap_targets",
+    "keyboard_focus_visible"
+  ]
+}

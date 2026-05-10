@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/component-object.schema.json",
+  "title": "Component Design Object Set",
+  "description": "Component-specific constraints layered on top of design-object-set.schema.json.",
+  "type": "object",
+  "required": [
+    "kind",
+    "objects"
+  ],
+  "properties": {
+    "kind": {
+      "const": "component"
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "class_name",
+          "selector"
+        ],
+        "properties": {
+          "type": {
+            "const": "component"
+          },
+          "class_name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "selector": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "min_target_px": {
+                "type": "number",
+                "minimum": 44
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Justin Napolitano Design One-Pager</title>
+  <style>
+    :root {
+      color: #0f100f;
+      background: #f5f2ec;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+
+    body {
+      margin: 0;
+      padding: clamp(24px, 5vw, 72px);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    header,
+    section {
+      background: #fdfbf7;
+      border: 1px solid rgba(15, 16, 15, 0.12);
+      border-radius: 24px;
+      padding: clamp(22px, 4vw, 42px);
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(42px, 9vw, 86px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    .kicker,
+    .meta {
+      color: rgba(15, 16, 15, 0.66);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .direction {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+      max-width: 740px;
+      font-size: 19px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+
+    .swatch,
+    .specimen,
+    .module {
+      min-height: 120px;
+      display: grid;
+      align-content: start;
+      gap: 10px;
+      border: 1px solid rgba(15, 16, 15, 0.12);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .swatch-chip {
+      width: 100%;
+      height: 54px;
+      border: 1px solid rgba(15, 16, 15, 0.14);
+      border-radius: 14px;
+    }
+
+    code {
+      font-size: 13px;
+    }
+
+    small,
+    .module p,
+    .specimen p {
+      color: rgba(15, 16, 15, 0.68);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="kicker">Personal public PR platform</p>
+      <h1>Justin Napolitano</h1>
+      <div class="direction">
+        <p><strong>Front Room.</strong> This direction makes the root feel curious, human, and worth exploring without turning it into a pitch deck.</p>
+        <p>A mobile-first front room on the internet: a few high-signal objects, enough personality to keep clicking, and no overexplaining.</p>
+        <p class="meta">First impression: Justin has taste, range, and a real life beyond a resume.</p>
+      </div>
+    </header>
+
+    <section>
+      <h2>Color Palette</h2>
+      <div class="grid">
+        <article class="swatch">
+  <span class="swatch-chip" style="background:#F5F2EC"></span>
+  <strong>Warm Paper</strong>
+  <code>#F5F2EC</code>
+  <small>body background, outer page field</small>
+</article>
+<article class="swatch">
+  <span class="swatch-chip" style="background:#FDFBF7"></span>
+  <strong>Soft Surface</strong>
+  <code>#FDFBF7</code>
+  <small>route object background, identity object background</small>
+</article>
+<article class="swatch">
+  <span class="swatch-chip" style="background:#0F100F"></span>
+  <strong>Ink</strong>
+  <code>#0F100F</code>
+  <small>name, route labels, icons when monochrome</small>
+</article>
+<article class="swatch">
+  <span class="swatch-chip" style="background:rgba(15, 16, 15, 0.65)"></span>
+  <strong>Muted Ink</strong>
+  <code>rgba(15, 16, 15, 0.65)</code>
+  <small>short notes, secondary labels</small>
+</article>
+<article class="swatch">
+  <span class="swatch-chip" style="background:#0F7C66"></span>
+  <strong>Living Green</strong>
+  <code>#0F7C66</code>
+  <small>focus ring, selected accents, route icon tint</small>
+</article>
+<article class="swatch">
+  <span class="swatch-chip" style="background:#2563EB"></span>
+  <strong>Electric Blue</strong>
+  <code>#2563EB</code>
+  <small>secondary accent, interactive wake state</small>
+</article>
+<article class="swatch">
+  <span class="swatch-chip" style="background:rgba(15, 16, 15, 0.12)"></span>
+  <strong>Soft Line</strong>
+  <code>rgba(15, 16, 15, 0.12)</code>
+  <small>object border, surface divider</small>
+</article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Typography</h2>
+      <div class="grid">
+        <article class="specimen">
+  <span>Identity Display</span>
+  <p>&#39;Fraunces&#39;, &#39;Georgia&#39;, serif</p>
+</article>
+<article class="specimen">
+  <span>Readable Body</span>
+  <p>-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, &#39;Inter&#39;, system-ui, sans-serif</p>
+</article>
+<article class="specimen">
+  <span>Name</span>
+  <p>font family: font.display.identity, font size: clamp(2.8rem, 12vw, 4.75rem), font weight: 560, line height: 1.0, letter spacing: 0</p>
+</article>
+<article class="specimen">
+  <span>Route Label</span>
+  <p>font family: font.body.default, font size: 1rem, font weight: 650, line height: 1.2, letter spacing: 0</p>
+</article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience Rules</h2>
+      <ul>
+        <li>The first phone screen should show the name and immediate route objects, with a hint that more exists below.</li>
+        <li>Group by proximity and spacing instead of visible category headings.</li>
+<li>Keep the first three exits obvious.</li>
+<li>Let desktop become more asymmetric without changing content.</li>
+<li>Tap feedback should feel immediate.</li>
+<li>Hover/focus can slightly move or wake objects.</li>
+<li>No hidden navigation or hover-only meaning.</li>
+<li>Reduced-motion-safe by default.</li>
+<li>Small Anime.js-style interaction may be prototyped only after static layout works.</li>
+<li>No scroll spectacle or delayed route access.</li>
+<li>Readable contrast.</li>
+<li>Visible keyboard focus.</li>
+<li>Touch targets remain comfortable.</li>
+<li>All routes work without animation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Content Modules</h2>
+      <div class="grid">
+        <article class="module">
+  <span>required</span>
+  <strong>Identity</strong>
+  <p>Name and first impression.</p>
+</article>
+<article class="module">
+  <span>required</span>
+  <strong>Proof routes</strong>
+  <p>Resume, docs, and GitHub for professional trust.</p>
+</article>
+<article class="module">
+  <span>required</span>
+  <strong>Direct contact</strong>
+  <p>Schedule, Signal, and email without exposing private URLs.</p>
+</article>
+<article class="module">
+  <span>required</span>
+  <strong>Social</strong>
+  <p>Human texture through public profiles.</p>
+</article>
+<article class="module">
+  <span>future_optional</span>
+  <strong>Selected objects</strong>
+  <p>Projects, photos, listening, or lifestyle artifacts after privacy review.</p>
+</article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Build Objects</h2>
+      <div class="grid">
+        <article class="module">
+  <span>approved</span>
+  <strong>Foyer Root</strong>
+  <p>Template root and token scope.</p>
+</article>
+<article class="module">
+  <span>approved</span>
+  <strong>Identity Object</strong>
+  <p>Name-bearing first impression surface.</p>
+</article>
+<article class="module">
+  <span>approved</span>
+  <strong>Route Cluster</strong>
+  <p>Visual group of related route objects without visible section headings.</p>
+</article>
+<article class="module">
+  <span>approved</span>
+  <strong>Route Object</strong>
+  <p>Touchable route into an external or internal destination.</p>
+</article>
+<article class="module">
+  <span>approved</span>
+  <strong>Foyer Footer</strong>
+  <p>Privacy link and minimal footer surface.</p>
+</article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Approval Checklist</h2>
+      <ul>
+        <li>Design thesis approved.</li>
+<li>Font direction approved.</li>
+<li>Palette approved.</li>
+<li>Motion policy approved.</li>
+<li>Content modules approved.</li>
+<li>Privacy-sensitive future modules explicitly deferred.</li>
+<li>Approved to generate an inactive preview template.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

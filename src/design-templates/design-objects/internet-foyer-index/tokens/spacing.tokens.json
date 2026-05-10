@@ -1,0 +1,122 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "internet-foyer.spacing.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "internet-foyer-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/internet-foyer-index/spacing.json"
+      ]
+    }
+  },
+  "space": {
+    "1": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      },
+      "$description": "Small internal offset.",
+      "$extensions": {
+        "me.jnap": {
+          "css_variable": "--foyer-space-1",
+          "css_value": "0.25rem",
+          "source_object_id": "space.1"
+        }
+      }
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      },
+      "$description": "Small gap.",
+      "$extensions": {
+        "me.jnap": {
+          "css_variable": "--foyer-space-2",
+          "css_value": "0.5rem",
+          "source_object_id": "space.2"
+        }
+      }
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.85,
+        "unit": "rem"
+      },
+      "$description": "Default tight gap.",
+      "$extensions": {
+        "me.jnap": {
+          "css_variable": "--foyer-space-3",
+          "css_value": "0.85rem",
+          "source_object_id": "space.3"
+        }
+      }
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1.1,
+        "unit": "rem"
+      },
+      "$description": "Object padding and cluster gap.",
+      "$extensions": {
+        "me.jnap": {
+          "css_variable": "--foyer-space-4",
+          "css_value": "1.1rem",
+          "source_object_id": "space.4"
+        }
+      }
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1.75,
+        "unit": "rem"
+      },
+      "$description": "Section rhythm.",
+      "$extensions": {
+        "me.jnap": {
+          "css_variable": "--foyer-space-6",
+          "css_value": "1.75rem",
+          "source_object_id": "space.6"
+        }
+      }
+    },
+    "page": {
+      "mobile": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        },
+        "$description": "Comfortable mobile edge inset.",
+        "$extensions": {
+          "me.jnap": {
+            "css_variable": "--foyer-page-padding-mobile",
+            "css_value": "1.25rem",
+            "source_object_id": "space.page.mobile"
+          }
+        }
+      },
+      "desktop": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "rem"
+        },
+        "$description": "Responsive desktop page inset baseline.",
+        "$extensions": {
+          "me.jnap": {
+            "css_variable": "--foyer-page-padding-desktop",
+            "css_value": "clamp(2rem, 5vw, 5rem)",
+            "source_object_id": "space.page.desktop"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "internet-foyer.typography.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "internet-foyer-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/internet-foyer-index/typography.json"
+      ]
+    }
+  },
+  "font": {
+    "display": {
+      "identity": {
+        "$type": "fontFamily",
+        "$value": [
+          "Fraunces",
+          "Georgia",
+          "serif"
+        ],
+        "$description": "Distinctive name treatment.",
+        "$extensions": {
+          "me.jnap": {
+            "css_variable": "--foyer-font-display",
+            "css_value": "'Fraunces', 'Georgia', serif",
+            "source_object_id": "font.display.identity"
+          }
+        }
+      }
+    },
+    "body": {
+      "default": {
+        "$type": "fontFamily",
+        "$value": [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Inter",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Readable route labels and notes.",
+        "$extensions": {
+          "me.jnap": {
+            "css_variable": "--foyer-font-body",
+            "css_value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif",
+            "source_object_id": "font.body.default"
+          }
+        }
+      }
+    }
+  },
+  "type": {
+    "identity": {
+      "name": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.display.identity}",
+          "fontSize": {
+            "value": 2.8,
+            "unit": "rem"
+          },
+          "fontWeight": 560,
+          "lineHeight": 1,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "First impression and identity.",
+        "$extensions": {
+          "me.jnap": {
+            "selector": ".foyer-name",
+            "css_values": {
+              "font_size": "clamp(2.8rem, 12vw, 4.75rem)"
+            },
+            "source_object_id": "type.identity.name"
+          }
+        }
+      }
+    },
+    "route": {
+      "label": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.body.default}",
+          "fontSize": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "fontWeight": 650,
+          "lineHeight": 1.2,
+          "letterSpacing": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "$description": "Readable labels on route objects.",
+        "$extensions": {
+          "me.jnap": {
+            "selector": ".foyer-route__label",
+            "source_object_id": "type.route.label"
+          }
+        }
+      }
+    }
+  }
+}

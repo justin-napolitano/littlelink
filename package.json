@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "favicons": "node scripts/generate-favicons.mjs"
+    "favicons": "node scripts/generate-favicons.mjs",
+    "design:one-pager": "node scripts/generate-design-one-pager.mjs",
+    "design:validate": "node scripts/validate-design-contracts.mjs"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "homepage": "https://github.com/justin-napolitano/littlelink#readme",
   "dependencies": {
     "@astrojs/vercel": "^9.0.2",
+    "ajv": "^6.12.6",
     "astro": "^5.16.6"
   }
 }

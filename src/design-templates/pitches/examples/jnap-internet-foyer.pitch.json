@@ -1,0 +1,207 @@
+{
+  "$schema": "../design-pitch.schema.json",
+  "pitch_id": "jnap-internet-foyer-pitch-v1",
+  "version": 1,
+  "status": "approved_for_execplan",
+  "intake_ref": "src/design-templates/pitches/examples/jnap-intake.json",
+  "template_contract_refs": [
+    "src/design-templates/contracts/internet-foyer.contract.json"
+  ],
+  "client_summary": {
+    "positioning": "Justin's root should feel like a curated public front room: professional enough to trust, personal enough to keep clicking.",
+    "audience_priority": [
+      "recruiter",
+      "collaborator",
+      "personal",
+      "client_or_business"
+    ],
+    "content_strategy": "Use routes and objects as proof. Keep copy sparse and let visitors self-select into resume, docs, GitHub, contact, or social surfaces.",
+    "design_risks": [
+      "Too polished becomes pitch-deck energy.",
+      "Too sparse can feel unfinished.",
+      "Too much motion can turn craft into distraction.",
+      "Personal texture needs privacy review."
+    ]
+  },
+  "pitch_directions": [
+    {
+      "id": "front-room",
+      "name": "Front Room",
+      "thesis": "A warm object-led root that feels like walking into a curated personal room.",
+      "reference_logic": [
+        "Paco Coursey for direct personal signal density.",
+        "Brian Lovin for personal operating-system energy.",
+        "Anime.js for light interaction that rewards poking."
+      ],
+      "content_modules": [
+        "identity",
+        "work routes",
+        "contact routes",
+        "social routes",
+        "future selected objects"
+      ],
+      "visual_system": [
+        "mobile-first object clusters",
+        "asymmetric desktop shelf/table composition",
+        "plain labels",
+        "small vivid accents",
+        "warm but not beige-dominant"
+      ],
+      "interaction_model": [
+        "tap feedback on objects",
+        "small object movement on hover/focus",
+        "reduced-motion fallback",
+        "no hidden navigation"
+      ],
+      "pros": [
+        "Most aligned with curiosity goal.",
+        "Supports professional and personal overlap.",
+        "Can become a reusable personal-site product pattern."
+      ],
+      "risks": [
+        "Needs careful spacing so it does not feel messy.",
+        "Future lifestyle objects need privacy review."
+      ],
+      "best_for": [
+        "Justin root",
+        "individual operators",
+        "creative technical people",
+        "personal PR sites"
+      ]
+    },
+    {
+      "id": "proof-shelf",
+      "name": "Proof Shelf",
+      "thesis": "A tighter professional-first version that presents proof as selected objects.",
+      "reference_logic": [
+        "Joe Coleman agencies page for direct credibility.",
+        "Paco Coursey for route clarity.",
+        "Current link-index-mobile-first for mobile clarity."
+      ],
+      "content_modules": [
+        "identity",
+        "resume",
+        "docs",
+        "github",
+        "contact"
+      ],
+      "visual_system": [
+        "denser list/shelf layout",
+        "fewer social signals above fold",
+        "plain system type with one display-name treatment"
+      ],
+      "interaction_model": [
+        "fast scan",
+        "strong focus states",
+        "minimal motion"
+      ],
+      "pros": [
+        "Strong for hiring.",
+        "Lower implementation risk.",
+        "Very clear on mobile."
+      ],
+      "risks": [
+        "Less personal.",
+        "May feel too close to the current root."
+      ],
+      "best_for": [
+        "recruiters",
+        "client trust",
+        "fast professional review"
+      ]
+    },
+    {
+      "id": "living-index",
+      "name": "Living Index",
+      "thesis": "A more active personal operating-system page with now, writing, projects, and social exits.",
+      "reference_logic": [
+        "Brian Lovin for ongoing public activity.",
+        "Rauno Freiberg for sparse personal signature.",
+        "Anime.js for subtle interactive craft."
+      ],
+      "content_modules": [
+        "identity",
+        "now",
+        "selected writing",
+        "selected projects",
+        "social",
+        "contact"
+      ],
+      "visual_system": [
+        "editorial index rhythm",
+        "small timestamps or status labels",
+        "less card-like surface treatment"
+      ],
+      "interaction_model": [
+        "small reveal states",
+        "status-driven modules",
+        "reduced-motion safe"
+      ],
+      "pros": [
+        "Feels alive.",
+        "Excellent long-term direction when docs and content sync mature."
+      ],
+      "risks": [
+        "Needs more content infrastructure.",
+        "Can feel stale if not updated."
+      ],
+      "best_for": [
+        "future personal platform",
+        "writers",
+        "builders with public logs"
+      ]
+    }
+  ],
+  "recommended_direction": {
+    "direction_id": "front-room",
+    "why": "It best matches the stated goal: make someone interested without explaining everything, while preserving professional trust.",
+    "changes_to_template_contract": [
+      "Use the internet-foyer contract as the base.",
+      "Prioritize object clusters over visible category headings.",
+      "Keep motion optional and small.",
+      "Add future content slots only as inactive placeholders until content is governed."
+    ]
+  },
+  "template_generation_plan": {
+    "template_id": "internet-foyer-index",
+    "preview_route": "/preview/internet-foyer-index",
+    "files_to_create": [
+      "src/design-templates/internet-foyer-index/manifest.yaml",
+      "src/design-templates/internet-foyer-index/index.astro",
+      "src/design-templates/internet-foyer-index/styles.css",
+      "src/design-templates/internet-foyer-index/control-map.json",
+      "src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json"
+    ],
+    "files_to_update": [
+      "src/lib/design-template-ids.ts",
+      "src/lib/design-template-registry.ts",
+      "src/design-templates/candidate-templates.json",
+      "src/design-templates/README.md"
+    ],
+    "execplan_template": ".agent/execplans/templates/client-template-build-execplan.md"
+  },
+  "client_review_packet": {
+    "include": [
+      "one-paragraph design thesis",
+      "three pitch directions",
+      "recommended direction",
+      "reference notes",
+      "mobile-first interaction goals",
+      "approval gates"
+    ],
+    "exclude": [
+      "private direct-link URLs",
+      "implementation-only file churn",
+      "unapproved personal photos",
+      "raw environment variables"
+    ]
+  },
+  "approval_gates": [
+    "pitch_direction_selected",
+    "template_contract_marked_approved_for_build",
+    "execplan_created",
+    "inactive_preview_template_built",
+    "mobile_desktop_screenshots_reviewed",
+    "activation_decision_recorded"
+  ]
+}
