@@ -1,0 +1,97 @@
+{
+  "$schema": "../template-build-plan.schema.json",
+  "plan_id": "jnap-internet-foyer-build-plan-v1",
+  "version": 1,
+  "status": "draft",
+  "pitch_ref": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
+  "template_contract_ref": "src/design-templates/contracts/internet-foyer.contract.json",
+  "branch": "impl-execplan/internet-foyer-template",
+  "implementation_slices": [
+    {
+      "id": "template-scaffold",
+      "title": "Create inactive internet-foyer template scaffold",
+      "owned_files": [
+        "src/design-templates/internet-foyer-index/manifest.yaml",
+        "src/design-templates/internet-foyer-index/index.astro",
+        "src/design-templates/internet-foyer-index/styles.css",
+        "src/design-templates/internet-foyer-index/control-map.json",
+        "src/lib/design-template-ids.ts",
+        "src/lib/design-template-registry.ts"
+      ],
+      "deliverable": "Previewable inactive template at /preview/internet-foyer-index.",
+      "acceptance_checks": [
+        "template renders shared site.json",
+        "production active template unchanged",
+        "preview route returns 200",
+        "npm run build passes"
+      ]
+    },
+    {
+      "id": "mobile-first-layout",
+      "title": "Implement mobile-first object clusters",
+      "owned_files": [
+        "src/design-templates/internet-foyer-index/index.astro",
+        "src/design-templates/internet-foyer-index/styles.css",
+        "src/design-templates/internet-foyer-index/control-map.json"
+      ],
+      "deliverable": "Mobile first screen with name and high-signal route objects, no visible category-heading dependency.",
+      "acceptance_checks": [
+        "390px screenshot has no overlap",
+        "primary exits are tappable without horizontal scroll",
+        "below-fold hint is visible",
+        "keyboard focus visible"
+      ]
+    },
+    {
+      "id": "desktop-composition",
+      "title": "Loosen desktop into front-room composition",
+      "owned_files": [
+        "src/design-templates/internet-foyer-index/styles.css"
+      ],
+      "deliverable": "Desktop layout feels more alive than the current root without losing route clarity.",
+      "acceptance_checks": [
+        "1440px screenshot reviewed",
+        "no generic SaaS hero",
+        "no pitch-deck copy",
+        "all route URLs unchanged"
+      ]
+    },
+    {
+      "id": "motion-polish",
+      "title": "Add reduced-motion-safe interaction polish",
+      "owned_files": [
+        "src/design-templates/internet-foyer-index/styles.css"
+      ],
+      "deliverable": "Small tap, hover, and focus interactions that prove craft without hiding meaning.",
+      "acceptance_checks": [
+        "prefers-reduced-motion behavior exists",
+        "no animation required for comprehension",
+        "no delayed route access"
+      ]
+    }
+  ],
+  "validation_commands": [
+    "npm run build",
+    "git diff --check",
+    "curl -I http://127.0.0.1:4327/preview/internet-foyer-index"
+  ],
+  "pull_request_policy": {
+    "base": "main",
+    "draft_allowed": false,
+    "required_summary": [
+      "contract and pitch refs",
+      "created and updated files",
+      "mobile screenshot path",
+      "desktop screenshot path",
+      "validation results",
+      "activation status remains inactive"
+    ]
+  },
+  "stop_conditions": [
+    "production active-template config changes without explicit activation request",
+    "shared route URLs change",
+    "privacy or analytics behavior changes",
+    "template cannot be previewed without activation",
+    "mobile screenshot shows text overlap or broken tap targets"
+  ]
+}

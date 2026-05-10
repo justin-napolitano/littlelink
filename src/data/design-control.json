@@ -11,6 +11,11 @@
     "candidate_templates": "src/design-templates/candidate-templates.json",
     "personal_site_template_contract_schema": "src/design-templates/contracts/personal-site-template-contract.schema.json",
     "next_template_contract": "src/design-templates/contracts/internet-foyer.contract.json",
+    "client_intake_schema": "src/design-templates/pitches/client-intake.schema.json",
+    "design_pitch_schema": "src/design-templates/pitches/design-pitch.schema.json",
+    "template_build_plan_schema": "src/design-templates/pitches/template-build-plan.schema.json",
+    "design_pitch_execplan_template": ".agent/execplans/templates/client-design-pitch-execplan.md",
+    "template_build_execplan_template": ".agent/execplans/templates/client-template-build-execplan.md",
     "template_ids": "src/lib/design-template-ids.ts",
     "template_registry": "src/lib/design-template-registry.ts",
     "preview_index": "src/pages/preview/index.astro",
@@ -21,7 +26,8 @@
     "candidate_definition": "A candidate template is a complete inactive presentation implementation for comparison.",
     "active_selection_rule": "Only one template is active for the root route at a time.",
     "shared_content_rule": "Improve site.json as universal content; do not bake current-template layout needs into shared data.",
-    "presentation_scope_rule": "Spacing, typography, background, density, and motion choices are template-owned unless explicitly promoted to shared controls."
+    "presentation_scope_rule": "Spacing, typography, background, density, and motion choices are template-owned unless explicitly promoted to shared controls.",
+    "pitch_workflow_rule": "Client designs start with intake, pitch, template contract, build plan, and execplan artifacts before implementation."
   },
   "candidate_templates": {
     "planning_artifact": "src/design-templates/candidate-templates.json",
@@ -192,6 +198,16 @@
     "keyboard_focus_visible",
     "contrast_readable",
     "privacy_behavior_unchanged"
+  ],
+  "pitch_workflow": [
+    "client_intake",
+    "design_pitch",
+    "template_contract",
+    "template_build_plan",
+    "execplan",
+    "inactive_preview_template",
+    "screenshot_review",
+    "activation_decision"
   ],
   "reference_sources": [
     "brian-lovin",

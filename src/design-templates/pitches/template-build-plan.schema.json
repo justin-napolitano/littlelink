@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/template-build-plan.schema.json",
+  "title": "Template Build Plan",
+  "description": "Machine-readable build plan for turning an approved design pitch into an inactive preview template.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plan_id",
+    "version",
+    "status",
+    "pitch_ref",
+    "template_contract_ref",
+    "branch",
+    "implementation_slices",
+    "validation_commands",
+    "pull_request_policy",
+    "stop_conditions"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "plan_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_build",
+        "in_progress",
+        "complete",
+        "blocked"
+      ]
+    },
+    "pitch_ref": {
+      "type": "string"
+    },
+    "template_contract_ref": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "implementation_slices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "owned_files",
+          "deliverable",
+          "acceptance_checks"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "owned_files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "deliverable": {
+            "type": "string"
+          },
+          "acceptance_checks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "pull_request_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base",
+        "draft_allowed",
+        "required_summary"
+      ],
+      "properties": {
+        "base": {
+          "type": "string"
+        },
+        "draft_allowed": {
+          "type": "boolean"
+        },
+        "required_summary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}
