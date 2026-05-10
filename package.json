@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "favicons": "node scripts/generate-favicons.mjs"
+    "favicons": "node scripts/generate-favicons.mjs",
+    "design:one-pager": "node scripts/generate-design-one-pager.mjs"
   },
   "repository": {
     "type": "git",

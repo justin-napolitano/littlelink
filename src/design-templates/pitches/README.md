@@ -37,3 +37,11 @@ This layer exists so the platform can support real design work for Justin's root
 `examples/jnap-internet-foyer.pitch.json` shows how the current JNAP direction becomes a pitch package. It is still planning metadata; it does not activate or build a template.
 
 `examples/jnap-internet-foyer.one-pager.json` is the client-facing version of the same recommendation.
+
+Generate a readable Markdown brief from a one-pager JSON contract:
+
+```bash
+npm run design:one-pager -- --input src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json --output src/design-templates/pitches/generated/jnap-internet-foyer.one-pager.md
+```
+
+Generated Markdown is for review and handoff. The JSON contract remains the source of truth.
