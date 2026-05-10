@@ -1,0 +1,390 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/personal-site-template-contract.schema.json",
+  "title": "Personal Site Template Contract",
+  "description": "Governed design brief for a reusable personal-site template before implementation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "version",
+    "status",
+    "template",
+    "positioning",
+    "audience_modes",
+    "reference_set",
+    "content_contract",
+    "experience_contract",
+    "visual_contract",
+    "motion_contract",
+    "privacy_contract",
+    "implementation_scope",
+    "qa_gates",
+    "selection_criteria"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "contract_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "planned",
+        "approved_for_build",
+        "implemented",
+        "retired"
+      ]
+    },
+    "template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "candidate_id",
+        "reusable_market"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "reusable_market": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "positioning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "first_impression",
+        "curiosity_strategy",
+        "tone",
+        "must_feel_like",
+        "must_not_feel_like"
+      ],
+      "properties": {
+        "first_impression": {
+          "type": "string",
+          "minLength": 1
+        },
+        "curiosity_strategy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "must_feel_like": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "must_not_feel_like": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "audience_modes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "intent",
+          "primary_exits"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "intent": {
+            "type": "string"
+          },
+          "primary_exits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "reference_set": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "url",
+          "role",
+          "borrow",
+          "avoid"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "borrow": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "avoid": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "content_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shared_source",
+        "required_modules",
+        "optional_modules",
+        "copy_rules"
+      ],
+      "properties": {
+        "shared_source": {
+          "type": "string"
+        },
+        "required_modules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "optional_modules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "copy_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "experience_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mobile_first",
+        "first_screen",
+        "navigation_model",
+        "progressive_disclosure",
+        "interaction_requirements"
+      ],
+      "properties": {
+        "mobile_first": {
+          "type": "boolean"
+        },
+        "first_screen": {
+          "type": "string"
+        },
+        "navigation_model": {
+          "type": "string"
+        },
+        "progressive_disclosure": {
+          "type": "string"
+        },
+        "interaction_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "visual_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "layout",
+        "typography",
+        "color",
+        "texture",
+        "density"
+      ],
+      "properties": {
+        "layout": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "typography": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "color": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "texture": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "density": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "motion_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy",
+        "allowed",
+        "forbidden"
+      ],
+      "properties": {
+        "policy": {
+          "type": "string"
+        },
+        "allowed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "privacy_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "invariants",
+        "review_required_for"
+      ],
+      "properties": {
+        "invariants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "review_required_for": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "implementation_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "build_status",
+        "intended_files",
+        "preview_route",
+        "activation_rule"
+      ],
+      "properties": {
+        "build_status": {
+          "type": "string"
+        },
+        "intended_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "preview_route": {
+          "type": "string"
+        },
+        "activation_rule": {
+          "type": "string"
+        }
+      }
+    },
+    "qa_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "selection_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}

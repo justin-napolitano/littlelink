@@ -7,7 +7,8 @@
     "active_selection": "Only one template is active on the root route at a time.",
     "preview_rule": "Candidate templates must be previewable without changing production active-template config.",
     "shared_content_rule": "Every candidate renders the same shared src/data/site.json content unless a content-contract change is approved.",
-    "privacy_rule": "Privacy, analytics, direct links, and provider-backed data behavior must not change during template comparison."
+    "privacy_rule": "Privacy, analytics, direct links, and provider-backed data behavior must not change during template comparison.",
+    "contract_rule": "New candidate directions need a JSON design contract before implementation."
   },
   "first_build_batch": [
     "quiet-index",
@@ -86,6 +87,35 @@
         "route contracts remain stable"
       ],
       "activation_test": "Improves professional scan speed without making the page feel like a deck."
+    },
+    {
+      "id": "internet-foyer-index",
+      "status": "contract_ready",
+      "purpose": "Curious personal front-room template that makes visitors want to click deeper without explaining everything.",
+      "primary_question": "Does this make Justin feel interesting, human, and worth exploring while staying trustworthy?",
+      "contract": "src/design-templates/contracts/internet-foyer.contract.json",
+      "references": [
+        "paco-coursey",
+        "joe-coleman-agencies",
+        "animejs",
+        "brian-lovin",
+        "rauno-freiberg"
+      ],
+      "changes": [
+        "object-led route clusters instead of visible category headers",
+        "more personal/professional overlap",
+        "slightly less polished and more alive surface",
+        "motion allowed only as reduced-motion-safe curiosity and craft",
+        "mobile-first first-screen curiosity"
+      ],
+      "must_not_change": [
+        "route URLs",
+        "privacy behavior",
+        "analytics behavior",
+        "direct link behavior",
+        "shared content ownership"
+      ],
+      "activation_test": "Beats the current template for curiosity and personal signal without becoming unclear or performative."
     },
     {
       "id": "card-index",
