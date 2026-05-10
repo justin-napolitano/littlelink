@@ -4,14 +4,16 @@
   "status": "implemented_preview",
   "intent": "Inactive preview scaffold for the Internet Foyer direction.",
   "source_contracts": {
-    "template_contract": "src/design-templates/contracts/internet-foyer.contract.json",
+    "template_contract": "src/design-templates/contracts/internet-foyer-index.contract.json",
     "build_plan": "src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json",
     "design_objects": "src/design-templates/design-objects/internet-foyer-index/",
     "tokens": [
       "src/design-templates/design-objects/internet-foyer-index/tokens/color.tokens.json",
       "src/design-templates/design-objects/internet-foyer-index/tokens/typography.tokens.json",
       "src/design-templates/design-objects/internet-foyer-index/tokens/spacing.tokens.json"
-    ]
+    ],
+    "pitch": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
+    "one_pager": "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
   },
   "content_map": {
     "identity": {

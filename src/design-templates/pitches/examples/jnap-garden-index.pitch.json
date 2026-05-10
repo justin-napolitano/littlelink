@@ -1,0 +1,119 @@
+{
+  "$schema": "../design-pitch.schema.json",
+  "pitch_id": "jnap-garden-index-pitch-v1",
+  "version": 1,
+  "status": "implemented",
+  "intake_ref": "src/design-templates/pitches/examples/jnap-intake.json",
+  "template_contract_refs": [
+    "src/design-templates/contracts/garden-index.contract.json"
+  ],
+  "client_summary": {
+    "positioning": "A personal root with a clear path into deeper public notes.",
+    "audience_priority": [
+      "professional-reviewer",
+      "social-discovery",
+      "direct-contact"
+    ],
+    "content_strategy": "Render shared site content through a distinct template-owned presentation without changing route contracts.",
+    "design_risks": [
+      "overfitting shared content to one template",
+      "letting prototype styles become ungoverned production defaults"
+    ]
+  },
+  "pitch_directions": [
+    {
+      "id": "garden-index",
+      "name": "Garden Index",
+      "thesis": "Docs-forward bridge into the public garden/wiki without turning the root into a blog.",
+      "reference_logic": [
+        "Use maggie-appleton as a directional reference, not a visual copy source.",
+        "Use tania-rascia as a directional reference, not a visual copy source."
+      ],
+      "content_modules": [
+        "identity",
+        "docs_feature",
+        "work",
+        "contact",
+        "social"
+      ],
+      "visual_system": [
+        "two-part hero with docs feature card",
+        "three-column route grid on desktop and single-column mobile"
+      ],
+      "interaction_model": [
+        "subtle hover background on route rows",
+        "no motion required for comprehension"
+      ],
+      "pros": [
+        "uses existing shared route data",
+        "previewable without activation",
+        "small implementation surface"
+      ],
+      "risks": [
+        "needs screenshot QA before activation",
+        "requires contract updates before visual changes"
+      ],
+      "best_for": [
+        "template comparison",
+        "personal PR front door experimentation"
+      ]
+    }
+  ],
+  "recommended_direction": {
+    "direction_id": "garden-index",
+    "why": "Backfilled to match the governed template lifecycle and preserve the existing implemented direction.",
+    "changes_to_template_contract": [
+      "Mark existing implementation as governed.",
+      "Bind manifest, control map, design objects, tokens, and build plan."
+    ]
+  },
+  "template_generation_plan": {
+    "template_id": "garden-index",
+    "preview_route": "/preview/garden-index",
+    "files_to_create": [
+      "src/design-templates/contracts/garden-index.contract.json",
+      "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+      "src/design-templates/pitches/examples/jnap-garden-index.build-plan.json",
+      "src/design-templates/garden-index/control-map.json",
+      "src/design-templates/design-objects/garden-index/palette.json",
+      "src/design-templates/design-objects/garden-index/typography.json",
+      "src/design-templates/design-objects/garden-index/spacing.json",
+      "src/design-templates/design-objects/garden-index/shape.json",
+      "src/design-templates/design-objects/garden-index/motion.json",
+      "src/design-templates/design-objects/garden-index/layout.json",
+      "src/design-templates/design-objects/garden-index/components.json",
+      "src/design-templates/design-objects/garden-index/content-map.json",
+      "src/design-templates/design-objects/garden-index/accessibility.json",
+      "src/design-templates/design-objects/garden-index/implementation-map.json",
+      "src/design-templates/design-objects/garden-index/tokens/color.tokens.json",
+      "src/design-templates/design-objects/garden-index/tokens/typography.tokens.json",
+      "src/design-templates/design-objects/garden-index/tokens/spacing.tokens.json"
+    ],
+    "files_to_update": [
+      "src/design-templates/garden-index/manifest.yaml",
+      "src/design-templates/candidate-templates.json",
+      "src/design-templates/README.md"
+    ],
+    "execplan_template": ".agent/execplans/templates/client-template-build-execplan.md"
+  },
+  "client_review_packet": {
+    "include": [
+      "template contract",
+      "one-page summary",
+      "mobile screenshot",
+      "desktop screenshot"
+    ],
+    "exclude": [
+      "private source material",
+      "unapproved social feeds",
+      "unreviewed analytics changes"
+    ]
+  },
+  "approval_gates": [
+    "template_contract_marked_implemented",
+    "design_objects_present",
+    "tokens_present",
+    "build_plan_present",
+    "validator_passes"
+  ]
+}

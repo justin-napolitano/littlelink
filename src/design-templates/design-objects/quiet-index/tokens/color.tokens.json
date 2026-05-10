@@ -1,0 +1,139 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "quiet-index.color.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "quiet-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/quiet-index/palette.json"
+      ]
+    }
+  },
+  "color": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9725,
+            0.9647,
+            0.9451
+          ]
+        },
+        "$description": "Quiet Background",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.page",
+            "css_variable": "--quiet-bg",
+            "css_fallback": "#F8F6F1"
+          }
+        }
+      },
+      "object": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.9922,
+            0.9725
+          ]
+        },
+        "$description": "Quiet Paper",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.surface.object",
+            "css_variable": "--quiet-paper",
+            "css_fallback": "#FFFDF8"
+          }
+        }
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0667,
+            0.0745,
+            0.0706
+          ]
+        },
+        "$description": "Quiet Ink",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.primary",
+            "css_variable": "--quiet-ink",
+            "css_fallback": "#111312"
+          }
+        }
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0667,
+            0.0745,
+            0.0706
+          ],
+          "alpha": 0.58
+        },
+        "$description": "Quiet Muted",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.text.secondary",
+            "css_variable": "--quiet-muted",
+            "css_fallback": "rgba(#111312, 0.58)"
+          }
+        }
+      }
+    },
+    "accent": {
+      "primary": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.4863,
+            0.4
+          ]
+        },
+        "$description": "Living Green",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.accent.primary",
+            "css_variable": "--quiet-accent",
+            "css_fallback": "#0F7C66"
+          }
+        }
+      }
+    },
+    "line": {
+      "soft": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0667,
+            0.0745,
+            0.0706
+          ],
+          "alpha": 0.14
+        },
+        "$description": "Quiet Line",
+        "$extensions": {
+          "me.jnap": {
+            "source_object_id": "color.line.soft",
+            "css_variable": "--quiet-line",
+            "css_fallback": "rgba(#111312, 0.14)"
+          }
+        }
+      }
+    }
+  }
+}

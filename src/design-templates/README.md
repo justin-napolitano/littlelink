@@ -32,14 +32,22 @@ Build the first batch before expanding the set:
 
 Production should remain on `link-index-mobile-first` until a candidate passes preview, screenshot QA, and selection review.
 
-## Design Contracts
+## Required Lifecycle
 
-New template directions should start as JSON contracts before implementation.
+Every implemented template, including the active template, must carry the same governed lifecycle artifacts:
 
-- `src/design-templates/contracts/personal-site-template-contract.schema.json` defines the reusable contract shape for personal-site templates.
-- `src/design-templates/contracts/internet-foyer.contract.json` defines the next planned direction: a curious, mobile-first personal front room that invites interaction instead of explaining everything.
+- `src/design-templates/[template-id]/manifest.yaml`
+- `src/design-templates/[template-id]/control-map.json`
+- `src/design-templates/contracts/[template-id].contract.json`
+- `src/design-templates/pitches/examples/jnap-[template-id].pitch.json`
+- `src/design-templates/pitches/examples/jnap-[template-id].one-pager.json`
+- `src/design-templates/pitches/examples/jnap-[template-id].build-plan.json`
+- `src/design-templates/design-objects/[template-id]/*.json`
+- `src/design-templates/design-objects/[template-id]/tokens/*.tokens.json`
 
-A contract must name the intended template, audience modes, reference set, content rules, visual rules, motion rules, privacy invariants, implementation scope, QA gates, and selection criteria. Build work should not begin until the contract is reviewed and marked `approved_for_build`.
+`npm run design:validate` validates this lifecycle for every ID in `src/lib/design-template-ids.ts`. A template-specific check can still be run with `-- --template-id [template-id]`.
+
+The lifecycle does not activate templates. It defines the contract, design objects, token refs, implementation map, and QA gates that make each template maintainable and comparable.
 
 ## Pitch Workflow
 
@@ -57,8 +65,8 @@ Client design work uses a contract stack:
 
 The pitch step can compare several design directions, but it should recommend one direction for the first build. The one-pager turns that recommendation into a client-facing summary of fonts, palette, layout, motion, modules, references, deliverables, and approvals. Design objects turn the recommendation into build-grade classes, layout rules, content maps, accessibility requirements, and implementation maps. DTCG token files turn the build-critical palette, type, and spacing choices into machine-readable values while repo-specific CSS output details live under `$extensions.me.jnap`. The build-plan step turns the approved pitch into implementation slices and validation commands. The execplan step executes those slices as an inactive preview template.
 
-Example JNAP planning artifacts live in `src/design-templates/pitches/examples/`.
-Example JNAP design objects live in `src/design-templates/design-objects/internet-foyer-index/`.
+JNAP planning artifacts live in `src/design-templates/pitches/examples/`.
+JNAP design objects live in `src/design-templates/design-objects/[template-id]/`.
 Run `npm run design:validate` before a build agent edits template code.
 
 ## Preview Harness
@@ -89,8 +97,7 @@ The preview index lives at `/preview` and shows cards for implemented and planne
 Template controls are declarative for now:
 
 - `src/data/design-control.json` defines tenant-level content, brand, theme, module, QA, and reference controls.
-- `src/design-templates/link-index-mobile-first/control-map.json` maps the active template to content paths, CSS tokens, selectors, accessibility expectations, and activation gates.
-- `src/design-templates/internet-foyer-index/control-map.json` maps the inactive Internet Foyer preview to its design-object contracts and implementation selectors.
+- `src/design-templates/[template-id]/control-map.json` maps each template to content paths, source contracts, tokens, selectors, accessibility expectations, and activation gates.
 - `src/design-templates/contracts/*.contract.json` defines candidate scope before any template code is created.
 
 These files do not change the rendered page. They exist so future visual slices can tune the design through explicit controls instead of ad hoc CSS edits.

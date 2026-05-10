@@ -1,0 +1,110 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "link-index-mobile-first.component.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "link-index-mobile-first",
+  "kind": "component",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-link-index-mobile-first.one-pager.json",
+    "src/design-templates/contracts/link-index-mobile-first.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "component.template_root",
+      "type": "component",
+      "name": "Template Root",
+      "purpose": "Template root and scoped style owner.",
+      "status": "implemented",
+      "class_name": "link-index-mobile-first",
+      "selector": "main[data-design-template='link-index-mobile-first']",
+      "tokens": {
+        "background": "color.surface.page",
+        "text": "color.text.primary"
+      }
+    },
+    {
+      "id": "component.identity_object",
+      "type": "component",
+      "name": "Identity Object",
+      "purpose": "Name and first impression.",
+      "status": "implemented",
+      "class_name": "hero",
+      "selector": ".hero",
+      "content_bindings": [
+        {
+          "source_path": "hero.name",
+          "target": "h1",
+          "rule": "Render the shared identity name."
+        }
+      ]
+    },
+    {
+      "id": "component.route_cluster",
+      "type": "component",
+      "name": "Route Cluster",
+      "purpose": "Visual grouping for shared sections.",
+      "status": "implemented",
+      "class_name": "link-stack-section",
+      "selector": ".link-stack__section",
+      "content_bindings": [
+        {
+          "source_path": "sections[]",
+          "target": ".link-stack__section",
+          "rule": "Render section groups in source order."
+        }
+      ]
+    },
+    {
+      "id": "component.route_object",
+      "type": "component",
+      "name": "Route Object",
+      "purpose": "Touchable route into shared destinations.",
+      "status": "implemented",
+      "class_name": "link-pill",
+      "selector": ".link-pill",
+      "content_bindings": [
+        {
+          "source_path": "sections[].links[].label",
+          "target": ".link-pill__label",
+          "rule": "Render visible label."
+        },
+        {
+          "source_path": "sections[].links[].href",
+          "target": ".link-pill[href]",
+          "rule": "Preserve href."
+        }
+      ],
+      "metadata": {
+        "min_target_px": 44
+      },
+      "requirements": [
+        "Minimum 44px tap target.",
+        "No hover-only meaning."
+      ]
+    },
+    {
+      "id": "component.template_footer",
+      "type": "component",
+      "name": "Template Footer",
+      "purpose": "Privacy link surface.",
+      "status": "implemented",
+      "class_name": "site-footer",
+      "selector": ".site-footer",
+      "content_bindings": [
+        {
+          "source_path": "footer.privacyHref",
+          "target": ".site-footer a[href]",
+          "rule": "Render privacy link when available."
+        }
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "tap_targets",
+    "keyboard_focus_visible"
+  ]
+}

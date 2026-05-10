@@ -1,0 +1,82 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "garden-index.accessibility.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "garden-index",
+  "kind": "accessibility",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+    "src/design-templates/contracts/garden-index.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "accessibility.focus",
+      "type": "accessibility_rule",
+      "name": "Visible Focus",
+      "purpose": "Keyboard navigation clarity.",
+      "status": "implemented",
+      "selector": ".garden-link:focus-visible",
+      "requirements": [
+        "Focus must be visible on route links.",
+        "Focus must not rely on motion alone."
+      ],
+      "metadata": {
+        "machine_checks": [
+          {
+            "id": "focus-selector-required",
+            "type": "selector_required",
+            "selector": ".garden-link:focus-visible"
+          }
+        ]
+      }
+    },
+    {
+      "id": "accessibility.tap_targets",
+      "type": "accessibility_rule",
+      "name": "Tap Targets",
+      "purpose": "Mobile usability.",
+      "status": "implemented",
+      "requirements": [
+        "Route links must be at least 44px high."
+      ],
+      "metadata": {
+        "machine_checks": [
+          {
+            "id": "route-target-minimum",
+            "type": "tap_target_minimum",
+            "selector": ".garden-link",
+            "minimum_px": 44
+          }
+        ]
+      }
+    },
+    {
+      "id": "accessibility.structure",
+      "type": "accessibility_rule",
+      "name": "Semantic Structure",
+      "purpose": "Readable document order.",
+      "status": "implemented",
+      "requirements": [
+        "One primary identity heading.",
+        "Route labels remain visible."
+      ],
+      "metadata": {
+        "machine_checks": [
+          {
+            "id": "single-h1",
+            "type": "semantic_rule",
+            "expectation": "exactly_one_h1"
+          }
+        ]
+      }
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "keyboard_focus_visible",
+    "logical_heading_structure"
+  ]
+}

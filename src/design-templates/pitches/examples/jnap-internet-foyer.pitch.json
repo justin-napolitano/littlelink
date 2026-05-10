@@ -5,7 +5,7 @@
   "status": "approved_for_execplan",
   "intake_ref": "src/design-templates/pitches/examples/jnap-intake.json",
   "template_contract_refs": [
-    "src/design-templates/contracts/internet-foyer.contract.json"
+    "src/design-templates/contracts/internet-foyer-index.contract.json"
   ],
   "client_summary": {
     "positioning": "Justin's root should feel like a curated public front room: professional enough to trust, personal enough to keep clicking.",

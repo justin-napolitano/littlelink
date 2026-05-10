@@ -1,0 +1,118 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "proof-index.palette.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "proof-index",
+  "kind": "palette",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+    "src/design-templates/contracts/proof-index.contract.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/proof-index/tokens/color.tokens.json",
+    "contrast_pairs": [
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.text.primary",
+        "background": "color.surface.object",
+        "minimum_ratio": 4.5
+      },
+      {
+        "foreground": "color.accent.primary",
+        "background": "color.surface.page",
+        "minimum_ratio": 4.5
+      }
+    ]
+  },
+  "objects": [
+    {
+      "id": "color.surface.page",
+      "type": "color",
+      "name": "Proof Background",
+      "purpose": "Proof Background token for Proof Index.",
+      "status": "implemented",
+      "value": "#F7F7F3",
+      "css_variable": "--proof-bg",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.surface.object",
+      "type": "color",
+      "name": "Proof Paper",
+      "purpose": "Proof Paper token for Proof Index.",
+      "status": "implemented",
+      "value": "#FFFFFF",
+      "css_variable": "--proof-paper",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.text.primary",
+      "type": "color",
+      "name": "Proof Ink",
+      "purpose": "Proof Ink token for Proof Index.",
+      "status": "implemented",
+      "value": "#111111",
+      "css_variable": "--proof-ink",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.text.secondary",
+      "type": "color",
+      "name": "Proof Muted",
+      "purpose": "Proof Muted token for Proof Index.",
+      "status": "implemented",
+      "value": "#111111",
+      "css_variable": "--proof-muted",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.accent.primary",
+      "type": "color",
+      "name": "Proof Blue",
+      "purpose": "Proof Blue token for Proof Index.",
+      "status": "implemented",
+      "value": "#244F7A",
+      "css_variable": "--proof-blue",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    },
+    {
+      "id": "color.line.soft",
+      "type": "color",
+      "name": "Proof Line",
+      "purpose": "Proof Line token for Proof Index.",
+      "status": "implemented",
+      "value": "#111111",
+      "css_variable": "--proof-line",
+      "usage": [
+        "template CSS",
+        "preview QA"
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "contrast_readable"
+  ]
+}

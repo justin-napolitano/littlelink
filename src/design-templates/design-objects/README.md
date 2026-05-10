@@ -26,9 +26,9 @@ Common object kinds:
 
 Template token exports live next to the design objects:
 
-- `internet-foyer-index/tokens/color.tokens.json`
-- `internet-foyer-index/tokens/typography.tokens.json`
-- `internet-foyer-index/tokens/spacing.tokens.json`
+- `[template-id]/tokens/color.tokens.json`
+- `[template-id]/tokens/typography.tokens.json`
+- `[template-id]/tokens/spacing.tokens.json`
 
 These files use DTCG `$type`, `$value`, `$description`, and `$extensions` fields so the same contracts can feed CSS, previews, docs, and future API workflows. Repo-specific CSS variables, CSS fallback values, source object IDs, and provenance live under the `$extensions.me.jnap` namespace.
 
@@ -41,4 +41,4 @@ These files use DTCG `$type`, `$value`, `$description`, and `$extensions` fields
 5. Build an inactive preview template from the design objects and tokens.
 6. Compare screenshots before activation.
 
-Design objects are still planning artifacts until the build plan status is `ready_for_build`.
+Design objects are required for every implemented template. New builds use `ready_for_build`; backfilled or completed template work may use `complete` on the build plan, but still has to pass `npm run design:validate`.

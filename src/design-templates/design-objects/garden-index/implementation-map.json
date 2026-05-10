@@ -1,0 +1,61 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "garden-index.implementation_map.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "garden-index",
+  "kind": "implementation_map",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-garden-index.build-plan.json",
+    "src/design-templates/design-objects/garden-index/components.json"
+  ],
+  "objects": [
+    {
+      "id": "implementation.template_files",
+      "type": "implementation_rule",
+      "name": "Template Files",
+      "purpose": "Runtime template implementation files.",
+      "status": "implemented",
+      "implementation": {
+        "files": [
+          "src/design-templates/garden-index/manifest.yaml",
+          "src/design-templates/garden-index/index.astro",
+          "src/design-templates/garden-index/styles.css",
+          "src/design-templates/garden-index/control-map.json"
+        ],
+        "selectors": [
+          "main[data-design-template='garden-index']",
+          ".garden-hero",
+          ".garden-link"
+        ],
+        "test_hooks": [
+          "/preview/garden-index"
+        ]
+      },
+      "requirements": [
+        "Template remains previewable.",
+        "Shared content and privacy behavior remain unchanged."
+      ]
+    },
+    {
+      "id": "implementation.validation",
+      "type": "implementation_rule",
+      "name": "Validation",
+      "purpose": "Required checks for this template lifecycle.",
+      "status": "implemented",
+      "requirements": [
+        "npm run design:validate",
+        "npm run build",
+        "git diff --check",
+        "curl -I http://127.0.0.1:4327/preview/garden-index"
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "build_passes",
+    "preview_route_healthy"
+  ]
+}

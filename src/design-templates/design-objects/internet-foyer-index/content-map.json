@@ -2,12 +2,12 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.content-map.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "content_map",
   "source_refs": [
     "src/data/site.json",
-    "src/design-templates/contracts/internet-foyer.contract.json"
+    "src/design-templates/contracts/internet-foyer-index.contract.json"
   ],
   "objects": [
     {
@@ -15,7 +15,7 @@
       "type": "content_binding",
       "name": "Identity",
       "purpose": "Map shared identity content into the identity object.",
-      "status": "approved",
+      "status": "implemented",
       "content_bindings": [
         {
           "source_path": "hero.name",
@@ -37,7 +37,7 @@
       "type": "content_binding",
       "name": "Proof Routes",
       "purpose": "Professional trust exits.",
-      "status": "approved",
+      "status": "implemented",
       "content_bindings": [
         {
           "source_path": "sections[id=studio].links",
@@ -54,7 +54,7 @@
       "type": "content_binding",
       "name": "Contact Routes",
       "purpose": "Direct contact while preserving private URL proxying.",
-      "status": "approved",
+      "status": "implemented",
       "content_bindings": [
         {
           "source_path": "sections[id=direct].links",
@@ -72,7 +72,7 @@
       "type": "content_binding",
       "name": "Social Routes",
       "purpose": "Human texture through public social routes.",
-      "status": "approved",
+      "status": "implemented",
       "content_bindings": [
         {
           "source_path": "sections[id=socials].links",

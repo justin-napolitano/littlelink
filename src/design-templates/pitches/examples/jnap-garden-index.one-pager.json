@@ -1,0 +1,148 @@
+{
+  "$schema": "../design-one-pager.schema.json",
+  "one_pager_id": "jnap-garden-index-one-pager-v1",
+  "version": 1,
+  "status": "approved",
+  "pitch_ref": "src/design-templates/pitches/examples/jnap-garden-index.pitch.json",
+  "client": {
+    "name": "Justin Napolitano",
+    "site_url": "https://jnap.me",
+    "project_type": "Personal PR template"
+  },
+  "selected_direction": {
+    "id": "garden-index",
+    "name": "Garden Index",
+    "why": "Docs-forward bridge into the public garden/wiki without turning the root into a blog."
+  },
+  "design_thesis": {
+    "one_liner": "Docs-forward bridge into the public garden/wiki without turning the root into a blog.",
+    "first_impression": "A personal root with a clear path into deeper public notes.",
+    "not_this": [
+      "pitch deck",
+      "generic template",
+      "tech-stack personality"
+    ]
+  },
+  "visual_system": {
+    "typography": {
+      "display": "Georgia, serif",
+      "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "labels": "Route labels use .garden-link span:last-child.",
+      "rules": [
+        "No negative letter spacing.",
+        "Text must fit mobile containers.",
+        "Copy stays short and direct."
+      ]
+    },
+    "color_palette": [
+      {
+        "name": "Garden Background",
+        "value": "#F4F2EA",
+        "usage": "page background"
+      },
+      {
+        "name": "Garden Paper",
+        "value": "#FFFDF7",
+        "usage": "surface/object background"
+      },
+      {
+        "name": "Garden Ink",
+        "value": "#151812",
+        "usage": "primary text"
+      },
+      {
+        "name": "Garden Green",
+        "value": "#315F4A",
+        "usage": "focus and route accent"
+      }
+    ],
+    "shape": [
+      "Surface radius: 20px",
+      "Route radius: 14px",
+      "Icon radius: 999px"
+    ],
+    "texture": [
+      "Line, spacing, and surface quality only."
+    ],
+    "imagery": [
+      "No image dependency for this template."
+    ],
+    "iconography": [
+      "Use existing route icons from shared content."
+    ]
+  },
+  "experience_system": {
+    "mobile_first": "Mobile is the primary review surface.",
+    "layout": [
+      "two-part hero with docs feature card",
+      "three-column route grid on desktop and single-column mobile"
+    ],
+    "interaction": [
+      "Direct route links",
+      "Visible keyboard focus",
+      "No hover-only meaning"
+    ],
+    "motion": [
+      "subtle hover background on route rows",
+      "no motion required for comprehension"
+    ],
+    "accessibility": [
+      "Readable contrast",
+      "Minimum 44px tap targets",
+      "Single clear identity heading"
+    ]
+  },
+  "content_modules": [
+    {
+      "name": "identity",
+      "status": "active_or_supported",
+      "purpose": "Supports identity content through shared site.json."
+    },
+    {
+      "name": "docs_feature",
+      "status": "active_or_supported",
+      "purpose": "Supports docs_feature content through shared site.json."
+    },
+    {
+      "name": "work",
+      "status": "active_or_supported",
+      "purpose": "Supports work content through shared site.json."
+    },
+    {
+      "name": "contact",
+      "status": "active_or_supported",
+      "purpose": "Supports contact content through shared site.json."
+    },
+    {
+      "name": "social",
+      "status": "active_or_supported",
+      "purpose": "Supports social content through shared site.json."
+    }
+  ],
+  "references": [
+    {
+      "name": "maggie-appleton",
+      "url": "https://maggieappleton.com/",
+      "borrow": "Digital garden and visual note reference"
+    },
+    {
+      "name": "tania-rascia",
+      "url": "https://www.taniarascia.com/",
+      "borrow": "Readable developer writing reference"
+    }
+  ],
+  "deliverables": [
+    "inactive preview template",
+    "template contract",
+    "control map",
+    "design object files",
+    "DTCG-compatible token files",
+    "template build plan"
+  ],
+  "approval_checklist": [
+    "Shared route data unchanged.",
+    "Privacy behavior unchanged.",
+    "Mobile and desktop screenshots reviewed.",
+    "Validator passes."
+  ]
+}

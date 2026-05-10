@@ -1,0 +1,143 @@
+{
+  "$schema": "../design-one-pager.schema.json",
+  "one_pager_id": "jnap-link-index-mobile-first-one-pager-v1",
+  "version": 1,
+  "status": "approved",
+  "pitch_ref": "src/design-templates/pitches/examples/jnap-link-index-mobile-first.pitch.json",
+  "client": {
+    "name": "Justin Napolitano",
+    "site_url": "https://jnap.me",
+    "project_type": "Personal PR template"
+  },
+  "selected_direction": {
+    "id": "link-index-mobile-first",
+    "name": "Link Index Mobile First",
+    "why": "Accepted mobile-first link hub with warm identity and direct route objects."
+  },
+  "design_thesis": {
+    "one_liner": "Accepted mobile-first link hub with warm identity and direct route objects.",
+    "first_impression": "A normal, organized public front door that feels personal without trying too hard.",
+    "not_this": [
+      "pitch deck",
+      "generic template",
+      "tech-stack personality"
+    ]
+  },
+  "visual_system": {
+    "typography": {
+      "display": "'Fraunces', 'Georgia', serif",
+      "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif",
+      "labels": "Route labels use .link-pill__label.",
+      "rules": [
+        "No negative letter spacing.",
+        "Text must fit mobile containers.",
+        "Copy stays short and direct."
+      ]
+    },
+    "color_palette": [
+      {
+        "name": "Warm Background",
+        "value": "#F5F2EC",
+        "usage": "page background"
+      },
+      {
+        "name": "Soft Upper Surface",
+        "value": "#FDFBF7",
+        "usage": "surface/object background"
+      },
+      {
+        "name": "Ink",
+        "value": "#0F100F",
+        "usage": "primary text"
+      },
+      {
+        "name": "Living Green",
+        "value": "#0F7C66",
+        "usage": "focus and route accent"
+      }
+    ],
+    "shape": [
+      "Surface radius: 28px",
+      "Route radius: 999px",
+      "Icon radius: 999px"
+    ],
+    "texture": [
+      "Line, spacing, and surface quality only."
+    ],
+    "imagery": [
+      "No image dependency for this template."
+    ],
+    "iconography": [
+      "Use existing route icons from shared content."
+    ]
+  },
+  "experience_system": {
+    "mobile_first": "Mobile is the primary review surface.",
+    "layout": [
+      "single-column mobile-first route stack",
+      "warm hero surface above grouped route cards"
+    ],
+    "interaction": [
+      "Direct route links",
+      "Visible keyboard focus",
+      "No hover-only meaning"
+    ],
+    "motion": [
+      "subtle hover/focus transition only",
+      "reduced-motion-safe by global reset"
+    ],
+    "accessibility": [
+      "Readable contrast",
+      "Minimum 44px tap targets",
+      "Single clear identity heading"
+    ]
+  },
+  "content_modules": [
+    {
+      "name": "identity",
+      "status": "active_or_supported",
+      "purpose": "Supports identity content through shared site.json."
+    },
+    {
+      "name": "work",
+      "status": "active_or_supported",
+      "purpose": "Supports work content through shared site.json."
+    },
+    {
+      "name": "contact",
+      "status": "active_or_supported",
+      "purpose": "Supports contact content through shared site.json."
+    },
+    {
+      "name": "social",
+      "status": "active_or_supported",
+      "purpose": "Supports social content through shared site.json."
+    }
+  ],
+  "references": [
+    {
+      "name": "brian-lovin",
+      "url": "https://brianlovin.com/",
+      "borrow": "Personal operating-system reference"
+    },
+    {
+      "name": "rauno-freiberg",
+      "url": "https://rauno.me/",
+      "borrow": "Sparse personal signature reference"
+    }
+  ],
+  "deliverables": [
+    "inactive preview template",
+    "template contract",
+    "control map",
+    "design object files",
+    "DTCG-compatible token files",
+    "template build plan"
+  ],
+  "approval_checklist": [
+    "Shared route data unchanged.",
+    "Privacy behavior unchanged.",
+    "Mobile and desktop screenshots reviewed.",
+    "Validator passes."
+  ]
+}

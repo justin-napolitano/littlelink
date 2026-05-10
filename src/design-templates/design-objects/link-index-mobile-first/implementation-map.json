@@ -1,0 +1,61 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "link-index-mobile-first.implementation_map.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "link-index-mobile-first",
+  "kind": "implementation_map",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-link-index-mobile-first.build-plan.json",
+    "src/design-templates/design-objects/link-index-mobile-first/components.json"
+  ],
+  "objects": [
+    {
+      "id": "implementation.template_files",
+      "type": "implementation_rule",
+      "name": "Template Files",
+      "purpose": "Runtime template implementation files.",
+      "status": "implemented",
+      "implementation": {
+        "files": [
+          "src/design-templates/link-index-mobile-first/manifest.yaml",
+          "src/design-templates/link-index-mobile-first/index.astro",
+          "src/design-templates/link-index-mobile-first/styles.css",
+          "src/design-templates/link-index-mobile-first/control-map.json"
+        ],
+        "selectors": [
+          "main[data-design-template='link-index-mobile-first']",
+          ".hero",
+          ".link-pill"
+        ],
+        "test_hooks": [
+          "/preview/link-index-mobile-first"
+        ]
+      },
+      "requirements": [
+        "Template remains previewable.",
+        "Shared content and privacy behavior remain unchanged."
+      ]
+    },
+    {
+      "id": "implementation.validation",
+      "type": "implementation_rule",
+      "name": "Validation",
+      "purpose": "Required checks for this template lifecycle.",
+      "status": "implemented",
+      "requirements": [
+        "npm run design:validate",
+        "npm run build",
+        "git diff --check",
+        "curl -I http://127.0.0.1:4327/preview/link-index-mobile-first"
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "build_passes",
+    "preview_route_healthy"
+  ]
+}

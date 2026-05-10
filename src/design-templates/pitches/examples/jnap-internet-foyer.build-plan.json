@@ -2,9 +2,9 @@
   "$schema": "../template-build-plan.schema.json",
   "plan_id": "jnap-internet-foyer-build-plan-v1",
   "version": 1,
-  "status": "ready_for_build",
+  "status": "complete",
   "pitch_ref": "src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json",
-  "template_contract_ref": "src/design-templates/contracts/internet-foyer.contract.json",
+  "template_contract_ref": "src/design-templates/contracts/internet-foyer-index.contract.json",
   "design_object_refs": [
     "src/design-templates/design-objects/internet-foyer-index/palette.json",
     "src/design-templates/design-objects/internet-foyer-index/typography.json",

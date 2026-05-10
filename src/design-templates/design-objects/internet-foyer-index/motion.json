@@ -2,11 +2,11 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.motion.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "motion",
   "source_refs": [
-    "src/design-templates/contracts/internet-foyer.contract.json",
+    "src/design-templates/contracts/internet-foyer-index.contract.json",
     "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json"
   ],
   "objects": [
@@ -15,7 +15,7 @@
       "type": "duration_token",
       "name": "Quick",
       "purpose": "Immediate tap and hover response.",
-      "status": "approved",
+      "status": "implemented",
       "value": "160ms",
       "css_variable": "--foyer-motion-quick"
     },
@@ -24,7 +24,7 @@
       "type": "duration_token",
       "name": "Gentle",
       "purpose": "Small object wake transitions.",
-      "status": "approved",
+      "status": "implemented",
       "value": "260ms",
       "css_variable": "--foyer-motion-gentle"
     },
@@ -33,7 +33,7 @@
       "type": "easing_token",
       "name": "Natural",
       "purpose": "Soft movement without spectacle.",
-      "status": "approved",
+      "status": "implemented",
       "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
       "css_variable": "--foyer-ease-natural"
     },
@@ -42,7 +42,7 @@
       "type": "interaction",
       "name": "Route Wake",
       "purpose": "Small proof-of-craft response on hover, focus, and tap.",
-      "status": "approved",
+      "status": "implemented",
       "selector": ".foyer-route",
       "states": [
         {

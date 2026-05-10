@@ -1,0 +1,78 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "link-index-mobile-first.typography.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "link-index-mobile-first",
+  "kind": "typography",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-link-index-mobile-first.one-pager.json",
+    "src/design-templates/contracts/link-index-mobile-first.contract.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/link-index-mobile-first/tokens/typography.tokens.json"
+  },
+  "objects": [
+    {
+      "id": "font.display.identity",
+      "type": "font",
+      "name": "Display Font",
+      "purpose": "Identity and first impression type.",
+      "status": "implemented",
+      "value": "'Fraunces', 'Georgia', serif",
+      "css_variable": "--link-font-display"
+    },
+    {
+      "id": "font.body.default",
+      "type": "font",
+      "name": "Body Font",
+      "purpose": "Route labels and supporting text.",
+      "status": "implemented",
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif",
+      "css_variable": "--link-font-body"
+    },
+    {
+      "id": "type.identity.name",
+      "type": "type_style",
+      "name": "Identity Name",
+      "purpose": "Primary identity heading.",
+      "status": "implemented",
+      "values": {
+        "font_family": "font.display.identity",
+        "font_size": "clamp(2.8rem, 6vw, 4rem)",
+        "font_weight": "560",
+        "line_height": "1",
+        "letter_spacing": "0"
+      },
+      "selector": "h1",
+      "requirements": [
+        "No negative letter spacing.",
+        "Must fit mobile viewport without horizontal overflow."
+      ]
+    },
+    {
+      "id": "type.route.label",
+      "type": "type_style",
+      "name": "Route Label",
+      "purpose": "Readable link label type.",
+      "status": "implemented",
+      "values": {
+        "font_family": "font.body.default",
+        "font_size": "1rem",
+        "font_weight": "700",
+        "line_height": "1.2",
+        "letter_spacing": "0"
+      },
+      "selector": ".link-pill__label",
+      "requirements": [
+        "Labels stay short and direct."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "no_text_overflow"
+  ]
+}

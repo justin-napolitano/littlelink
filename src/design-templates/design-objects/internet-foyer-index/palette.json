@@ -2,12 +2,12 @@
   "$schema": "../design-object-set.schema.json",
   "object_set_id": "internet-foyer.palette.v1",
   "version": 1,
-  "status": "draft",
+  "status": "implemented",
   "template_id": "internet-foyer-index",
   "kind": "palette",
   "source_refs": [
     "src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json",
-    "src/design-templates/contracts/internet-foyer.contract.json"
+    "src/design-templates/contracts/internet-foyer-index.contract.json"
   ],
   "metadata": {
     "token_ref": "src/design-templates/design-objects/internet-foyer-index/tokens/color.tokens.json",
@@ -40,7 +40,7 @@
       "type": "color",
       "name": "Warm Paper",
       "purpose": "Page base that feels warm without becoming a beige-only theme.",
-      "status": "approved",
+      "status": "implemented",
       "value": "#F5F2EC",
       "css_variable": "--foyer-color-surface-page",
       "usage": [
@@ -57,7 +57,7 @@
       "type": "color",
       "name": "Soft Surface",
       "purpose": "Primary object surface for tappable route objects and identity surfaces.",
-      "status": "approved",
+      "status": "implemented",
       "value": "#FDFBF7",
       "css_variable": "--foyer-color-surface-object",
       "usage": [
@@ -70,7 +70,7 @@
       "type": "color",
       "name": "Ink",
       "purpose": "Primary readable text.",
-      "status": "approved",
+      "status": "implemented",
       "value": "#0F100F",
       "css_variable": "--foyer-color-text-primary",
       "usage": [
@@ -84,7 +84,7 @@
       "type": "color",
       "name": "Muted Ink",
       "purpose": "Secondary explanatory text if a design object needs it.",
-      "status": "approved",
+      "status": "implemented",
       "value": "rgba(15, 16, 15, 0.65)",
       "css_variable": "--foyer-color-text-secondary",
       "usage": [
@@ -97,7 +97,7 @@
       "type": "color",
       "name": "Living Green",
       "purpose": "Small route accents and focus states.",
-      "status": "approved",
+      "status": "implemented",
       "value": "#0F7C66",
       "css_variable": "--foyer-color-accent-living",
       "usage": [
@@ -111,7 +111,7 @@
       "type": "color",
       "name": "Electric Blue",
       "purpose": "Occasional interaction accent for a more alive surface.",
-      "status": "approved",
+      "status": "implemented",
       "value": "#2563EB",
       "css_variable": "--foyer-color-accent-electric",
       "usage": [
@@ -128,7 +128,7 @@
       "type": "color",
       "name": "Soft Line",
       "purpose": "Low-contrast borders around tactile objects.",
-      "status": "approved",
+      "status": "implemented",
       "value": "rgba(15, 16, 15, 0.12)",
       "css_variable": "--foyer-color-line-soft",
       "usage": [

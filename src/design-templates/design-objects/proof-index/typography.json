@@ -1,0 +1,78 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "proof-index.typography.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "proof-index",
+  "kind": "typography",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+    "src/design-templates/contracts/proof-index.contract.json"
+  ],
+  "metadata": {
+    "token_ref": "src/design-templates/design-objects/proof-index/tokens/typography.tokens.json"
+  },
+  "objects": [
+    {
+      "id": "font.display.identity",
+      "type": "font",
+      "name": "Display Font",
+      "purpose": "Identity and first impression type.",
+      "status": "implemented",
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "css_variable": "--proof-font-display"
+    },
+    {
+      "id": "font.body.default",
+      "type": "font",
+      "name": "Body Font",
+      "purpose": "Route labels and supporting text.",
+      "status": "implemented",
+      "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "css_variable": "--proof-font-body"
+    },
+    {
+      "id": "type.identity.name",
+      "type": "type_style",
+      "name": "Identity Name",
+      "purpose": "Primary identity heading.",
+      "status": "implemented",
+      "values": {
+        "font_family": "font.display.identity",
+        "font_size": "clamp(2.5rem, 9vw, 5rem)",
+        "font_weight": "900",
+        "line_height": "1",
+        "letter_spacing": "0"
+      },
+      "selector": "#proof-title",
+      "requirements": [
+        "No negative letter spacing.",
+        "Must fit mobile viewport without horizontal overflow."
+      ]
+    },
+    {
+      "id": "type.route.label",
+      "type": "type_style",
+      "name": "Route Label",
+      "purpose": "Readable link label type.",
+      "status": "implemented",
+      "values": {
+        "font_family": "font.body.default",
+        "font_size": "1rem",
+        "font_weight": "900",
+        "line_height": "1.2",
+        "letter_spacing": "0"
+      },
+      "selector": ".proof-primary__link span:last-child, .proof-link span",
+      "requirements": [
+        "Labels stay short and direct."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "no_text_overflow"
+  ]
+}

@@ -10,7 +10,7 @@
     "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json",
     "candidate_templates": "src/design-templates/candidate-templates.json",
     "personal_site_template_contract_schema": "src/design-templates/contracts/personal-site-template-contract.schema.json",
-    "next_template_contract": "src/design-templates/contracts/internet-foyer.contract.json",
+    "next_template_contract": "src/design-templates/contracts/internet-foyer-index.contract.json",
     "client_intake_schema": "src/design-templates/pitches/client-intake.schema.json",
     "design_pitch_schema": "src/design-templates/pitches/design-pitch.schema.json",
     "design_one_pager_schema": "src/design-templates/pitches/design-one-pager.schema.json",
@@ -24,7 +24,46 @@
     "template_ids": "src/lib/design-template-ids.ts",
     "template_registry": "src/lib/design-template-registry.ts",
     "preview_index": "src/pages/preview/index.astro",
-    "preview_route": "src/pages/preview/[templateId].astro"
+    "preview_route": "src/pages/preview/[templateId].astro",
+    "template_contract_requirement": "Every implemented template must pass npm run design:validate with contract, pitch, one-pager, build plan, design objects, tokens, manifest, and control map present.",
+    "implemented_template_contracts": {
+      "link-index-mobile-first": {
+        "manifest": "src/design-templates/link-index-mobile-first/manifest.yaml",
+        "contract": "src/design-templates/contracts/link-index-mobile-first.contract.json",
+        "pitch": "src/design-templates/pitches/examples/jnap-link-index-mobile-first.pitch.json",
+        "one_pager": "src/design-templates/pitches/examples/jnap-link-index-mobile-first.one-pager.json",
+        "build_plan": "src/design-templates/pitches/examples/jnap-link-index-mobile-first.build-plan.json",
+        "design_objects": "src/design-templates/design-objects/link-index-mobile-first/",
+        "control_map": "src/design-templates/link-index-mobile-first/control-map.json"
+      },
+      "quiet-index": {
+        "manifest": "src/design-templates/quiet-index/manifest.yaml",
+        "contract": "src/design-templates/contracts/quiet-index.contract.json",
+        "pitch": "src/design-templates/pitches/examples/jnap-quiet-index.pitch.json",
+        "one_pager": "src/design-templates/pitches/examples/jnap-quiet-index.one-pager.json",
+        "build_plan": "src/design-templates/pitches/examples/jnap-quiet-index.build-plan.json",
+        "design_objects": "src/design-templates/design-objects/quiet-index/",
+        "control_map": "src/design-templates/quiet-index/control-map.json"
+      },
+      "garden-index": {
+        "manifest": "src/design-templates/garden-index/manifest.yaml",
+        "contract": "src/design-templates/contracts/garden-index.contract.json",
+        "pitch": "src/design-templates/pitches/examples/jnap-garden-index.pitch.json",
+        "one_pager": "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+        "build_plan": "src/design-templates/pitches/examples/jnap-garden-index.build-plan.json",
+        "design_objects": "src/design-templates/design-objects/garden-index/",
+        "control_map": "src/design-templates/garden-index/control-map.json"
+      },
+      "proof-index": {
+        "manifest": "src/design-templates/proof-index/manifest.yaml",
+        "contract": "src/design-templates/contracts/proof-index.contract.json",
+        "pitch": "src/design-templates/pitches/examples/jnap-proof-index.pitch.json",
+        "one_pager": "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+        "build_plan": "src/design-templates/pitches/examples/jnap-proof-index.build-plan.json",
+        "design_objects": "src/design-templates/design-objects/proof-index/",
+        "control_map": "src/design-templates/proof-index/control-map.json"
+      }
+    }
   },
   "template_strategy": {
     "comparison_unit": "template",

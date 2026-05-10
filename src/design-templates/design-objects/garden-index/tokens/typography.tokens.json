@@ -1,0 +1,85 @@
+{
+  "$schema": "../../schemas/design-token-file.schema.json",
+  "$extensions": {
+    "me.jnap": {
+      "token_set_id": "garden-index.typography.tokens.v1",
+      "format": "DTCG 2025.10",
+      "template_id": "garden-index",
+      "source_object_refs": [
+        "src/design-templates/design-objects/garden-index/typography.json"
+      ]
+    }
+  },
+  "font": {
+    "display": {
+      "$type": "fontFamily",
+      "$value": "Georgia, serif",
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "font.display.identity",
+          "css_variable": "--template-font-display",
+          "css_fallback": "Georgia, serif"
+        }
+      }
+    },
+    "body": {
+      "$type": "fontFamily",
+      "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "font.body.default",
+          "css_variable": "--template-font-body",
+          "css_fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
+        }
+      }
+    }
+  },
+  "type": {
+    "identity": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.display}",
+        "fontSize": {
+          "value": 48,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "lineHeight": 1,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "type.identity.name",
+          "css_variable": "--template-type-identity",
+          "css_fallback": "clamp(3rem, 12vw, 6.2rem)"
+        }
+      }
+    },
+    "route": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.body}",
+        "fontSize": {
+          "value": 16,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "lineHeight": 1.2,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "$extensions": {
+        "me.jnap": {
+          "source_object_id": "type.route.label",
+          "css_variable": "--template-type-route",
+          "css_fallback": "1rem"
+        }
+      }
+    }
+  }
+}

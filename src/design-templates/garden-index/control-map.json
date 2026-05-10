@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "template_id": "garden-index",
+  "status": "implemented_preview",
+  "intent": "Docs-forward bridge into the public garden/wiki without turning the root into a blog.",
+  "source_contracts": {
+    "template_contract": "src/design-templates/contracts/garden-index.contract.json",
+    "pitch": "src/design-templates/pitches/examples/jnap-garden-index.pitch.json",
+    "one_pager": "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+    "build_plan": "src/design-templates/pitches/examples/jnap-garden-index.build-plan.json",
+    "design_objects": "src/design-templates/design-objects/garden-index/",
+    "tokens": [
+      "src/design-templates/design-objects/garden-index/tokens/color.tokens.json",
+      "src/design-templates/design-objects/garden-index/tokens/typography.tokens.json",
+      "src/design-templates/design-objects/garden-index/tokens/spacing.tokens.json"
+    ]
+  },
+  "content_map": {
+    "identity": {
+      "source_paths": [
+        "hero.name",
+        "hero.subhead"
+      ],
+      "selectors": [
+        ".garden-hero",
+        "#garden-title"
+      ],
+      "rule": "Render shared identity content without adding pitch copy."
+    },
+    "route_clusters": {
+      "source_paths": [
+        "sections[]",
+        "sections[].links[]"
+      ],
+      "selectors": [
+        ".garden-section",
+        ".garden-link",
+        ".garden-link span:last-child",
+        ".garden-link__icon"
+      ],
+      "rule": "Preserve route labels, URLs, icon bindings, and source order."
+    },
+    "footer": {
+      "source_paths": [
+        "footer.privacyLabel",
+        "footer.privacyHref"
+      ],
+      "selectors": [
+        ".garden-footer"
+      ]
+    },
+    "privacy": {
+      "source_paths": [
+        "consentScript"
+      ],
+      "selectors": [
+        ".consent-banner",
+        ".consent-banner__actions"
+      ]
+    }
+  },
+  "css_token_map": {
+    "color": [
+      "color.surface.page",
+      "color.surface.object",
+      "color.text.primary",
+      "color.text.secondary",
+      "color.accent.primary",
+      "color.line.soft"
+    ],
+    "type": [
+      "font.display.identity",
+      "font.body.default",
+      "type.identity.name",
+      "type.route.label"
+    ],
+    "space": [
+      "space.page.padding",
+      "space.stack.gap",
+      "space.section.padding",
+      "space.route.padding"
+    ]
+  },
+  "activation_requirements": [
+    "route labels and URLs are unchanged unless the content contract changes",
+    "privacy and analytics behavior are unchanged",
+    "mobile and desktop screenshots are reviewed",
+    "npm run design:validate passes for all implemented templates"
+  ]
+}

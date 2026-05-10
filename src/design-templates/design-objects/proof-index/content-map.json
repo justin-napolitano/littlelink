@@ -1,0 +1,67 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "proof-index.content_map.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "proof-index",
+  "kind": "content_map",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-proof-index.one-pager.json",
+    "src/design-templates/contracts/proof-index.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "content.identity",
+      "type": "content_rule",
+      "name": "Identity Content",
+      "purpose": "Bind shared identity fields.",
+      "status": "implemented",
+      "content_bindings": [
+        {
+          "source_path": "hero.name",
+          "target": "#proof-title",
+          "rule": "Render without changing content."
+        }
+      ]
+    },
+    {
+      "id": "content.routes",
+      "type": "content_rule",
+      "name": "Route Content",
+      "purpose": "Bind shared sections and route links.",
+      "status": "implemented",
+      "content_bindings": [
+        {
+          "source_path": "sections[]",
+          "target": ".proof-section",
+          "rule": "Render in source order."
+        },
+        {
+          "source_path": "sections[].links[]",
+          "target": ".proof-primary__link, .proof-link",
+          "rule": "Preserve labels, URLs, icons, and new-tab behavior."
+        }
+      ]
+    },
+    {
+      "id": "content.footer",
+      "type": "content_rule",
+      "name": "Footer Content",
+      "purpose": "Bind privacy footer content.",
+      "status": "implemented",
+      "content_bindings": [
+        {
+          "source_path": "footer.privacyHref",
+          "target": ".proof-footer",
+          "rule": "Preserve privacy route."
+        }
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "shared_content_unchanged"
+  ]
+}

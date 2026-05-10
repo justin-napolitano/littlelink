@@ -1,0 +1,45 @@
+{
+  "$schema": "../design-object-set.schema.json",
+  "object_set_id": "garden-index.layout.v1",
+  "version": 1,
+  "status": "implemented",
+  "template_id": "garden-index",
+  "kind": "layout",
+  "source_refs": [
+    "src/design-templates/pitches/examples/jnap-garden-index.one-pager.json",
+    "src/design-templates/contracts/garden-index.contract.json"
+  ],
+  "objects": [
+    {
+      "id": "layout.root",
+      "type": "layout_rule",
+      "name": "Root Layout",
+      "purpose": "Owns template viewport, width, and page rhythm.",
+      "status": "implemented",
+      "selector": "main[data-design-template='garden-index']",
+      "requirements": [
+        "two-part hero with docs feature card",
+        "three-column route grid on desktop and single-column mobile"
+      ]
+    },
+    {
+      "id": "layout.routes",
+      "type": "layout_rule",
+      "name": "Route Layout",
+      "purpose": "Defines route grouping and scan rhythm.",
+      "status": "implemented",
+      "selector": ".garden-section",
+      "requirements": [
+        "Render shared sections in source order.",
+        "Preserve mobile-first readability."
+      ]
+    }
+  ],
+  "build_rules": [
+    "Update this design object before changing equivalent template CSS."
+  ],
+  "qa_gates": [
+    "mobile_screenshot",
+    "desktop_screenshot"
+  ]
+}

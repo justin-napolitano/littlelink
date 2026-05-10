@@ -1,6 +1,6 @@
 # Design Contracts
 
-Design contracts are build prerequisites for new templates.
+Design contracts are required lifecycle artifacts for every implemented template.
 
 The goal is to make personal-site design work explicit before implementation:
 
@@ -14,7 +14,7 @@ The goal is to make personal-site design work explicit before implementation:
 ## Files
 
 - `personal-site-template-contract.schema.json`: reusable schema for personal-site template briefs.
-- `internet-foyer.contract.json`: next candidate direction for a more curious, personal, interactive root.
+- `[template-id].contract.json`: one contract per implemented template.
 
 ## Workflow
 
@@ -23,7 +23,9 @@ The goal is to make personal-site design work explicit before implementation:
 3. Approve the contract for build.
 4. Create the inactive template folder.
 5. Register the template for `/preview/[templateId]`.
-6. Compare mobile and desktop screenshots before activation.
+6. Add the pitch, one-pager, build plan, design objects, tokens, manifest, and control map.
+7. Run `npm run design:validate`.
+8. Compare mobile and desktop screenshots before activation.
 
 Contracts do not activate templates. They define the scope and design standard for future implementation slices.
 

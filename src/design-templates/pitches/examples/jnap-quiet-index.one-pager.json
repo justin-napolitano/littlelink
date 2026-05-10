@@ -1,0 +1,143 @@
+{
+  "$schema": "../design-one-pager.schema.json",
+  "one_pager_id": "jnap-quiet-index-one-pager-v1",
+  "version": 1,
+  "status": "approved",
+  "pitch_ref": "src/design-templates/pitches/examples/jnap-quiet-index.pitch.json",
+  "client": {
+    "name": "Justin Napolitano",
+    "site_url": "https://jnap.me",
+    "project_type": "Personal PR template"
+  },
+  "selected_direction": {
+    "id": "quiet-index",
+    "name": "Quiet Index",
+    "why": "Normal, trustworthy personal root with quiet surface treatment."
+  },
+  "design_thesis": {
+    "one_liner": "Normal, trustworthy personal root with quiet surface treatment.",
+    "first_impression": "A plain and competent personal directory.",
+    "not_this": [
+      "pitch deck",
+      "generic template",
+      "tech-stack personality"
+    ]
+  },
+  "visual_system": {
+    "typography": {
+      "display": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+      "labels": "Route labels use .quiet-link__label.",
+      "rules": [
+        "No negative letter spacing.",
+        "Text must fit mobile containers.",
+        "Copy stays short and direct."
+      ]
+    },
+    "color_palette": [
+      {
+        "name": "Quiet Background",
+        "value": "#F8F6F1",
+        "usage": "page background"
+      },
+      {
+        "name": "Quiet Paper",
+        "value": "#FFFDF8",
+        "usage": "surface/object background"
+      },
+      {
+        "name": "Quiet Ink",
+        "value": "#111312",
+        "usage": "primary text"
+      },
+      {
+        "name": "Living Green",
+        "value": "#0F7C66",
+        "usage": "focus and route accent"
+      }
+    ],
+    "shape": [
+      "Surface radius: 18px",
+      "Route radius: 18px",
+      "Icon radius: 12px"
+    ],
+    "texture": [
+      "Line, spacing, and surface quality only."
+    ],
+    "imagery": [
+      "No image dependency for this template."
+    ],
+    "iconography": [
+      "Use existing route icons from shared content."
+    ]
+  },
+  "experience_system": {
+    "mobile_first": "Mobile is the primary review surface.",
+    "layout": [
+      "narrow centered page",
+      "section labels sit beside route lists on desktop and stack on mobile"
+    ],
+    "interaction": [
+      "Direct route links",
+      "Visible keyboard focus",
+      "No hover-only meaning"
+    ],
+    "motion": [
+      "one-pixel hover lift",
+      "motion removed under reduced-motion preference"
+    ],
+    "accessibility": [
+      "Readable contrast",
+      "Minimum 44px tap targets",
+      "Single clear identity heading"
+    ]
+  },
+  "content_modules": [
+    {
+      "name": "identity",
+      "status": "active_or_supported",
+      "purpose": "Supports identity content through shared site.json."
+    },
+    {
+      "name": "work",
+      "status": "active_or_supported",
+      "purpose": "Supports work content through shared site.json."
+    },
+    {
+      "name": "contact",
+      "status": "active_or_supported",
+      "purpose": "Supports contact content through shared site.json."
+    },
+    {
+      "name": "social",
+      "status": "active_or_supported",
+      "purpose": "Supports social content through shared site.json."
+    }
+  ],
+  "references": [
+    {
+      "name": "derek-sivers",
+      "url": "https://sive.rs/",
+      "borrow": "Plain personal site reference"
+    },
+    {
+      "name": "rauno-freiberg",
+      "url": "https://rauno.me/",
+      "borrow": "Sparse personal signature reference"
+    }
+  ],
+  "deliverables": [
+    "inactive preview template",
+    "template contract",
+    "control map",
+    "design object files",
+    "DTCG-compatible token files",
+    "template build plan"
+  ],
+  "approval_checklist": [
+    "Shared route data unchanged.",
+    "Privacy behavior unchanged.",
+    "Mobile and desktop screenshots reviewed.",
+    "Validator passes."
+  ]
+}
