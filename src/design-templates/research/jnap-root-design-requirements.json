@@ -1,0 +1,240 @@
+{
+  "$schema": "./design-requirements.schema.json",
+  "version": 1,
+  "status": "active",
+  "product": "jnap-root-personal-pr-platform",
+  "scope": "Build-facing design requirements for the next JNAP template round and future client personal PR templates.",
+  "requirements": [
+    {
+      "id": "req-mobile-experience-first",
+      "title": "Mobile and experience first",
+      "priority": "must",
+      "description": "Every template must start from the mobile path through the site, then scale to desktop without compressing or overexplaining the content.",
+      "source_story_ids": [
+        "story-recruiter-five-second-read"
+      ],
+      "bibliography_ids": [
+        "std-wcag-22",
+        "note-jnap-template-research-2026"
+      ],
+      "acceptance_checks": [
+        "Primary exits are reachable in the first mobile viewport.",
+        "Tap targets meet or exceed local 44px design-object requirements.",
+        "Desktop layout is an expansion of the mobile experience, not a separate pitch page."
+      ],
+      "anti_goals": [
+        "Desktop-first decorative composition.",
+        "Hero copy required to explain the navigation."
+      ]
+    },
+    {
+      "id": "req-curiosity-with-clear-exits",
+      "title": "Curiosity with clear exits",
+      "priority": "must",
+      "description": "The root should make visitors want to interact further while keeping the useful exits obvious.",
+      "source_story_ids": [
+        "story-recruiter-five-second-read",
+        "story-personal-curated-human-read"
+      ],
+      "bibliography_ids": [
+        "ref-paco-coursey",
+        "ref-rauno-freiberg",
+        "note-jnap-template-research-2026"
+      ],
+      "acceptance_checks": [
+        "The first screen gives a clear read of identity and at least two next actions.",
+        "At least one below-fold hint is visible on common mobile viewports.",
+        "Interaction never hides or delays route access."
+      ],
+      "anti_goals": [
+        "Mystery navigation.",
+        "Explaining every route on the root."
+      ]
+    },
+    {
+      "id": "req-show-dont-claim",
+      "title": "Show, do not claim",
+      "priority": "must",
+      "description": "Credibility should come from routes, objects, proof, and specificity instead of generic claims about work or personality.",
+      "source_story_ids": [
+        "story-recruiter-five-second-read",
+        "story-collaborator-deeper-work"
+      ],
+      "bibliography_ids": [
+        "ref-getcoleman-agencies",
+        "ref-brian-lovin",
+        "ref-derek-sivers",
+        "note-jnap-template-research-2026"
+      ],
+      "acceptance_checks": [
+        "No generic pitch-deck value proposition is required above the fold.",
+        "Proof routes are visible as objects or direct links.",
+        "Labels stay concrete and plain."
+      ],
+      "anti_goals": [
+        "Work, writing, systems, experiments as decorative category language.",
+        "Sycophantic or jargony positioning copy."
+      ]
+    },
+    {
+      "id": "req-personal-professional-overlap",
+      "title": "Personal and professional overlap",
+      "priority": "should",
+      "description": "The root should feel like one real public identity where professional proof and personal texture coexist under privacy controls.",
+      "source_story_ids": [
+        "story-personal-curated-human-read"
+      ],
+      "bibliography_ids": [
+        "ref-brian-lovin",
+        "ref-tania-rascia",
+        "note-jnap-template-research-2026"
+      ],
+      "acceptance_checks": [
+        "Professional and personal routes can coexist without separate landing pages.",
+        "Optional lifestyle modules remain inactive until public review.",
+        "Social routes support the person without dominating the site."
+      ],
+      "anti_goals": [
+        "Raw social feed mirroring.",
+        "Private life as brand content."
+      ]
+    },
+    {
+      "id": "req-privacy-reviewed-personal-texture",
+      "title": "Privacy-reviewed personal texture",
+      "priority": "must",
+      "description": "Lifestyle, photo, social-media, and location-adjacent modules require explicit review before activation.",
+      "source_story_ids": [
+        "story-personal-curated-human-read"
+      ],
+      "bibliography_ids": [
+        "std-wcag-22",
+        "note-jnap-template-research-2026"
+      ],
+      "acceptance_checks": [
+        "Contracts list privacy review requirements for personal modules.",
+        "No private routes, photos, feeds, direct links, or environment values appear in public templates.",
+        "Unreviewed personal modules stay planned or disabled."
+      ],
+      "anti_goals": [
+        "Using private assets to make the page feel more personal.",
+        "Accidental direct-link or provider-data exposure."
+      ]
+    },
+    {
+      "id": "req-garden-ready-docs",
+      "title": "Garden-ready docs and wiki",
+      "priority": "should",
+      "description": "The docs/wiki path should be prepared for exploratory, evolving, connected knowledge rather than a reverse-chronological blog only.",
+      "source_story_ids": [
+        "story-collaborator-deeper-work"
+      ],
+      "bibliography_ids": [
+        "ref-maggie-appleton-garden-history",
+        "ref-derek-sivers"
+      ],
+      "acceptance_checks": [
+        "Docs/wiki references are treated as deeper routes, not root-page explanations.",
+        "Future garden modules can expose state, links, and content maturity.",
+        "Navigation provides enough signposts to explore without getting lost."
+      ],
+      "anti_goals": [
+        "Decorative garden language without information architecture.",
+        "Chronological blog assumptions baked into the root."
+      ]
+    },
+    {
+      "id": "req-motion-as-craft-not-dependency",
+      "title": "Motion as craft, not dependency",
+      "priority": "should",
+      "description": "Motion may create delight and brand signal, but the static structure must carry all meaning.",
+      "source_story_ids": [
+        "story-collaborator-deeper-work",
+        "story-personal-curated-human-read"
+      ],
+      "bibliography_ids": [
+        "ref-animejs",
+        "std-wcag-22"
+      ],
+      "acceptance_checks": [
+        "prefers-reduced-motion behavior exists when animation is used.",
+        "No animation is required to find links or understand grouping.",
+        "Motion is limited to interaction response, light entrance states, or optional prototypes."
+      ],
+      "anti_goals": [
+        "Scroll spectacle.",
+        "Autoplay sequences that delay route access."
+      ]
+    },
+    {
+      "id": "req-template-owned-presentation",
+      "title": "Template-owned presentation",
+      "priority": "must",
+      "description": "Spacing, typography, layout, background, density, and motion choices belong to the template unless promoted into shared controls.",
+      "source_story_ids": [
+        "story-collaborator-deeper-work",
+        "story-client-trust-template-system"
+      ],
+      "bibliography_ids": [
+        "std-design-tokens-2025-10",
+        "note-jnap-template-research-2026"
+      ],
+      "acceptance_checks": [
+        "Shared content remains universal across templates.",
+        "Template-specific design decisions live in template folders, control maps, design objects, and tokens.",
+        "Candidate templates can be previewed without changing production active-template config."
+      ],
+      "anti_goals": [
+        "Current-template spacing baked into site.json.",
+        "CSS-only design decisions with no contract or object representation."
+      ]
+    },
+    {
+      "id": "req-scalable-client-template-system",
+      "title": "Scalable client template system",
+      "priority": "must",
+      "description": "The design workflow should be reusable for future people and small businesses, not just Justin's root.",
+      "source_story_ids": [
+        "story-client-trust-template-system",
+        "story-operator-governed-build"
+      ],
+      "bibliography_ids": [
+        "std-design-tokens-2025-10",
+        "method-ixdf-user-stories"
+      ],
+      "acceptance_checks": [
+        "Pitch artifacts cite bibliography, user stories, and requirements.",
+        "Readable Markdown summaries can be generated or maintained for nontechnical review.",
+        "Template choices can be compared through preview routes and design objects."
+      ],
+      "anti_goals": [
+        "A one-off personal site workflow that cannot become a client product.",
+        "Design rationale stored only in chat history."
+      ]
+    },
+    {
+      "id": "req-contract-first-handoff",
+      "title": "Contract-first handoff",
+      "priority": "must",
+      "description": "Agentic design and build work must start from machine-readable contracts with auditable source IDs before implementation.",
+      "source_story_ids": [
+        "story-client-trust-template-system",
+        "story-operator-governed-build"
+      ],
+      "bibliography_ids": [
+        "std-design-tokens-2025-10",
+        "method-ixdf-user-stories",
+        "note-jnap-template-research-2026"
+      ],
+      "acceptance_checks": [
+        "npm run design:validate checks bibliography, user-story, requirement, pitch, one-pager, build-plan, design-object, and token artifacts.",
+        "Execplan templates require research inputs for pitch work.",
+        "Autonomous build agents stop on missing or invalid research references."
+      ],
+      "anti_goals": [
+        "Agents guessing design direction from screenshots only.",
+        "Manual reconciliation branches for missing research metadata."
+      ]
+    }
+  ]
+}

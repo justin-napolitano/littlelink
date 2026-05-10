@@ -9,6 +9,12 @@
     "template_manifest": "src/design-templates/link-index-mobile-first/manifest.yaml",
     "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json",
     "candidate_templates": "src/design-templates/candidate-templates.json",
+    "design_bibliography": "src/design-templates/research/jnap-design-bibliography.json",
+    "design_bibliography_readable": "src/design-templates/research/jnap-design-bibliography.md",
+    "user_story_map": "src/design-templates/user-stories/jnap-root.user-stories.json",
+    "user_story_map_readable": "src/design-templates/user-stories/jnap-root.user-stories.md",
+    "design_requirements": "src/design-templates/research/jnap-root-design-requirements.json",
+    "design_requirements_readable": "src/design-templates/research/jnap-root-design-requirements.md",
     "personal_site_template_contract_schema": "src/design-templates/contracts/personal-site-template-contract.schema.json",
     "next_template_contract": "src/design-templates/contracts/internet-foyer.contract.json",
     "client_intake_schema": "src/design-templates/pitches/client-intake.schema.json",
@@ -32,7 +38,7 @@
     "active_selection_rule": "Only one template is active for the root route at a time.",
     "shared_content_rule": "Improve site.json as universal content; do not bake current-template layout needs into shared data.",
     "presentation_scope_rule": "Spacing, typography, background, density, and motion choices are template-owned unless explicitly promoted to shared controls.",
-    "pitch_workflow_rule": "Client designs start with intake, pitch, template contract, design objects, token exports, build plan, and execplan artifacts before implementation."
+    "pitch_workflow_rule": "Client designs start with intake, bibliography, user stories, requirements, pitch, template contract, design objects, token exports, build plan, and execplan artifacts before implementation."
   },
   "candidate_templates": {
     "planning_artifact": "src/design-templates/candidate-templates.json",
@@ -206,6 +212,9 @@
   ],
   "pitch_workflow": [
     "client_intake",
+    "design_bibliography",
+    "user_story_map",
+    "design_requirements",
     "design_pitch",
     "design_one_pager",
     "design_objects",
@@ -217,14 +226,17 @@
     "activation_decision"
   ],
   "reference_sources": [
-    "brian-lovin",
-    "derek-sivers",
-    "maggie-appleton",
-    "maggie-appleton-digital-garden",
-    "paco-coursey",
-    "joe-coleman-agencies",
-    "animejs",
-    "rauno-freiberg",
-    "thinkhouse-2026-web-design"
+    "ref-paco-coursey",
+    "ref-brian-lovin",
+    "ref-getcoleman-agencies",
+    "ref-animejs",
+    "ref-rauno-freiberg",
+    "ref-derek-sivers",
+    "ref-maggie-appleton-garden-history",
+    "ref-tania-rascia",
+    "std-wcag-22",
+    "std-design-tokens-2025-10",
+    "method-ixdf-user-stories",
+    "note-jnap-template-research-2026"
   ]
 }

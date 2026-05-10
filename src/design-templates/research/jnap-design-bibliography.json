@@ -1,0 +1,266 @@
+{
+  "$schema": "./design-bibliography.schema.json",
+  "version": 1,
+  "status": "active",
+  "scope": "Research baseline for JNAP root design, reusable personal PR templates, and future client design pitches.",
+  "last_reviewed": "2026-05-10",
+  "sources": [
+    {
+      "id": "ref-paco-coursey",
+      "title": "Paco Coursey",
+      "url": "https://paco.me/",
+      "source_type": "reference_site",
+      "category": "personal index",
+      "research_role": "Shows how a personal root can make projects, writing, now, and contact feel direct without a marketing wrapper.",
+      "usable_lessons": [
+        "Let visible work and routes carry credibility.",
+        "Use simple labels and strong information scent.",
+        "Keep the page personal without turning it into a bio essay."
+      ],
+      "avoid": [
+        "Copying developer-only category language.",
+        "Letting minimalism become generic."
+      ],
+      "applies_to": [
+        "internet-foyer-index",
+        "future-personal-pr-template"
+      ]
+    },
+    {
+      "id": "ref-brian-lovin",
+      "title": "Brian Lovin",
+      "url": "https://brianlovin.com/",
+      "source_type": "reference_site",
+      "category": "personal operating system",
+      "research_role": "Shows a mature personal site where writing, projects, tools, listening, and professional identity coexist.",
+      "usable_lessons": [
+        "A personal site can be a living index instead of a static resume.",
+        "Project lists can create trust when they are specific and easy to scan.",
+        "Personal and professional signals can share the same surface."
+      ],
+      "avoid": [
+        "Making the root feel like a blog index only.",
+        "Over-indexing on software-insider references for general visitors."
+      ],
+      "applies_to": [
+        "internet-foyer-index",
+        "garden-index",
+        "future-personal-pr-template"
+      ]
+    },
+    {
+      "id": "ref-getcoleman-agencies",
+      "title": "Agencies | Joe Coleman",
+      "url": "https://getcoleman.com/agencies/",
+      "source_type": "reference_site",
+      "category": "proof list",
+      "research_role": "Shows how direct listing can communicate credibility without explanatory copy.",
+      "usable_lessons": [
+        "Proof can be terse when the structure is confident.",
+        "Dense credibility can work when navigation remains obvious.",
+        "A list can be more memorable than a polished claim."
+      ],
+      "avoid": [
+        "Desktop-only density.",
+        "Making proof feel like an opaque insider roll call."
+      ],
+      "applies_to": [
+        "proof-index",
+        "future-small-business-template"
+      ]
+    },
+    {
+      "id": "ref-animejs",
+      "title": "Anime.js | JavaScript Animation Engine",
+      "url": "https://animejs.com/",
+      "source_type": "reference_site",
+      "category": "interactive craft",
+      "research_role": "Shows how motion and interactive examples can create curiosity while still supporting documentation and navigation.",
+      "usable_lessons": [
+        "Motion should reward interaction instead of blocking comprehension.",
+        "Interactive craft can be part of the brand signal.",
+        "Responsive and modular motion belongs behind clear static structure."
+      ],
+      "avoid": [
+        "Animation as spectacle.",
+        "Motion required to understand or access routes.",
+        "A library-site level of technical density on a personal root."
+      ],
+      "applies_to": [
+        "internet-foyer-index",
+        "future-motion-template"
+      ]
+    },
+    {
+      "id": "ref-rauno-freiberg",
+      "title": "Rauno Freiberg",
+      "url": "https://rauno.me/",
+      "source_type": "reference_site",
+      "category": "personal signature",
+      "research_role": "Shows how sparse language, rhythm, and restraint can create a memorable personal signature.",
+      "usable_lessons": [
+        "A site can feel authored with very little copy.",
+        "Short phrases can become a stronger brand signal than a pitch.",
+        "Restraint can make interaction details feel more intentional."
+      ],
+      "avoid": [
+        "Copying aphorism structure.",
+        "Letting style outrun route clarity."
+      ],
+      "applies_to": [
+        "quiet-index",
+        "internet-foyer-index"
+      ]
+    },
+    {
+      "id": "ref-derek-sivers",
+      "title": "Derek Sivers",
+      "url": "https://sive.rs/",
+      "source_type": "reference_site",
+      "category": "plain personal archive",
+      "research_role": "Shows how a personal site can expose biography, now, contact, books, projects, and writing through plain information architecture.",
+      "usable_lessons": [
+        "Plain route labels can build trust quickly.",
+        "A personal archive can be broad without hiding the next step.",
+        "Direct contact framing can feel human when the rest of the page is organized."
+      ],
+      "avoid": [
+        "Becoming text-heavy on the root.",
+        "Letting breadth bury the high-signal exits."
+      ],
+      "applies_to": [
+        "garden-index",
+        "future-docs-wiki-template"
+      ]
+    },
+    {
+      "id": "ref-maggie-appleton-garden-history",
+      "title": "A Brief History & Ethos of the Digital Garden",
+      "url": "https://maggieappleton.com/garden-history",
+      "source_type": "method",
+      "category": "digital garden",
+      "research_role": "Frames the docs/wiki direction as exploratory, evolving, contextual personal knowledge instead of a reverse-chronological blog.",
+      "usable_lessons": [
+        "The docs/wiki surface should support topology over timeline.",
+        "Garden content can be incomplete but useful if its state is legible.",
+        "Personal knowledge systems should encourage exploration without making users lost."
+      ],
+      "avoid": [
+        "Using garden language as decoration only.",
+        "Publishing private or half-ready material without state markers."
+      ],
+      "applies_to": [
+        "garden-index",
+        "future-docs-wiki-template",
+        "future-content-sync-system"
+      ]
+    },
+    {
+      "id": "ref-tania-rascia",
+      "title": "About Me | Tania Rascia",
+      "url": "https://www.taniarascia.com/me/",
+      "source_type": "reference_site",
+      "category": "personal creative corner",
+      "research_role": "Shows how professional work, writing, personal interests, tools, and contact can live in one normal public web space.",
+      "usable_lessons": [
+        "A personal site can be broad without sounding like a pitch.",
+        "Clear public boundaries make personal details feel intentional.",
+        "A normal human voice can improve trust."
+      ],
+      "avoid": [
+        "Overloading the root with every personal detail.",
+        "Using personal texture without privacy review."
+      ],
+      "applies_to": [
+        "internet-foyer-index",
+        "future-lifestyle-modules"
+      ]
+    },
+    {
+      "id": "std-wcag-22",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "source_type": "standard",
+      "category": "accessibility",
+      "research_role": "Defines accessibility constraints that every template and interaction must respect.",
+      "usable_lessons": [
+        "Keyboard access, focus visibility, target size, text alternatives, and meaningful structure are baseline requirements.",
+        "Motion and interaction cannot interfere with access.",
+        "Accessible implementation improves usability beyond compliance."
+      ],
+      "avoid": [
+        "Treating accessibility as a post-build checklist.",
+        "Relying on visual grouping without programmatic structure."
+      ],
+      "applies_to": [
+        "all-templates",
+        "all-client-pitches"
+      ]
+    },
+    {
+      "id": "std-design-tokens-2025-10",
+      "title": "Design Tokens Format Module 2025.10",
+      "url": "https://www.w3.org/community/reports/design-tokens/CG-FINAL-format-20251028/",
+      "source_type": "standard",
+      "category": "design tokens",
+      "research_role": "Defines the stable token format used to make colors, typography, and spacing portable across templates and future client systems.",
+      "usable_lessons": [
+        "Design decisions should be represented as named tokens when they need to scale.",
+        "Token files should separate reusable values from implementation-specific extensions.",
+        "A standard token shape improves portability across tools and codebases."
+      ],
+      "avoid": [
+        "Hard-coding build-specific CSS as the only source of design truth.",
+        "Inventing token structure when a stable format exists."
+      ],
+      "applies_to": [
+        "internet-foyer-index",
+        "future-client-template-system"
+      ]
+    },
+    {
+      "id": "method-ixdf-user-stories",
+      "title": "What Are User Stories?",
+      "url": "https://www.interaction-design.org/literature/topics/user-stories",
+      "source_type": "method",
+      "category": "user stories",
+      "research_role": "Provides the user-centered planning pattern used to turn audience intent into build requirements.",
+      "usable_lessons": [
+        "Stories should state who needs what and why.",
+        "Stories should guide build choices without over-prescribing implementation.",
+        "A story map keeps design work tied to user intent instead of taste alone."
+      ],
+      "avoid": [
+        "Writing stories as internal tasks only.",
+        "Letting stories replace acceptance criteria."
+      ],
+      "applies_to": [
+        "all-client-pitches",
+        "all-template-build-plans"
+      ]
+    },
+    {
+      "id": "note-jnap-template-research-2026",
+      "title": "JNAP template research notes, May 2026",
+      "url": "internal:conversation-notes/2026-05-10-template-research",
+      "source_type": "client_note",
+      "category": "client direction",
+      "research_role": "Captures the direction that the root should be mobile-first, experience-first, brand-forward, direct, beautiful, and less like a tech pitch deck.",
+      "usable_lessons": [
+        "Make people interested enough to click further.",
+        "Show and do instead of explaining.",
+        "Treat the current root as one template, then compare future templates through contracts."
+      ],
+      "avoid": [
+        "Generic SaaS hero patterns.",
+        "Visible category language that explains obvious groups.",
+        "Over-polished pitch-deck tone."
+      ],
+      "applies_to": [
+        "internet-foyer-index",
+        "future-personal-pr-template",
+        "future-client-template-system"
+      ]
+    }
+  ]
+}

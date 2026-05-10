@@ -7,6 +7,41 @@
   "template_contract_refs": [
     "src/design-templates/contracts/internet-foyer.contract.json"
   ],
+  "research_basis": {
+    "bibliography_refs": [
+      "ref-paco-coursey",
+      "ref-brian-lovin",
+      "ref-getcoleman-agencies",
+      "ref-animejs",
+      "ref-rauno-freiberg",
+      "ref-derek-sivers",
+      "ref-maggie-appleton-garden-history",
+      "ref-tania-rascia",
+      "std-wcag-22",
+      "std-design-tokens-2025-10",
+      "method-ixdf-user-stories",
+      "note-jnap-template-research-2026"
+    ],
+    "user_story_refs": [
+      "story-recruiter-five-second-read",
+      "story-collaborator-deeper-work",
+      "story-personal-curated-human-read",
+      "story-client-trust-template-system",
+      "story-operator-governed-build"
+    ],
+    "requirement_refs": [
+      "req-mobile-experience-first",
+      "req-curiosity-with-clear-exits",
+      "req-show-dont-claim",
+      "req-personal-professional-overlap",
+      "req-privacy-reviewed-personal-texture",
+      "req-garden-ready-docs",
+      "req-motion-as-craft-not-dependency",
+      "req-template-owned-presentation",
+      "req-scalable-client-template-system",
+      "req-contract-first-handoff"
+    ]
+  },
   "client_summary": {
     "positioning": "Justin's root should feel like a curated public front room: professional enough to trust, personal enough to keep clicking.",
     "audience_priority": [

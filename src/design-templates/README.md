@@ -38,6 +38,9 @@ New template directions should start as JSON contracts before implementation.
 
 - `src/design-templates/contracts/personal-site-template-contract.schema.json` defines the reusable contract shape for personal-site templates.
 - `src/design-templates/contracts/internet-foyer.contract.json` defines the next planned direction: a curious, mobile-first personal front room that invites interaction instead of explaining everything.
+- `src/design-templates/research/jnap-design-bibliography.json` defines the formal source list for research-backed design decisions.
+- `src/design-templates/user-stories/jnap-root.user-stories.json` defines the audience stories that pitches and build plans must satisfy.
+- `src/design-templates/research/jnap-root-design-requirements.json` maps sources and user stories into build-facing requirements.
 
 A contract must name the intended template, audience modes, reference set, content rules, visual rules, motion rules, privacy invariants, implementation scope, QA gates, and selection criteria. Build work should not begin until the contract is reviewed and marked `approved_for_build`.
 
@@ -46,18 +49,22 @@ A contract must name the intended template, audience modes, reference set, conte
 Client design work uses a contract stack:
 
 1. `src/design-templates/pitches/client-intake.schema.json`
-2. `src/design-templates/contracts/personal-site-template-contract.schema.json`
-3. `src/design-templates/pitches/design-pitch.schema.json`
-4. `src/design-templates/pitches/design-one-pager.schema.json`
-5. `src/design-templates/design-objects/design-object-set.schema.json`
-6. `src/design-templates/design-objects/*/tokens/*.tokens.json`
-7. `src/design-templates/pitches/template-build-plan.schema.json`
-8. `.agent/execplans/templates/client-design-pitch-execplan.md`
-9. `.agent/execplans/templates/client-template-build-execplan.md`
+2. `src/design-templates/research/jnap-design-bibliography.json`
+3. `src/design-templates/user-stories/jnap-root.user-stories.json`
+4. `src/design-templates/research/jnap-root-design-requirements.json`
+5. `src/design-templates/contracts/personal-site-template-contract.schema.json`
+6. `src/design-templates/pitches/design-pitch.schema.json`
+7. `src/design-templates/pitches/design-one-pager.schema.json`
+8. `src/design-templates/design-objects/design-object-set.schema.json`
+9. `src/design-templates/design-objects/*/tokens/*.tokens.json`
+10. `src/design-templates/pitches/template-build-plan.schema.json`
+11. `.agent/execplans/templates/client-design-pitch-execplan.md`
+12. `.agent/execplans/templates/client-template-build-execplan.md`
 
-The pitch step can compare several design directions, but it should recommend one direction for the first build. The one-pager turns that recommendation into a client-facing summary of fonts, palette, layout, motion, modules, references, deliverables, and approvals. Design objects turn the recommendation into build-grade classes, layout rules, content maps, accessibility requirements, and implementation maps. DTCG token files turn the build-critical palette, type, and spacing choices into machine-readable values while repo-specific CSS output details live under `$extensions.me.jnap`. The build-plan step turns the approved pitch into implementation slices and validation commands. The execplan step executes those slices as an inactive preview template.
+The pitch step can compare several design directions, but it should cite the bibliography, user-story, and requirement IDs it depends on before recommending one direction for the first build. The one-pager turns that recommendation into a client-facing summary of fonts, palette, layout, motion, modules, references, deliverables, and approvals. Design objects turn the recommendation into build-grade classes, layout rules, content maps, accessibility requirements, and implementation maps. DTCG token files turn the build-critical palette, type, and spacing choices into machine-readable values while repo-specific CSS output details live under `$extensions.me.jnap`. The build-plan step turns the approved pitch into implementation slices and validation commands. The execplan step executes those slices as an inactive preview template.
 
 Example JNAP planning artifacts live in `src/design-templates/pitches/examples/`.
+Example JNAP research artifacts live in `src/design-templates/research/` and `src/design-templates/user-stories/`.
 Example JNAP design objects live in `src/design-templates/design-objects/internet-foyer-index/`.
 Run `npm run design:validate` before a build agent edits template code.
 

@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jnap.me/contracts/design-bibliography.schema.json",
+  "title": "Design Research Bibliography",
+  "description": "Formal source list for template research, client design pitches, and reusable personal PR platform decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "status",
+    "scope",
+    "last_reviewed",
+    "sources"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "retired"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "last_reviewed": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "url",
+          "source_type",
+          "category",
+          "research_role",
+          "usable_lessons",
+          "avoid",
+          "applies_to"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "reference_site",
+              "standard",
+              "method",
+              "design_system",
+              "client_note"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "research_role": {
+            "type": "string"
+          },
+          "usable_lessons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "avoid": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "applies_to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        }
+      }
+    }
+  }
+}

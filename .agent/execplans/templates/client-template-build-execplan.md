@@ -8,6 +8,7 @@ Build an inactive preview template from an approved design pitch and template bu
 
 - Design pitch: `<DESIGN_PITCH_JSON>`
 - Template build plan: `<TEMPLATE_BUILD_PLAN_JSON>`
+- Design bibliography, user stories, and requirements: read from the pitch `research_basis` and validated by `npm run design:validate`
 - Design object refs: read from `design_object_refs` inside the build plan
 - Token refs: read from `token_refs` inside the build plan
 - Branch: `<BRANCH>`
@@ -19,6 +20,7 @@ Build an inactive preview template from an approved design pitch and template bu
 - Build only the inactive preview template unless activation is explicitly requested.
 - Do not change canonical route URLs, direct-link behavior, privacy behavior, analytics consent behavior, or provider-backed data.
 - Render shared `src/data/site.json` content unless the pitch explicitly references an approved content-contract change.
+- Preserve the approved bibliography, user-story, and requirement basis unless a separate planning slice updates it.
 - Implement classes, tokens, layout rules, and content bindings from the referenced design-object JSON and token files.
 - Stop and report blockers instead of guessing when any stop condition is hit.
 

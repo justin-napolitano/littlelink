@@ -11,6 +11,7 @@
     "status",
     "intake_ref",
     "template_contract_refs",
+    "research_basis",
     "client_summary",
     "pitch_directions",
     "recommended_direction",
@@ -49,6 +50,38 @@
         "type": "string"
       },
       "minItems": 1
+    },
+    "research_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bibliography_refs",
+        "user_story_refs",
+        "requirement_refs"
+      ],
+      "properties": {
+        "bibliography_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "user_story_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "requirement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
     },
     "client_summary": {
       "type": "object",
