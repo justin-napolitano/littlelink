@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "template_id": "internet-foyer-index",
+  "status": "implemented_preview",
+  "intent": "Inactive preview scaffold for the Internet Foyer direction.",
+  "source_contracts": {
+    "template_contract": "src/design-templates/contracts/internet-foyer.contract.json",
+    "build_plan": "src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json",
+    "design_objects": "src/design-templates/design-objects/internet-foyer-index/",
+    "tokens": [
+      "src/design-templates/design-objects/internet-foyer-index/tokens/color.tokens.json",
+      "src/design-templates/design-objects/internet-foyer-index/tokens/typography.tokens.json",
+      "src/design-templates/design-objects/internet-foyer-index/tokens/spacing.tokens.json"
+    ]
+  },
+  "content_map": {
+    "identity": {
+      "source_paths": [
+        "hero.name"
+      ],
+      "selectors": [
+        ".foyer-identity",
+        ".foyer-name"
+      ],
+      "rule": "Render the name as the only large identity text."
+    },
+    "route_clusters": {
+      "source_paths": [
+        "sections[]",
+        "sections[].links[]"
+      ],
+      "selectors": [
+        ".foyer-room",
+        ".foyer-cluster",
+        ".foyer-route",
+        ".foyer-route__icon",
+        ".foyer-route__label"
+      ],
+      "rule": "Use aria-label from section.title and visual grouping from spacing, not visible category headings."
+    },
+    "footer": {
+      "source_paths": [
+        "footer.privacyLabel",
+        "footer.privacyHref"
+      ],
+      "selectors": [
+        ".foyer-footer"
+      ]
+    },
+    "privacy": {
+      "source_paths": [
+        "consentScript"
+      ],
+      "selectors": [
+        ".consent-banner",
+        ".consent-banner__actions"
+      ]
+    }
+  },
+  "css_token_map": {
+    "color": [
+      "--foyer-color-surface-page",
+      "--foyer-color-surface-object",
+      "--foyer-color-text-primary",
+      "--foyer-color-text-secondary",
+      "--foyer-color-accent-living",
+      "--foyer-color-accent-electric",
+      "--foyer-color-line-soft"
+    ],
+    "type": [
+      "--foyer-font-display",
+      "--foyer-font-body"
+    ],
+    "space": [
+      "--foyer-space-1",
+      "--foyer-space-2",
+      "--foyer-space-3",
+      "--foyer-space-4",
+      "--foyer-space-6",
+      "--foyer-page-padding-mobile",
+      "--foyer-page-padding-desktop"
+    ]
+  },
+  "activation_requirements": [
+    "src/data/active-template.json remains unchanged until explicit activation",
+    "route labels and URLs are unchanged unless the content contract changes",
+    "privacy and analytics behavior are unchanged",
+    "mobile and desktop screenshots are reviewed"
+  ]
+}
