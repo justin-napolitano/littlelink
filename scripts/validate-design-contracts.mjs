@@ -6,6 +6,8 @@ import process from 'node:process';
 const args = process.argv.slice(2);
 const root = process.cwd();
 const designObjectRoot = path.join(root, 'src/design-templates/design-objects');
+const researchRoot = path.join(root, 'src/design-templates/research');
+const userStoriesRoot = path.join(root, 'src/design-templates/user-stories');
 
 const getArg = (name, fallback = undefined) => {
   const index = args.indexOf(name);
@@ -18,10 +20,31 @@ const activeObjectDir = path.join(designObjectRoot, templateId);
 const buildPlanPath = resolveFromRoot(
   getArg('--build-plan', 'src/design-templates/pitches/examples/jnap-internet-foyer.build-plan.json')
 );
+const pitchPath = resolveFromRoot(getArg('--pitch', 'src/design-templates/pitches/examples/jnap-internet-foyer.pitch.json'));
+const onePagerPath = resolveFromRoot(
+  getArg('--one-pager', 'src/design-templates/pitches/examples/jnap-internet-foyer.one-pager.json')
+);
+const intakePath = resolveFromRoot(getArg('--intake', 'src/design-templates/pitches/examples/jnap-intake.json'));
+const templateContractPath = resolveFromRoot(
+  getArg('--template-contract', 'src/design-templates/contracts/internet-foyer.contract.json')
+);
+const bibliographyPath = resolveFromRoot(getArg('--bibliography', 'src/design-templates/research/jnap-design-bibliography.json'));
+const userStoriesPath = resolveFromRoot(getArg('--user-stories', 'src/design-templates/user-stories/jnap-root.user-stories.json'));
+const requirementsPath = resolveFromRoot(
+  getArg('--requirements', 'src/design-templates/research/jnap-root-design-requirements.json')
+);
 
 const schemaPaths = {
+  bibliography: path.join(researchRoot, 'design-bibliography.schema.json'),
+  buildPlan: resolveFromRoot('src/design-templates/pitches/template-build-plan.schema.json'),
+  clientIntake: resolveFromRoot('src/design-templates/pitches/client-intake.schema.json'),
   designObjectSet: path.join(designObjectRoot, 'design-object-set.schema.json'),
+  designPitch: resolveFromRoot('src/design-templates/pitches/design-pitch.schema.json'),
+  designRequirements: path.join(researchRoot, 'design-requirements.schema.json'),
+  onePager: resolveFromRoot('src/design-templates/pitches/design-one-pager.schema.json'),
+  personalSiteTemplateContract: resolveFromRoot('src/design-templates/contracts/personal-site-template-contract.schema.json'),
   tokenFile: path.join(designObjectRoot, 'schemas/design-token-file.schema.json'),
+  userStoryMap: path.join(userStoriesRoot, 'user-story-map.schema.json'),
   byKind: {
     accessibility: path.join(designObjectRoot, 'schemas/accessibility-object.schema.json'),
     component: path.join(designObjectRoot, 'schemas/component-object.schema.json'),
@@ -84,6 +107,39 @@ const fileExists = async (filePath) => {
     return (await stat(filePath)).isFile();
   } catch {
     return false;
+  }
+};
+
+const uniqueIds = (filePath, items, label) => {
+  const ids = new Set();
+
+  for (const item of items ?? []) {
+    assert(typeof item.id === 'string' && item.id.length > 0, filePath, `${label} missing id`);
+
+    if (!item.id) {
+      continue;
+    }
+
+    assert(!ids.has(item.id), filePath, `duplicate ${label} id ${item.id}`);
+    ids.add(item.id);
+  }
+
+  return ids;
+};
+
+const assertRefsInSet = (filePath, refs, allowed, label) => {
+  assert(Array.isArray(refs) && refs.length > 0, filePath, `${label} refs must be non-empty`);
+
+  for (const ref of refs ?? []) {
+    assert(allowed.has(ref), filePath, `${label} ref ${ref} not found`);
+  }
+};
+
+const assertLocalFileRefs = async (filePath, refs, label) => {
+  assert(Array.isArray(refs) && refs.length > 0, filePath, `${label} refs must be non-empty`);
+
+  for (const ref of refs ?? []) {
+    assert(await fileExists(path.join(root, ref)), filePath, `${label} ref missing: ${ref}`);
   }
 };
 
@@ -383,14 +439,94 @@ const validateTokenFile = async (filePath, objectIds) => {
   walkTokenFile(filePath, tokenFile, '', objectIds);
 };
 
-const validateBuildPlanRefs = async () => {
+const validateResearchLayer = async (validators) => {
+  const bibliography = await readJson(bibliographyPath);
+  const userStories = await readJson(userStoriesPath);
+  const requirements = await readJson(requirementsPath);
+
+  validateWithSchema(validators.bibliography, bibliographyPath, bibliography, 'bibliography schema');
+  validateWithSchema(validators.userStoryMap, userStoriesPath, userStories, 'user-story schema');
+  validateWithSchema(validators.designRequirements, requirementsPath, requirements, 'design-requirements schema');
+
+  const bibliographyIds = uniqueIds(bibliographyPath, bibliography?.sources, 'bibliography source');
+  const personaIds = uniqueIds(userStoriesPath, userStories?.personas, 'persona');
+  const userStoryIds = uniqueIds(userStoriesPath, userStories?.stories, 'user story');
+  const requirementIds = uniqueIds(requirementsPath, requirements?.requirements, 'requirement');
+
+  for (const story of userStories?.stories ?? []) {
+    assert(personaIds.has(story.persona_id), userStoriesPath, `${story.id} references missing persona ${story.persona_id}`);
+    assertRefsInSet(userStoriesPath, story.requirement_refs, requirementIds, `${story.id} requirement`);
+  }
+
+  for (const requirement of requirements?.requirements ?? []) {
+    assertRefsInSet(requirementsPath, requirement.source_story_ids, userStoryIds, `${requirement.id} user-story`);
+    assertRefsInSet(requirementsPath, requirement.bibliography_ids, bibliographyIds, `${requirement.id} bibliography`);
+  }
+
+  return { bibliographyIds, userStoryIds, requirementIds };
+};
+
+const validatePlanningArtifacts = async (validators, researchBasis) => {
+  const intake = await readJson(intakePath);
+  const templateContract = await readJson(templateContractPath);
+  const pitch = await readJson(pitchPath);
+  const onePager = await readJson(onePagerPath);
+
+  validateWithSchema(validators.clientIntake, intakePath, intake, 'client-intake schema');
+  validateWithSchema(
+    validators.personalSiteTemplateContract,
+    templateContractPath,
+    templateContract,
+    'personal-site-template-contract schema'
+  );
+  validateWithSchema(validators.designPitch, pitchPath, pitch, 'design-pitch schema');
+  validateWithSchema(validators.onePager, onePagerPath, onePager, 'one-pager schema');
+
+  if (pitch) {
+    assert(await fileExists(path.join(root, pitch.intake_ref)), pitchPath, `intake_ref missing: ${pitch.intake_ref}`);
+    await assertLocalFileRefs(pitchPath, pitch.template_contract_refs, 'template_contract');
+    assertRefsInSet(pitchPath, pitch.research_basis?.bibliography_refs, researchBasis.bibliographyIds, 'bibliography');
+    assertRefsInSet(pitchPath, pitch.research_basis?.user_story_refs, researchBasis.userStoryIds, 'user-story');
+    assertRefsInSet(pitchPath, pitch.research_basis?.requirement_refs, researchBasis.requirementIds, 'requirement');
+
+    const directionIds = new Set((pitch.pitch_directions ?? []).map((direction) => direction.id));
+    assert(
+      directionIds.has(pitch.recommended_direction?.direction_id),
+      pitchPath,
+      `recommended direction ${pitch.recommended_direction?.direction_id} not found in pitch_directions`
+    );
+  }
+
+  if (onePager) {
+    assert(await fileExists(path.join(root, onePager.pitch_ref)), onePagerPath, `pitch_ref missing: ${onePager.pitch_ref}`);
+
+    if (pitch) {
+      const pitchDirectionIds = new Set((pitch.pitch_directions ?? []).map((direction) => direction.id));
+      assert(
+        pitchDirectionIds.has(onePager.selected_direction?.id),
+        onePagerPath,
+        `selected direction ${onePager.selected_direction?.id} not found in pitch_directions`
+      );
+    }
+  }
+};
+
+const validateBuildPlanRefs = async (buildPlanValidator) => {
   const buildPlan = await readJson(buildPlanPath);
 
   if (!buildPlan) {
     return;
   }
 
+  validateWithSchema(buildPlanValidator, buildPlanPath, buildPlan, 'build-plan schema');
+
   assert(buildPlan.status === 'ready_for_build', buildPlanPath, 'status must be ready_for_build before a template build execplan can run');
+  assert(await fileExists(path.join(root, buildPlan.pitch_ref)), buildPlanPath, `pitch_ref missing: ${buildPlan.pitch_ref}`);
+  assert(
+    await fileExists(path.join(root, buildPlan.template_contract_ref)),
+    buildPlanPath,
+    `template_contract_ref missing: ${buildPlan.template_contract_ref}`
+  );
 
   for (const ref of buildPlan.design_object_refs ?? []) {
     assert(await fileExists(path.join(root, ref)), buildPlanPath, `missing design_object_ref ${ref}`);
@@ -410,6 +546,16 @@ const validateBuildPlanRefs = async () => {
 };
 
 const main = async () => {
+  const planningValidators = {
+    bibliography: await loadSchemaValidator(schemaPaths.bibliography),
+    buildPlan: await loadSchemaValidator(schemaPaths.buildPlan),
+    clientIntake: await loadSchemaValidator(schemaPaths.clientIntake),
+    designPitch: await loadSchemaValidator(schemaPaths.designPitch),
+    designRequirements: await loadSchemaValidator(schemaPaths.designRequirements),
+    onePager: await loadSchemaValidator(schemaPaths.onePager),
+    personalSiteTemplateContract: await loadSchemaValidator(schemaPaths.personalSiteTemplateContract),
+    userStoryMap: await loadSchemaValidator(schemaPaths.userStoryMap)
+  };
   const designObjectValidator = await loadSchemaValidator(schemaPaths.designObjectSet);
   const tokenFileValidator = await loadSchemaValidator(schemaPaths.tokenFile);
   const kindValidators = {};
@@ -417,6 +563,9 @@ const main = async () => {
   for (const [kind, schemaPath] of Object.entries(schemaPaths.byKind)) {
     kindValidators[kind] = await loadSchemaValidator(schemaPath);
   }
+
+  const researchBasis = await validateResearchLayer(planningValidators);
+  await validatePlanningArtifacts(planningValidators, researchBasis);
 
   const files = await objectSetFiles();
   const requiredKinds = new Set([
@@ -482,7 +631,7 @@ const main = async () => {
     await validateTokenFile(filePath, objectIds);
   }
 
-  await validateBuildPlanRefs();
+  await validateBuildPlanRefs(planningValidators.buildPlan);
 
   if (failures.length > 0) {
     console.error('Design contract validation failed:');
@@ -492,7 +641,7 @@ const main = async () => {
     process.exit(1);
   }
 
-  console.log(`Validated ${objectSets.length} design object sets and ${tokenFiles.length} token files.`);
+  console.log(`Validated research layer, planning artifacts, ${objectSets.length} design object sets, and ${tokenFiles.length} token files.`);
 };
 
 await main();

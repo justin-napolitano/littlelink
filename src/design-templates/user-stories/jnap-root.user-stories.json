@@ -1,0 +1,192 @@
+{
+  "$schema": "./user-story-map.schema.json",
+  "version": 1,
+  "status": "active",
+  "product": "jnap-root-personal-pr-platform",
+  "scope": "User stories for Justin's root page, reusable personal PR templates, and future client design pitches.",
+  "personas": [
+    {
+      "id": "persona-recruiter",
+      "name": "Recruiter or hiring manager",
+      "description": "Needs a fast trust read and a direct path to resume, proof, and contact without reading a long bio.",
+      "privacy_mode": "public"
+    },
+    {
+      "id": "persona-collaborator",
+      "name": "Potential collaborator",
+      "description": "Wants to understand what Justin makes, how he thinks, and whether there is a natural route into deeper work.",
+      "privacy_mode": "public"
+    },
+    {
+      "id": "persona-personal-visitor",
+      "name": "Personal visitor",
+      "description": "Arrives from social or search and wants a normal, curated human read without private material being exposed.",
+      "privacy_mode": "selective"
+    },
+    {
+      "id": "persona-client-or-business",
+      "name": "Client or small business prospect",
+      "description": "Needs to decide whether this person or template system feels organized, tasteful, and credible enough to contact.",
+      "privacy_mode": "public_reviewed"
+    },
+    {
+      "id": "persona-template-operator",
+      "name": "Template operator",
+      "description": "Uses the platform to turn a reusable design direction into a governed client template without hand-copying design decisions.",
+      "privacy_mode": "private"
+    }
+  ],
+  "stories": [
+    {
+      "id": "story-recruiter-five-second-read",
+      "persona_id": "persona-recruiter",
+      "story": "As a recruiter, I want to understand the person and reach resume or proof in a few seconds so that I can decide whether to keep evaluating.",
+      "why": "Hiring visitors will not read a manifesto before checking credibility.",
+      "entry_points": [
+        "root route",
+        "resume route",
+        "docs route",
+        "github route"
+      ],
+      "success_criteria": [
+        "The first mobile screen exposes identity plus at least two professional exits.",
+        "Resume and proof routes are visually obvious without a visible pitch headline.",
+        "No route label or URL changes are required to understand the next step."
+      ],
+      "anti_goals": [
+        "A marketing hero that explains value props.",
+        "A dense resume wall on the root."
+      ],
+      "template_implications": [
+        "Keep professional exits high in the visual hierarchy.",
+        "Prefer object labels and route affordances over paragraphs.",
+        "Use mobile spacing as the default constraint."
+      ],
+      "requirement_refs": [
+        "req-mobile-experience-first",
+        "req-curiosity-with-clear-exits",
+        "req-show-dont-claim"
+      ]
+    },
+    {
+      "id": "story-collaborator-deeper-work",
+      "persona_id": "persona-collaborator",
+      "story": "As a collaborator, I want a quick sense of projects, docs, and thinking so that I can find the right deeper surface to explore.",
+      "why": "Collaboration starts from evidence of taste, range, and working style.",
+      "entry_points": [
+        "root route",
+        "docs route",
+        "github route",
+        "future selected project routes"
+      ],
+      "success_criteria": [
+        "Docs and code exits are findable without reading category explanations.",
+        "The site creates curiosity without hiding the useful routes.",
+        "Future project modules can be added without rewriting shared content."
+      ],
+      "anti_goals": [
+        "Generic categories such as work, systems, or experiments as the main signal.",
+        "A portfolio grid that depends on unready content."
+      ],
+      "template_implications": [
+        "Support route objects that can become project or docs modules later.",
+        "Keep shared content universal and template-owned layout separate.",
+        "Make room for a garden/docs surface without forcing it into the root."
+      ],
+      "requirement_refs": [
+        "req-garden-ready-docs",
+        "req-show-dont-claim",
+        "req-template-owned-presentation"
+      ]
+    },
+    {
+      "id": "story-personal-curated-human-read",
+      "persona_id": "persona-personal-visitor",
+      "story": "As a personal visitor, I want the site to feel like a real person with taste and boundaries so that I trust the public identity without seeing private life.",
+      "why": "The root should be a curated glimpse into life, not a raw feed or private archive.",
+      "entry_points": [
+        "root route",
+        "social routes",
+        "future lifestyle modules"
+      ],
+      "success_criteria": [
+        "Personal texture is opt-in and public-reviewed.",
+        "The first impression feels normal and alive, not like a tech stack identity.",
+        "Social exits are present without dominating professional routes."
+      ],
+      "anti_goals": [
+        "Private photos, locations, feeds, or direct-link details.",
+        "A page that performs being personal through excessive copy."
+      ],
+      "template_implications": [
+        "Use controlled optional lifestyle modules.",
+        "Keep privacy review gates in the contract.",
+        "Let visual grouping and interaction do more work than visible headings."
+      ],
+      "requirement_refs": [
+        "req-personal-professional-overlap",
+        "req-privacy-reviewed-personal-texture",
+        "req-curiosity-with-clear-exits"
+      ]
+    },
+    {
+      "id": "story-client-trust-template-system",
+      "persona_id": "persona-client-or-business",
+      "story": "As a client or small business prospect, I want to see a tasteful, flexible template system so that I can imagine adapting it to my own public identity.",
+      "why": "The product should scale beyond Justin without flattening every client into one generic template.",
+      "entry_points": [
+        "root route",
+        "preview index",
+        "future client one-pager"
+      ],
+      "success_criteria": [
+        "The design system can explain its fonts, palette, modules, and motion in a readable one-pager.",
+        "Each candidate template is a full alternate design, not a spacing tweak.",
+        "Template selection can happen without changing canonical content."
+      ],
+      "anti_goals": [
+        "One-off CSS with no design objects.",
+        "A template that only works for a software developer."
+      ],
+      "template_implications": [
+        "Require bibliography, user stories, requirements, pitch, one-pager, design objects, tokens, and build plan before implementation.",
+        "Keep template-specific presentation in template folders.",
+        "Use source IDs so design rationale can be audited."
+      ],
+      "requirement_refs": [
+        "req-scalable-client-template-system",
+        "req-contract-first-handoff",
+        "req-template-owned-presentation"
+      ]
+    },
+    {
+      "id": "story-operator-governed-build",
+      "persona_id": "persona-template-operator",
+      "story": "As a template operator, I want agents to read contracts, sources, stories, objects, and tokens before building so that autonomous slices remain governed.",
+      "why": "Agentic work needs machine-readable constraints or design changes drift into taste-only patches.",
+      "entry_points": [
+        "design pitch execplan",
+        "template build execplan",
+        "npm run design:validate"
+      ],
+      "success_criteria": [
+        "Validation fails when a pitch references missing bibliography, user-story, or requirement IDs.",
+        "Build plans keep implementation slices tied to approved sources.",
+        "Generated templates stay inactive until preview and screenshot review."
+      ],
+      "anti_goals": [
+        "Manual reconciliation branches for missing metadata.",
+        "Agents guessing the design basis from prose."
+      ],
+      "template_implications": [
+        "Extend validator coverage to research and story artifacts.",
+        "Update execplan templates to require research inputs.",
+        "Keep JSON as source of truth and Markdown as readable output."
+      ],
+      "requirement_refs": [
+        "req-contract-first-handoff",
+        "req-scalable-client-template-system"
+      ]
+    }
+  ]
+}

@@ -9,30 +9,40 @@ This layer exists so the platform can support real design work for Justin's root
 1. **Client intake**
    `client-intake.schema.json` captures the person or business, audience, content inventory, constraints, and approval gates.
 
-2. **Template contract**
+2. **Research bibliography**
+   `../research/jnap-design-bibliography.json` captures the formal source set used by the pitch.
+
+3. **User stories**
+   `../user-stories/jnap-root.user-stories.json` captures audience intent and success criteria.
+
+4. **Design requirements**
+   `../research/jnap-root-design-requirements.json` maps sources and stories into build-facing requirements.
+
+5. **Template contract**
    `../contracts/personal-site-template-contract.schema.json` defines the reusable template direction.
 
-3. **Design pitch**
+6. **Design pitch**
    `design-pitch.schema.json` turns intake plus template contracts into pitch directions, a recommendation, and the files a build would create.
 
-4. **Design one-pager**
+7. **Design one-pager**
    `design-one-pager.schema.json` summarizes the selected direction for client review: thesis, fonts, palette, layout, motion, modules, references, deliverables, and approvals.
 
-5. **Design objects**
+8. **Design objects**
    `../design-objects/design-object-set.schema.json` defines build-grade JSON for palette, typography, spacing, shape, motion, layout, components, content map, accessibility, and implementation map.
 
-6. **Design tokens**
+9. **Design tokens**
    `../design-objects/*/tokens/*.tokens.json` exports DTCG color, typography, and spacing decisions for build tooling.
 
-7. **Template build plan**
+10. **Template build plan**
    `template-build-plan.schema.json` turns an approved pitch into implementation slices, validation commands, PR policy, and stop conditions.
 
-8. **ExecPlan**
+11. **ExecPlan**
    `.agent/execplans/templates/client-template-build-execplan.md` is the human/agent execution wrapper for the build plan.
 
 ## Rules
 
 - A pitch can compare several directions, but only one direction should be recommended for the first build.
+- A pitch must include `research_basis` with valid bibliography, user-story, and requirement IDs.
 - Pitches must separate client-facing language from internal build details.
 - Template code should not be written until the pitch is approved for an execplan.
 - Client-specific private material must stay out of public template contracts.
