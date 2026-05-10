@@ -1,0 +1,59 @@
+---
+import './styles.css';
+
+const { site, consentScript } = Astro.props;
+const { hero, sections, footer } = site;
+const isExternal = (href: string = '') => /^https?:\/\//.test(href);
+const iconPath = (name: string) => `/images/icons/${name}.svg`;
+const identityWords = String(hero.name ?? '').split(/\s+/).filter(Boolean);
+---
+
+<main class="foyer-index" data-design-template="internet-foyer-index">
+  <div class="foyer-room" aria-label="Personal front room">
+    <header class="foyer-identity" aria-labelledby="foyer-title">
+      <h1 id="foyer-title" class="foyer-name">
+        {identityWords.map((word) => <span>{word}</span>)}
+      </h1>
+    </header>
+
+    <div class="foyer-clusters" aria-label="Personal link hub">
+      {sections.map((section) => (
+        <section class="foyer-cluster" aria-label={section.title || section.id}>
+          {section.links.map((link) => {
+            const openInNewTab = link.newTab ?? isExternal(link.href);
+            return (
+              <a
+                class="foyer-route"
+                href={link.href}
+                target={openInNewTab ? '_blank' : undefined}
+                rel={openInNewTab ? 'noopener' : undefined}
+              >
+                {link.icon && (
+                  <span
+                    class="foyer-route__icon"
+                    style={`--icon-image: url('${iconPath(link.icon)}'); --icon-color: ${link.brandColor ?? 'var(--foyer-color-accent-living)'};`}
+                    aria-hidden="true"
+                  />
+                )}
+                <span class="foyer-route__label">{link.label}</span>
+                <span class="foyer-route__arrow" aria-hidden="true">↗</span>
+              </a>
+            );
+          })}
+        </section>
+      ))}
+    </div>
+
+    <footer class="foyer-footer">
+      {footer.privacyHref && <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy'}</a>}
+    </footer>
+  </div>
+</main>
+<div id="consentBanner" class="consent-banner" hidden role="dialog" aria-live="polite" aria-label="Analytics consent">
+  <p>Analytics cookies?</p>
+  <div class="consent-banner__actions">
+    <button type="button" data-consent="accept">Allow</button>
+    <button type="button" class="secondary" data-consent="decline">No</button>
+  </div>
+</div>
+<script is:inline set:html={consentScript}></script>

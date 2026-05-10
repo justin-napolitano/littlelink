@@ -90,7 +90,7 @@
     },
     {
       "id": "internet-foyer-index",
-      "status": "contract_ready",
+      "status": "implemented_preview",
       "purpose": "Curious personal front-room template that makes visitors want to click deeper without explaining everything.",
       "primary_question": "Does this make Justin feel interesting, human, and worth exploring while staying trustworthy?",
       "contract": "src/design-templates/contracts/internet-foyer.contract.json",

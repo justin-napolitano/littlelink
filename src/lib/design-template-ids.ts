@@ -3,6 +3,7 @@ export const designTemplateIds = [
   'quiet-index',
   'garden-index',
   'proof-index',
+  'internet-foyer-index',
 ] as const;
 
 export type DesignTemplateId = (typeof designTemplateIds)[number];

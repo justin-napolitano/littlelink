@@ -73,6 +73,7 @@ Implemented preview templates:
 - `quiet-index`
 - `garden-index`
 - `proof-index`
+- `internet-foyer-index`
 
 Preview routes use `/preview/[templateId]`. The preview route:
 
@@ -89,6 +90,7 @@ Template controls are declarative for now:
 
 - `src/data/design-control.json` defines tenant-level content, brand, theme, module, QA, and reference controls.
 - `src/design-templates/link-index-mobile-first/control-map.json` maps the active template to content paths, CSS tokens, selectors, accessibility expectations, and activation gates.
+- `src/design-templates/internet-foyer-index/control-map.json` maps the inactive Internet Foyer preview to its design-object contracts and implementation selectors.
 - `src/design-templates/contracts/*.contract.json` defines candidate scope before any template code is created.
 
 These files do not change the rendered page. They exist so future visual slices can tune the design through explicit controls instead of ad hoc CSS edits.
