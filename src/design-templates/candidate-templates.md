@@ -13,6 +13,16 @@ The current live template is `link-index-mobile-first`. It remains one template.
 - Candidates must not change route labels, route URLs, privacy behavior, analytics behavior, or direct link behavior.
 - Candidates must be previewable without changing the production active-template config.
 - Candidate PRs must include mobile and desktop screenshots.
+- New candidate directions need a JSON design contract before implementation.
+
+## Design Contracts
+
+Contracts live in `src/design-templates/contracts/`.
+
+- `personal-site-template-contract.schema.json`: reusable schema for personal-site template briefs.
+- `internet-foyer.contract.json`: next planned direction for a more curious personal root.
+
+A contract captures audience modes, references, content rules, visual rules, motion rules, privacy invariants, implementation scope, QA gates, and selection criteria. Build work should start only after the contract is reviewed and marked `approved_for_build`.
 
 ## First Build Batch
 
@@ -53,6 +63,7 @@ Hiring/professional proof-forward root focused on resume, docs, GitHub, and proj
 
 ## Later Candidates
 
+- `internet-foyer-index`: curious personal front-room template that invites interaction instead of explaining everything.
 - `card-index`: warmer personal card style with stronger tactile identity.
 - `ledger-index`: text-forward durable personal directory.
 - `social-card-index`: more personal/social while avoiding embedded feeds.

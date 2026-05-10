@@ -1,0 +1,282 @@
+{
+  "$schema": "./personal-site-template-contract.schema.json",
+  "contract_id": "internet-foyer-template-v1",
+  "version": 1,
+  "status": "planned",
+  "template": {
+    "id": "internet-foyer-index",
+    "name": "Internet Foyer",
+    "candidate_id": "internet-foyer-index",
+    "reusable_market": "Personal PR base for individuals, operators, makers, small studios, and small businesses."
+  },
+  "positioning": {
+    "first_impression": "This person has taste, range, and something worth clicking into.",
+    "curiosity_strategy": "Show a few high-signal doors instead of explaining the whole person on the root.",
+    "tone": [
+      "direct",
+      "alive",
+      "confident",
+      "normal",
+      "slightly playful"
+    ],
+    "must_feel_like": [
+      "a front room on the internet",
+      "a curated glimpse into a real life",
+      "someone who likes themself without performing",
+      "professional and personal at the same time"
+    ],
+    "must_not_feel_like": [
+      "pitch deck",
+      "generic SaaS landing page",
+      "tech stack identity",
+      "resume wall",
+      "overexplained personal brand"
+    ]
+  },
+  "audience_modes": [
+    {
+      "id": "recruiter",
+      "intent": "Find proof quickly without reading a full bio.",
+      "primary_exits": [
+        "resume",
+        "docs",
+        "github"
+      ]
+    },
+    {
+      "id": "collaborator",
+      "intent": "Understand what Justin makes and where deeper work lives.",
+      "primary_exits": [
+        "docs",
+        "github",
+        "schedule"
+      ]
+    },
+    {
+      "id": "client_or_business",
+      "intent": "Decide whether this person is organized enough to contact.",
+      "primary_exits": [
+        "schedule",
+        "email",
+        "docs"
+      ]
+    },
+    {
+      "id": "personal",
+      "intent": "Get a human read without exposing private life.",
+      "primary_exits": [
+        "instagram",
+        "bluesky",
+        "selected_future_lifestyle_objects"
+      ]
+    }
+  ],
+  "reference_set": [
+    {
+      "id": "paco-coursey",
+      "url": "https://paco.me/",
+      "role": "Plain personal index with strong signal density.",
+      "borrow": [
+        "simple section rhythm",
+        "projects and writing doing the credibility work",
+        "personal now energy without overexplaining"
+      ],
+      "avoid": [
+        "copying developer-only category language",
+        "becoming too plain for a reusable brand system"
+      ]
+    },
+    {
+      "id": "joe-coleman-agencies",
+      "url": "https://getcoleman.com/agencies/",
+      "role": "Confident bare proof list.",
+      "borrow": [
+        "confidence through direct listing",
+        "minimal ornament around credibility",
+        "professional proof as navigation"
+      ],
+      "avoid": [
+        "dense agency-list opacity",
+        "desktop-only reading assumptions"
+      ]
+    },
+    {
+      "id": "animejs",
+      "url": "https://animejs.com/",
+      "role": "Interaction reference for playful craft.",
+      "borrow": [
+        "modular motion as proof of craft",
+        "small interactive moments that invite poking",
+        "clear docs/examples navigation energy"
+      ],
+      "avoid": [
+        "animation as spectacle",
+        "motion required for comprehension",
+        "library-site technical density on a personal root"
+      ]
+    },
+    {
+      "id": "brian-lovin",
+      "url": "https://brianlovin.com/",
+      "role": "Personal operating-system reference.",
+      "borrow": [
+        "active personal surface",
+        "projects, writing, tools, and interests coexisting",
+        "direct routes into deeper work"
+      ],
+      "avoid": [
+        "making the root feel like a blog index only"
+      ]
+    },
+    {
+      "id": "rauno-freiberg",
+      "url": "https://rauno.me/",
+      "role": "Personal signature reference.",
+      "borrow": [
+        "strong identity through sparse language",
+        "memorable personal rhythm",
+        "tasteful restraint"
+      ],
+      "avoid": [
+        "copying aphorism structure",
+        "letting style outrun route clarity"
+      ]
+    }
+  ],
+  "content_contract": {
+    "shared_source": "src/data/site.json",
+    "required_modules": [
+      "identity",
+      "work",
+      "contact",
+      "social"
+    ],
+    "optional_modules": [
+      "now",
+      "selected_projects",
+      "selected_writing",
+      "selected_lifestyle_objects",
+      "listening",
+      "photos",
+      "proof_list"
+    ],
+    "copy_rules": [
+      "Use plain nouns and verbs.",
+      "Prefer labels over explanatory paragraphs.",
+      "Show routes and objects before claims.",
+      "Leave enough unsaid that clicking feels natural.",
+      "Do not add generic categories like work, writing, systems, experiments unless the objects demand them."
+    ]
+  },
+  "experience_contract": {
+    "mobile_first": true,
+    "first_screen": "Name plus a small set of touchable objects or doors, not a full bio.",
+    "navigation_model": "Spatial object index: grouped by proximity, icon, motion, and placement instead of visible category headings.",
+    "progressive_disclosure": "Each tap should reveal the next layer on the right route; the root should not summarize every route.",
+    "interaction_requirements": [
+      "Thumb-friendly targets at mobile widths.",
+      "No hover-only meaning.",
+      "Keyboard focus remains visible.",
+      "Touch feedback feels immediate.",
+      "The first three exits are obvious without headers."
+    ]
+  },
+  "visual_contract": {
+    "layout": [
+      "Mobile starts as a compact personal front room.",
+      "Desktop can loosen into an asymmetric table, shelf, or wall of selected objects.",
+      "Group boundaries may be cards, spacing, rails, or clusters, but not explanatory headings.",
+      "The root should feel curated, not exhaustive."
+    ],
+    "typography": [
+      "Name can keep a distinctive display face if it feels personal.",
+      "Labels stay plain and highly readable.",
+      "No large marketing headline under the name.",
+      "Text scale must remain comfortable on phone."
+    ],
+    "color": [
+      "Avoid one-note palette dominance.",
+      "Use warm neutrals only as a base, not the whole identity.",
+      "Allow small vivid accents on objects and motion states.",
+      "Contrast must stay readable."
+    ],
+    "texture": [
+      "Optional tactile surface, paper, or object texture if performance-safe.",
+      "No decorative orbs, blobs, or generic gradients.",
+      "Texture must support the personal front-room idea."
+    ],
+    "density": [
+      "Less polished air than the current template.",
+      "Enough density to invite exploring.",
+      "No clutter on mobile.",
+      "At least one below-fold hint should be visible on common mobile viewports."
+    ]
+  },
+  "motion_contract": {
+    "policy": "Motion may create curiosity and prove craft, but the page must work without it.",
+    "allowed": [
+      "small entrance offsets",
+      "tap and hover response",
+      "gentle object rearrangement",
+      "reduced-motion-safe micro interactions",
+      "optional future Anime.js-style prototype only after static layout works"
+    ],
+    "forbidden": [
+      "scroll spectacle",
+      "animation required to find links",
+      "long autoplay sequences",
+      "motion that delays route access",
+      "heavy dependency before a measured need exists"
+    ]
+  },
+  "privacy_contract": {
+    "invariants": [
+      "Canonical URLs stay unchanged.",
+      "Analytics consent behavior stays unchanged.",
+      "Direct link redirects stay unchanged.",
+      "No private photos, private locations, or private feeds.",
+      "Social/media modules require explicit public-review status before activation."
+    ],
+    "review_required_for": [
+      "photos",
+      "lifestyle_objects",
+      "music/listening embeds",
+      "social media control panels",
+      "location-adjacent copy"
+    ]
+  },
+  "implementation_scope": {
+    "build_status": "Do not build until this contract is reviewed and approved.",
+    "intended_files": [
+      "src/design-templates/internet-foyer-index/manifest.yaml",
+      "src/design-templates/internet-foyer-index/index.astro",
+      "src/design-templates/internet-foyer-index/styles.css",
+      "src/design-templates/internet-foyer-index/control-map.json",
+      "src/lib/design-template-ids.ts",
+      "src/lib/design-template-registry.ts",
+      "src/design-templates/candidate-templates.json"
+    ],
+    "preview_route": "/preview/internet-foyer-index",
+    "activation_rule": "Only activate after mobile and desktop screenshots beat link-index-mobile-first for curiosity without losing clarity."
+  },
+  "qa_gates": [
+    "npm_build",
+    "route_health_check",
+    "mobile_screenshot",
+    "desktop_screenshot",
+    "no_text_overflow",
+    "keyboard_focus_visible",
+    "contrast_readable",
+    "reduced_motion_acceptable",
+    "privacy_behavior_unchanged",
+    "shared_content_unchanged",
+    "template_preview_without_activation"
+  ],
+  "selection_criteria": [
+    "Makes the viewer want to click further within five seconds.",
+    "Feels less polished and more alive than the current root.",
+    "Still reads as organized and trustworthy.",
+    "Serves professional and personal audiences through route choice rather than separate landing pages.",
+    "Can become a reusable contract model for future personal or small-business sites."
+  ]
+}

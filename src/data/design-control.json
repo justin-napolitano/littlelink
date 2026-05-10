@@ -9,6 +9,8 @@
     "template_manifest": "src/design-templates/link-index-mobile-first/manifest.yaml",
     "template_control_map": "src/design-templates/link-index-mobile-first/control-map.json",
     "candidate_templates": "src/design-templates/candidate-templates.json",
+    "personal_site_template_contract_schema": "src/design-templates/contracts/personal-site-template-contract.schema.json",
+    "next_template_contract": "src/design-templates/contracts/internet-foyer.contract.json",
     "template_ids": "src/lib/design-template-ids.ts",
     "template_registry": "src/lib/design-template-registry.ts",
     "preview_index": "src/pages/preview/index.astro",
@@ -29,13 +31,14 @@
       "proof-index"
     ],
     "later_candidates": [
+      "internet-foyer-index",
       "card-index",
       "ledger-index",
       "social-card-index",
       "business-card-index"
     ],
     "preview_requirement": "Candidate templates must be previewable without changing production active-template config.",
-    "selection_rule": "Select a candidate only after mobile and desktop screenshot review.",
+    "selection_rule": "Select a candidate only after contract review plus mobile and desktop screenshot review.",
     "preview_index_route": "/preview",
     "preview_route_pattern": "/preview/[templateId]"
   },
@@ -195,6 +198,10 @@
     "derek-sivers",
     "maggie-appleton",
     "maggie-appleton-digital-garden",
+    "paco-coursey",
+    "joe-coleman-agencies",
+    "animejs",
+    "rauno-freiberg",
     "thinkhouse-2026-web-design"
   ]
 }

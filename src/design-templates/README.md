@@ -22,6 +22,7 @@ Candidate plans live in:
 
 - `src/design-templates/candidate-templates.md`
 - `src/design-templates/candidate-templates.json`
+- `src/design-templates/contracts/*.contract.json`
 
 Build the first batch before expanding the set:
 
@@ -30,6 +31,15 @@ Build the first batch before expanding the set:
 - `proof-index`
 
 Production should remain on `link-index-mobile-first` until a candidate passes preview, screenshot QA, and selection review.
+
+## Design Contracts
+
+New template directions should start as JSON contracts before implementation.
+
+- `src/design-templates/contracts/personal-site-template-contract.schema.json` defines the reusable contract shape for personal-site templates.
+- `src/design-templates/contracts/internet-foyer.contract.json` defines the next planned direction: a curious, mobile-first personal front room that invites interaction instead of explaining everything.
+
+A contract must name the intended template, audience modes, reference set, content rules, visual rules, motion rules, privacy invariants, implementation scope, QA gates, and selection criteria. Build work should not begin until the contract is reviewed and marked `approved_for_build`.
 
 ## Preview Harness
 
@@ -59,5 +69,6 @@ Template controls are declarative for now:
 
 - `src/data/design-control.json` defines tenant-level content, brand, theme, module, QA, and reference controls.
 - `src/design-templates/link-index-mobile-first/control-map.json` maps the active template to content paths, CSS tokens, selectors, accessibility expectations, and activation gates.
+- `src/design-templates/contracts/*.contract.json` defines candidate scope before any template code is created.
 
 These files do not change the rendered page. They exist so future visual slices can tune the design through explicit controls instead of ad hoc CSS edits.
