@@ -1,0 +1,69 @@
+{
+  "authority": "repo_local_execution",
+  "board_title": "JNAP Link Hub Execution Board",
+  "edges": [
+    {
+      "authority": "repo_local_execution",
+      "from": "repo.littlelink",
+      "status": "active",
+      "to": "contract.littlelink.workflow",
+      "type": "owns"
+    },
+    {
+      "authority": "repo_local_execution",
+      "from": "repo.littlelink",
+      "status": "active",
+      "to": "data.littlelink.remaining_work_graph",
+      "type": "owns"
+    },
+    {
+      "authority": "repo_local_execution",
+      "from": "repo.littlelink",
+      "status": "planned",
+      "to": "contract.littlelink.repo_local_nodes",
+      "type": "owns"
+    }
+  ],
+  "fragment_id": "fragment.littlelink",
+  "generated_by": "bootstrap-managed-repo",
+  "nodes": [
+    {
+      "authority": "repo_local_execution",
+      "id": "repo.littlelink",
+      "name": "littlelink",
+      "repo": "littlelink",
+      "status": "active",
+      "type": "repo"
+    },
+    {
+      "artifact_ref": "spec/workflow.yaml",
+      "authority": "repo_local_execution",
+      "id": "contract.littlelink.workflow",
+      "name": "littlelink Workflow Contract",
+      "repo": "littlelink",
+      "status": "active",
+      "type": "contract"
+    },
+    {
+      "artifact_ref": "artifacts/planner/research/remaining-work-graph.json",
+      "authority": "repo_local_execution",
+      "id": "data.littlelink.remaining_work_graph",
+      "name": "littlelink Remaining Work Graph",
+      "repo": "littlelink",
+      "status": "active",
+      "type": "data_object"
+    },
+    {
+      "artifact_ref": ".agent/nodes/",
+      "authority": "repo_local_execution",
+      "id": "contract.littlelink.repo_local_nodes",
+      "name": "littlelink Repo-Local Nodes",
+      "repo": "littlelink",
+      "status": "planned",
+      "type": "contract"
+    }
+  ],
+  "repo": "littlelink",
+  "target_id": "link",
+  "version": 1
+}
