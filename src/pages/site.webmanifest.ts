@@ -10,8 +10,8 @@ export function GET() {
     start_url: '/',
     scope: '/',
     display: 'standalone',
-    theme_color: '#0f7c66',
-    background_color: '#f5f2ec',
+    theme_color: '#356349',
+    background_color: '#fcfbf8',
     icons: [
       { src: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
       { src: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },

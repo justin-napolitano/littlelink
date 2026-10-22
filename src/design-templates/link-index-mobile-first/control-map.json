@@ -2,7 +2,7 @@
   "version": 1,
   "template_id": "link-index-mobile-first",
   "status": "active",
-  "intent": "Preserve the accepted JNAP mobile-first link hub while making its controls explicit.",
+  "intent": "Apply the approved Index / Simplified visual contract while preserving link and privacy behavior.",
   "template_scope": {
     "comparison_unit": "template",
     "presentation_ownership": "This template owns its spacing, typography, background, density, and interaction choices.",
@@ -11,29 +11,26 @@
   },
   "content_map": {
     "identity": {
-      "component_scope": "hero",
+      "component_scope": "index-header",
       "source_paths": [
         "hero.name",
         "hero.subhead"
       ],
       "selectors": [
-        ".hero",
-        ".hero__copy",
-        "h1",
-        ".hero__subhead"
+        ".index-header",
+        "h1"
       ]
     },
     "section_groups": {
-      "component_scope": "link-stack",
+      "component_scope": "index-directory",
       "source_paths": [
         "sections[]",
         "sections[].links[]"
       ],
       "selectors": [
-        ".link-stack",
-        ".link-stack__section",
-        ".link-pills",
-        ".link-pill"
+        ".index-directory",
+        ".index-section",
+        ".index-link"
       ]
     },
     "footer": {
@@ -44,7 +41,7 @@
         "footer.privacyHref"
       ],
       "selectors": [
-        ".site-footer"
+        ".index-footer"
       ]
     },
     "privacy": {
@@ -60,36 +57,28 @@
   },
   "css_token_map": {
     "background": [
-      "--bg",
-      "--upper-bg"
+      "--bg"
     ],
     "text": [
       "--ink",
-      "--ink-soft",
-      "--ink-mute"
+      "--ink-soft"
     ],
     "accent": [
-      "--accent",
-      "--accent-soft"
+      "--accent"
     ],
     "line": [
-      "--line",
-      "--line-strong"
-    ],
-    "surface": [
-      "--shadow",
-      "--radius"
+      "--line"
     ]
   },
   "layout_controls": {
     "scope": "link-index-mobile-first",
-    "page_width": "main max-width",
-    "page_padding": "main padding",
-    "hero_density": ".hero--simple padding",
-    "section_density": ".link-stack__section padding",
-    "link_density": ".link-pill padding",
-    "section_header_alignment": ".link-stack__section header padding-inline",
-    "tap_target_policy": "large rounded link pills"
+    "page_width": ".index-page width",
+    "page_padding": ".index-page padding",
+    "hero_density": ".index-header padding-bottom",
+    "section_density": ".index-section padding",
+    "link_density": ".index-link padding",
+    "section_header_alignment": ".index-section grid",
+    "tap_target_policy": "44px minimum text navigation; 56px directory rows"
   },
   "copy_policy": {
     "rule": "show_and_do_do_not_explain",

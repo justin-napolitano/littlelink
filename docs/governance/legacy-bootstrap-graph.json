@@ -1,0 +1,111 @@
+{
+  "last_updated": "2026-05-05T00:00:00Z",
+  "nodes": [
+    {
+      "goal_area": "product",
+      "initiative_branch": "initiative/link-suite-maintenance",
+      "node_id": "initiative-link-suite-maintenance",
+      "status": "in_progress",
+      "title": "JNAP Link Hub maintenance",
+      "type": "initiative"
+    },
+    {
+      "completion_ref": "bootstrap:repo-initialized",
+      "goal_area": "governance",
+      "implementation_branch": "impl-execplan/20260505-littlelink-bootstrap-governed-project-codex-01-execplan-codex-01-20260505",
+      "initiative_branch": "initiative/link-suite-maintenance",
+      "integration_mode": "via_initiative",
+      "node_id": "rwg-001",
+      "parent_initiative_node": "initiative-link-suite-maintenance",
+      "status": "completed",
+      "target_execplan_id": "20260505-littlelink-bootstrap-governed-project-codex-01-execplan",
+      "title": "Bootstrap governed project skeleton",
+      "type": "execplan"
+    },
+    {
+      "goal_area": "product",
+      "implementation_branch": "impl-execplan/20260505-littlelink-link-routing-publishing-contract-codex-01-execplan-codex-01-20260505",
+      "initiative_branch": "initiative/link-suite-maintenance",
+      "integration_mode": "via_initiative",
+      "node_id": "rwg-002",
+      "parent_initiative_node": "initiative-link-suite-maintenance",
+      "status": "decision_gated",
+      "target_execplan_id": "20260505-littlelink-link-routing-publishing-contract-codex-01-execplan",
+      "title": "Define link hub routing, published URL checks, and suite handoff contract",
+      "type": "execplan"
+    },
+    {
+      "goal_area": "product",
+      "implementation_branch": "impl-execplan/20260505-littlelink-link-suite-navigation-validation-codex-01-execplan-codex-01-20260505",
+      "initiative_branch": "initiative/link-suite-maintenance",
+      "integration_mode": "via_initiative",
+      "node_id": "rwg-003",
+      "parent_initiative_node": "initiative-link-suite-maintenance",
+      "status": "decision_gated",
+      "target_execplan_id": "20260505-littlelink-link-suite-navigation-validation-codex-01-execplan",
+      "title": "Validate jnap.me navigation to resume, docs, and hire surfaces",
+      "type": "execplan"
+    },
+    {
+      "node_id": "initiative-unified-brand-20261022",
+      "title": "Initiative / unified brand 20261022",
+      "status": "ready",
+      "gating_class": "auto_runnable",
+      "conflict_domains": [
+        "littlelink-presentation"
+      ],
+      "target_execplan_id": "initiative:unified-brand-20261022",
+      "goal_area": "reference",
+      "initiative_branch": "initiative/unified-brand-20261022",
+      "parent_initiative_node": "initiative-unified-brand-20261022",
+      "ordering": {}
+    },
+    {
+      "node_id": "rwg-brand-20261022",
+      "title": "Apply approved simplified identity to the active link template",
+      "status": "decision_gated",
+      "status_reason": "registered from ExecPlan metadata; authoritative ExecPlan required before execution",
+      "gating_class": "decision_gated",
+      "conflict_domains": [
+        "littlelink-presentation"
+      ],
+      "target_execplan_id": "20261022-unified-brand-implementation",
+      "goal_area": "product",
+      "implementation_branch": "impl-execplan/unified-brand-20261022",
+      "initiative_branch": "initiative/unified-brand-20261022",
+      "parent_initiative_node": "initiative-unified-brand-20261022",
+      "integration_mode": "via_initiative",
+      "expected_artifacts": [
+        "design-qa.md"
+      ],
+      "ordering": {
+        "queue_position": 4,
+        "tie_breaker": "20261022-unified-brand-implementation",
+        "source_action_id": "rwg-action-20261022-register-rwg-brand-20261022"
+      },
+      "action_state": {
+        "last_action_id": "rwg-action-20261022-register-rwg-brand-20261022",
+        "last_action": "block",
+        "action_required": false,
+        "reorder_requires_human": false,
+        "reorder_blockers": []
+      }
+    }
+  ],
+  "version": 1,
+  "queue_projection": {
+    "last_reconciled_action_id": "rwg-action-20261022-register-rwg-brand-20261022",
+    "ready_execplan_ids": [],
+    "projection_authority": "projection_only"
+  },
+  "graph_actions": [
+    {
+      "action_id": "rwg-action-20261022-register-rwg-brand-20261022",
+      "action": "block",
+      "node_id": "rwg-brand-20261022",
+      "rationale": "node registered deterministically from ExecPlan graph_registration metadata",
+      "evidence_ref": "/Users/justin/repos/brand-review/swarm/littlelink/.agent/execplans/20261022-unified-brand-implementation.md",
+      "queue_reconciled": true
+    }
+  ]
+}
