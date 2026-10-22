@@ -36,12 +36,20 @@ No unresolved P0/P1/P2 finding in the user-directed accent comparison. This was 
 
 Coordinator visual approval and deployment are still pending for this new accent revision. No deployment/domain promotion performed. Existing privacy prose/analytics inconsistency is unchanged and remains a separate content-review item.
 
-## Latest readability and forest canvas follow-up — pending rendered review
+## Latest readability and forest canvas follow-up — rendered review
 
-Final result for this follow-up: blocked pending coordinator-run Chromium captures and manual comparison. Earlier passed accent evidence applies to afe3f0f only. Latest explicit user direction changes paper to #FCFBF8, body ink to #202820, long descriptions to 17px/1.6 ink, and thin rules to #BDCDB8. Short secondary labels retain accessible dark green.
+Final result for this follow-up: passed for Chromium layout, readability, focus and natural scrolling. Native Safari elastic overscroll remains unverified. Earlier passed accent evidence applies to afe3f0f only. Latest explicit user direction changes paper to #FCFBF8, body ink to #202820, long descriptions to 17px/1.6 ink, and thin rules to #BDCDB8. Short secondary labels retain accessible dark green.
 
 Active root html and body use forest #356349, with an actual full-width min-height:100svh warm-white .link-surface wrapper. RootDocument opts in only for the selected active template; candidate previews retain the original canvas behavior. Standalone privacy uses the same surface and forest theme metadata. Manifest theme is forest and launch background warm white. No JS bounce emulation, scroll trapping, content rewrite or dependency added.
 
 Coordinator production before captures: implementation-evidence/readability-before. Prepared after runner: /Users/justin/repos/brand-review/2026-10-22/qa-readability-littlelink.cjs. Output: implementation-evidence/readability/littlelink. Browser launch in this child was sandbox-blocked and escalation aborted; coordinator is running the authorized capture. Native Safari elastic overscroll is not verifiable from Chromium; report remains explicit about that device-level limit.
 
 Current local npm run design:validate, npm run build, and git diff --check pass. Actual policy output is retained alongside evidence. No deployment or promotion performed.
+
+### Completed rendered evidence
+
+Coordinator ran the prepared authorized Chromium runner. Opened base08 reference, production-before desktop, current home1440/390/320, privacy1440/390, focus1440 and effective200 PNGs manually. The latest warm-white/ink direction keeps the quiet directory structure, small sans identity, selective forest labels and thin green rules. No P0/P1/P2 visual issue found. Evidence directory: /Users/justin/repos/brand-review/2026-10-22/implementation-evidence/readability/littlelink. Current screenshots are actual browser output, with no synthetic overscroll rendering.
+
+Home and privacy both fit1440/768/390/320 with no horizontal overflow;720CSSpx effective200% reflow fits. Computed html/body both rgb(53,99,73), actual surface rgb(252,251,248), full viewport width and900px min-height at900px viewport; theme #356349 and manifest background #fcfbf8. Privacy descriptions compute17px/27.2px in rgb(32,40,32); the current directory has no description nodes and none were invented. Wheel scrolling moves mobile home34px, desktop privacy153px and mobile privacy354px naturally; short desktop home requires no scroll. No JS errors; contact hash navigation works and keyboard focus stays visible. No contact destination action taken.
+
+Contrast on new paper: body ink14.64:1, forest6.69:1, hover9.51:1, secondary labels6.15:1. Postcommit actual policy passes with no blockers; historical commit-size warnings remain. Browser launch in the child was blocked by sandbox and approval interruption; coordinator successfully ran capture afterward. Native Safari chrome/root sampling and elastic bounce still require real-device confirmation; source implements the requested root/body colors without claiming that device check. No deployment by this agent.
