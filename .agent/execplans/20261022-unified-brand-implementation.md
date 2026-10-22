@@ -30,6 +30,7 @@ changes:
   - src/design-templates/link-index-mobile-first/
   - src/data/design-control.json
   - src/components/RootDocument.astro
+  - src/pages/index.astro
   - src/pages/site.webmanifest.ts
   - src/pages/privacy.astro
   - src/styles/privacy.css
@@ -71,3 +72,7 @@ Explicit user Chromium permission obtained. Comparison found the unchanged priva
 The user approved a subsequent accent-only revision for littlelink, the two resume surfaces and Select Projects. For this repository only, the latest user direction supersedes the original board's slate/grey accent tokens: forest #356349, darker hover #244B36, soft sage text selection #E2ECDF. Keep warm paper, body ink, typography, layout and all source facts/links unchanged. Muted labels become soft dark green; thin rules become light green-tinted paper. Apply only to the actual active link-index-mobile-first shared tokens and interaction rules, with privacy inheriting coherent colors. No logo, decorative image, new content, background slab, dependency, API or consent-behavior change.
 
 Capture desktop/mobile and hover/focus/selection states; compare the base08 board with this explicit palette override. Check text contrast, reflow and content invariants, then run existing design/build and actual policy gates. Commit/push for coordinator visual review; do not deploy until that review.
+
+## User-directed readability and native canvas follow-up
+
+Use latest approved warm white #FCFBF8, deeper body ink #202820, 17px/1.6 descriptions in ink, selective short green labels and firmer thin green rules. Set actual html/body canvas forest #356349 for the active page and privacy, with a full-width min-height:100svh warm-white surface; align active theme-color and manifest. RootDocument opt-in preserves inactive candidate canvases. Preserve content, consent, redirects and natural scrolling; no bounce handlers or scroll trapping. Existing production baseline captures supplied by coordinator. Run design validation, build and actual policy; render desktop/mobile after captures and report native Safari elastic-bounce behavior as unverified in Chromium. No deployment before coordinator review.

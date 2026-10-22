@@ -35,3 +35,13 @@ Ink/paper13.55:1; forest/paper6.09:1; hover/paper8.65:1; secondary green/paper5.
 No unresolved P0/P1/P2 finding in the user-directed accent comparison. This was a manual combined-image review, not a DOM-generated pass. Prior P2 privacy64px-serify/card mismatch was already corrected in78966d3; this pass changes only its shared colors. Prior full browser review evidence remains in implementation-evidence/browser-qa/2026-10-22T18-53-42-262Z.
 
 Coordinator visual approval and deployment are still pending for this new accent revision. No deployment/domain promotion performed. Existing privacy prose/analytics inconsistency is unchanged and remains a separate content-review item.
+
+## Latest readability and forest canvas follow-up — pending rendered review
+
+Final result for this follow-up: blocked pending coordinator-run Chromium captures and manual comparison. Earlier passed accent evidence applies to afe3f0f only. Latest explicit user direction changes paper to #FCFBF8, body ink to #202820, long descriptions to 17px/1.6 ink, and thin rules to #BDCDB8. Short secondary labels retain accessible dark green.
+
+Active root html and body use forest #356349, with an actual full-width min-height:100svh warm-white .link-surface wrapper. RootDocument opts in only for the selected active template; candidate previews retain the original canvas behavior. Standalone privacy uses the same surface and forest theme metadata. Manifest theme is forest and launch background warm white. No JS bounce emulation, scroll trapping, content rewrite or dependency added.
+
+Coordinator production before captures: implementation-evidence/readability-before. Prepared after runner: /Users/justin/repos/brand-review/2026-10-22/qa-readability-littlelink.cjs. Output: implementation-evidence/readability/littlelink. Browser launch in this child was sandbox-blocked and escalation aborted; coordinator is running the authorized capture. Native Safari elastic overscroll is not verifiable from Chromium; report remains explicit about that device-level limit.
+
+Current local npm run design:validate, npm run build, and git diff --check pass. Actual policy output is retained alongside evidence. No deployment or promotion performed.
