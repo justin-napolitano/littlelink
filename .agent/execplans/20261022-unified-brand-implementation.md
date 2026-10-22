@@ -31,6 +31,8 @@ changes:
   - src/data/design-control.json
   - src/components/RootDocument.astro
   - src/pages/site.webmanifest.ts
+  - src/pages/privacy.astro
+  - src/styles/privacy.css
   - docs/branding/2026-10-22/
   - public/fonts/
   - design-qa.md
@@ -59,3 +61,7 @@ The approved brand implementation remains unchanged by this prerequisite. Canoni
 ## Artifacts and Notes
 
 Reviewable governance prerequisite: docs/governance/brand-governance-prerequisites.md. Finalization fields remain explicitly blank. Legacy graph snapshot retained; actual public reconciler agent events record branch/plan evidence without a human signature. Browser QA remains a separate release gate.
+
+## Browser QA follow-up
+
+Explicit user Chromium permission obtained. Comparison found the unchanged privacy route still loaded the superseded oversized serif/green theme. Extend bounded presentation scope to privacy.astro import/class/theme-color and a small local stylesheet; preserve every privacy text node and link. Capture the same route before/after and re-check primary page, reflow and focus. No privacy-policy assertions or consent logic rewritten.

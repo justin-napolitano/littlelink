@@ -1,0 +1,18 @@
+.privacy-page { width: min(100% - 3rem, 860px); margin: 0 auto; padding: 48px 0 40px; }
+.privacy-page h1 { margin: 0 0 16px; font-size: 26px; font-weight: 500; line-height: 1.35; }
+.privacy-page h2 { margin: 0; font-size: 20px; font-weight: 500; line-height: 1.4; }
+.privacy-page p { margin: 0 0 16px; }
+.privacy-page .hero { padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.privacy-page .hero__eyebrow, .privacy-page .hero__note, .privacy-page .card-note { color: var(--ink-soft); }
+.privacy-page .hero__cta { margin: 20px 0; }
+.privacy-page .cta { display: inline-flex; align-items: center; min-height: 44px; }
+.privacy-page .hero__details { margin-top: 24px; }
+.privacy-page .hero__vitals { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; margin: 0; }
+.privacy-page dt { font-size: 14px; color: var(--ink-soft); }
+.privacy-page dd { margin: 4px 0 0; }
+.privacy-page .link-stack__section { padding: 24px 0; border-bottom: 1px solid var(--line); }
+.privacy-page .card-code { margin-bottom: 8px; color: var(--ink-soft); font-size: 13px; }
+.privacy-page .link-pill { padding: 16px 0 0; }
+.privacy-page .link-pill__label { display: block; font-weight: 500; }
+.privacy-page .link-pill__meta { color: var(--ink-soft); }
+@media(max-width:600px) { .privacy-page { width: calc(100% - 40px); padding-top: 28px; } .privacy-page .hero__vitals { grid-template-columns: 1fr; gap: 16px; } }
