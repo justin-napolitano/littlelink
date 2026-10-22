@@ -1,0 +1,9 @@
+# Reviewable governance schema prerequisite
+
+The existing public bootstrap-managed-repo emits a lightweight graph without graph_id/created_at/edges/order policy, node gates or event contracts; current public referees require those. Re-running bootstrap with --force would overwrite registered work and is unsafe. There is no public migration command. This narrow repo-local migration retains the complete original graph snapshot and all IDs, branches, facts, completion refs, existing ready nodes and graph actions. It does not promote a task or claim human approval.
+
+Mapping: legacy initiative containers become goal_area reference; historical in_progress becomes conservatively decision_gated, with legacy_status preserved as schema migration metadata. Existing completed and decision_gated task statuses are preserved. Missing metadata receives declarative schema defaults; queue positions1/2 come from the existing queue. No dependencies are invented: old graph declares no edges. Future execution transitions only occur through public reconcile-remaining-work-transition using actual plan/branch evidence.
+
+Exact current committed Platform schema snapshots are included; no platform worktree or protected instructions modified. Original snapshot can be compared field-for-field or restored on rollback. The migration script is idempotent and refuses unexpected source version/status. Review schema adoption in this separate draft prerequisite PR before integrating with the brand implementation. No application, font, fact, URL, access-control, finalization, dependency or deployment changes.
+
+Validation must include board-action-api-check, remaining-work-graph-check, plan lint and policy-compliance-check. Only real reconciler-generated agent events can release brand slice. All existing legacy work stays gated; no review event is fabricated.

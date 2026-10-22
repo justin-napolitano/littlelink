@@ -2,12 +2,18 @@
   "last_updated": "2026-05-05T00:00:00Z",
   "nodes": [
     {
-      "goal_area": "product",
+      "goal_area": "reference",
       "initiative_branch": "initiative/link-suite-maintenance",
       "node_id": "initiative-link-suite-maintenance",
-      "status": "in_progress",
+      "status": "decision_gated",
       "title": "JNAP Link Hub maintenance",
-      "type": "initiative"
+      "type": "initiative",
+      "legacy_status": "in_progress",
+      "status_reason": "Legacy in_progress container has no canonical execution grant; preserved conservatively pending review",
+      "gating_class": "decision_gated",
+      "target_execplan_id": "initiative:link-suite-maintenance",
+      "conflict_domains": [],
+      "ordering": {}
     },
     {
       "completion_ref": "bootstrap:repo-initialized",
@@ -20,7 +26,10 @@
       "status": "completed",
       "target_execplan_id": "20260505-littlelink-bootstrap-governed-project-codex-01-execplan",
       "title": "Bootstrap governed project skeleton",
-      "type": "execplan"
+      "type": "execplan",
+      "gating_class": "auto_runnable",
+      "conflict_domains": [],
+      "ordering": {}
     },
     {
       "goal_area": "product",
@@ -32,7 +41,14 @@
       "status": "decision_gated",
       "target_execplan_id": "20260505-littlelink-link-routing-publishing-contract-codex-01-execplan",
       "title": "Define link hub routing, published URL checks, and suite handoff contract",
-      "type": "execplan"
+      "type": "execplan",
+      "gating_class": "decision_gated",
+      "conflict_domains": [],
+      "status_reason": "Legacy queued task remains decision gated; no execution authority inferred",
+      "ordering": {
+        "queue_position": 1,
+        "tie_breaker": "20260505-littlelink-link-routing-publishing-contract-codex-01-execplan"
+      }
     },
     {
       "goal_area": "product",
@@ -44,7 +60,14 @@
       "status": "decision_gated",
       "target_execplan_id": "20260505-littlelink-link-suite-navigation-validation-codex-01-execplan",
       "title": "Validate jnap.me navigation to resume, docs, and hire surfaces",
-      "type": "execplan"
+      "type": "execplan",
+      "gating_class": "decision_gated",
+      "conflict_domains": [],
+      "status_reason": "Legacy queued task remains decision gated; no execution authority inferred",
+      "ordering": {
+        "queue_position": 2,
+        "tie_breaker": "20260505-littlelink-link-suite-navigation-validation-codex-01-execplan"
+      }
     },
     {
       "node_id": "initiative-unified-brand-20261022",
@@ -63,9 +86,9 @@
     {
       "node_id": "rwg-brand-20261022",
       "title": "Apply approved simplified identity to the active link template",
-      "status": "decision_gated",
-      "status_reason": "registered from ExecPlan metadata; authoritative ExecPlan required before execution",
-      "gating_class": "decision_gated",
+      "status": "review_gated",
+      "status_reason": "authoritative plan is canonical; implementation branch publication required before execution",
+      "gating_class": "review_gated",
       "conflict_domains": [
         "littlelink-presentation"
       ],
@@ -81,11 +104,11 @@
       "ordering": {
         "queue_position": 4,
         "tie_breaker": "20261022-unified-brand-implementation",
-        "source_action_id": "rwg-action-20261022-register-rwg-brand-20261022"
+        "source_action_id": "rwg-action-20261022-001-unblock-rwg-brand-20261022"
       },
       "action_state": {
-        "last_action_id": "rwg-action-20261022-register-rwg-brand-20261022",
-        "last_action": "block",
+        "last_action_id": "rwg-action-20261022-001-unblock-rwg-brand-20261022",
+        "last_action": "unblock",
         "action_required": false,
         "reorder_requires_human": false,
         "reorder_blockers": []
@@ -94,9 +117,10 @@
   ],
   "version": 1,
   "queue_projection": {
-    "last_reconciled_action_id": "rwg-action-20261022-register-rwg-brand-20261022",
+    "last_reconciled_action_id": "rwg-action-20261022-001-unblock-rwg-brand-20261022",
     "ready_execplan_ids": [],
-    "projection_authority": "projection_only"
+    "projection_authority": "projection_only",
+    "path": "docs/queued-execplans.md"
   },
   "graph_actions": [
     {
@@ -106,6 +130,29 @@
       "rationale": "node registered deterministically from ExecPlan graph_registration metadata",
       "evidence_ref": "/Users/justin/repos/brand-review/swarm/littlelink/.agent/execplans/20261022-unified-brand-implementation.md",
       "queue_reconciled": true
+    },
+    {
+      "action_id": "rwg-action-20261022-001-unblock-rwg-brand-20261022",
+      "action": "unblock",
+      "node_id": "rwg-brand-20261022",
+      "rationale": "initiative_execplan_authorized derived deterministically from canonical branch and ExecPlan evidence",
+      "evidence_ref": "branch:initiative/unified-brand-20261022",
+      "queue_reconciled": true
     }
-  ]
+  ],
+  "graph_id": "littlelink-remaining-work-graph-20260505",
+  "created_at": "2026-05-05T00:00:00Z",
+  "ordering_policy": {
+    "ready_statuses": [
+      "ready"
+    ],
+    "ready_sort_fields": [
+      "ready_order",
+      "tie_breaker",
+      "node_id"
+    ],
+    "reorder_requires_explicit_action": true,
+    "board_projection_authority": "projection_only"
+  },
+  "edges": []
 }
