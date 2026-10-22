@@ -1,43 +1,43 @@
-# Unified brand implementation swarm
+# Unified brand rollout
 
-Updated 2026-10-22T18:41:38.103309+00:00.
+Updated 2026-10-22T19:33:10.131179+00:00.
 
-The user approved Index / Simplified with the title characters removed, and authorized swarm implementation and deployment. All 17 repositories have implementation PRs in isolated worktrees. The standalone PDF update is published; website production-domain promotion is held for rendered QA.
+Approved Index / Simplified identity without title marks implemented across17 repositories. Browser QA is complete. 13/13 Vercel projects promoted to their existing domains; two archived writing-site Pages workflows succeeded; standalone PDF published. Jaysearch release remains blocked by its repository integration checks.
 
-## Release status
+## Verified behavior
 
-- Vercel login restored. Thirteen existing projects have staging deployments. `--skip-domain` preserved all 20 custom domains and prior production pointers; generic project preview aliases moved as expected.
-- Staging pages require Vercel login, so public HTTP 200 responses to the login screen are not counted as app verification. No protection setting or bypass secret was created.
-- Browser fallback permission is pending. The in-app browser is unavailable; the Product Design skill requires explicit consent before Playwright/Chromium fallback. No browser was run and no visual QA pass was invented.
-- Supported framework prerequisites are being prepared for the four Next apps; Vercel rejected old MDX5 on Docs/Log. Read-only runtime initialization fixes prevent schema migrations during rendering in those two apps. No operator migration was run.
-- The PDF PR4 is merged to its existing pit download branch. Its standalone native-rendered output is one readable page with selectable text. Existing web downloadable PDFs have separate content authorities; they are not blindly replaced with older pit facts.
+- Chromium responsive captures at390/768/1440px plus320px and effective200% reflow, combined approved-reference comparisons, keyboard focus and core interactions. Effective reflow is recorded accurately; native browser toolbar zoom was not claimed.
+- Repaired narrow-screen overflow, title inconsistencies, secondary privacy styling, input labels and photo descriptions. Source facts, authentication boundaries and data behavior preserved.
+- Canonical and legacy web PDFs now use their own public DOM/privacy rules. All19 experience bullets match each source; private phone absent. Full PDFs are6/5pages; separate standalone legacy PDF is1page. No one-page or ATS claim for full web exports.
+- Supported framework/MDX prerequisites and SELECT-only schema readiness fixes included. Existing unrelated dependency advisory findings remain documented; no migration was run.
+- No DNS, redirect, Vercel protection or credential settings changed. Rollback deployment IDs recorded before promotion. Zola retains its existing CNAME/DNS split: Pages published, existing custom domain still serves Vercel link site.
 
-## Repository work
+## Repositories
 
-| Repository | Implementation | Source head | Staging / release |
+| Repository | Implementation PR | Reviewed source | Release |
 |---|---|---|---|
-| littlelink | [PR](https://github.com/justin-napolitano/littlelink/pull/31) | `491d19b4` | [READY](https://littlelink-nfi1tkfdw-justin-napolitanos-projects.vercel.app); custom domains held |
-| creative-resume | [PR](https://github.com/justin-napolitano/creative-resume/pull/33) | `96bcf767` | [READY](https://creative-resume-5v0r2uv4m-justin-napolitanos-projects.vercel.app); custom domains held |
-| selected-projects | [PR](https://github.com/justin-napolitano/selected-projects/pull/39) | `d52168a6` | [READY](https://selected-projects-40azjrkbt-justin-napolitanos-projects.vercel.app); custom domains held |
-| justin-portfolio-poc-with-docs | [PR](https://github.com/justin-napolitano/justin-portfolio-poc-with-docs/pull/34) | `ff1aa3b1` | [ERROR](https://justin-portfolio-poc-with-docs-2dhr8jt93.vercel.app); custom domains held |
-| burdlytics_boilerplate | [PR](https://github.com/justin-napolitano/burdlytics_boilerplate/pull/10) | `cb53661b` | [READY](https://burdlytics-boilerplate-pjyt8ecsn-justin-napolitanos-projects.vercel.app); custom domains held |
-| jaysearch | [PR](https://github.com/justin-napolitano/jaysearch/pull/14) | `1b485f4f` | Pages source ready; QA and existing deployment gate pending |
-| clinical-registry-data-platform-site | [PR](https://github.com/justin-napolitano/clinical-registry-data-platform-site/pull/2) | `bcf9410d` | [READY](https://clinical-registry-data-platform-site-7x3bx2pjp.vercel.app); custom domains held |
-| journal-zine | [PR](https://github.com/justin-napolitano/journal-zine/pull/16) | `f30c228d` | [READY](https://journal-zine-bes25o70c-justin-napolitanos-projects.vercel.app); custom domains held |
-| hire-me | [PR](https://github.com/justin-napolitano/hire-me/pull/6) | `c3771e1f` | [READY](https://hire-782unzena-justin-napolitanos-projects.vercel.app); custom domains held |
-| news-reader | [PR](https://github.com/justin-napolitano/news-reader/pull/18) | `bd5ca786` | [READY](https://news-reader-9a9og9a94-justin-napolitanos-projects.vercel.app); custom domains held |
-| data-strategist-resume | [PR](https://github.com/justin-napolitano/data-strategist-resume/pull/4) | `c09ae8de` | Published PDF |
-| resume-site-2 | [PR](https://github.com/justin-napolitano/resume-site-2/pull/4) | `0b007f17` | [READY](https://resume-site-2-9l5ff6j3i-justin-napolitanos-projects.vercel.app); custom domains held |
-| portfolio-for-real | [PR](https://github.com/justin-napolitano/portfolio-for-real/pull/4) | `3cb73758` | [READY](https://portfolio-for-real-4u6q8dhct-justin-napolitanos-projects.vercel.app); custom domains held |
-| jnapolitano.com | [PR](https://github.com/justin-napolitano/jnapolitano.com/pull/86) | `e360c5c3` | Pages source ready; QA and existing deployment gate pending |
-| jnapolitano-site | [PR](https://github.com/justin-napolitano/jnapolitano-site/pull/19) | `e3e29a6e` | Pages source ready; QA and existing deployment gate pending |
-| personal-suite-client-site | [PR](https://github.com/justin-napolitano/personal-suite-client-site/pull/3) | `89903ded` | [READY](https://personal-suite-client-site-2hvw1iqan.vercel.app); custom domains held |
-| personal-suite-product-launch-site | [PR](https://github.com/justin-napolitano/personal-suite-product-launch-site/pull/3) | `41a30b05` | [READY](https://personal-suite-product-launch-site-3ohzav9ac.vercel.app); custom domains held |
+| littlelink | [PR](https://github.com/justin-napolitano/littlelink/pull/31) | `78966d39` | Live on existing Vercel domains; exact reviewed build promoted |
+| creative-resume | [PR](https://github.com/justin-napolitano/creative-resume/pull/33) | `43c6f29a` | Live on existing Vercel domains; exact reviewed build promoted |
+| selected-projects | [PR](https://github.com/justin-napolitano/selected-projects/pull/39) | `592f52be` | Live on existing Vercel domains; exact reviewed build promoted |
+| justin-portfolio-poc-with-docs | [PR](https://github.com/justin-napolitano/justin-portfolio-poc-with-docs/pull/34) | `23f47da4` | Live on existing Vercel domains; exact reviewed build promoted |
+| burdlytics_boilerplate | [PR](https://github.com/justin-napolitano/burdlytics_boilerplate/pull/10) | `07b71386` | Live on existing Vercel domains; exact reviewed build promoted |
+| jaysearch | [PR](https://github.com/justin-napolitano/jaysearch/pull/14) | `938a4e05` | Built and browser verified; repository integration policy blocks release |
+| clinical-registry-data-platform-site | [PR](https://github.com/justin-napolitano/clinical-registry-data-platform-site/pull/2) | `c7eaa638` | Live on existing Vercel domains; exact reviewed build promoted |
+| journal-zine | [PR](https://github.com/justin-napolitano/journal-zine/pull/16) | `c6f9993d` | Live on existing Vercel domains; exact reviewed build promoted |
+| hire-me | [PR](https://github.com/justin-napolitano/hire-me/pull/6) | `3b2a0e8e` | Live on existing Vercel domains; exact reviewed build promoted |
+| news-reader | [PR](https://github.com/justin-napolitano/news-reader/pull/18) | `1cdd5e1e` | Live on existing Vercel domains; exact reviewed build promoted |
+| data-strategist-resume | [PR](https://github.com/justin-napolitano/data-strategist-resume/pull/4) | `c09ae8de` | Standalone PDF published to existing pit branch |
+| resume-site-2 | [PR](https://github.com/justin-napolitano/resume-site-2/pull/4) | `bb1ba380` | Live on existing Vercel domains; exact reviewed build promoted |
+| portfolio-for-real | [PR](https://github.com/justin-napolitano/portfolio-for-real/pull/4) | `f8e3a567` | Live on existing Vercel domains; exact reviewed build promoted |
+| jnapolitano.com | [PR](https://github.com/justin-napolitano/jnapolitano.com/pull/86) | `79b6c8d1` | Merged; existing Pages workflow succeeded |
+| jnapolitano-site | [PR](https://github.com/justin-napolitano/jnapolitano-site/pull/19) | `aa8e78d5` | Merged; existing Pages workflow succeeded |
+| personal-suite-client-site | [PR](https://github.com/justin-napolitano/personal-suite-client-site/pull/3) | `5726f5eb` | Live on existing Vercel domains; exact reviewed build promoted |
+| personal-suite-product-launch-site | [PR](https://github.com/justin-napolitano/personal-suite-product-launch-site/pull/3) | `9dc3fb34` | Live on existing Vercel domains; exact reviewed build promoted |
 
-## Evidence and recovery
+## Evidence and remaining work
 
-- The coordinator-held implementation evidence contains the individual agent handoffs, source checks, native PDF evidence, governance reports and HTTP/domain audit.
-- The coordinator-held deployment inventory records original project IDs, domains and previous deployments for rollback.
-- The coordinator-held staging log retains staging IDs and original-source commits.
-- Existing original working-tree change categories remain present; no initial hash snapshot exists, so byte-for-byte original preservation is not asserted.
-- Next step: obtain the pending Chromium fallback choice, capture/compare responsive previews, repair any visual issues, and promote only verified supported builds. Pages deployments retain their configured main-branch/environment controls.
+- Per-repo `design-qa.md`, committed screenshot evidence where supported, and coordinator-held browser/PDF/public-verification reports record actual checks.
+- `production-releases.json`, `staging-deployments.json` and `deployment-inventory.json` retain exact build IDs, source commits and rollback pointers.
+- Jaysearch: visual implementation is verified, but existing commit-order/source-surface/design-review/graph policy checks block integration. Human-signed finalization and the existing main-only Pages environment remain intact; no bypass or signature was fabricated. See its implementation PR for the concrete handoff.
+- Initiative-based source PRs remain reviewable in their governed branch flow. Production artifact promotion does not claim main finalization.
+- Original working-tree change categories remain present; no initial byte-level snapshot exists, so byte-for-byte preservation is not asserted.
