@@ -17,3 +17,9 @@ Canonical source: `artifacts/planner/research/remaining-work-graph.json`
 2. `rwg-003` `decision_gated`
    `20260505-littlelink-link-suite-navigation-validation-codex-01-execplan`
    Validate jnap.me navigation to resume, docs, and hire surfaces
+
+4. `20261022-unified-brand-implementation`
+   - status: `decision_gated`
+   - goal: Apply approved simplified identity to the active link template
+   - implementation branch: `impl-execplan/unified-brand-20261022`
+   - gate: `authoritative ExecPlan required before execution`
