@@ -164,9 +164,9 @@
   "theme_controls": {
     "scope": "active_template_defaults",
     "typography": {
-      "display_font": "Fraunces",
-      "body_font": "system_ui",
-      "heading_style": "warm_serif_identity",
+      "display_font": "system_ui",
+      "body_font": "Inter, system_ui",
+      "heading_style": "modest_sans_identity",
       "label_style": "plain_nouns_and_actions"
     },
     "color": {
@@ -181,9 +181,9 @@
       ]
     },
     "shape": {
-      "surface_radius": "var(--radius)",
-      "link_radius": "999px",
-      "icon_radius": "999px"
+      "surface_radius": "0",
+      "link_radius": "0",
+      "icon_radius": "not_rendered"
     },
     "motion": {
       "policy": "subtle_guidance_only",

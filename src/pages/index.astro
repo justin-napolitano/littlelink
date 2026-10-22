@@ -17,6 +17,6 @@ if (!ActiveTemplate) {
 const consentScript = createAnalyticsConsentScript(gaMeasurementId);
 ---
 
-<RootDocument site={site}>
+<RootDocument site={site} forestCanvas={activeTemplateId === 'link-index-mobile-first'}>
   <ActiveTemplate site={site} consentScript={consentScript} />
 </RootDocument>

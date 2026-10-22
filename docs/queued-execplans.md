@@ -17,3 +17,14 @@ Canonical source: `artifacts/planner/research/remaining-work-graph.json`
 2. `rwg-003` `decision_gated`
    `20260505-littlelink-link-suite-navigation-validation-codex-01-execplan`
    Validate jnap.me navigation to resume, docs, and hire surfaces
+
+4. `20261022-unified-brand-implementation`
+   - status: `ready`
+   - goal: Apply approved simplified identity to the active link template
+   - implementation branch: `impl-execplan/unified-brand-20261022`
+
+## Mirror Metadata
+
+- canonical_last_graph_action_id: `rwg-action-20261022-002-promote_ready-rwg-brand-20261022`
+- canonical_ready_order: `20261022-unified-brand-implementation`
+- projection_authority: `projection_only`
