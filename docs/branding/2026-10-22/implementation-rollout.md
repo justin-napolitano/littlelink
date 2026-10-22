@@ -34,7 +34,7 @@ Approved Index / Simplified identity without title marks implemented across 17 r
 | personal-suite-client-site | [PR](https://github.com/justin-napolitano/personal-suite-client-site/pull/3) | `5726f5eb` | Live on existing Vercel domains; exact reviewed build promoted |
 | personal-suite-product-launch-site | [PR](https://github.com/justin-napolitano/personal-suite-product-launch-site/pull/3) | `9dc3fb34` | Live on existing Vercel domains; exact reviewed build promoted |
 
-## Current four-site green refinement
+## Previous four-site green refinement
 
 The user requested green interaction accents and useful text highlights on the two resume sites, personal links and Select Projects only. Those four refinements are live. Forest `#356349`, deeper hover `#244b36`, sage `#e2ecdf`, green secondary `#4e6550` and pale green rules `#cfd9c8` replace their grey/slate accents. Body ink, paper, type scale, content and layout are retained.
 
@@ -49,3 +49,14 @@ A separate post-release Journal hydration correction is tested in [PR18](https:/
 - Jaysearch: visual implementation is verified, but existing commit-order/source-surface/design-review/graph policy checks block integration. Human-signed finalization and the existing main-only Pages environment remain intact; no bypass or signature was fabricated. See its implementation PR for the concrete handoff.
 - Initiative-based source PRs remain reviewable in their governed branch flow. Production artifact promotion does not claim main finalization.
 - Original working-tree change categories remain present; no initial byte-level snapshot exists, so byte-for-byte preservation is not asserted.
+
+
+## Readability and overscroll follow-up
+
+The two resume sites, personal Links and Select Projects now use lighter warm white `#FCFBF8`, deep reading ink `#202820`, comfortable body spacing and firmer green rules. Short labels, links and useful text highlights retain restrained green. Existing layouts, modest title sizes, source facts and contact privacy are retained. Both web PDFs were regenerated from their own public content and verified after publication.
+
+Links and Docs use a forest `#356349` document canvas and matching browser theme metadata, with a separate full-width paper reading surface. Docs received only this overscroll fix. Native scrolling remains enabled. Chromium confirms the rendered surfaces, document colors, theme metadata and normal scrolling; native Safari elastic overscroll remains untested.
+
+Final public browser checks: all five sites return HTTP 200, with no page JavaScript errors or horizontal overflow at 390 / 1440 px. Both public PDF downloads match the verified files exactly. [Review PNG](readability-review.png).
+
+Follow-up source PRs: [legacy resume PR6](https://github.com/justin-napolitano/resume-site-2/pull/6), [Select Projects PR41](https://github.com/justin-napolitano/selected-projects/pull/41), and [Docs PR8](https://github.com/justin-napolitano/portfolio-for-real/pull/8) are merged. Links PR31 and canonical resume PR33 retain their existing initiative review flow.
