@@ -22,6 +22,7 @@ changes:
   - src/components/RootDocument.astro
   - src/pages/site.webmanifest.ts
   - docs/branding/2026-10-22/
+  - public/fonts/
   - design-qa.md
 ---
 

@@ -14,7 +14,7 @@ Exact selected reference: docs/branding/2026-10-22/approved-reference.png, SHA-2
 - HTML inspection: all nine existing directory URLs and Privacy remain, exactly one h1, no decorative image elements, no remote font link. Header section anchors provide functional local navigation.
 - Source comparison against main: shared site.json, direct-links.ts, private redirect API and analytics-consent.ts unchanged byte for byte. The existing open-in-new-tab and noopener behavior is retained.
 - Contrast on paper: ink #25251F 13.55:1, secondary #62625C 5.40:1. Slate #64758A is 4.15:1 and is used only for focus/underline, never normal text. Stone is used only for rules.
-- Typography: system fallback for unavailable Inter, 24px desktop / 22px mobile identity, 20px directory labels, 16px body, 14px navigation. Paper #F4F0E8, ink #25251F, stone #CBC8BF, slate #64758A. No photographs, title mark, display-sized heading, gradients, shadowed cards, animation or icon pills.
+- Typography: locally bundled licensed Inter with system fallback, 24px desktop / 22px mobile identity, 20px directory labels, 16px body, 14px navigation. Paper #F4F0E8, ink #25251F, stone #CBC8BF, slate #64758A. No photographs, title mark, display-sized heading, gradients, shadowed cards, animation or icon pills.
 
 ## Blocking evidence still needed
 
