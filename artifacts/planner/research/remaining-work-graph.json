@@ -86,9 +86,9 @@
     {
       "node_id": "rwg-brand-20261022",
       "title": "Apply approved simplified identity to the active link template",
-      "status": "review_gated",
-      "status_reason": "authoritative plan is canonical; implementation branch publication required before execution",
-      "gating_class": "review_gated",
+      "status": "ready",
+      "status_reason": "",
+      "gating_class": "auto_runnable",
       "conflict_domains": [
         "littlelink-presentation"
       ],
@@ -104,11 +104,12 @@
       "ordering": {
         "queue_position": 4,
         "tie_breaker": "20261022-unified-brand-implementation",
-        "source_action_id": "rwg-action-20261022-001-unblock-rwg-brand-20261022"
+        "source_action_id": "rwg-action-20261022-002-promote_ready-rwg-brand-20261022",
+        "ready_order": 1
       },
       "action_state": {
-        "last_action_id": "rwg-action-20261022-001-unblock-rwg-brand-20261022",
-        "last_action": "unblock",
+        "last_action_id": "rwg-action-20261022-002-promote_ready-rwg-brand-20261022",
+        "last_action": "promote_ready",
         "action_required": false,
         "reorder_requires_human": false,
         "reorder_blockers": []
@@ -117,8 +118,10 @@
   ],
   "version": 1,
   "queue_projection": {
-    "last_reconciled_action_id": "rwg-action-20261022-001-unblock-rwg-brand-20261022",
-    "ready_execplan_ids": [],
+    "last_reconciled_action_id": "rwg-action-20261022-002-promote_ready-rwg-brand-20261022",
+    "ready_execplan_ids": [
+      "20261022-unified-brand-implementation"
+    ],
     "projection_authority": "projection_only",
     "path": "docs/queued-execplans.md"
   },
@@ -137,6 +140,14 @@
       "node_id": "rwg-brand-20261022",
       "rationale": "initiative_execplan_authorized derived deterministically from canonical branch and ExecPlan evidence",
       "evidence_ref": "branch:initiative/unified-brand-20261022",
+      "queue_reconciled": true
+    },
+    {
+      "action_id": "rwg-action-20261022-002-promote_ready-rwg-brand-20261022",
+      "action": "promote_ready",
+      "node_id": "rwg-brand-20261022",
+      "rationale": "implementation_branch_publish derived deterministically from canonical branch and ExecPlan evidence",
+      "evidence_ref": "branch:origin/impl-execplan/unified-brand-20261022",
       "queue_reconciled": true
     }
   ],
