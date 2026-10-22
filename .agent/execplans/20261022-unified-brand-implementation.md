@@ -65,3 +65,9 @@ Reviewable governance prerequisite: docs/governance/brand-governance-prerequisit
 ## Browser QA follow-up
 
 Explicit user Chromium permission obtained. Comparison found the unchanged privacy route still loaded the superseded oversized serif/green theme. Extend bounded presentation scope to privacy.astro import/class/theme-color and a small local stylesheet; preserve every privacy text node and link. Capture the same route before/after and re-check primary page, reflow and focus. No privacy-policy assertions or consent logic rewritten.
+
+## User-directed forest-green accent revision
+
+The user approved a subsequent accent-only revision for littlelink, the two resume surfaces and Select Projects. For this repository only, the latest user direction supersedes the original board's slate/grey accent tokens: forest #356349, darker hover #244B36, soft sage text selection #E2ECDF. Keep warm paper, body ink, typography, layout and all source facts/links unchanged. Muted labels become soft dark green; thin rules become light green-tinted paper. Apply only to the actual active link-index-mobile-first shared tokens and interaction rules, with privacy inheriting coherent colors. No logo, decorative image, new content, background slab, dependency, API or consent-behavior change.
+
+Capture desktop/mobile and hover/focus/selection states; compare the base08 board with this explicit palette override. Check text contrast, reflow and content invariants, then run existing design/build and actual policy gates. Commit/push for coordinator visual review; do not deploy until that review.
