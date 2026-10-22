@@ -48,5 +48,5 @@ template_scope:
   candidate_rule: "Different visual directions should be built as separate templates for comparison."
   shared_content_rule: "Content remains shared through src/data/site.json."
 notes:
-  - "This template preserves the accepted JNAP mobile-first link hub design."
+  - "This active template implements the approved Index / Simplified identity, without title marks."
   - "Switching templates must not change shared content, route URLs, or privacy decisions."
