@@ -81,3 +81,8 @@ Use selected signal red (#d71920) consistently for highlights and hover, with a 
 ## 2026-10-23: Cardinal red trial
 
 Try selected cardinal red (#c8102e) consistently for text highlights and hover, with a light cardinal selection (#fff0f3), matching secondary ink and rules. Keep green overscroll (#356349), layout, and destinations unchanged. Contrast passes on paper and selection backgrounds. Live color and canvas verification is recorded after deployment.
+
+
+## 2026-10-23: Signal/cardinal midpoint trial
+
+Try the selected midpoint red (#d01527) consistently for text highlights and hover, with a light selection (#fff0f2), matching secondary ink and rules. Keep green overscroll (#356349), layout, and destinations unchanged. Contrast passes on paper and selection backgrounds. Live rendering is verified after deployment.

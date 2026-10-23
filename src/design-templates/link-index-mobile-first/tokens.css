@@ -10,11 +10,11 @@
   color-scheme: light;
   --bg: #fcfbf8;
   --ink: #2d2421;
-  --ink-soft: #70434e;
-  --line: #e8c7cf;
+  --ink-soft: #70444b;
+  --line: #e8c7cc;
   --canvas: #356349;
-  --accent: #c8102e;
-  --accent-hover: #c8102e;
-  --accent-soft: #fff0f3;
+  --accent: #d01527;
+  --accent-hover: #d01527;
+  --accent-soft: #fff0f2;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
