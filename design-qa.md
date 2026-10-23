@@ -66,3 +66,8 @@ Production diagnosis: a fresh Chromium session at jnap.me redirected to www.jnap
 Local verification: Astro production build passes. Browser checks at 320, 390, and 1440px confirm the index layout, 9 original links, compact 22/24px title, no legacy hero/cards, red hover and target-section text, green root/body canvas, privacy route, and green manifest. No runtime errors or horizontal overflow. Contrast: primary ink 14.64:1, secondary ink 6.52:1, red accent 6.82:1 on paper, and selection text 7.57:1 on highlight.
 
 Public production verification and screenshots are recorded separately after deployment in the local link-red-evidence directory.
+
+
+## 2026-10-23: Brighter cool red
+
+Replace brick tones with a brighter red (#e00034), a vivid hover red (#cf0030), and a cool pink selection (#ffe0e8). Secondary ink and rules now use cool red tones. Preserve the green canvas (#356349). Accent contrast on paper is 4.81:1; hover contrast is 5.49:1. Production color and canvas checks are recorded in the separate local release evidence after deployment.
