@@ -9,11 +9,12 @@
 :root {
   color-scheme: light;
   --bg: #fcfbf8;
-  --ink: #202820;
-  --ink-soft: #4e6550;
-  --line: #bdcdb8;
-  --accent: #356349;
-  --accent-hover: #244b36;
-  --accent-soft: #e2ecdf;
+  --ink: #2d2421;
+  --ink-soft: #76534d;
+  --line: #d9c4be;
+  --canvas: #356349;
+  --accent: #9d352b;
+  --accent-hover: #7b281f;
+  --accent-soft: #f4dfd8;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }

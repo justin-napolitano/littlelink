@@ -53,3 +53,16 @@ Coordinator ran the prepared authorized Chromium runner. Opened base08 reference
 Home and privacy both fit1440/768/390/320 with no horizontal overflow;720CSSpx effective200% reflow fits. Computed html/body both rgb(53,99,73), actual surface rgb(252,251,248), full viewport width and900px min-height at900px viewport; theme #356349 and manifest background #fcfbf8. Privacy descriptions compute17px/27.2px in rgb(32,40,32); the current directory has no description nodes and none were invented. Wheel scrolling moves mobile home34px, desktop privacy153px and mobile privacy354px naturally; short desktop home requires no scroll. No JS errors; contact hash navigation works and keyboard focus stays visible. No contact destination action taken.
 
 Contrast on new paper: body ink14.64:1, forest6.69:1, hover9.51:1, secondary labels6.15:1. Postcommit actual policy passes with no blockers; historical commit-size warnings remain. Browser launch in the child was blocked by sandbox and approval interruption; coordinator successfully ran capture afterward. Native Safari chrome/root sampling and elastic bounce still require real-device confirmation; source implements the requested root/body colors without claiming that device check. No deployment by this agent.
+
+
+## 2026-10-23: Red text accents, green overscroll
+
+Final result: passed
+
+The approved link-index-mobile-first layout is retained. Brick red (#9d352b, hover #7b281f, selection #f4dfd8) replaces green text accents; the green canvas (#356349), theme color, and manifest remain green. Secondary ink and rules use warm tones. No content, destinations, consent behavior, or other site templates were changed.
+
+Production diagnosis: a fresh Chromium session at jnap.me redirected to www.jnap.me and rendered the legacy hero/card layout (64px heading, 9 cards, no index page). The assigned deployment was dpl_2CXSyJax4fAikfWss1Ptcps2WAVo. The latest main GitHub deployment had failed with Vercel's build-rate-limit status. A successful HTTP response was not evidence of the approved layout.
+
+Local verification: Astro production build passes. Browser checks at 320, 390, and 1440px confirm the index layout, 9 original links, compact 22/24px title, no legacy hero/cards, red hover and target-section text, green root/body canvas, privacy route, and green manifest. No runtime errors or horizontal overflow. Contrast: primary ink 14.64:1, secondary ink 6.52:1, red accent 6.82:1 on paper, and selection text 7.57:1 on highlight.
+
+Public production verification and screenshots are recorded separately after deployment in the local link-red-evidence directory.
