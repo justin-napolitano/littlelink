@@ -71,3 +71,8 @@ Public production verification and screenshots are recorded separately after dep
 ## 2026-10-23: Brighter cool red
 
 Replace brick tones with a brighter red (#e00034), a vivid hover red (#cf0030), and a cool pink selection (#ffe0e8). Secondary ink and rules now use cool red tones. Preserve the green canvas (#356349). Accent contrast on paper is 4.81:1; hover contrast is 5.49:1. Production color and canvas checks are recorded in the separate local release evidence after deployment.
+
+
+## 2026-10-23: Signal red trial
+
+Use selected signal red (#d71920) consistently for highlights and hover, with a light neutral-red selection (#fff0f0), matching secondary ink and rules. Green overscroll (#356349) and the index layout remain unchanged. Text contrast passes on both paper and selection backgrounds. Production rendering is verified after deployment.
