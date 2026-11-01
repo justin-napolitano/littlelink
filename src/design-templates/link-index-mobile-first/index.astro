@@ -3,6 +3,8 @@ import './styles.css';
 
 const { site, consentScript } = Astro.props;
 const { hero, sections, footer } = site;
+const primarySections = sections.filter((section) => section.id !== 'socials');
+const socialSection = sections.find((section) => section.id === 'socials');
 const isExternal = (href: string = '') => /^https?:\/\//.test(href);
 ---
 
@@ -14,12 +16,12 @@ const isExternal = (href: string = '') => /^https?:\/\//.test(href);
       {hero.thesis && <p class="index-tagline">{hero.thesis}</p>}
     </div>
     <nav aria-label="Directory sections">
-      {sections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
+      {primarySections.map((section) => <a href={`#${section.id}`}>{section.title}</a>)}
     </nav>
   </header>
 
   <div id="links" class="index-directory" tabindex="-1">
-    {sections.map((section) => (
+    {primarySections.map((section) => (
       <section class="index-section" aria-labelledby={`title-${section.id}`} id={section.id}>
         <h2 id={`title-${section.id}`}>{section.title || section.id}</h2>
         <ul>
@@ -45,8 +47,26 @@ const isExternal = (href: string = '') => /^https?:\/\//.test(href);
   </div>
 
   <footer class="index-footer">
-    {footer.text && <p>{footer.text}</p>}
-    {footer.privacyHref && <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy policy'}</a>}
+    {socialSection && (
+      <nav class="index-socials" id={socialSection.id} aria-label="Social profiles">
+        <ul>
+          {socialSection.links.map((link) => {
+            const openInNewTab = link.newTab ?? isExternal(link.href);
+            return (
+              <li>
+                <a href={link.href} target={openInNewTab ? '_blank' : undefined} rel={openInNewTab ? 'noopener' : undefined}>
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    )}
+    <div class="index-footer__meta">
+      {footer.text && <p>{footer.text}</p>}
+      {footer.privacyHref && <a href={footer.privacyHref}>{footer.privacyLabel ?? 'Privacy policy'}</a>}
+    </div>
   </footer>
 </main>
 <div id="consentBanner" class="consent-banner" hidden role="dialog" aria-live="polite" aria-label="Analytics consent">
