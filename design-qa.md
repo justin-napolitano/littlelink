@@ -86,3 +86,14 @@ Try selected cardinal red (#c8102e) consistently for text highlights and hover, 
 ## 2026-10-23: Signal/cardinal midpoint trial
 
 Try the selected midpoint red (#d01527) consistently for text highlights and hover, with a light selection (#fff0f2), matching secondary ink and rules. Keep green overscroll (#356349), layout, and destinations unchanged. Contrast passes on paper and selection backgrounds. Live rendering is verified after deployment.
+
+
+## 2026-11-01: Deep forest and skill hierarchy
+
+Local visual result: passed
+
+Approved deep forest (#285447), pale sage highlights (#e5eee7) and existing green native scroll canvas (#356349). Dark-mode links use pale green (#acd0b8) for contrast.
+
+Production build/static checks passed. Browser checks passed at 320, 390 and 1440 pixels. Checks cover accent/selection colors, full-height paper surfaces without exposed green bands, no horizontal page overflow, and no browser runtime exceptions. Existing dark modes are checked. Resume card ordering, relative type sizes and print punctuation are verified. Screenshots are retained in the local rollout evidence directory.
+
+Publication status is recorded separately after preview checks and production verification. No application data, dependency, schema or published PDF changes are included.
