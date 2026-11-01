@@ -12,6 +12,7 @@ a:focus-visible, button:focus-visible, [tabindex='-1']:focus-visible { outline: 
 .index-page { width: min(100% - 3rem, 860px); margin: 0 auto; padding: 48px 0 32px; }
 .index-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .index-header h1 { margin: 0; font-size: 24px; line-height: 1.3; font-weight: 600; letter-spacing: -0.025em; }
+.index-tagline { margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
 .index-header nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .index-header nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; text-decoration: none; }
 .index-header nav a:hover, .index-header nav a:active { color: var(--accent-hover); text-decoration: underline; text-decoration-color: var(--accent); }

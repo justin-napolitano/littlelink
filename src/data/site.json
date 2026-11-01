@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Justin Napolitano",
-    "description": "Personal links for Justin Napolitano.",
-    "keywords": "Justin Napolitano, resume, docs, hiring, GitHub, LinkedIn",
+    "description": "Justin Napolitano’s personal index.",
+    "keywords": "Justin Napolitano, personal index, links",
     "author": "Justin Napolitano",
     "url": "https://jnap.me",
     "image": "https://jnap.me/twitter-card.png"
@@ -10,7 +10,7 @@
   "hero": {
     "eyebrow": "",
     "name": "Justin Napolitano",
-    "thesis": "",
+    "thesis": "A personal index.",
     "subhead": "Links",
     "primaryCta": null,
     "secondaryCta": null,
